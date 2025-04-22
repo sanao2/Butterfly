@@ -11,16 +11,16 @@ namespace Time
 
 	void InitTime()
 	{
-		QueryPerformanceFrequency(&frequency);	// °í¼º´É Å¸ÀÌ¸Ó°¡ 1ÃÊ µ¿¾È Áõ°¡½ÃÅ³¼ö ÀÖ´Â TickCount °ª
-		QueryPerformanceCounter(&intialCounter);  // ÃÊ±â TickCount °ª
+		QueryPerformanceFrequency(&frequency);
+		QueryPerformanceCounter(&intialCounter);
 		prevCounter = intialCounter;
 	}
 
 	void UpdateTime()
 	{
-		QueryPerformanceCounter(&currentCounter); // ÇöÀç TickCount °ª
+		QueryPerformanceCounter(&currentCounter);
 		deltaTime = static_cast<float>(currentCounter.QuadPart - prevCounter.QuadPart) /
-			static_cast<float>(frequency.QuadPart);  // Ä«¿îÅÍÂ÷ÀÌ¸¦ ½Ã°£ ÃÊ´ÜÀ§·Î º¯È¯
+			static_cast<float>(frequency.QuadPart);
 
 		prevCounter = currentCounter;
 	}
@@ -32,6 +32,6 @@ namespace Time
 	float GetTotalTime()
 	{
 		return static_cast<float>(currentCounter.QuadPart - intialCounter.QuadPart) /
-			static_cast<float>(frequency.QuadPart);  // Ä«¿îÅÍÂ÷ÀÌ¸¦ ½Ã°£ ÃÊ´ÜÀ§·Î º¯È¯
+			static_cast<float>(frequency.QuadPart);  // Ä«ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì¸ï¿½ ï¿½Ã°ï¿½ ï¿½Ê´ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¯
 	}
 }
