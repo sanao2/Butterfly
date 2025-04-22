@@ -4,6 +4,9 @@
 
 namespace Input
 {
+    constexpr int MAX_KEY_COUNT = 256;
+    constexpr SHORT KEY_PRESSED_FLAG = 0x8000;
+
     template<typename DeviceType>
     class InputManager;
 
@@ -21,8 +24,8 @@ namespace Input
 
         void Update()
         {
-          std::memcpy(prevState.data(), currState.data(), sizeof(SHORT) * 256);
-          for(int i =0; i < 256; ++i)
+          std::memcpy(prevState.data(), currState.data(), sizeof(SHORT) * MAX_KEY_COUNT);
+          for(int i =0; i < MAX_KEY_COUNT; ++i)
           {
             currState[i] = GetAsyncKeyState(i);
           }
@@ -30,12 +33,29 @@ namespace Input
 
         bool IsKeyDown(int vKey) const
         {
-          return (currState[vKey] & 0x8000) != 0;
+          return (currState[vKey] & KEY_PRESSED_FLAG) != 0;
         }
+
+        bool IsKeyPressed(int vKey) const
+        {
+          return (!(prevState[vKey] & KEY_PRESSED_FLAG) && (currState[vKey] & KEY_PRESSED_FLAG));
+        }
+
+        bool IsKeyReleased(int vKey) const
+        {
+          return ((prevState[vKey] & KEY_PRESSED_FLAG) && !(currState[vKey] & KEY_PRESSED_FLAG));
+        }
+
+        private:
+          InputManager() = default;
+          ~InputManager() = default;
+
+          InputManager(const InputManager&) = delete;
+          InputManager& oprator=(const InputManager&) = delete;
+
+          std::array<SHORT, MAX_KEY_COUNT> prevState;
+          std::array<SHORT, MAX_KEY_COUNT> currState;
     }
 
-    void Update();
-    bool IsKeyDown(int vKey);
-    bool IsKeyPressed(int vKey);
-    bool IsKeyReleased(int vKey);
+    using Keybard = InputManager<KeyboardDevice>;
 }
