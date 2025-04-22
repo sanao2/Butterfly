@@ -18,6 +18,15 @@ namespace Input
           static InputManager instance;
           return instance;
         }
+
+        void Update()
+        {
+          std::memcpy(prevState.data(), currState.data(), sizeof(SHORT) * 256);
+          for(int i =0; i < 256; ++i)
+          {
+            currState[i] = GetAsyncKeyState(i);
+          }
+        }
     }
 
     void Update();
