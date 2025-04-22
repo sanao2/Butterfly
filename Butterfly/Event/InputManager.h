@@ -27,6 +27,11 @@ namespace Input
             currState[i] = GetAsyncKeyState(i);
           }
         }
+
+        bool IsKeyDown(int vKey) const
+        {
+          return (currState[vKey] & 0x8000) != 0;
+        }
     }
 
     void Update();
