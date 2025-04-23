@@ -10,7 +10,7 @@
 		printf("경과 시간 : %.3f\n", deltatime);
 	}
 
-	Timer::Timer(double time) : cur_Time(time)
+	Timer::Timer() 
 	{
 		startTime = clock(); 
 		endTime = clock(); 
