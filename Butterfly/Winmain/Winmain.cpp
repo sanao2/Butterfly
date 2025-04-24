@@ -123,7 +123,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 
 	auto& key = InputManager<KeyboardDevice>::GetInstance(); // Get KeyboardManaager Instance 
 	////////Renderer::Initialize
-	Move->MoveUpdate(key); 
+	Move = new MoveManager(key, rect); 
+	 
 
 	MSG msg;
 	while (true)
@@ -137,7 +138,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 			DispatchMessage(&msg);
 		}
 		boxDraw();
-		Move->MoveInput(rect, key);
+		Move->MoveUpdate(key);
+		Move->MoveKeyInput(key);
 	}
 
 
