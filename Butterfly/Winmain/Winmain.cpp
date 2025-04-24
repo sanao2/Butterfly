@@ -40,7 +40,7 @@ void UninitConsole()
 
 void boxDraw()
 {
-	Rectangle(drawDC, rect.left, rect.right, rect.top, rect.bottom);
+	Rectangle(drawDC, pPos.x, pPos.y, rect.top, rect.bottom);
 }
 void KeyboardInput()
 {   
@@ -49,11 +49,11 @@ void KeyboardInput()
 
 	if (Key.IsKeyDown(VK_RIGHT) && Key.IsKeyPressed(VK_RIGHT)) // Key : Right -> Button Down && Button Pressed. 
 	{
-		OffsetRect(&rect, 10, 10); // rect move Right 
+		OffsetRect(&rect, 10, 0); // rect move Right 
 	}
 	if (Key.IsKeyDown(VK_LEFT) && Key.IsKeyPressed(VK_LEFT))
 	{
-		OffsetRect(&rect, -10, -10); // rect move LEFT
+		OffsetRect(&rect, -10, 0); // rect move LEFT
 	}		
 }
 LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
