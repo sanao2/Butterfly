@@ -1,8 +1,0 @@
-﻿  Timer.cpp
-  Winmain.cpp
-C:\Users\user\Documents\Butterfly\ButterflyProject\Butterfly\Winmain\Timer.h(23,50): warning C4244: '=': 'double'에서 'clock_t'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  (소스 파일 'Timer.cpp'을(를) 컴파일하는 중)
-  
-  코드를 생성하고 있습니다...
-  LINK : C:\Users\user\Documents\Butterfly\ButterflyProject\Butterfly\x64\Debug\Winmain.exe을(를) 찾을 수 없거나 마지막 증분 링크에 의해 빌드되지 않았습니다. 전체 링크를 수행하고 있습니다.
-  Winmain.vcxproj -> C:\Users\user\Documents\Butterfly\ButterflyProject\Butterfly\x64\Debug\Winmain.exe
