@@ -6,57 +6,42 @@ void MoveManager::MoveUpdate(InputManager<KeyboardDevice>& key)
 	key.Update(); 
 }
 
-
-void MoveManager::MoveKeyInput(InputManager<KeyboardDevice>& key)
+void MoveManager::MoveKeyInput(InputManager<KeyboardDevice>& key, RECT& rc)
 {
-	float moveSpeed = 0.12f;
+	int moveSpeed = 1;
+	int rcWidth = rc.right - rc.left;
+	int rcHeight = rc.bottom - rc.top;
 
-	POINT movePos = { (rect.left + rect.right) / 2  , (rect.top + rect.bottom) / 2 };
+	// 중심 좌표 계산
+	POINT movePos = {(rc.right + rc.left) / 2,	(rc.top + rc.bottom) / 2};
 
-	if (key.IsKeyDown(VK_RIGHT)) // Key : Right -> Button Down && Button Pressed. 
+	for (int i = 0; i <= MAX_KEY_COUNT; ++i)
 	{
-		SetIsMoving(true); 
-		OffsetRect(&rect, movePos.x - 0.1, 0);		 // rect move Right  
+		if (key.IsKeyPressed(VK_RIGHT))
+			OffsetRect(&rc, movePos.x += 1, 0);
+		if (key.IsKeyPressed(VK_LEFT))
+			movePos.x -= moveSpeed;
+		if (key.IsKeyPressed(VK_UP))
+			movePos.y -= moveSpeed;
+		if (key.IsKeyPressed(VK_DOWN))
+			movePos.y += moveSpeed;
 	}
-	if (key.IsKeyDown(VK_LEFT))
-	{
-		SetIsMoving(true);
-		OffsetRect(&rect, movePos.x + 0.1, 0);		 // rect move LEFT
-	}
-	if (key.IsKeyDown(VK_UP)) // Key : Right -> Button Down && Button Pressed. 
-	{
-		SetIsMoving(true);
-		OffsetRect(&rect, 0, movePos.y + 0.1);	 // rect move Up 
-
-	}
-	if (key.IsKeyDown(VK_DOWN))
-	{
-		OffsetRect(&rect, 0, movePos.y - 0.1);		// rect move Down
-
-	}
-
 	
+
+	rc.left = movePos.x - rcWidth / 2;
+	rc.top = movePos.y - rcHeight / 2;
+	rc.right = movePos.x + rcWidth / 2;
+	rc.bottom = movePos.y + rcHeight / 2;
 	
 }
 void MoveManager::MoveKeyRelese(InputManager<KeyboardDevice>& key)
 {
-	if (key.IsKeyReleased(VK_RIGHT)) // Key : Right -> Button Down && Button Pressed. 
-	{
-		OffsetRect(&rect, 0, 0);		 // rect move Right  
-	}
-	if (key.IsKeyReleased(VK_LEFT))
-	{
-		OffsetRect(&rect, -0, 0);		 // rect move LEFT
-	}
-	if (key.IsKeyReleased(VK_UP)) // Key : Right -> Button Down && Button Pressed. 
-	{
-		OffsetRect(&rect, 0, -0);	 // rect move Up 
+	int moveSpeed = 0;
 
-	}
-	if (key.IsKeyReleased(VK_DOWN))
+	if (key.IsKeyReleased(VK_LEFT) || key.IsKeyReleased(VK_RIGHT) || key.IsKeyReleased(VK_UP) || key.IsKeyReleased(VK_DOWN))
 	{
-		OffsetRect(&rect, 0, 0);		// rect move Down
-
+		SetIsMoving(false);
+		OffsetRect(&rect, 0, 0); 
 	}
 }
 

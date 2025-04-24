@@ -12,7 +12,7 @@ private :
 
 public : 
 	void MoveUpdate(InputManager<KeyboardDevice>& key);
-	void MoveKeyInput(InputManager<KeyboardDevice>& key);
+	void MoveKeyInput(InputManager<KeyboardDevice>& key, RECT& rc);
 	void MoveKeyRelese(InputManager<KeyboardDevice>& key);
 
 	bool IsMoving(); 
