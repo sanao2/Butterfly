@@ -11,22 +11,18 @@ void MoveManager::MoveKeyInput(InputManager<KeyboardDevice>& key, RECT& rc)
 	int moveSpeed = 1;
 	int rcWidth = rc.right - rc.left;
 	int rcHeight = rc.bottom - rc.top;
-
-	// Áß½É ÁÂÇ¥ °è»ê
+		
 	POINT movePos = { (rc.right + rc.left) / 2,	(rc.top + rc.bottom) / 2 };
-
-	for (int i = 0; i <= MAX_KEY_COUNT; ++i)
-	{
-		if (key.IsKeyPressed(VK_RIGHT))
-			OffsetRect(&rc, movePos.x += 1, 0);
-		if (key.IsKeyPressed(VK_LEFT))
-			movePos.x -= moveSpeed;
-		if (key.IsKeyPressed(VK_UP))
-			movePos.y -= moveSpeed;
-		if (key.IsKeyPressed(VK_DOWN))
-			movePos.y += moveSpeed;
-	}
-
+		
+	if (key.IsKeyPressed(VK_RIGHT))
+		OffsetRect(&rc, movePos.x += 1, 0);
+	if (key.IsKeyPressed(VK_LEFT))
+		OffsetRect(&rc, movePos.x -= 1, 0);
+	if (key.IsKeyPressed(VK_DOWN))
+		OffsetRect(&rc, 0, movePos.y += 1);
+	if (key.IsKeyPressed(VK_UP))
+		OffsetRect(&rc, 0, movePos.y -= 1);
+	
 
 	rc.left = movePos.x - rcWidth / 2;
 	rc.top = movePos.y - rcHeight / 2;
