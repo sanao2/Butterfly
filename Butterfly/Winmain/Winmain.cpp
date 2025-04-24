@@ -1,8 +1,9 @@
-﻿#include <windows.h>
+#include <windows.h>
 #include <stdio.h>
 #include "Event/KeyboardInputManager.h"
 using namespace Input;
 #pragma comment(lib, "Msimg32.lib")	
+
 
 LPCTSTR g_title = TEXT("윈도우 타이틀바에 표시할 문자열");
 LPCTSTR g_szClassName = TEXT("윈도우 클래스 이름");
@@ -12,7 +13,7 @@ int g_height = 768;
 
 HWND g_hWnd;
 
-// MainWindow draw Rect 
+// MainWindow in Rect draw  
 HDC  drawDC;	
 RECT rect = { 10, 10, 100, 100 };
 POINT pPos = { 0, 0 };
@@ -31,38 +32,41 @@ int boxDraw() // Move Test
 
 	Rectangle(drawDC, rect.left, rect.top, rect.right, rect.bottom);
 
-
 	return S_OK;
 }
 
 void KeyboardInput(InputManager<KeyboardDevice>& key)
 {
-	float moveSpeed = 0.14f;
-
+	float moveSpeed = 0.018f;
 
 	key.Update();
+	// Rect Width / Height 
+	int rcWidth = rect.right - rect.left;
+	int rcHeight = rect.bottom - rect.top;
 
 	if (key.IsKeyDown(VK_RIGHT) || key.IsKeyPressed(VK_RIGHT)) // Key : Right -> Button Down && Button Pressed. 
 	{
-		OffsetRect(&rect, 10 * moveSpeed , 0); // rect move Right 
+		OffsetRect(&rect, rcWidth * moveSpeed , 0); // rect move Right 
+		key.CheckKeyCount(VK_RIGHT);
 	}
 	if (key.IsKeyDown(VK_LEFT) || key.IsKeyPressed(VK_LEFT))
 	{
-		OffsetRect(&rect, -10 * moveSpeed, 0); // rect move LEFT
+		OffsetRect(&rect, -rcWidth * moveSpeed, 0); // rect move LEFT
+		key.CheckKeyCount(VK_LEFT);
 	}
 	if (key.IsKeyDown(VK_UP) || key.IsKeyPressed(VK_UP)) // Key : Right -> Button Down && Button Pressed. 
 	{
-		OffsetRect(&rect, 0, -10 * moveSpeed); // rect move Up 
+		OffsetRect(&rect, 0, -rcHeight * moveSpeed); // rect move Up 
+		key.CheckKeyCount(VK_UP);
 	}
 	if (key.IsKeyDown(VK_DOWN) || key.IsKeyPressed(VK_DOWN))
 	{
-		OffsetRect(&rect, 0, 10 * moveSpeed); // rect move Down
+		OffsetRect(&rect, 0, rcHeight * moveSpeed); // rect move Down
+		key.CheckKeyCount(VK_DOWN);
 	}
-	if (key.IsKeyDown(VK_SPACE) || key.IsKeyPressed(VK_SPACE))
-	{
-		// interaction Key 
-	}
+	 
 	
+		
 }
 
 
