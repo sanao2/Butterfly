@@ -11,5 +11,7 @@ private :
 public : 
 	void MoveUpdate(InputManager<KeyboardDevice>& key);
 	void MoveInput(RECT& rect, InputManager<KeyboardDevice>& key);
+
+	void ClampRectToClientArea(HWND hWnd, RECT& rect);
 };
 

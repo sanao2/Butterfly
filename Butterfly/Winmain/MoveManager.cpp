@@ -8,30 +8,35 @@ void MoveManager::MoveUpdate(InputManager<KeyboardDevice>& key)
 
 void MoveManager::MoveInput(RECT& rect, InputManager<KeyboardDevice>& key)
 {
-	float moveSpeed = 0.032f;
+	int moveSpeed = 1;
 
 	key.Update();
 	// Rect Width / Height 
 	int rcWidth = rect.right - rect.left;
 	int rcHeight = rect.bottom - rect.top;
 
-	if (key.IsKeyDown(VK_RIGHT) || key.IsKeyPressed(VK_RIGHT)) // Key : Right -> Button Down && Button Pressed. 
+	if (key.IsKeyDown(VK_RIGHT)) // Key : Right -> Button Down && Button Pressed. 
 	{
-		OffsetRect(&rect, rcWidth * moveSpeed, 0);		 // rect move Right 
+		OffsetRect(&rect, 1 , 0);		 // rect move Right  
+		 
 
 	}
-	if (key.IsKeyDown(VK_LEFT) || key.IsKeyPressed(VK_LEFT))
+	if (key.IsKeyDown(VK_LEFT))
 	{
-		OffsetRect(&rect, -rcWidth * moveSpeed, 0);		 // rect move LEFT
-
+		OffsetRect(&rect, -1 , 0);		 // rect move LEFT
 	}
-	if (key.IsKeyDown(VK_UP) || key.IsKeyPressed(VK_UP)) // Key : Right -> Button Down && Button Pressed. 
+	if (key.IsKeyDown(VK_UP)) // Key : Right -> Button Down && Button Pressed. 
 	{
-		OffsetRect(&rect, 0, -rcHeight * moveSpeed);	 // rect move Up 
+		OffsetRect(&rect, 0, -1);	 // rect move Up 
+		rcWidth = 0;
+		rcHeight = 0;
 	}
-	if (key.IsKeyDown(VK_DOWN) || key.IsKeyPressed(VK_DOWN))
+	if (key.IsKeyDown(VK_DOWN))
 	{
-		OffsetRect(&rect, 0, rcHeight * moveSpeed);		// rect move Down
+		OffsetRect(&rect, 0, 1 );		// rect move Down
+		rcWidth = 0;
+		rcHeight = 0;
 	}
 
 }
+
