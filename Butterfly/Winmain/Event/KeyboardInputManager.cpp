@@ -5,7 +5,7 @@ namespace Input
 {
     InputManager<KeyboardDevice>& InputManager<KeyboardDevice>::GetInstance()
     {
-        static InputManager instance;
+        static InputManager instance; // Singleton Instance Get Code 
         return instance;
     }
 
@@ -18,17 +18,17 @@ namespace Input
         }
     }
 
-    bool InputManager<KeyboardDevice>::IsKeyDown(int vKey) const
+    bool InputManager<KeyboardDevice>::IsKeyDown(int vKey) const  // key Button Down 
     {
         return (currState[vKey] & KEY_PRESSED_FLAG) != 0;
     }
 
-    bool InputManager<KeyboardDevice>::IsKeyPressed(int vKey) const
+    bool InputManager<KeyboardDevice>::IsKeyPressed(int vKey) const // key Button Pressed
     {
         return (!(prevState[vKey] & KEY_PRESSED_FLAG) && (currState[vKey] & KEY_PRESSED_FLAG));
     }
 
-    bool InputManager<KeyboardDevice>::IsKeyReleased(int vKey) const
+    bool InputManager<KeyboardDevice>::IsKeyReleased(int vKey) const  // Key Button Up 
     {
         return ((prevState[vKey] & KEY_PRESSED_FLAG) && !(currState[vKey] & KEY_PRESSED_FLAG));
     }
