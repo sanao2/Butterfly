@@ -6,6 +6,8 @@
 #include "Event/KeyboardInputManager.h"
 using namespace Input;
 
+#include <windows.h>
+
 LPCTSTR g_title = TEXT("윈도우 타이틀바에 표시할 문자열");
 LPCTSTR g_szClassName = TEXT("윈도우 클래스 이름");
 
@@ -14,6 +16,9 @@ int g_height = 768;
 
 HDC  drawDC;	// 메인 윈도우에 그릴 DC 
 RECT rect = { 10, 10, 100, 100 };
+
+POINT pPos = { 0, 0 }; 
+
 
 // 콘솔 초기화
 void InitConsole()
@@ -33,6 +38,10 @@ void UninitConsole()
 	FreeConsole();
 }
 
+void boxDraw()
+{
+	Rectangle(drawDC, rect.left, rect.right, rect.top, rect.bottom);
+}
 void KeyboardInput()
 {   
 	auto& Key = InputManager<KeyboardDevice>::GetInstance();
@@ -40,11 +49,11 @@ void KeyboardInput()
 
 	if (Key.IsKeyDown(VK_RIGHT) && Key.IsKeyPressed(VK_RIGHT)) // Key : Right -> Button Down && Button Pressed. 
 	{
-		OffsetRect(&rect, 2, 0); // rect move Right 
+		OffsetRect(&rect, 10, 10); // rect move Right 
 	}
 	if (Key.IsKeyDown(VK_LEFT) && Key.IsKeyPressed(VK_LEFT))
 	{
-		OffsetRect(&rect, 2, 0); // rect move LEFT
+		OffsetRect(&rect, -10, -10); // rect move LEFT
 	}		
 }
 LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
@@ -125,6 +134,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 	// 움직임 실험용 RECT DC 
 	drawDC = GetDC(hwnd);
 
+
 	MSG msg;
 	while (true)
 	{
@@ -138,10 +148,10 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 		}
 
 		::PatBlt(hDC, 0, 0, g_width, g_height, WHITENESS);
-
+		boxDraw();
 		KeyboardInput();
-		Rectangle(drawDC, rect.left, rect.right, rect.top, rect.bottom);
-
+		
+	
 	}
 
 	ReleaseDC(hwnd, hDC);
