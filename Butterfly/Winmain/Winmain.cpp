@@ -38,21 +38,23 @@ int boxDraw()
 
 void KeyboardInput(InputManager<KeyboardDevice>& key)
 {
+	float moveSpeed = 0.2f;
+	
 	if (key.IsKeyDown(VK_RIGHT) || key.IsKeyPressed(VK_RIGHT)) // Key : Right -> Button Down && Button Pressed. 
 	{
-		OffsetRect(&rect, 10, 0); // rect move Right 
+		OffsetRect(&rect, 10 * moveSpeed, 0); // rect move Right 
 	}
 	if (key.IsKeyDown(VK_LEFT) || key.IsKeyPressed(VK_LEFT))
 	{
-		OffsetRect(&rect, -10, 0); // rect move LEFT
+		OffsetRect(&rect, -10 * moveSpeed, 0); // rect move LEFT
 	}
 	if (key.IsKeyDown(VK_UP) || key.IsKeyPressed(VK_UP)) // Key : Right -> Button Down && Button Pressed. 
 	{
-		OffsetRect(&rect, 0, -10); // rect move Right 
+		OffsetRect(&rect, 0, -10 * moveSpeed); // rect move Right 
 	}
 	if (key.IsKeyDown(VK_DOWN) || key.IsKeyPressed(VK_DOWN))
 	{
-		OffsetRect(&rect, 0, 10); // rect move LEFT
+		OffsetRect(&rect, 0, 10 * moveSpeed); // rect move LEFT
 	}
 	
 }
