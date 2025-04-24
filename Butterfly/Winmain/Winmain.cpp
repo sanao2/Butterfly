@@ -1,6 +1,7 @@
 ﻿#include <windows.h>
 #include <stdio.h>
-
+#include "Event/KeyboardInputManager.h"
+using namespace Input;
 #pragma comment(lib, "Msimg32.lib")	
 
 LPCTSTR g_title = TEXT("윈도우 타이틀바에 표시할 문자열");
@@ -10,8 +11,54 @@ int g_width = 1024;
 int g_height = 768;
 
 HWND g_hWnd;
+HDC  drawDC;	// 메인 윈도우에 그릴 DC 
+RECT rect = { 10, 10, 100, 100 };
+POINT pPos = { 0, 0 };
 
-// 콘솔 초기화
+void KeyboardInput(InputManager<KeyboardDevice>& key);
+
+int boxDraw()
+{	
+	// Move Test RECT HDC Init
+	drawDC = GetDC(g_hWnd);
+
+	RECT rcClient = { 0, 0, g_width, g_height };  // 새로운 콘솔창 해상도 크기 
+	AdjustWindowRect(&rcClient, WS_OVERLAPPEDWINDOW, FALSE);
+		
+	PatBlt(drawDC, 0, 0, g_width, g_height, WHITENESS);
+
+	Rectangle(drawDC, rect.left, rect.top, rect.right, rect.bottom);
+
+	auto& Key = InputManager<KeyboardDevice>::GetInstance();
+	Key.Update();
+
+	KeyboardInput(Key); 
+	return S_OK;
+}
+
+void KeyboardInput(InputManager<KeyboardDevice>& key)
+{
+	if (key.IsKeyDown(VK_RIGHT) || key.IsKeyPressed(VK_RIGHT)) // Key : Right -> Button Down && Button Pressed. 
+	{
+		OffsetRect(&rect, 10, 0); // rect move Right 
+	}
+	if (key.IsKeyDown(VK_LEFT) || key.IsKeyPressed(VK_LEFT))
+	{
+		OffsetRect(&rect, -10, 0); // rect move LEFT
+	}
+	if (key.IsKeyDown(VK_UP) || key.IsKeyPressed(VK_UP)) // Key : Right -> Button Down && Button Pressed. 
+	{
+		OffsetRect(&rect, 0, -10); // rect move Right 
+	}
+	if (key.IsKeyDown(VK_DOWN) || key.IsKeyPressed(VK_DOWN))
+	{
+		OffsetRect(&rect, 0, 10); // rect move LEFT
+	}
+	
+}
+
+
+// Console Initialize
 void InitConsole()
 {
 	AllocConsole();
@@ -29,7 +76,7 @@ void UninitConsole()
 	FreeConsole();
 }
 
-// WIN32 API 에러 값에 대한 실제 메세지를 출력하는 함수
+
 void PrintLastErrorMessage()
 {
 	DWORD errorCode = GetLastError();
@@ -98,14 +145,12 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 		rcClient.right - rcClient.left, rcClient.bottom - rcClient.top,
 		NULL, NULL, hInstance, NULL);
 
+	g_hWnd = hwnd; 
+	
 	ShowWindow(hwnd, nCmdShow);
 	UpdateWindow(hwnd);
 
 	////////Renderer::Initialize
-
-
-
-
 
 	MSG msg;
 	while (true)
@@ -118,8 +163,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 			TranslateMessage(&msg);
 			DispatchMessage(&msg);
 		}
-
-
+		boxDraw();
 	}
 
 
