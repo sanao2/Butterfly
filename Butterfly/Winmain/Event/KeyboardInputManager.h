@@ -9,12 +9,14 @@ namespace Input
     class InputManager<KeyboardDevice>
     {
     public:
-        static InputManager& GetInstance();
+        static InputManager& GetInstance(); // Keyboard GetInstance
 
         void Update();
         bool IsKeyDown(int vKey) const;
         bool IsKeyPressed(int vKey) const;
         bool IsKeyReleased(int vKey) const;
+
+        bool IsKeyCountReset() const; 
 
     private:
         InputManager() = default;

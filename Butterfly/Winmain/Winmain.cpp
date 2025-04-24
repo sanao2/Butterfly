@@ -11,13 +11,15 @@ int g_width = 1024;
 int g_height = 768;
 
 HWND g_hWnd;
-HDC  drawDC;	// 메인 윈도우에 그릴 DC 
+
+// MainWindow draw Rect 
+HDC  drawDC;	
 RECT rect = { 10, 10, 100, 100 };
 POINT pPos = { 0, 0 };
 
 void KeyboardInput(InputManager<KeyboardDevice>& key);
 
-int boxDraw()
+int boxDraw() // Move Test 
 {	
 	// Move Test RECT HDC Init
 	drawDC = GetDC(g_hWnd);
@@ -29,20 +31,18 @@ int boxDraw()
 
 	Rectangle(drawDC, rect.left, rect.top, rect.right, rect.bottom);
 
-	auto& Key = InputManager<KeyboardDevice>::GetInstance();
-	Key.Update();
 
-	KeyboardInput(Key); 
 	return S_OK;
 }
 
 void KeyboardInput(InputManager<KeyboardDevice>& key)
 {
 	float moveSpeed = 0.2f;
-	
+	key.Update();
+
 	if (key.IsKeyDown(VK_RIGHT) || key.IsKeyPressed(VK_RIGHT)) // Key : Right -> Button Down && Button Pressed. 
 	{
-		OffsetRect(&rect, 10 * moveSpeed, 0); // rect move Right 
+		OffsetRect(&rect, 10 * moveSpeed , 0); // rect move Right 
 	}
 	if (key.IsKeyDown(VK_LEFT) || key.IsKeyPressed(VK_LEFT))
 	{
@@ -50,11 +50,15 @@ void KeyboardInput(InputManager<KeyboardDevice>& key)
 	}
 	if (key.IsKeyDown(VK_UP) || key.IsKeyPressed(VK_UP)) // Key : Right -> Button Down && Button Pressed. 
 	{
-		OffsetRect(&rect, 0, -10 * moveSpeed); // rect move Right 
+		OffsetRect(&rect, 0, -10 * moveSpeed); // rect move Up 
 	}
 	if (key.IsKeyDown(VK_DOWN) || key.IsKeyPressed(VK_DOWN))
 	{
-		OffsetRect(&rect, 0, 10 * moveSpeed); // rect move LEFT
+		OffsetRect(&rect, 0, 10 * moveSpeed); // rect move Down
+	}
+	if (key.IsKeyDown(VK_SPACE) || key.IsKeyPressed(VK_SPACE))
+	{
+		// interaction Key 
 	}
 	
 }
@@ -166,6 +170,9 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 			DispatchMessage(&msg);
 		}
 		boxDraw();
+		auto& Key = InputManager<KeyboardDevice>::GetInstance();
+
+		KeyboardInput(Key);
 	}
 
 
