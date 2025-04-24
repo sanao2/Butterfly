@@ -37,7 +37,9 @@ int boxDraw() // Move Test
 
 void KeyboardInput(InputManager<KeyboardDevice>& key)
 {
-	float moveSpeed = 0.2f;
+	float moveSpeed = 0.14f;
+
+
 	key.Update();
 
 	if (key.IsKeyDown(VK_RIGHT) || key.IsKeyPressed(VK_RIGHT)) // Key : Right -> Button Down && Button Pressed. 

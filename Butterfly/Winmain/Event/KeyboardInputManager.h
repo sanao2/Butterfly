@@ -16,8 +16,6 @@ namespace Input
         bool IsKeyPressed(int vKey) const;
         bool IsKeyReleased(int vKey) const;
 
-        bool IsKeyCountReset() const; 
-
     private:
         InputManager() = default;
         ~InputManager() = default;

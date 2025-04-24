@@ -33,9 +33,5 @@ namespace Input
         return ((prevState[vKey] & KEY_PRESSED_FLAG) && !(currState[vKey] & KEY_PRESSED_FLAG));
     }
 
-    // KeyCount Reset = MAX_KEY_COUNT -> 256 Init
-    bool InputManager<KeyboardDevice>::IsKeyCountReset() const
-    {
-        return false;
-    }
+ 
 }
