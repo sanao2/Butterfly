@@ -1,9 +1,5 @@
-#include <windows.h>
-#include <stdio.h>
-#include "Event/KeyboardInputManager.h"
-using namespace Input;
+﻿#include "Winmain.h"
 #pragma comment(lib, "Msimg32.lib")	
-
 
 LPCTSTR g_title = TEXT("윈도우 타이틀바에 표시할 문자열");
 LPCTSTR g_szClassName = TEXT("윈도우 클래스 이름");
@@ -16,9 +12,6 @@ HWND g_hWnd;
 // MainWindow in Rect draw  
 HDC  drawDC;	
 RECT rect = { 10, 10, 100, 100 };
-POINT pPos = { 0, 0 };
-
-void KeyboardInput(InputManager<KeyboardDevice>& key);
 
 int boxDraw() // Move Test 
 {	
@@ -33,40 +26,6 @@ int boxDraw() // Move Test
 	Rectangle(drawDC, rect.left, rect.top, rect.right, rect.bottom);
 
 	return S_OK;
-}
-
-void KeyboardInput(InputManager<KeyboardDevice>& key)
-{
-	float moveSpeed = 0.018f;
-
-	key.Update();
-	// Rect Width / Height 
-	int rcWidth = rect.right - rect.left;
-	int rcHeight = rect.bottom - rect.top;
-
-	if (key.IsKeyDown(VK_RIGHT) || key.IsKeyPressed(VK_RIGHT)) // Key : Right -> Button Down && Button Pressed. 
-	{
-		OffsetRect(&rect, rcWidth * moveSpeed , 0); // rect move Right 
-		key.CheckKeyCount(VK_RIGHT);
-	}
-	if (key.IsKeyDown(VK_LEFT) || key.IsKeyPressed(VK_LEFT))
-	{
-		OffsetRect(&rect, -rcWidth * moveSpeed, 0); // rect move LEFT
-		key.CheckKeyCount(VK_LEFT);
-	}
-	if (key.IsKeyDown(VK_UP) || key.IsKeyPressed(VK_UP)) // Key : Right -> Button Down && Button Pressed. 
-	{
-		OffsetRect(&rect, 0, -rcHeight * moveSpeed); // rect move Up 
-		key.CheckKeyCount(VK_UP);
-	}
-	if (key.IsKeyDown(VK_DOWN) || key.IsKeyPressed(VK_DOWN))
-	{
-		OffsetRect(&rect, 0, rcHeight * moveSpeed); // rect move Down
-		key.CheckKeyCount(VK_DOWN);
-	}
-	 
-	
-		
 }
 
 
@@ -162,7 +121,9 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 	ShowWindow(hwnd, nCmdShow);
 	UpdateWindow(hwnd);
 
+	auto& key = InputManager<KeyboardDevice>::GetInstance(); // Get KeyboardManaager Instance 
 	////////Renderer::Initialize
+	Move->MoveUpdate(key); 
 
 	MSG msg;
 	while (true)
@@ -176,9 +137,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 			DispatchMessage(&msg);
 		}
 		boxDraw();
-		auto& Key = InputManager<KeyboardDevice>::GetInstance();
-
-		KeyboardInput(Key);
+		Move->MoveInput(rect, key);
 	}
 
 
