@@ -1,12 +1,7 @@
-﻿// Winmain.cpp : 애플리케이션에 대한 진입점을 정의합니다.
-//
+﻿#include <windows.h>
+#include <stdio.h>
 
-#include "framework.h"
-#include "Winmain.h"
-#include "Event/KeyboardInputManager.h"
-using namespace Input;
-
-#include <windows.h>
+#pragma comment(lib, "Msimg32.lib")	
 
 LPCTSTR g_title = TEXT("윈도우 타이틀바에 표시할 문자열");
 LPCTSTR g_szClassName = TEXT("윈도우 클래스 이름");
@@ -14,11 +9,7 @@ LPCTSTR g_szClassName = TEXT("윈도우 클래스 이름");
 int g_width = 1024;
 int g_height = 768;
 
-HDC  drawDC;	// 메인 윈도우에 그릴 DC 
-RECT rect = { 10, 10, 100, 100 };
-
-POINT pPos = { 0, 0 }; 
-
+HWND g_hWnd;
 
 // 콘솔 초기화
 void InitConsole()
@@ -38,58 +29,37 @@ void UninitConsole()
 	FreeConsole();
 }
 
-void boxDraw()
+// WIN32 API 에러 값에 대한 실제 메세지를 출력하는 함수
+void PrintLastErrorMessage()
 {
-	Rectangle(drawDC, pPos.x, pPos.y, rect.top, rect.bottom);
-}
-void KeyboardInput()
-{   
-	auto& Key = InputManager<KeyboardDevice>::GetInstance();
-	Key.Update(); 
+	DWORD errorCode = GetLastError();
+	LPVOID lpMsgBuf;
 
-	if (Key.IsKeyDown(VK_RIGHT) && Key.IsKeyPressed(VK_RIGHT)) // Key : Right -> Button Down && Button Pressed. 
+	FormatMessageA(
+		FORMAT_MESSAGE_ALLOCATE_BUFFER | FORMAT_MESSAGE_FROM_SYSTEM | FORMAT_MESSAGE_IGNORE_INSERTS,
+		NULL,
+		errorCode,
+		MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT), // 기본 언어
+		(LPSTR)&lpMsgBuf,
+		0,
+		NULL);
+
+	if (lpMsgBuf)
 	{
-		OffsetRect(&rect, 10, 0); // rect move Right 
+		printf("오류 코드: %lu\n오류 메시지: %s\n", errorCode, (char*)lpMsgBuf);
+		LocalFree(lpMsgBuf); // 할당된 버퍼 해제
 	}
-	if (Key.IsKeyDown(VK_LEFT) && Key.IsKeyPressed(VK_LEFT))
+	else
 	{
-		OffsetRect(&rect, -10, 0); // rect move LEFT
-	}		
+		printf("오류 코드: %lu (메시지를 찾을 수 없음)\n", errorCode);
+	}
 }
+
 LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
 {
 	switch (msg)
 	{
-	case WM_CREATE:
-		printf("WM_CREATE: 윈도우가 생성되었습니다.\n");
-		break;
-
-	case WM_PAINT:
-		printf("WM_PAINT: 윈도우가 WM_PAINT발생.\n");
-		break;
-	case WM_ERASEBKGND:
-		printf("WM_ERASEBKGND: 윈도우가 WM_ERASEBKGND발생.\n");
-		break;
-	case WM_KEYDOWN:
-		printf("WM_KEYDOWN: VK_CODE = %d\n", (int)wParam);
-		break;
-	case WM_ENTERSIZEMOVE:
-		printf("WM_ENTERSIZEMOVE:  창 이동/크기 조절중\n");
-		break;
-
-	case WM_EXITSIZEMOVE:
-		printf("WM_EXITSIZEMOVE: 창 이동/크기 조절 종료.\n");
-		break;
-
-	case WM_CHAR:
-		printf("WM_CHAR: 문자 입력 = '%c'\n", (char)wParam);
-		break;
-
-	case WM_LBUTTONDOWN:
-		printf("WM_LBUTTONDOWN: 클릭 위치 x=%d y=%d\n", LOWORD(lParam), HIWORD(lParam));
-		break;
 	case WM_DESTROY:
-		printf("WM_DESTROY: 프로그램 종료\n");
 		PostQuitMessage(0);
 		break;
 	}
@@ -101,6 +71,10 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 	LPSTR lpCmdLine, int nCmdShow)
 {
 	InitConsole();  // 콘솔 출력 초기화
+
+	char szPath[MAX_PATH] = { 0, };
+	::GetCurrentDirectoryA(MAX_PATH, szPath);
+	printf("Current Directory: %s\n", szPath);
 
 	WNDCLASS wc = { 0 };
 	wc.lpfnWndProc = WndProc;
@@ -115,8 +89,6 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 	RECT rcClient = { 0, 0, (LONG)g_width, (LONG)g_height };
 	AdjustWindowRect(&rcClient, WS_OVERLAPPEDWINDOW, FALSE);
 
-
-
 	//생성
 	HWND hwnd = CreateWindow(
 		g_szClassName,
@@ -129,10 +101,10 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 	ShowWindow(hwnd, nCmdShow);
 	UpdateWindow(hwnd);
 
-	HDC hDC = GetDC(hwnd);
+	////////Renderer::Initialize
 
-	// 움직임 실험용 RECT DC 
-	drawDC = GetDC(hwnd);
+
+
 
 
 	MSG msg;
@@ -147,14 +119,11 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 			DispatchMessage(&msg);
 		}
 
-		::PatBlt(hDC, 0, 0, g_width, g_height, WHITENESS);
-		boxDraw();
-		KeyboardInput();
-		
-	
+
 	}
 
-	ReleaseDC(hwnd, hDC);
+
+	//////////////////////////////////////////////////////////////////////////
 
 	UninitConsole();  // 콘솔 출력 해제
 	return (int)msg.wParam;
