@@ -8,20 +8,20 @@ void MoveManager::MoveUpdate(InputManager<KeyboardDevice>& key)
 
 void MoveManager::MoveKeyInput(InputManager<KeyboardDevice>& key, RECT& rc)
 {
-	int moveSpeed = 1;
+	int moveSpeed = 10;
 	int rcWidth = rc.right - rc.left;
 	int rcHeight = rc.bottom - rc.top;
 		
 	POINT movePos = { (rc.right + rc.left) / 2,	(rc.top + rc.bottom) / 2 };
 		
 	if (key.IsKeyPressed(VK_RIGHT))
-		OffsetRect(&rc, movePos.x += 1, 0);
+		movePos.x += moveSpeed;
 	if (key.IsKeyPressed(VK_LEFT))
-		OffsetRect(&rc, movePos.x -= 1, 0);
+		movePos.x -= moveSpeed;
 	if (key.IsKeyPressed(VK_DOWN))
-		OffsetRect(&rc, 0, movePos.y += 1);
+		movePos.y += moveSpeed;
 	if (key.IsKeyPressed(VK_UP))
-		OffsetRect(&rc, 0, movePos.y -= 1);
+		movePos.y -= moveSpeed;
 	
 
 	rc.left = movePos.x - rcWidth / 2;
