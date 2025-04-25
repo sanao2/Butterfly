@@ -138,9 +138,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 			DispatchMessage(&msg);
 		}
 		boxDraw();
-		Move->MoveUpdate(key);
 		Move->MoveKeyInput(key, rect);
-		Move->MoveKeyRelese(key);
+
 	}
 
 
