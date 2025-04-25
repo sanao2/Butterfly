@@ -11,7 +11,7 @@ HWND g_hWnd;
 
 // MainWindow in Rect draw  
 HDC  drawDC;	
-RECT rect = { 10, 10, 20, 20 };
+RECT rect = { 5, 5, 20, 20 };
 
 int boxDraw() // Move Test 
 {	

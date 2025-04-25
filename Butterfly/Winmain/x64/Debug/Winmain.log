@@ -1,5 +1,5 @@
-﻿  MoveManagers.cpp
-C:\Users\user\Documents\Butterfly\Butterfly\Winmain\Event\InputConstants.h(7,40): warning C4309: '초기화 중': 상수 값이 잘립니다.
-  (소스 파일 'MoveManagers.cpp'을(를) 컴파일하는 중)
+﻿  Winmain.cpp
+C:\Users\User\Documents\Butterfly\Butterfly\Winmain\Event\InputConstants.h(7,40): warning C4309: '초기화 중': 상수 값이 잘립니다.
+  (소스 파일 'Winmain.cpp'을(를) 컴파일하는 중)
   
-  Winmain.vcxproj -> C:\Users\user\Documents\Butterfly\Butterfly\x64\Debug\Winmain.exe
+  Winmain.vcxproj -> C:\Users\User\Documents\Butterfly\Butterfly\x64\Debug\Winmain.exe
