@@ -3,17 +3,19 @@
 
 void MoveManager::MoveUpdate(InputManager<KeyboardDevice>& key)
 {
-	key.Update();
+	
 }
 
 void MoveManager::MoveKeyInput(InputManager<KeyboardDevice>& key, RECT& rc)
 {
+	key.Update();
 	int moveSpeed = 10;
 	int rcWidth = rc.right - rc.left;
 	int rcHeight = rc.bottom - rc.top;
-				
-	movePos.x = (rect.right + rect.left) / 2;
-	movePos.y = (rect.top + rect.bottom) / 2;
+	 
+	movePos = {
+		(rc.left + rc.right) / 2,
+		(rc.top + rc.bottom) / 2 };
 
 	if (key.IsKeyPressed(VK_RIGHT))
 		movePos.x += moveSpeed;
@@ -25,10 +27,10 @@ void MoveManager::MoveKeyInput(InputManager<KeyboardDevice>& key, RECT& rc)
 		movePos.y -= moveSpeed;
 	
 
-	rc.left =   movePos.x  - rcWidth / 2;
-	rc.top =    movePos.y  - rcHeight / 2;
-	rc.right =  movePos.x  + rcWidth / 2;
-	rc.bottom = movePos.y  + rcHeight / 2;
+	rc.left = movePos.x - rcWidth / 2;
+	rc.top = movePos.y - rcHeight / 2;
+	rc.right = movePos.x + rcWidth / 2;
+	rc.bottom = movePos.y + rcHeight / 2;
 
 }
 void MoveManager::MoveKeyRelese(InputManager<KeyboardDevice>& key)
@@ -51,7 +53,7 @@ bool MoveManager::IsMoving()
 }
 
 
-MoveManager::MoveManager(InputManager<KeyboardDevice>& key, RECT& rc) : key(key), rect(rc)
+MoveManager::MoveManager(InputManager<KeyboardDevice>& key, RECT& rc) : key(key), rect(rc), movePos{0,0}
 {
 }
 

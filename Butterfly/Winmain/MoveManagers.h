@@ -1,5 +1,5 @@
 #pragma once
-
+#include <cmath>
 #include "Event/KeyboardInputManager.h"
 using namespace Input;
 
@@ -9,7 +9,8 @@ private:
 	InputManager<KeyboardDevice>& key = InputManager<KeyboardDevice>::GetInstance(); // Get KeyboardManaager Instance 
 	RECT& rect;
 	bool isMoving = false;
-	POINT movePos = { };
+	POINT movePos = {};
+
 public:
 	void MoveUpdate(InputManager<KeyboardDevice>& key);
 	void MoveKeyInput(InputManager<KeyboardDevice>& key, RECT& rc);
