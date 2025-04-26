@@ -19,6 +19,9 @@
     <Filter Include="소스 파일\Event">
       <UniqueIdentifier>{5641d279-7100-4ed5-b889-f4d31579a3f0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\player">
+      <UniqueIdentifier>{e1c4108b-b5d7-4142-80bd-eb663c7e2a27}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -45,7 +48,7 @@
     <ClInclude Include="Event\KeyboardInputManager.h">
       <Filter>헤더 파일\Event</Filter>
     </ClInclude>
-    <ClInclude Include="MoveManagers.h">
+    <ClInclude Include="Player\MoveManagers.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
@@ -59,7 +62,7 @@
     <ClCompile Include="Event\KeyboardInputManager.cpp">
       <Filter>소스 파일\Event</Filter>
     </ClCompile>
-    <ClCompile Include="MoveManagers.cpp">
+    <ClCompile Include="Player\MoveManagers.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

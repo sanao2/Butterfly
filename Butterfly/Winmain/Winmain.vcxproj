@@ -131,7 +131,7 @@
     <ClInclude Include="Event\InputManager.h" />
     <ClInclude Include="Event\KeyboardInputManager.h" />
     <ClInclude Include="framework.h" />
-    <ClInclude Include="MoveManagers.h" />
+    <ClInclude Include="Player\MoveManagers.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="UI\Timer.h" />
@@ -139,7 +139,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Event\KeyboardInputManager.cpp" />
-    <ClCompile Include="MoveManagers.cpp" />
+    <ClCompile Include="Player\MoveManagers.cpp" />
     <ClCompile Include="UI\Timer.cpp" />
     <ClCompile Include="Winmain.cpp" />
   </ItemGroup>
