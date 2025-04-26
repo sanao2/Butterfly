@@ -12,40 +12,33 @@ namespace Move
 
 	void MoveManager::MoveKeyInput()
 	{
-		int rcWidth = rect.right - rect.left;
-		int rcHeight = rect.bottom - rect.top;
+		MoveDirection dir = MoveDirection::None;
+
+		if (key.IsKeyDown(VK_RIGHT)) dir = MoveDirection::Right;
+		else if (key.IsKeyDown(VK_LEFT)) dir = MoveDirection::Left;
+		else if (key.IsKeyDown(VK_UP)) dir = MoveDirection::Up;
+		else if (key.IsKeyDown(VK_DOWN)) dir = MoveDirection::Down;
+
+		ApplyMovement(dir);
+	}
+
+	void MoveManager::ApplyMovement(MoveDirection dir)
+	{
+		const int moveSpeed = 1;
+		const int rcWidth = rect.right - rect.left;
+		const int rcHeight = rect.bottom - rect.top;
+
 		std::cout << "[DEBUG] rect (L:" << rect.left << ", T:" << rect.top << ", R:" << rect.right << ", B:" << rect.bottom << "]" << std::endl;
 		std::cout << "[DEBUG] rcWidth: " << rcWidth << " rcHeight: " << rcHeight << "\n";
 		std::cout << "[DEBUG] movePos (X:" << movePos.x << ", Y:" << movePos.y << ")\n";
 
-		int moveSpeed = 10;
-
-		movePos = {
-			(rect.left + rect.right) / 2,
-			(rect.top + rect.bottom) / 2
-		};
-
-		isMoving = false;
-
-		if (key.IsKeyPressed(VK_RIGHT))
+		switch(dir)
 		{
-			isMoving = true;
-			movePos.x += moveSpeed;
-		}
-		if (key.IsKeyPressed(VK_LEFT))
-		{
-			isMoving = true;
-			movePos.x -= moveSpeed;
-		}
-		if (key.IsKeyPressed(VK_DOWN))
-		{
-			isMoving = true;
-			movePos.y += moveSpeed;
-		}
-		if (key.IsKeyPressed(VK_UP))
-		{
-			isMoving = true;
-			movePos.y -= moveSpeed;
+			case MoveDirection::Left:  movePos.x -= moveSpeed; isMoving = true; break;
+			case MoveDirection::Right: movePos.x += moveSpeed; isMoving = true; break;
+			case MoveDirection::Up:    movePos.y -= moveSpeed; isMoving = true; break;
+			case MoveDirection::Down:  movePos.y += moveSpeed; isMoving = true; break;
+			default: break;
 		}
 
 		rect.left = movePos.x - rcWidth / 2;

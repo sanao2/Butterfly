@@ -5,28 +5,29 @@
 
 namespace Move
 {
-	class MoveManager
-	{
-	public:
-		explicit MoveManager(Input::InputManager<Input::KeyboardDevice>& keyREf, RECT& rc);
-		~MoveManager();
+    enum class MoveDirection { None, Left, Right, Up, Down };
 
-		void MoveUpdate(); // InputManager 인자를 제거하고 내부 인스턴스 사용
-		bool IsMoving() const;
+    class MoveManager
+    {
+    public:
+        explicit MoveManager(Input::InputManager<Input::KeyboardDevice>& keyRef, RECT& rc);
+        ~MoveManager();
 
-		bool GetIsMoving() const { return isMoving; }
-		void SetIsMoving(bool state) { isMoving = state; }
+        void MoveUpdate();
+        bool IsMoving() const;
 
-	private:
-		void MoveKeyInput();
-		void MoveKeyRelease();
+        bool GetIsMoving() const { return isMoving; }
+        void SetIsMoving(bool state) { isMoving = state; }
 
-	private:
-		Input::InputManager<Input::KeyboardDevice>& key;
-		bool isMoving = false;
-		POINT movePos = {};
-		RECT& rect;
-	};
+    private:
+        void MoveKeyInput();
+        void MoveKeyRelease();
+        void ApplyMovement(MoveDirection dir); 
 
+    private:
+        Input::InputManager<Input::KeyboardDevice>& key;
+        bool isMoving = false;
+        POINT movePos = {};
+        RECT& rect;
+    };
 }
-	

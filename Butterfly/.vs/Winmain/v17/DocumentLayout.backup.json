@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\user\\Documents\\Butterfly\\Butterfly\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|C:\\Users\\user\\Documents\\Butterfly\\Butterfly\\Winmain\\Move\\PlayerMoveController.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|solutionrelative:Winmain\\Move\\PlayerMoveController.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|C:\\Users\\user\\Documents\\Butterfly\\Butterfly\\Winmain\\Winmain.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|solutionrelative:Winmain\\Winmain.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|C:\\Users\\user\\Documents\\Butterfly\\Butterfly\\Winmain\\Move\\MoveDirection.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|solutionrelative:Winmain\\Move\\MoveDirection.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|C:\\Users\\user\\Documents\\Butterfly\\Butterfly\\Winmain\\Event\\KeyboardInputManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|solutionrelative:Winmain\\Event\\KeyboardInputManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|C:\\Users\\user\\Documents\\Butterfly\\Butterfly\\Winmain\\Move\\PlayerMoveController.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|solutionrelative:Winmain\\Move\\PlayerMoveController.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|C:\\Users\\user\\Documents\\Butterfly\\Butterfly\\Winmain\\Move\\MoveManagers.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -17,6 +21,26 @@
     {
       "AbsoluteMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|C:\\Users\\user\\Documents\\Butterfly\\Butterfly\\Winmain\\Move\\MoveManagers.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|solutionrelative:Winmain\\Move\\MoveManagers.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|C:\\Users\\user\\Documents\\Butterfly\\Butterfly\\Winmain\\Move\\MoveDirection.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|solutionrelative:Winmain\\Move\\MoveDirection.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|C:\\Users\\user\\Documents\\Butterfly\\Butterfly\\Winmain\\Event\\KeyboardInputManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|solutionrelative:Winmain\\Event\\KeyboardInputManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|C:\\Users\\user\\Documents\\Butterfly\\Butterfly\\Winmain\\Event\\InputConstants.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|solutionrelative:Winmain\\Event\\InputConstants.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|C:\\Users\\user\\Documents\\Butterfly\\Butterfly\\Winmain\\Move\\AIMoveController.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|solutionrelative:Winmain\\Move\\AIMoveController.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|C:\\Users\\user\\Documents\\Butterfly\\Butterfly\\Winmain\\Move\\IMoveController.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|solutionrelative:Winmain\\Move\\IMoveController.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|C:\\Users\\user\\Documents\\Butterfly\\Butterfly\\Winmain\\Winmain.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -30,7 +54,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 252,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Bookmark",
@@ -50,39 +74,117 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "InputConstants.h",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\Butterfly\\Butterfly\\Winmain\\Event\\InputConstants.h",
+              "RelativeDocumentMoniker": "Winmain\\Event\\InputConstants.h",
+              "ToolTip": "C:\\Users\\user\\Documents\\Butterfly\\Butterfly\\Winmain\\Event\\InputConstants.h",
+              "RelativeToolTip": "Winmain\\Event\\InputConstants.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvwgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-04-26T13:39:25.826Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "KeyboardInputManager.cpp",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\Butterfly\\Butterfly\\Winmain\\Event\\KeyboardInputManager.cpp",
+              "RelativeDocumentMoniker": "Winmain\\Event\\KeyboardInputManager.cpp",
+              "ToolTip": "C:\\Users\\user\\Documents\\Butterfly\\Butterfly\\Winmain\\Event\\KeyboardInputManager.cpp",
+              "RelativeToolTip": "Winmain\\Event\\KeyboardInputManager.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-04-26T13:39:22.467Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "KeyboardInputManager.h",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\Butterfly\\Butterfly\\Winmain\\Event\\KeyboardInputManager.h",
+              "RelativeDocumentMoniker": "Winmain\\Event\\KeyboardInputManager.h",
+              "ToolTip": "C:\\Users\\user\\Documents\\Butterfly\\Butterfly\\Winmain\\Event\\KeyboardInputManager.h",
+              "RelativeToolTip": "Winmain\\Event\\KeyboardInputManager.h",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAWwA8AAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-04-26T13:39:10.618Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "IMoveController.h",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\Butterfly\\Butterfly\\Winmain\\Move\\IMoveController.h",
+              "RelativeDocumentMoniker": "Winmain\\Move\\IMoveController.h",
+              "ToolTip": "C:\\Users\\user\\Documents\\Butterfly\\Butterfly\\Winmain\\Move\\IMoveController.h",
+              "RelativeToolTip": "Winmain\\Move\\IMoveController.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-04-26T13:29:11.287Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "AIMoveController.h",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\Butterfly\\Butterfly\\Winmain\\Move\\AIMoveController.h",
+              "RelativeDocumentMoniker": "Winmain\\Move\\AIMoveController.h",
+              "ToolTip": "C:\\Users\\user\\Documents\\Butterfly\\Butterfly\\Winmain\\Move\\AIMoveController.h",
+              "RelativeToolTip": "Winmain\\Move\\AIMoveController.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-04-26T13:29:10.237Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Winmain.cpp",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\Butterfly\\Butterfly\\Winmain\\Winmain.cpp",
+              "RelativeDocumentMoniker": "Winmain\\Winmain.cpp",
+              "ToolTip": "C:\\Users\\user\\Documents\\Butterfly\\Butterfly\\Winmain\\Winmain.cpp",
+              "RelativeToolTip": "Winmain\\Winmain.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-04-26T13:28:05.363Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "PlayerMoveController.h",
               "DocumentMoniker": "C:\\Users\\user\\Documents\\Butterfly\\Butterfly\\Winmain\\Move\\PlayerMoveController.h",
               "RelativeDocumentMoniker": "Winmain\\Move\\PlayerMoveController.h",
               "ToolTip": "C:\\Users\\user\\Documents\\Butterfly\\Butterfly\\Winmain\\Move\\PlayerMoveController.h",
               "RelativeToolTip": "Winmain\\Move\\PlayerMoveController.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAtAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAmwA4AAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-04-26T13:19:20.737Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "MoveManagers.cpp",
               "DocumentMoniker": "C:\\Users\\user\\Documents\\Butterfly\\Butterfly\\Winmain\\Move\\MoveManagers.cpp",
               "RelativeDocumentMoniker": "Winmain\\Move\\MoveManagers.cpp",
-              "ToolTip": "C:\\Users\\user\\Documents\\Butterfly\\Butterfly\\Winmain\\Move\\MoveManagers.cpp*",
-              "RelativeToolTip": "Winmain\\Move\\MoveManagers.cpp*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAACAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\user\\Documents\\Butterfly\\Butterfly\\Winmain\\Move\\MoveManagers.cpp",
+              "RelativeToolTip": "Winmain\\Move\\MoveManagers.cpp",
+              "ViewState": "AgIAAAYAAADAMjMzMzMTwCcAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-04-26T13:11:18.901Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "MoveDirection.h",
               "DocumentMoniker": "C:\\Users\\user\\Documents\\Butterfly\\Butterfly\\Winmain\\Move\\MoveDirection.h",
               "RelativeDocumentMoniker": "Winmain\\Move\\MoveDirection.h",
               "ToolTip": "C:\\Users\\user\\Documents\\Butterfly\\Butterfly\\Winmain\\Move\\MoveDirection.h",
               "RelativeToolTip": "Winmain\\Move\\MoveDirection.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-04-26T12:54:42.506Z",
               "EditorCaption": ""
@@ -95,20 +197,20 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "MoveManagers.h",
               "DocumentMoniker": "C:\\Users\\user\\Documents\\Butterfly\\Butterfly\\Winmain\\Move\\MoveManagers.h",
               "RelativeDocumentMoniker": "Winmain\\Move\\MoveManagers.h",
               "ToolTip": "C:\\Users\\user\\Documents\\Butterfly\\Butterfly\\Winmain\\Move\\MoveManagers.h",
               "RelativeToolTip": "Winmain\\Move\\MoveManagers.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-04-26T13:11:02.073Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 10,
               "Title": "Winmain.h",
               "DocumentMoniker": "C:\\Users\\user\\Documents\\Butterfly\\Butterfly\\Winmain\\Winmain.h",
               "RelativeDocumentMoniker": "Winmain\\Winmain.h",
@@ -116,8 +218,7 @@
               "RelativeToolTip": "Winmain\\Winmain.h",
               "ViewState": "AgIAAAAAAAAAAAAAAADwvwMAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-24T11:48:44.103Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-24T11:48:44.103Z"
             }
           ]
         }
