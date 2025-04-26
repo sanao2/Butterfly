@@ -1,42 +1,50 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\User\\Documents\\Butterfly\\Butterfly\\",
+  "WorkspaceRootPath": "C:\\Users\\hot56\\OneDrive\\\uBB38\uC11C\\Butterfly\\Butterfly\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|C:\\Users\\User\\Documents\\Butterfly\\Butterfly\\Winmain\\MoveManagers.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|solutionrelative:Winmain\\MoveManagers.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|C:\\Users\\hot56\\OneDrive\\\uBB38\uC11C\\Butterfly\\Butterfly\\Winmain\\Player\\MoveManagers.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|solutionrelative:Winmain\\Player\\MoveManagers.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|C:\\Users\\User\\Documents\\Butterfly\\Butterfly\\Winmain\\Winmain.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|solutionrelative:Winmain\\Winmain.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|C:\\Users\\hot56\\OneDrive\\\uBB38\uC11C\\Butterfly\\Butterfly\\Winmain\\Winmain.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|solutionrelative:Winmain\\Winmain.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|C:\\Users\\User\\Documents\\Butterfly\\Butterfly\\Winmain\\Event\\KeyboardInputManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|C:\\Users\\hot56\\OneDrive\\\uBB38\uC11C\\Butterfly\\Butterfly\\Winmain\\Player\\MoveManagers.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|solutionrelative:Winmain\\Player\\MoveManagers.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|C:\\Users\\hot56\\OneDrive\\\uBB38\uC11C\\Butterfly\\Butterfly\\Winmain\\Event\\KeyboardInputManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|solutionrelative:Winmain\\Event\\KeyboardInputManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|C:\\Users\\User\\Documents\\Butterfly\\Butterfly\\Winmain\\MoveManagers.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|solutionrelative:Winmain\\MoveManagers.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|C:\\Users\\hot56\\OneDrive\\\uBB38\uC11C\\Butterfly\\Butterfly\\Winmain\\Winmain.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|solutionrelative:Winmain\\Winmain.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|C:\\Users\\User\\Documents\\Butterfly\\Butterfly\\Winmain\\Event\\InputConstants.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|solutionrelative:Winmain\\Event\\InputConstants.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|C:\\Users\\hot56\\OneDrive\\\uBB38\uC11C\\Butterfly\\Butterfly\\Winmain\\DoubleBuffering.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|solutionrelative:Winmain\\DoubleBuffering.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|C:\\Users\\User\\Documents\\Butterfly\\Butterfly\\Winmain\\Event\\InputManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|C:\\Users\\hot56\\OneDrive\\\uBB38\uC11C\\Butterfly\\Butterfly\\Winmain\\Event\\InputManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|solutionrelative:Winmain\\Event\\InputManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|C:\\Users\\User\\Documents\\Butterfly\\Butterfly\\Winmain\\Resource.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|solutionrelative:Winmain\\Resource.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|C:\\Users\\hot56\\OneDrive\\\uBB38\uC11C\\Butterfly\\Butterfly\\Winmain\\Event\\InputConstants.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|solutionrelative:Winmain\\Event\\InputConstants.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|C:\\Users\\User\\Documents\\Butterfly\\Butterfly\\Winmain\\Event\\KeyboardInputManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|C:\\Users\\hot56\\OneDrive\\\uBB38\uC11C\\Butterfly\\Butterfly\\Winmain\\Event\\KeyboardInputManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|solutionrelative:Winmain\\Event\\KeyboardInputManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|C:\\Users\\User\\Documents\\Butterfly\\Butterfly\\Winmain\\Winmain.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|solutionrelative:Winmain\\Winmain.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|C:\\Users\\hot56\\OneDrive\\\uBB38\uC11C\\Butterfly\\Butterfly\\Winmain\\DoubleBuffering.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|solutionrelative:Winmain\\DoubleBuffering.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|C:\\Users\\hot56\\OneDrive\\\uBB38\uC11C\\Butterfly\\Butterfly\\Winmain\\Resource.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|solutionrelative:Winmain\\Resource.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -45,8 +53,8 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 230,
-          "SelectedChildIndex": 6,
+          "DockedWidth": 190,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -67,23 +75,62 @@
             {
               "$type": "Document",
               "DocumentIndex": 5,
+              "Title": "DoubleBuffering.cpp",
+              "DocumentMoniker": "C:\\Users\\hot56\\OneDrive\\\uBB38\uC11C\\Butterfly\\Butterfly\\Winmain\\DoubleBuffering.cpp",
+              "RelativeDocumentMoniker": "Winmain\\DoubleBuffering.cpp",
+              "ToolTip": "C:\\Users\\hot56\\OneDrive\\\uBB38\uC11C\\Butterfly\\Butterfly\\Winmain\\DoubleBuffering.cpp",
+              "RelativeToolTip": "Winmain\\DoubleBuffering.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-04-26T04:58:11.591Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MoveManagers.h",
+              "DocumentMoniker": "C:\\Users\\hot56\\OneDrive\\\uBB38\uC11C\\Butterfly\\Butterfly\\Winmain\\Player\\MoveManagers.h",
+              "RelativeDocumentMoniker": "Winmain\\Player\\MoveManagers.h",
+              "ToolTip": "C:\\Users\\hot56\\OneDrive\\\uBB38\uC11C\\Butterfly\\Butterfly\\Winmain\\Player\\MoveManagers.h",
+              "RelativeToolTip": "Winmain\\Player\\MoveManagers.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-04-26T03:55:14.707Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MoveManagers.cpp",
+              "DocumentMoniker": "C:\\Users\\hot56\\OneDrive\\\uBB38\uC11C\\Butterfly\\Butterfly\\Winmain\\Player\\MoveManagers.cpp",
+              "RelativeDocumentMoniker": "Winmain\\Player\\MoveManagers.cpp",
+              "ToolTip": "C:\\Users\\hot56\\OneDrive\\\uBB38\uC11C\\Butterfly\\Butterfly\\Winmain\\Player\\MoveManagers.cpp",
+              "RelativeToolTip": "Winmain\\Player\\MoveManagers.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-04-26T03:55:00.072Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "InputManager.h",
-              "DocumentMoniker": "C:\\Users\\User\\Documents\\Butterfly\\Butterfly\\Winmain\\Event\\InputManager.h",
+              "DocumentMoniker": "C:\\Users\\hot56\\OneDrive\\\uBB38\uC11C\\Butterfly\\Butterfly\\Winmain\\Event\\InputManager.h",
               "RelativeDocumentMoniker": "Winmain\\Event\\InputManager.h",
-              "ToolTip": "C:\\Users\\User\\Documents\\Butterfly\\Butterfly\\Winmain\\Event\\InputManager.h",
+              "ToolTip": "C:\\Users\\hot56\\OneDrive\\\uBB38\uC11C\\Butterfly\\Butterfly\\Winmain\\Event\\InputManager.h",
               "RelativeToolTip": "Winmain\\Event\\InputManager.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAXAAAAAAAAAA==",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-04-24T05:14:41.245Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 10,
               "Title": "Resource.h",
-              "DocumentMoniker": "C:\\Users\\User\\Documents\\Butterfly\\Butterfly\\Winmain\\Resource.h",
+              "DocumentMoniker": "C:\\Users\\hot56\\OneDrive\\\uBB38\uC11C\\Butterfly\\Butterfly\\Winmain\\Resource.h",
               "RelativeDocumentMoniker": "Winmain\\Resource.h",
-              "ToolTip": "C:\\Users\\User\\Documents\\Butterfly\\Butterfly\\Winmain\\Resource.h",
+              "ToolTip": "C:\\Users\\hot56\\OneDrive\\\uBB38\uC11C\\Butterfly\\Butterfly\\Winmain\\Resource.h",
               "RelativeToolTip": "Winmain\\Resource.h",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAABsAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
@@ -91,98 +138,87 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "MoveManagers.cpp",
-              "DocumentMoniker": "C:\\Users\\User\\Documents\\Butterfly\\Butterfly\\Winmain\\MoveManagers.cpp",
-              "RelativeDocumentMoniker": "Winmain\\MoveManagers.cpp",
-              "ToolTip": "C:\\Users\\User\\Documents\\Butterfly\\Butterfly\\Winmain\\MoveManagers.cpp",
-              "RelativeToolTip": "Winmain\\MoveManagers.cpp",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABIAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-24T15:00:56.501Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "InputConstants.h",
-              "DocumentMoniker": "C:\\Users\\User\\Documents\\Butterfly\\Butterfly\\Winmain\\Event\\InputConstants.h",
+              "DocumentMoniker": "C:\\Users\\hot56\\OneDrive\\\uBB38\uC11C\\Butterfly\\Butterfly\\Winmain\\Event\\InputConstants.h",
               "RelativeDocumentMoniker": "Winmain\\Event\\InputConstants.h",
-              "ToolTip": "C:\\Users\\User\\Documents\\Butterfly\\Butterfly\\Winmain\\Event\\InputConstants.h",
+              "ToolTip": "C:\\Users\\hot56\\OneDrive\\\uBB38\uC11C\\Butterfly\\Butterfly\\Winmain\\Event\\InputConstants.h",
               "RelativeToolTip": "Winmain\\Event\\InputConstants.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAkAAAAAAAAAA==",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-04-24T05:14:47.278Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "Winmain.cpp",
-              "DocumentMoniker": "C:\\Users\\User\\Documents\\Butterfly\\Butterfly\\Winmain\\Winmain.cpp",
+              "DocumentMoniker": "C:\\Users\\hot56\\OneDrive\\\uBB38\uC11C\\Butterfly\\Butterfly\\Winmain\\Winmain.cpp",
               "RelativeDocumentMoniker": "Winmain\\Winmain.cpp",
-              "ToolTip": "C:\\Users\\User\\Documents\\Butterfly\\Butterfly\\Winmain\\Winmain.cpp",
+              "ToolTip": "C:\\Users\\hot56\\OneDrive\\\uBB38\uC11C\\Butterfly\\Butterfly\\Winmain\\Winmain.cpp",
               "RelativeToolTip": "Winmain\\Winmain.cpp",
-              "ViewState": "AgIAAG0AAAAAAAAAAAAAAIkAAAAZAAAAAAAAAA==",
+              "ViewState": "AQIAAGgAAAAAAAAAAAAwwIYAAAAKAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-04-24T03:16:01.041Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "KeyboardInputManager.cpp",
-              "DocumentMoniker": "C:\\Users\\User\\Documents\\Butterfly\\Butterfly\\Winmain\\Event\\KeyboardInputManager.cpp",
+              "DocumentMoniker": "C:\\Users\\hot56\\OneDrive\\\uBB38\uC11C\\Butterfly\\Butterfly\\Winmain\\Event\\KeyboardInputManager.cpp",
               "RelativeDocumentMoniker": "Winmain\\Event\\KeyboardInputManager.cpp",
-              "ToolTip": "C:\\Users\\User\\Documents\\Butterfly\\Butterfly\\Winmain\\Event\\KeyboardInputManager.cpp",
+              "ToolTip": "C:\\Users\\hot56\\OneDrive\\\uBB38\uC11C\\Butterfly\\Butterfly\\Winmain\\Event\\KeyboardInputManager.cpp",
               "RelativeToolTip": "Winmain\\Event\\KeyboardInputManager.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAFAAAAAAAAAA==",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-04-24T05:37:24.546Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "KeyboardInputManager.h",
-              "DocumentMoniker": "C:\\Users\\User\\Documents\\Butterfly\\Butterfly\\Winmain\\Event\\KeyboardInputManager.h",
+              "DocumentMoniker": "C:\\Users\\hot56\\OneDrive\\\uBB38\uC11C\\Butterfly\\Butterfly\\Winmain\\Event\\KeyboardInputManager.h",
               "RelativeDocumentMoniker": "Winmain\\Event\\KeyboardInputManager.h",
-              "ToolTip": "C:\\Users\\User\\Documents\\Butterfly\\Butterfly\\Winmain\\Event\\KeyboardInputManager.h",
+              "ToolTip": "C:\\Users\\hot56\\OneDrive\\\uBB38\uC11C\\Butterfly\\Butterfly\\Winmain\\Event\\KeyboardInputManager.h",
               "RelativeToolTip": "Winmain\\Event\\KeyboardInputManager.h",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAoAAAALAAAAAAAAAA==",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-24T05:14:42.095Z"
+              "WhenOpened": "2025-04-24T05:14:42.095Z",
+              "EditorCaption": ""
             }
           ]
         },
         {
-          "DockedWidth": 170,
+          "DockedWidth": 210,
           "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "MoveManagers.h",
-              "DocumentMoniker": "C:\\Users\\User\\Documents\\Butterfly\\Butterfly\\Winmain\\MoveManagers.h",
-              "RelativeDocumentMoniker": "Winmain\\MoveManagers.h",
-              "ToolTip": "C:\\Users\\User\\Documents\\Butterfly\\Butterfly\\Winmain\\MoveManagers.h",
-              "RelativeToolTip": "Winmain\\MoveManagers.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAVAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "Winmain.h",
+              "DocumentMoniker": "C:\\Users\\hot56\\OneDrive\\\uBB38\uC11C\\Butterfly\\Butterfly\\Winmain\\Winmain.h",
+              "RelativeDocumentMoniker": "Winmain\\Winmain.h",
+              "ToolTip": "C:\\Users\\hot56\\OneDrive\\\uBB38\uC11C\\Butterfly\\Butterfly\\Winmain\\Winmain.h",
+              "RelativeToolTip": "Winmain\\Winmain.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAASAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-24T15:00:54.997Z",
+              "WhenOpened": "2025-04-24T11:48:44.103Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Winmain.h",
-              "DocumentMoniker": "C:\\Users\\User\\Documents\\Butterfly\\Butterfly\\Winmain\\Winmain.h",
-              "RelativeDocumentMoniker": "Winmain\\Winmain.h",
-              "ToolTip": "C:\\Users\\User\\Documents\\Butterfly\\Butterfly\\Winmain\\Winmain.h",
-              "RelativeToolTip": "Winmain\\Winmain.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 9,
+              "Title": "DoubleBuffering.h",
+              "DocumentMoniker": "C:\\Users\\hot56\\OneDrive\\\uBB38\uC11C\\Butterfly\\Butterfly\\Winmain\\DoubleBuffering.h",
+              "RelativeDocumentMoniker": "Winmain\\DoubleBuffering.h",
+              "ToolTip": "C:\\Users\\hot56\\OneDrive\\\uBB38\uC11C\\Butterfly\\Butterfly\\Winmain\\DoubleBuffering.h",
+              "RelativeToolTip": "Winmain\\DoubleBuffering.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-24T11:48:44.103Z"
+              "WhenOpened": "2025-04-26T04:58:04.705Z",
+              "EditorCaption": ""
             }
           ]
         }

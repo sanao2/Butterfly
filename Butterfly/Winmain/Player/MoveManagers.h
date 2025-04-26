@@ -1,7 +1,7 @@
 #pragma once
 #include <cmath>
 #include <Windows.h>
-#include "Event/KeyboardInputManager.h"
+#include "../Event/KeyboardInputManager.h"
 
 class MoveManager
 {
