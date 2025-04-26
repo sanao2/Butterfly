@@ -2,10 +2,74 @@
 C:\Users\hot56\OneDrive\문서\Butterfly\Butterfly\Winmain\Player\MoveManagers.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
   (소스 파일 'Player/MoveManagers.cpp'을(를) 컴파일하는 중)
   
-C:\Users\hot56\OneDrive\문서\Butterfly\Butterfly\Winmain\Player\MoveManagers.h(4,10): error C1083: 포함 파일을 열 수 없습니다. 'Event/KeyboardInputManager.h': No such file or directory
+C:\Users\hot56\OneDrive\문서\Butterfly\Butterfly\Winmain\Event\InputConstants.h(7,40): warning C4309: '초기화 중': 상수 값이 잘립니다.
   (소스 파일 'Player/MoveManagers.cpp'을(를) 컴파일하는 중)
   
-  Timer.cpp
+  Render.cpp
+C:\Users\hot56\OneDrive\문서\Butterfly\Butterfly\Winmain\Render.cpp(6,2): error C2679: 이항 '=': 오른쪽 피연산자로 'HBITMAP' 형식을 사용하는 연산자가 없거나 허용되는 변환이 없습니다.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\wingdi.h(613,3):
+  'tagBITMAP &tagBITMAP::operator =(tagBITMAP &&)'일 수 있습니다.
+  	C:\Users\hot56\OneDrive\문서\Butterfly\Butterfly\Winmain\Render.cpp(6,2):
+  	'tagBITMAP &tagBITMAP::operator =(tagBITMAP &&)': 인수 2을(를) 'HBITMAP'에서 'tagBITMAP &&'(으)로 변환할 수 없습니다.
+  		C:\Users\hot56\OneDrive\문서\Butterfly\Butterfly\Winmain\Render.cpp(6,35):
+  		원인: 'HBITMAP'에서 'tagBITMAP'(으)로 변환할 수 없습니다.
+  		C:\Users\hot56\OneDrive\문서\Butterfly\Butterfly\Winmain\Render.cpp(6,35):
+  		'tagBITMAP::tagBITMAP': 모든 인수 형식을 변환할 수 있는 오버로드된 함수가 없습니다.
+  			C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\wingdi.h(613,3):
+  			'tagBITMAP::tagBITMAP(tagBITMAP &&)'일 수 있습니다.
+  				C:\Users\hot56\OneDrive\문서\Butterfly\Butterfly\Winmain\Render.cpp(6,35):
+  				'tagBITMAP::tagBITMAP(tagBITMAP &&)': 인수 1을(를) 'HBITMAP'에서 'tagBITMAP &&'(으)로 변환할 수 없습니다.
+  					C:\Users\hot56\OneDrive\문서\Butterfly\Butterfly\Winmain\Render.cpp(6,35):
+  					원인: 'HBITMAP'에서 'tagBITMAP'(으)로 변환할 수 없습니다.
+  					C:\Users\hot56\OneDrive\문서\Butterfly\Butterfly\Winmain\Render.cpp(6,35):
+  					변환하려면 둘째 사용자 정의 변환 연산자 또는 생성자가 있어야 합니다.
+  			C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\wingdi.h(613,3):
+  			또는       'tagBITMAP::tagBITMAP(const tagBITMAP &)'
+  				C:\Users\hot56\OneDrive\문서\Butterfly\Butterfly\Winmain\Render.cpp(6,35):
+  				'tagBITMAP::tagBITMAP(const tagBITMAP &)': 인수 1을(를) 'HBITMAP'에서 'const tagBITMAP &'(으)로 변환할 수 없습니다.
+  					C:\Users\hot56\OneDrive\문서\Butterfly\Butterfly\Winmain\Render.cpp(6,35):
+  					원인: 'HBITMAP'에서 'const tagBITMAP'(으)로 변환할 수 없습니다.
+  					C:\Users\hot56\OneDrive\문서\Butterfly\Butterfly\Winmain\Render.cpp(6,35):
+  					변환하려면 둘째 사용자 정의 변환 연산자 또는 생성자가 있어야 합니다.
+  			C:\Users\hot56\OneDrive\문서\Butterfly\Butterfly\Winmain\Render.cpp(6,35):
+  			인수 목록 '(HBITMAP)'을(를) 일치시키는 동안
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\wingdi.h(613,3):
+  또는       'tagBITMAP &tagBITMAP::operator =(const tagBITMAP &)'
+  	C:\Users\hot56\OneDrive\문서\Butterfly\Butterfly\Winmain\Render.cpp(6,2):
+  	'tagBITMAP &tagBITMAP::operator =(const tagBITMAP &)': 인수 2을(를) 'HBITMAP'에서 'const tagBITMAP &'(으)로 변환할 수 없습니다.
+  		C:\Users\hot56\OneDrive\문서\Butterfly\Butterfly\Winmain\Render.cpp(6,35):
+  		원인: 'HBITMAP'에서 'const tagBITMAP'(으)로 변환할 수 없습니다.
+  		C:\Users\hot56\OneDrive\문서\Butterfly\Butterfly\Winmain\Render.cpp(6,35):
+  		'tagBITMAP::tagBITMAP': 모든 인수 형식을 변환할 수 있는 오버로드된 함수가 없습니다.
+  			C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\wingdi.h(613,3):
+  			'tagBITMAP::tagBITMAP(tagBITMAP &&)'일 수 있습니다.
+  				C:\Users\hot56\OneDrive\문서\Butterfly\Butterfly\Winmain\Render.cpp(6,35):
+  				'tagBITMAP::tagBITMAP(tagBITMAP &&)': 인수 1을(를) 'HBITMAP'에서 'tagBITMAP &&'(으)로 변환할 수 없습니다.
+  					C:\Users\hot56\OneDrive\문서\Butterfly\Butterfly\Winmain\Render.cpp(6,35):
+  					원인: 'HBITMAP'에서 'tagBITMAP'(으)로 변환할 수 없습니다.
+  					C:\Users\hot56\OneDrive\문서\Butterfly\Butterfly\Winmain\Render.cpp(6,35):
+  					변환하려면 둘째 사용자 정의 변환 연산자 또는 생성자가 있어야 합니다.
+  			C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\wingdi.h(613,3):
+  			또는       'tagBITMAP::tagBITMAP(const tagBITMAP &)'
+  				C:\Users\hot56\OneDrive\문서\Butterfly\Butterfly\Winmain\Render.cpp(6,35):
+  				'tagBITMAP::tagBITMAP(const tagBITMAP &)': 인수 1을(를) 'HBITMAP'에서 'const tagBITMAP &'(으)로 변환할 수 없습니다.
+  					C:\Users\hot56\OneDrive\문서\Butterfly\Butterfly\Winmain\Render.cpp(6,35):
+  					원인: 'HBITMAP'에서 'const tagBITMAP'(으)로 변환할 수 없습니다.
+  					C:\Users\hot56\OneDrive\문서\Butterfly\Butterfly\Winmain\Render.cpp(6,35):
+  					변환하려면 둘째 사용자 정의 변환 연산자 또는 생성자가 있어야 합니다.
+  			C:\Users\hot56\OneDrive\문서\Butterfly\Butterfly\Winmain\Render.cpp(6,35):
+  			인수 목록 '(HBITMAP)'을(를) 일치시키는 동안
+  C:\Users\hot56\OneDrive\문서\Butterfly\Butterfly\Winmain\Render.cpp(6,2):
+  인수 목록 '(BITMAP, HBITMAP)'을(를) 일치시키는 동안
+  
+C:\Users\hot56\OneDrive\문서\Butterfly\Butterfly\Winmain\Render.cpp(7,2): error C2664: 'HGDIOBJ SelectObject(HDC,HGDIOBJ)': 인수 2을(를) 'BITMAP'에서 'HGDIOBJ'(으)로 변환할 수 없습니다.
+  C:\Users\hot56\OneDrive\문서\Butterfly\Butterfly\Winmain\Render.cpp(7,22):
+  이 변환을 수행할 수 있는 사용 가능한 사용자 정의 변환 연산자가 없거나 연산자를 호출할 수 없습니다.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\wingdi.h(4585,27):
+  'SelectObject' 선언을 참조하십시오.
+  C:\Users\hot56\OneDrive\문서\Butterfly\Butterfly\Winmain\Render.cpp(7,2):
+  인수 목록 '(HDC, BITMAP)'을(를) 일치시키는 동안
+  
   Winmain.cpp
 C:\Users\hot56\OneDrive\문서\Butterfly\Butterfly\Winmain\Player\MoveManagers.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
   (소스 파일 'Winmain.cpp'을(를) 컴파일하는 중)

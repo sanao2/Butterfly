@@ -127,21 +127,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="DoubleBuffering.h" />
     <ClInclude Include="Event\InputConstants.h" />
     <ClInclude Include="Event\InputManager.h" />
     <ClInclude Include="Event\KeyboardInputManager.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="Player\MoveManagers.h" />
+    <ClInclude Include="Render.h" />
     <ClInclude Include="Resource.h" />
+    <ClInclude Include="Swap.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="UI\Timer.h" />
     <ClInclude Include="Winmain.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="DoubleBuffering.cpp" />
     <ClCompile Include="Event\KeyboardInputManager.cpp" />
     <ClCompile Include="Player\MoveManagers.cpp" />
+    <ClCompile Include="Render.cpp" />
     <ClCompile Include="UI\Timer.cpp" />
     <ClCompile Include="Winmain.cpp" />
   </ItemGroup>

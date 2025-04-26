@@ -61,7 +61,7 @@ bool MoveManager::IsMoving() const
 	return isMoving;
 }
 
-MoveManager::MoveManager(InputManager<KeyboardDevice>& keyRef, RECT& rc)
+MoveManager::MoveManager(Input::InputManager<Input::KeyboardDevice>& keyRef, RECT& rc)
 	: key(keyRef), rect(rc), movePos{ 0, 0 }, isMoving(false)
 {
 }
