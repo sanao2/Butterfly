@@ -21,6 +21,8 @@ private:
 	std::atomic<bool>          isSwaping{ false };
 
 public:
+	void GetisSwaping(bool _isSwaping) { isSwaping.store(_isSwaping); } // Swaping Check
+
 	Swap(HWND _hWnd, int w_width, int w_height) : hWnd(_hWnd)
 	{
 		clientDC = GetDC(_hWnd);		// Get Client DC 
@@ -29,6 +31,7 @@ public:
 		SelectObject(clientDC, BackBitmap); // MemDC Memory Area Specify 
 	}
 
+	
 	~Swap()
 	{
 		//MemoryDC Delete
@@ -38,7 +41,8 @@ public:
 	}
 
 	void SwapBuffers(int w_width, int w_height)
-	{ // Swaping Buffer 		
+	{
+		// Swaping Buffer 		
 		if (isSwaping.load()) return; // Swaping Check 
 
 		{

@@ -3,6 +3,18 @@
   "WorkspaceRootPath": "C:\\Users\\user\\Documents\\Butterfly\\Butterfly\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|C:\\Users\\user\\Documents\\Butterfly\\Butterfly\\Winmain\\Render.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|solutionrelative:Winmain\\Render.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|C:\\Users\\user\\Documents\\Butterfly\\Butterfly\\Winmain\\Swap.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|solutionrelative:Winmain\\Swap.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|C:\\Users\\user\\Documents\\Butterfly\\Butterfly\\Winmain\\Render.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|solutionrelative:Winmain\\Render.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|C:\\Users\\user\\Documents\\Butterfly\\Butterfly\\Winmain\\Winmain.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|solutionrelative:Winmain\\Winmain.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -53,8 +65,8 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 252,
-          "SelectedChildIndex": 9,
+          "DockedWidth": 201,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -74,7 +86,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 1,
+              "Title": "Swap.h",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\Butterfly\\Butterfly\\Winmain\\Swap.h",
+              "RelativeDocumentMoniker": "Winmain\\Swap.h",
+              "ToolTip": "C:\\Users\\user\\Documents\\Butterfly\\Butterfly\\Winmain\\Swap.h",
+              "RelativeToolTip": "Winmain\\Swap.h",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAABwAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-04-26T13:56:50.674Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Render.cpp",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\Butterfly\\Butterfly\\Winmain\\Render.cpp",
+              "RelativeDocumentMoniker": "Winmain\\Render.cpp",
+              "ToolTip": "C:\\Users\\user\\Documents\\Butterfly\\Butterfly\\Winmain\\Render.cpp",
+              "RelativeToolTip": "Winmain\\Render.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-04-26T13:56:46.666Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "InputConstants.h",
               "DocumentMoniker": "C:\\Users\\user\\Documents\\Butterfly\\Butterfly\\Winmain\\Event\\InputConstants.h",
               "RelativeDocumentMoniker": "Winmain\\Event\\InputConstants.h",
@@ -87,7 +125,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "KeyboardInputManager.cpp",
               "DocumentMoniker": "C:\\Users\\user\\Documents\\Butterfly\\Butterfly\\Winmain\\Event\\KeyboardInputManager.cpp",
               "RelativeDocumentMoniker": "Winmain\\Event\\KeyboardInputManager.cpp",
@@ -100,7 +138,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 9,
               "Title": "KeyboardInputManager.h",
               "DocumentMoniker": "C:\\Users\\user\\Documents\\Butterfly\\Butterfly\\Winmain\\Event\\KeyboardInputManager.h",
               "RelativeDocumentMoniker": "Winmain\\Event\\KeyboardInputManager.h",
@@ -113,7 +151,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 12,
               "Title": "IMoveController.h",
               "DocumentMoniker": "C:\\Users\\user\\Documents\\Butterfly\\Butterfly\\Winmain\\Move\\IMoveController.h",
               "RelativeDocumentMoniker": "Winmain\\Move\\IMoveController.h",
@@ -126,7 +164,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 11,
               "Title": "AIMoveController.h",
               "DocumentMoniker": "C:\\Users\\user\\Documents\\Butterfly\\Butterfly\\Winmain\\Move\\AIMoveController.h",
               "RelativeDocumentMoniker": "Winmain\\Move\\AIMoveController.h",
@@ -139,20 +177,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "Winmain.cpp",
               "DocumentMoniker": "C:\\Users\\user\\Documents\\Butterfly\\Butterfly\\Winmain\\Winmain.cpp",
               "RelativeDocumentMoniker": "Winmain\\Winmain.cpp",
               "ToolTip": "C:\\Users\\user\\Documents\\Butterfly\\Butterfly\\Winmain\\Winmain.cpp",
               "RelativeToolTip": "Winmain\\Winmain.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAATAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABIAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-04-26T13:28:05.363Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "PlayerMoveController.h",
               "DocumentMoniker": "C:\\Users\\user\\Documents\\Butterfly\\Butterfly\\Winmain\\Move\\PlayerMoveController.h",
               "RelativeDocumentMoniker": "Winmain\\Move\\PlayerMoveController.h",
@@ -165,7 +203,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "MoveManagers.cpp",
               "DocumentMoniker": "C:\\Users\\user\\Documents\\Butterfly\\Butterfly\\Winmain\\Move\\MoveManagers.cpp",
               "RelativeDocumentMoniker": "Winmain\\Move\\MoveManagers.cpp",
@@ -178,7 +216,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "MoveDirection.h",
               "DocumentMoniker": "C:\\Users\\user\\Documents\\Butterfly\\Butterfly\\Winmain\\Move\\MoveDirection.h",
               "RelativeDocumentMoniker": "Winmain\\Move\\MoveDirection.h",
@@ -192,12 +230,12 @@
           ]
         },
         {
-          "DockedWidth": 148,
-          "SelectedChildIndex": 0,
+          "DockedWidth": 199,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "MoveManagers.h",
               "DocumentMoniker": "C:\\Users\\user\\Documents\\Butterfly\\Butterfly\\Winmain\\Move\\MoveManagers.h",
               "RelativeDocumentMoniker": "Winmain\\Move\\MoveManagers.h",
@@ -210,7 +248,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 0,
+              "Title": "Render.h",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\Butterfly\\Butterfly\\Winmain\\Render.h",
+              "RelativeDocumentMoniker": "Winmain\\Render.h",
+              "ToolTip": "C:\\Users\\user\\Documents\\Butterfly\\Butterfly\\Winmain\\Render.h",
+              "RelativeToolTip": "Winmain\\Render.h",
+              "ViewState": "AgIAAAYAAAAAAAAAAADwvw4AAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-04-26T13:56:48.123Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
               "Title": "Winmain.h",
               "DocumentMoniker": "C:\\Users\\user\\Documents\\Butterfly\\Butterfly\\Winmain\\Winmain.h",
               "RelativeDocumentMoniker": "Winmain\\Winmain.h",
