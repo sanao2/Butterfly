@@ -22,14 +22,9 @@ private:
 	POINT clientsize;	 // Client Size
 	Swap* swap;			 // Swap Class
 	
-	mutex						_mtx;
-	thread						thread;		// Multy Thread
-	std::condition_variable     _cv;
-	std::atomic<bool>		    needSwap{ false };
-	std::atomic<bool>           isSwaping{ false };
-
+	
 public:
-	void render(int w_width, int w_height); // Back Buffer Swap and Render.
+	void render(HDC backDC); // Back Buffer Swap and Render.
 	void Update(HWND _hwnd);							// Render Update. Buffer Swaping and Resource, check Update. 
 	POINT GetBufferSize(HWND _hwnd);			// Render Buffer Size POINT
 

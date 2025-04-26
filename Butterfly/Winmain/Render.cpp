@@ -3,20 +3,19 @@
 
 void Render::Update(HWND _hwnd)
 {
-	if (swap->GetisSwaping() == false) return; // Swaping Check
-	
-	std::unique_lock<std::mutex> lk(_mtx);
-	_cv.wait_for(lk, std::chrono::milliseconds(16), [&] { return needSwap.load(); });
-	
+	GetBufferSize(_hwnd); // Get Buffer Size 
 	
 	
 }
 
-void Render::render(int w_width, int w_height) // Back Buffer Swap and Render.
+void Render::render(HDC backDC) // Back Buffer Swap and Render.
 {
-	PatBlt(memDC, 0, 0, w_width, w_height, WHITENESS);				 //Back Buffer Begin Erager
+	PatBlt(backDC, 0, 0, clientsize.x, clientsize.y, WHITENESS); // Back Buffer Swap and Render 
 
-	BitBlt(clientDC, 0, 0, w_width, w_height, memDC, 0, 0, SRCCOPY); // Back Buffer is Copy and ClientDC in Draw
+	// Swap Buffers 
+	swap->SwapBuffers(hWnd, clientsize.x, clientsize.y); // Swap Buffers 
+
+	BitBlt(clientDC, 0, 0, clientsize.x, clientsize.y, memDC, 0, 0, SRCCOPY); // Back Buffer Swap and Render 
 }
 
 POINT Render::GetBufferSize(HWND _hwnd)
@@ -40,7 +39,8 @@ Render::Render(HWND hwnd, int w_width, int w_height) : hWnd(hwnd)
 	memDC = CreateCompatibleDC(clientDC);							// Create Memory DC
 	g_Bitmap = CreateCompatibleBitmap(clientDC, w_width, w_height); // Create Memory Area
 	SelectObject(memDC, g_Bitmap);									// Specify MemDC Memory Area 
-	clientsize = { 0,0 };											// Get Buffer Size 
+	clientsize = { 0,0 };											// Buffer Size Saved POINT Init
+	swap = new Swap(hwnd, w_width, w_height);
 }
 
 Render::~Render()
