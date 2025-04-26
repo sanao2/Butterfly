@@ -1,6 +1,6 @@
 #include "Render.h"
 
-void Render::render() // Back Buffer Swap and Render.
+void Render::render(int w_width, int w_height) // Back Buffer Swap and Render.
 {
 	PatBlt(memDC, 0, 0, w_width, w_height, WHITENESS); //Back Buffer Begin Erager
 }

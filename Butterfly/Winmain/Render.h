@@ -19,9 +19,9 @@ private:
 	Swap* swap;			 // Swap Class
 
 public:
-	void render(); // Back Buffer Swap and Render.
-	void Update(); // Render Update. Buffer Swaping and Resource, check Update. 
-	POINT BufferSize(HWND _hwnd);
+	void render(int w_width, int w_height); // Back Buffer Swap and Render.
+	void Update();							// Render Update. Buffer Swaping and Resource, check Update. 
+	POINT BufferSize(HWND _hwnd);			// Render Buffer Size POINT
 
 	Render(HWND hwnd, int w_width, int w_height); 
 	~Render();
