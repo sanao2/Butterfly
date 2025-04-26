@@ -20,8 +20,8 @@ private:
 
 public:
 	void render(int w_width, int w_height); // Back Buffer Swap and Render.
-	void Update();							// Render Update. Buffer Swaping and Resource, check Update. 
-	POINT BufferSize(HWND _hwnd);			// Render Buffer Size POINT
+	void Update(HWND _hwnd);							// Render Update. Buffer Swaping and Resource, check Update. 
+	POINT GetBufferSize(HWND _hwnd);			// Render Buffer Size POINT
 
 	Render(HWND hwnd, int w_width, int w_height); 
 	~Render();

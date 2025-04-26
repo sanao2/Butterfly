@@ -21,8 +21,8 @@ private:
 	std::atomic<bool>          isSwaping{ false };
 
 public:
-	void GetisSwaping(bool _isSwaping) { isSwaping.store(_isSwaping); } // Swaping Check
-
+	bool GetisSwaping() { return isSwaping; } // Swaping Check
+	void SetisSwaping(bool _isSwaping) { isSwaping.store(_isSwaping); } // Swaping Check
 	Swap(HWND _hWnd, int w_width, int w_height) : hWnd(_hWnd)
 	{
 		clientDC = GetDC(_hWnd);		// Get Client DC 
@@ -38,7 +38,7 @@ public:
 		ReleaseDC(hWnd, clientDC); 
 	}
 
-	void SwapBuffers(int w_width, int w_height)
+	void SwapBuffers(HWND _hWnd, int w_width, int w_height)
 	{
 		// Swaping Buffer 		
 		if (isSwaping.load()) return; // Swaping Check 

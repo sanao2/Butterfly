@@ -5,12 +5,20 @@ void Render::render(int w_width, int w_height) // Back Buffer Swap and Render.
 	PatBlt(memDC, 0, 0, w_width, w_height, WHITENESS); //Back Buffer Begin Erager
 }
 
-void Render::Update()
+void Render::Update(HWND _hwnd)
 {
-	//swap->SwapBuffers(clientDC); // Swap Buffers 
+	if (swap->GetisSwaping() == false) return; // Swaping Check
+
+	RECT rc; 
+	GetClientRect(_hwnd, &rc);
+
+	int width = rc.right - rc.left; 
+	int height = rc.bottom - rc.top; // Get Client Area Size 
+
+	swap->SwapBuffers(_hwnd, width, height); // Swap Buffers 
 }
 
-POINT Render::BufferSize(HWND _hwnd)
+POINT Render::GetBufferSize(HWND _hwnd)
 {
 	RECT Buffersize;
 	GetClientRect(_hwnd, &Buffersize);					// Get Client Area Size
