@@ -4,6 +4,10 @@
 #include "Swap.h"
 #include <iostream>
 using namespace std;
+#include <mutex>
+using std::mutex;
+#include <thread>
+using std::thread;
 
 extern int g_width;
 extern int g_height; 
@@ -17,6 +21,12 @@ private:
 	HBITMAP g_Bitmap;	 // Bitmap 
 	POINT clientsize;	 // Client Size
 	Swap* swap;			 // Swap Class
+	
+	mutex						_mtx;
+	thread						thread;		// Multy Thread
+	std::condition_variable     _cv;
+	std::atomic<bool>		    needSwap{ false };
+	std::atomic<bool>           isSwaping{ false };
 
 public:
 	void render(int w_width, int w_height); // Back Buffer Swap and Render.

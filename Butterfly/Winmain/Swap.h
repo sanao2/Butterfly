@@ -18,11 +18,14 @@ private:
 	mutex						_mtx;
 	thread						thread;		// Multy Thread
 	std::condition_variable     _cv;
-	std::atomic<bool>          isSwaping{ false };
+	std::atomic<bool>		    needSwap{ false };
+	std::atomic<bool>           isSwaping{ false };
 
 public:
+
 	bool GetisSwaping() { return isSwaping; } // Swaping Check
 	void SetisSwaping(bool _isSwaping) { isSwaping.store(_isSwaping); } // Swaping Check
+	
 	Swap(HWND _hWnd, int w_width, int w_height) : hWnd(_hWnd)
 	{
 		clientDC = GetDC(_hWnd);		// Get Client DC 
@@ -50,6 +53,7 @@ public:
 
 		}
 
+		needSwap = true; 
 		_cv.notify_one();
 	}
 };

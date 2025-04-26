@@ -4,8 +4,9 @@
 void Render::Update(HWND _hwnd)
 {
 	if (swap->GetisSwaping() == false) return; // Swaping Check
-
-
+	
+	std::unique_lock<std::mutex> lk(_mtx);
+	_cv.wait_for(lk, std::chrono::milliseconds(16), [&] { return needSwap.load(); });
 	
 }
 
@@ -38,12 +39,12 @@ Render::Render(HWND hwnd, int w_width, int w_height) : hWnd(hwnd)
 	memDC = CreateCompatibleDC(clientDC);							// Create Memory DC
 	g_Bitmap = CreateCompatibleBitmap(clientDC, w_width, w_height); // Create Memory Area
 	SelectObject(memDC, g_Bitmap);									// Specify MemDC Memory Area 
-	clientsize = { 0,0 }; // Get Client Size 
+	clientsize = { 0,0 };											// Get Buffer Size 
 }
 
 Render::~Render()
 {
-	DeleteObject(g_Bitmap); // Delete Bitmap
-	DeleteDC(memDC);		 // Delete Memory DC
-	ReleaseDC(hWnd, clientDC); // Release Client DC
+	DeleteObject(g_Bitmap);			// Delete Bitmap
+	DeleteDC(memDC);				// Delete Memory DC
+	ReleaseDC(hWnd, clientDC);		// Release Client DC
 }
