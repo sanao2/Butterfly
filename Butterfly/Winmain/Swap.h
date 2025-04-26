@@ -37,10 +37,9 @@ public:
 	}
 
 	void SwapBuffers(int w_width, int w_height)
-	{ // Swaping Buffer 
+	{ // Swaping Buffer 		
+		if (isSwaping.load()) return; // Swaping Check 
 
-		PatBlt(memDC, 0, 0, w_width, w_height, WHITENESS);// clientDC Clear 
-		
 		{
 		  // Swap Second : Mutex Lock 
 			std::lock_guard<std::mutex> lk(_mtx); // Only one thread can access the resource at a time 
@@ -49,7 +48,5 @@ public:
 		}
 
 		_cv.notify_one();
-
-		BitBlt(clientDC, 0, 0, w_width, w_height, memDC, 0, 0, SRCCOPY);
 	}
 };
