@@ -1,5 +1,6 @@
 ﻿#include "../Move/MoveManagers.h"
-
+namespace Move
+{
 	void MoveManager::MoveUpdate()
 	{
 		key.Update();
@@ -67,3 +68,4 @@
 	}
 
 	MoveManager::~MoveManager() = default;
+}

@@ -5,5 +5,5 @@
 #include "Event/KeyboardInputManager.h"
 using namespace Input;
 
-MoveManager* move; 
+Move::MoveManager* move; 
 extern HWND g_hWnd; 

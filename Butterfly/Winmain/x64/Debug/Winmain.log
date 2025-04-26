@@ -1,8 +1,4 @@
-﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(1122,5): warning MSB8027: 이름이 MoveManagers.cpp인 둘 이상의 파일이 같은 위치에 출력을 생성합니다. 이로 인해 잘못된 빌드 결과가 나타날 수 있습니다.  관련된 파일은 Move\MoveManagers.cpp, Player\MoveManagers.cpp입니다.
-  MoveManagers.cpp
-\Player\MoveManagers.cpp(1,1): error C1083: 소스 파일을 열 수 없습니다. 'Player\MoveManagers.cpp': No such file or directory
-  (소스 파일 '/Player/MoveManagers.cpp'을(를) 컴파일하는 중)
-  
+﻿  Render.cpp
   Winmain.cpp
 C:\Users\user\Documents\Butterfly\Butterfly\Winmain\Move\MoveManagers.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
   (소스 파일 'Winmain.cpp'을(를) 컴파일하는 중)
@@ -11,3 +7,4 @@ C:\Users\user\Documents\Butterfly\Butterfly\Winmain\Event\InputConstants.h(7,40)
   (소스 파일 'Winmain.cpp'을(를) 컴파일하는 중)
   
   코드를 생성하고 있습니다...
+  Winmain.vcxproj -> C:\Users\user\Documents\Butterfly\Butterfly\x64\Debug\Winmain.exe

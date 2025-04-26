@@ -123,7 +123,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 
 	auto& key = InputManager<KeyboardDevice>::GetInstance(); // Get KeyboardManaager Instance 
 	////////Renderer::Initialize
-	move = new MoveManager(key, rect);
+	move = new Move::MoveManager(key, rect);
 
 
 	MSG msg;

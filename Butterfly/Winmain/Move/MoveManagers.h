@@ -3,7 +3,8 @@
 #include <Windows.h>
 #include "../Event/KeyboardInputManager.h"
 
-
+namespace Move
+{
 	class MoveManager
 	{
 	public:
@@ -26,3 +27,6 @@
 		POINT movePos = {};
 		RECT& rect;
 	};
+
+}
+	
