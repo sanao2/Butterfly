@@ -28,6 +28,7 @@ public:
 		BackBitmap = CreateCompatibleBitmap(memDC, w_width, w_height); // Memory Create 
 		SelectObject(clientDC, BackBitmap); // MemDC Memory Area Specify 
 	}
+
 	~Swap()
 	{
 		//MemoryDC Delete

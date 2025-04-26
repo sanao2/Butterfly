@@ -1,9 +1,16 @@
 #include "Render.h"
 
+void Render::render() // Back Buffer Swap and Render.
+{
+
+}
+
 POINT Render::BufferSize(HWND _hwnd)
 {
 	RECT rcClient;
 	GetClientRect(_hwnd, &rcClient);					// Get Client Area Size
+
+	// Get Client Area Size
 	int clientwidth = rcClient.right - rcClient.left;   // Get Client Width 
 	int clientheight = rcClient.bottom - rcClient.top;  // Get Client Height 
 	
@@ -14,7 +21,7 @@ POINT Render::BufferSize(HWND _hwnd)
 
 Render::Render(HWND hwnd, int w_width, int w_height) : hWnd(hwnd)
 {
-	 // GDI Double Buffer Create and Initialize 
+	// GDI Double Buffer Create and Initialize 
 	clientDC = GetDC(hwnd);											// Get Client DC
 	memDC = CreateCompatibleDC(clientDC);							// Create Memory DC
 	g_Bitmap = CreateCompatibleBitmap(clientDC, w_width, w_height); // Create Memory Area
