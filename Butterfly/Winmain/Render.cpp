@@ -2,7 +2,7 @@
 
 void Render::render() // Back Buffer Swap and Render.
 {
-
+	PatBlt(memDC, 0, 0, w_width, w_height, WHITENESS); //Back Buffer Begin Erager
 }
 
 void Render::Update()
