@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\user\\Documents\\Butterfly\\Butterfly\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|C:\\Users\\user\\Documents\\Butterfly\\Butterfly\\Winmain\\Swap.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|solutionrelative:Winmain\\Swap.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|C:\\Users\\user\\Documents\\Butterfly\\Butterfly\\Winmain\\Render.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|solutionrelative:Winmain\\Render.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -13,10 +17,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|C:\\Users\\user\\Documents\\Butterfly\\Butterfly\\Winmain\\Event\\InputManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|solutionrelative:Winmain\\Event\\InputManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|C:\\Users\\user\\Documents\\Butterfly\\Butterfly\\Winmain\\Swap.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|solutionrelative:Winmain\\Swap.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|C:\\Users\\user\\Documents\\Butterfly\\Butterfly\\Winmain\\Player\\MoveManagers.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -94,12 +94,11 @@
               "RelativeToolTip": "Winmain\\Player\\MoveManagers.cpp",
               "ViewState": "AgIAAAcAAAAAAAAAAAAswBkAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-26T03:55:00.072Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-26T03:55:00.072Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "InputManager.h",
               "DocumentMoniker": "C:\\Users\\user\\Documents\\Butterfly\\Butterfly\\Winmain\\Event\\InputManager.h",
               "RelativeDocumentMoniker": "Winmain\\Event\\InputManager.h",
@@ -107,8 +106,7 @@
               "RelativeToolTip": "Winmain\\Event\\InputManager.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-24T05:14:41.245Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-24T05:14:41.245Z"
             },
             {
               "$type": "Document",
@@ -144,8 +142,7 @@
               "RelativeToolTip": "Winmain\\Winmain.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-24T03:16:01.041Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-24T03:16:01.041Z"
             },
             {
               "$type": "Document",
@@ -157,18 +154,17 @@
               "RelativeToolTip": "Winmain\\Event\\KeyboardInputManager.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-24T05:37:24.546Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-24T05:37:24.546Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Render.cpp",
               "DocumentMoniker": "C:\\Users\\user\\Documents\\Butterfly\\Butterfly\\Winmain\\Render.cpp",
               "RelativeDocumentMoniker": "Winmain\\Render.cpp",
               "ToolTip": "C:\\Users\\user\\Documents\\Butterfly\\Butterfly\\Winmain\\Render.cpp",
               "RelativeToolTip": "Winmain\\Render.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAhwBQAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAQwA8AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-04-26T05:59:01.01Z",
               "EditorCaption": ""
@@ -189,17 +185,17 @@
         },
         {
           "DockedWidth": 226,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "Swap.h",
               "DocumentMoniker": "C:\\Users\\user\\Documents\\Butterfly\\Butterfly\\Winmain\\Swap.h",
               "RelativeDocumentMoniker": "Winmain\\Swap.h",
               "ToolTip": "C:\\Users\\user\\Documents\\Butterfly\\Butterfly\\Winmain\\Swap.h",
               "RelativeToolTip": "Winmain\\Swap.h",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAACkAAAAWAAAAAAAAAA==",
+              "ViewState": "AgIAABUAAAAAAAAAAAAgwDQAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-04-26T06:27:09.319Z",
               "EditorCaption": ""
@@ -218,13 +214,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Render.h",
               "DocumentMoniker": "C:\\Users\\user\\Documents\\Butterfly\\Butterfly\\Winmain\\Render.h",
               "RelativeDocumentMoniker": "Winmain\\Render.h",
               "ToolTip": "C:\\Users\\user\\Documents\\Butterfly\\Butterfly\\Winmain\\Render.h",
               "RelativeToolTip": "Winmain\\Render.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAcAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-04-26T05:58:46.161Z",
               "EditorCaption": ""
