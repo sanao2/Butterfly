@@ -54,6 +54,21 @@
     <ClInclude Include="Swap.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="Move\AIMoveController.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Move\IMoveController.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Move\MoveDirection.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Move\MoveManagers.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Move\PlayerMoveController.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Winmain.cpp">
@@ -69,6 +84,9 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Render.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Move\MoveManagers.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

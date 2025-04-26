@@ -1,10 +1,9 @@
 #pragma once
 #include <windows.h>
 #include <stdio.h>
-#include "Player/MoveManagers.h"
+#include "Move/MoveManagers.h"
 #include "Event/KeyboardInputManager.h"
 using namespace Input;
 
-MoveManager* Move;
-
+MoveManager* move; 
 extern HWND g_hWnd; 

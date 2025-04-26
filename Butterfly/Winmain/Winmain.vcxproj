@@ -131,6 +131,11 @@
     <ClInclude Include="Event\InputManager.h" />
     <ClInclude Include="Event\KeyboardInputManager.h" />
     <ClInclude Include="framework.h" />
+    <ClInclude Include="Move\AIMoveController.h" />
+    <ClInclude Include="Move\IMoveController.h" />
+    <ClInclude Include="Move\MoveDirection.h" />
+    <ClInclude Include="Move\MoveManagers.h" />
+    <ClInclude Include="Move\PlayerMoveController.h" />
     <ClInclude Include="Player\MoveManagers.h" />
     <ClInclude Include="Render.h" />
     <ClInclude Include="Resource.h" />
@@ -141,6 +146,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Event\KeyboardInputManager.cpp" />
+    <ClCompile Include="Move\MoveManagers.cpp" />
     <ClCompile Include="Player\MoveManagers.cpp" />
     <ClCompile Include="Render.cpp" />
     <ClCompile Include="UI\Timer.cpp" />

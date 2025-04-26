@@ -18,8 +18,8 @@ int boxDraw() // Move Test
 	// Move Test RECT HDC Init
 	drawDC = GetDC(g_hWnd);
 
-	RECT rcClient = { 0, 0, g_width, g_height };  // 새로운 콘솔창 해상도 크기 
-	AdjustWindowRect(&rcClient, WS_OVERLAPPEDWINDOW, FALSE);
+	//RECT rcClient = { 0, 0, g_width, g_height };  // 새로운 콘솔창 해상도 크기 
+	//AdjustWindowRect(&rcClient, WS_OVERLAPPEDWINDOW, FALSE);
 
 	PatBlt(drawDC, 0, 0, g_width, g_height, WHITENESS);
 
@@ -123,7 +123,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 
 	auto& key = InputManager<KeyboardDevice>::GetInstance(); // Get KeyboardManaager Instance 
 	////////Renderer::Initialize
-	Move = new MoveManager(key, rect);
+	move = new MoveManager(key, rect);
 
 
 	MSG msg;
@@ -138,7 +138,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 			DispatchMessage(&msg);
 		}
 		boxDraw();
-		Move->MoveUpdate();
+		move->MoveUpdate();
 
 	}
 

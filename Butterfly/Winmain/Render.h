@@ -6,9 +6,7 @@
 using namespace std;
 
 extern int g_width;
-extern int g_height;
-
- 
+extern int g_height; 
 
 class Render
 {

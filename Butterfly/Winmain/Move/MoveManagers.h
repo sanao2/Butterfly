@@ -3,25 +3,26 @@
 #include <Windows.h>
 #include "../Event/KeyboardInputManager.h"
 
-class MoveManager
-{
-public:
-	explicit MoveManager(Input::InputManager<Input::KeyboardDevice>& keyREf, RECT& rc);
-	~MoveManager();
 
-	void MoveUpdate(); // InputManager 인자를 제거하고 내부 인스턴스 사용
-	bool IsMoving() const;
+	class MoveManager
+	{
+	public:
+		explicit MoveManager(Input::InputManager<Input::KeyboardDevice>& keyREf, RECT& rc);
+		~MoveManager();
 
-	bool GetIsMoving() const { return isMoving; }
-	void SetIsMoving(bool state) { isMoving = state; }
+		void MoveUpdate(); // InputManager 인자를 제거하고 내부 인스턴스 사용
+		bool IsMoving() const;
 
-private:
-	void MoveKeyInput();
-	void MoveKeyRelease();
+		bool GetIsMoving() const { return isMoving; }
+		void SetIsMoving(bool state) { isMoving = state; }
 
-private:
-	Input::InputManager<Input::KeyboardDevice>& key;
-	RECT& rect;
-	bool isMoving = false;
-	POINT movePos = {};
-};
+	private:
+		void MoveKeyInput();
+		void MoveKeyRelease();
+
+	private:
+		Input::InputManager<Input::KeyboardDevice>& key;
+		bool isMoving = false;
+		POINT movePos = {};
+		RECT& rect;
+	};
