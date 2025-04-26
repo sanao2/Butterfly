@@ -17,6 +17,7 @@ private:
 	HBITMAP g_Bitmap;	 // Bitmap 
 	POINT clientsize;	 // Client Size
 	Swap* swap;			 // Swap Class
+
 public:
 	void render(); // Back Buffer Swap and Render.
 	void Update(); // Render Update. Buffer Swaping and Resource, check Update. 

@@ -5,14 +5,19 @@ void Render::render() // Back Buffer Swap and Render.
 
 }
 
+void Render::Update()
+{
+	//swap->SwapBuffers(clientDC); // Swap Buffers 
+}
+
 POINT Render::BufferSize(HWND _hwnd)
 {
-	RECT rcClient;
-	GetClientRect(_hwnd, &rcClient);					// Get Client Area Size
+	RECT Buffersize;
+	GetClientRect(_hwnd, &Buffersize);					// Get Client Area Size
 
 	// Get Client Area Size
-	int clientwidth = rcClient.right - rcClient.left;   // Get Client Width 
-	int clientheight = rcClient.bottom - rcClient.top;  // Get Client Height 
+	int clientwidth = Buffersize.right - Buffersize.left;   // Get Client Width 
+	int clientheight = Buffersize.bottom - Buffersize.top;  // Get Client Height 
 	
 	clientsize = { clientwidth, clientheight };		    // Get Client Size 
 

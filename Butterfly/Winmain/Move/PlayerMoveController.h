@@ -1,23 +1,26 @@
 #pragma once
 #include "IMoveController.h"
-#include "Event/KeyboardInputManager.h"
+#include "../Event/KeyboardInputManager.h"
 
-class PlayerMoveController : public IMoveController
+namespace Move
 {
-public:
-    explicit PlayerMoveController(Input::InputManager<Input::KeyboardDevice>& key)
-        : key(key) {}
-
-    MoveDirection GetDirection() override
+    class PlayerMoveController : public IMoveController
     {
-        key.Update();
-        if (key.IsKeyPressed(VK_RIGHT)) return MoveDirection::Right;
-        if (key.IsKeyPressed(VK_LEFT))  return MoveDirection::Left;
-        if (key.IsKeyPressed(VK_UP))    return MoveDirection::Up;
-        if (key.IsKeyPressed(VK_DOWN))  return MoveDirection::Down;
-        return MoveDirection::None;
-    }
+    public:
+        explicit PlayerMoveController(Input::InputManager<Input::KeyboardDevice>& key)
+            : key(key) {}
 
-private:
-    Input::InputManager<Input::KeyboardDevice>& key;
-};
+        MoveDirection GetDirection() override
+        {
+            key.Update();
+            if (key.IsKeyPressed(VK_RIGHT)) return MoveDirection::Right;
+            if (key.IsKeyPressed(VK_LEFT))  return MoveDirection::Left;
+            if (key.IsKeyPressed(VK_UP))    return MoveDirection::Up;
+            if (key.IsKeyPressed(VK_DOWN))  return MoveDirection::Down;
+            return MoveDirection::None;
+        }
+
+    private:
+        Input::InputManager<Input::KeyboardDevice>& key;
+    };
+}
