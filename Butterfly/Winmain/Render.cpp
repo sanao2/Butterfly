@@ -8,10 +8,9 @@ void Render::Update(HWND _hwnd)
 	std::unique_lock<std::mutex> lk(_mtx);
 	_cv.wait_for(lk, std::chrono::milliseconds(16), [&] { return needSwap.load(); });
 	
-	BitBlt(memDC, 0, 0, g_width, g_height, clientDC, 0, 0, SRCCOPY);
-
+	
+	
 }
-
 
 void Render::render(int w_width, int w_height) // Back Buffer Swap and Render.
 {

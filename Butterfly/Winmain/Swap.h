@@ -56,4 +56,14 @@ public:
 		needSwap = true; 
 		_cv.notify_one();
 	}
+
+	void ResetneedSwap()
+	{
+		if (needSwap == true) return; // Swaping Checka == false)
+
+		if (needSwap == true)
+		{
+			needSwap.store(false); // Reset Swap Flag
+		}
+	}
 };
