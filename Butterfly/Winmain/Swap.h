@@ -1,21 +1,55 @@
 #pragma once
 #include <windows.h>
 #include <stdio.h>
+#include <mutex>
+using std::mutex;
+#include <thread>
+using std::thread; 
+
 
 class Swap
 {
 private:
-	HWND hWnd;	  // Window ID Handle
-	HDC memDC;    //  Back Buffer DC
-	HDC clientDC; // Front Buffer DC
+	HWND						hWnd;		 // Window ID Handle
+	HDC							memDC;		 //  Back Buffer DC
+	HDC							clientDC;	 // Front Buffer DC
+	HBITMAP						BackBitmap;  // Back Buffer Bitmap
+	
+	mutex						_mtx;
+	thread						thread;		// Multy Thread
+	std::condition_variable     _cv;
+	std::atomic<bool>          isSwaping{ false };
 
 public:
-	Swap(HWND _hWnd) : hWnd(_hWnd)
+	Swap(HWND _hWnd, int w_width, int w_height) : hWnd(_hWnd)
 	{
+		clientDC = GetDC(_hWnd);		// Get Client DC 
 		memDC = CreateCompatibleDC(clientDC);
+		BackBitmap = CreateCompatibleBitmap(memDC, w_width, w_height); // Memory Create 
+		SelectObject(clientDC, BackBitmap); // MemDC Memory Area Specify 
 	}
 	~Swap()
 	{
+		//MemoryDC Delete
+		DeleteObject(BackBitmap);
+		DeleteDC(memDC); 
+		ReleaseDC(hWnd, clientDC); 
+	}
 
+	void SwapBuffers(int w_width, int w_height)
+	{ // Swaping Buffer 
+
+		PatBlt(memDC, 0, 0, w_width, w_height, WHITENESS);// clientDC Clear 
+		
+		{
+		  // Swap Second : Mutex Lock 
+			std::lock_guard<std::mutex> lk(_mtx); // Only one thread can access the resource at a time 
+			std::swap(memDC, clientDC); // BackBuffer and FrontBuffer Swap
+
+		}
+
+		_cv.notify_one();
+
+		BitBlt(clientDC, 0, 0, w_width, w_height, memDC, 0, 0, SRCCOPY);
 	}
 };

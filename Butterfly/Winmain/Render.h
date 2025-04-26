@@ -16,7 +16,7 @@ private:
 	HBITMAP g_Bitmap; // Bitmap 
 
 public:
-	Render(HWND hwnd);
+	Render(HWND hwnd, int w_width, int w_height); 
 	~Render();
 };
 

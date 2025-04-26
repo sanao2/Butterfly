@@ -1,8 +1,16 @@
 #include "Render.h"
 
-Render::Render(HWND hwnd) : hWnd(hwnd)
+Render::Render(HWND hwnd, int w_width, int w_height) : hWnd(hwnd) 
 {
-	memDC = CreateCompatibleDC(clientDC);
-	g_Bitmap = CreateCompatibleBitmap(clientDC, g_width, g_height); // 메모리 영역생성
-	SelectObject(memDC, g_Bitmap); // MemDC의 메모리영역 지정
+	clientDC = GetDC(hwnd);											// Get Client DC
+	memDC = CreateCompatibleDC(clientDC);							// Create Memory DC
+	g_Bitmap = CreateCompatibleBitmap(clientDC, w_width, w_height); // Create Memory Area
+	SelectObject(memDC, g_Bitmap);									// Specify MemDC Memory Area 
+}
+
+Render::~Render()
+{
+	DeleteObject(g_Bitmap); // Delete Bitmap
+	DeleteDC(memDC);		 // Delete Memory DC
+	ReleaseDC(hWnd, clientDC); // Release Client DC
 }

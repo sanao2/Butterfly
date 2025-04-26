@@ -6,3 +6,5 @@
 using namespace Input;
 
 MoveManager* Move;
+
+extern HWND g_hWnd; 
