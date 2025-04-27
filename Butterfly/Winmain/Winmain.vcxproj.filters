@@ -132,6 +132,12 @@
     <Image Include="C:\Users\user\Desktop\리소스\shop_8bit.png">
       <Filter>리소스 파일</Filter>
     </Image>
+    <Image Include="bitmap1.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\shop_8bits.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <Text Include="메모.txt">

@@ -109,6 +109,10 @@
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>
+      </AdditionalIncludeDirectories>
+    </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -159,8 +163,10 @@
     <ResourceCompile Include="Winmain.rc" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="bitmap1.bmp" />
     <Image Include="C:\Users\user\Desktop\리소스\Shop.png" />
     <Image Include="C:\Users\user\Desktop\리소스\shop_8bit.png" />
+    <Image Include="Resource\shop_8bits.png" />
     <Image Include="small.ico" />
     <Image Include="Winmain.ico" />
   </ItemGroup>

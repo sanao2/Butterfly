@@ -4,6 +4,7 @@
 #include "Move/MoveManagers.h"
 #include "Event/KeyboardInputManager.h"
 #include "Render.h"
+#include "resource.h"
 
 
 using namespace Input;
