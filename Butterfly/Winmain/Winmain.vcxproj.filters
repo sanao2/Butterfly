@@ -84,9 +84,6 @@
     <ClInclude Include="UI\Timer.h">
       <Filter>헤더 파일\UI</Filter>
     </ClInclude>
-    <ClInclude Include="UIManager.h">
-      <Filter>헤더 파일\UI</Filter>
-    </ClInclude>
     <ClInclude Include="UI\Map\Map.h">
       <Filter>소스 파일\UI</Filter>
     </ClInclude>
@@ -111,9 +108,6 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="UI\Timer.cpp">
-      <Filter>소스 파일\UI</Filter>
-    </ClCompile>
-    <ClCompile Include="UIManager.cpp">
       <Filter>소스 파일\UI</Filter>
     </ClCompile>
     <ClCompile Include="UI\Map\Map.cpp">
