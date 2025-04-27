@@ -1,6 +1,8 @@
 #include "UIManager.h"
 
-UIManager::UIManager(HWND hwnd) : hWnd(hwnd), ObjPos{ 0,0 }, ObjSize{ 0,0 } {}
+UIManager::UIManager(HWND hwnd, int w_width, int w_height)
+	: hWnd(hwnd), ObjPos{ 0,0 },
+	ObjSize{ 0,0 }, clientsize{ w_width, w_height } {}
 
 UIManager::~UIManager() {}
 
@@ -11,6 +13,7 @@ void UIManager::Update()
 
 void UIManager::Render(HDC drawDC)
 {
+	PatBlt(drawDC, 0, 0, clientsize.x, clientsize.y, WHITENESS);
 	Rectangle(drawDC,
 		ObjPos.x,
 		ObjPos.y,
