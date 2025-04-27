@@ -5,9 +5,13 @@ void Render::Update(HWND _hwnd)
 {
 	GetBufferSize(_hwnd); // Get Buffer Size 
 	
-	if (swap->GetisSwaping() == false) // Swaping Check
+	if (swap->GetisSwaping() == true) // Swaping Check
 	{
 		swap->SwapBuffers(_hwnd); // Swap Buffers 
+	}
+	else
+	{
+		swap->ResetneedSwap(); // Reset Swaping Check
 	}
 }
 

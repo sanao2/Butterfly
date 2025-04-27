@@ -61,7 +61,7 @@ public:
 
 	void ResetneedSwap()
 	{
-		if (needSwap == true) return; // Swaping Checka == false)
+		if (needSwap == false) return; // Swaping Checka == false)
 
 		if (needSwap == true)
 		{
