@@ -34,10 +34,10 @@ namespace Move
 
 		switch(dir)
 		{
-			case MoveDirection::Left:   movePos.x -= moveSpeed; Sleep(200); isMoving = true; break;
-			case MoveDirection::Right:  movePos.x += moveSpeed; Sleep(200); isMoving = true; break;
-			case MoveDirection::Up:     movePos.y -= moveSpeed; Sleep(200); isMoving = true; break;
-			case MoveDirection::Down:   movePos.y += moveSpeed; Sleep(200); isMoving = true; break;
+			case MoveDirection::Left:   movePos.x -= moveSpeed; Sleep(150); isMoving = true; break;
+			case MoveDirection::Right:  movePos.x += moveSpeed; Sleep(150); isMoving = true; break;
+			case MoveDirection::Up:     movePos.y -= moveSpeed; Sleep(150); isMoving = true; break;
+			case MoveDirection::Down:   movePos.y += moveSpeed; Sleep(150); isMoving = true; break;
 			default: break;
 		}
 
