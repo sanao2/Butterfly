@@ -25,6 +25,9 @@
     <Filter Include="헤더 파일\DoubleBuffering">
       <UniqueIdentifier>{352cb712-fdac-4d63-b0c5-07d58eccc44e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Move">
+      <UniqueIdentifier>{dcdadb72-25a5-477d-bbb7-0fa3914768f2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -51,19 +54,7 @@
     <ClInclude Include="Event\KeyboardInputManager.h">
       <Filter>헤더 파일\Event</Filter>
     </ClInclude>
-    <ClInclude Include="Move\AIMoveController.h">
-      <Filter>소스 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Move\IMoveController.h">
-      <Filter>소스 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Move\MoveDirection.h">
-      <Filter>소스 파일</Filter>
-    </ClInclude>
     <ClInclude Include="Move\MoveManagers.h">
-      <Filter>소스 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Move\PlayerMoveController.h">
       <Filter>소스 파일</Filter>
     </ClInclude>
     <ClInclude Include="Swap.h">
@@ -74,6 +65,18 @@
     </ClInclude>
     <ClInclude Include="Global.h">
       <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Move\AIMoveController.h">
+      <Filter>소스 파일\Move</Filter>
+    </ClInclude>
+    <ClInclude Include="Move\IMoveController.h">
+      <Filter>소스 파일\Move</Filter>
+    </ClInclude>
+    <ClInclude Include="Move\MoveDirection.h">
+      <Filter>소스 파일\Move</Filter>
+    </ClInclude>
+    <ClInclude Include="Move\PlayerMoveController.h">
+      <Filter>소스 파일\Move</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
