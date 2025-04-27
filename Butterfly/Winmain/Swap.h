@@ -11,6 +11,7 @@ private:
     HDC memDC;
     HDC clientDC;
     HBITMAP backBitmap;
+    POINT clientSize; 
 
     std::mutex mtx;
     std::condition_variable cv;

@@ -1,6 +1,6 @@
 #include "Swap.h"
 
-Swap::Swap(HWND _hWnd, int width, int height) : hWnd(_hWnd)
+Swap::Swap(HWND _hWnd, int width, int height) : hWnd(_hWnd), clientSize{ width, height }
 {
     clientDC = GetDC(hWnd);
     memDC = CreateCompatibleDC(clientDC);
@@ -23,7 +23,7 @@ void Swap::SwapBuffers()
 
     {
         std::lock_guard<std::mutex> lock(mtx);
-        BitBlt(clientDC, 0, 0, 1024, 768, memDC, 0, 0, SRCCOPY); // 메모리 DC를 클라이언트 DC로 복사
+        BitBlt(clientDC, 0, 0, clientSize.x, clientSize.y, memDC, 0, 0, SRCCOPY); // 메모리 DC를 클라이언트 DC로 복사
     }
 
     needSwap.store(true);
