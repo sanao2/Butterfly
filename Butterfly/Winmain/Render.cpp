@@ -4,15 +4,13 @@
 void Render::Update(HWND _hwnd)
 {
 	GetBufferSize(_hwnd); // Get Buffer Size 
-	
+	// Swap Buffers 
+	swap->SwapBuffers(_hwnd); // Swap Buffers 
 }
 
 void Render::render(HDC backDC, HWND _hWnd) // Back Buffer Swap and Render.
 {
 	PatBlt(backDC, 0, 0, clientsize.x, clientsize.y, WHITENESS); // Back Buffer Swap and Render 
-
-	// Swap Buffers 
-	swap->SwapBuffers(_hWnd); // Swap Buffers 
 
 	BitBlt(clientDC, 0, 0, clientsize.x, clientsize.y, memDC, 0, 0, SRCCOPY); // Back Buffer Swap and Render 
 }
