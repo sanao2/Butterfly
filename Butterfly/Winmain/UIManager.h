@@ -15,13 +15,12 @@ private:
 	POINT ObjSize; // °´Ã¼ Å©±â 
 
 public:
-	UIManager(HWND hWnd, HDC _dc);
+	UIManager(HWND hwnd, HDC _dc);
 	~UIManager();
 
 	void SetObjPos(RECT rc) { ObjPos.x = (rc.right - rc.left); ObjPos.y = (rc.bottom - rc.top); }
 	void SetObjSize(int x, int y) { ObjSize.x = x; ObjSize.y = y; }
 
-	void CreateObj(); // Object Create 
 	void DrawObj(HDC drawDC); // Object Draw 
 
 	void Update();

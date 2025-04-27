@@ -141,6 +141,7 @@
     <ClInclude Include="Resource.h" />
     <ClInclude Include="Swap.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="UIManager.h" />
     <ClInclude Include="UI\Timer.h" />
     <ClInclude Include="Winmain.h" />
   </ItemGroup>
@@ -150,6 +151,7 @@
     <ClCompile Include="Move\MoveManagers.cpp" />
     <ClCompile Include="Render.cpp" />
     <ClCompile Include="Swap.cpp" />
+    <ClCompile Include="UIManager.cpp" />
     <ClCompile Include="UI\Timer.cpp" />
     <ClCompile Include="Winmain.cpp" />
   </ItemGroup>
