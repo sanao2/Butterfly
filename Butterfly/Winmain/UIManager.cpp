@@ -4,7 +4,9 @@ UIManager::UIManager(HWND hwnd, int w_width, int w_height)
 	: hWnd(hwnd), ObjPos{ 0,0 },
 	ObjSize{ 0,0 }, clientsize{ w_width, w_height } {}
 
-UIManager::~UIManager() {}
+UIManager::~UIManager() {
+	DeleteObject(pen);
+}
 
 void UIManager::Update()
 {
