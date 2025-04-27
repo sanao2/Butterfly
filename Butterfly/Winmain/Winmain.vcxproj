@@ -142,6 +142,7 @@
     <ClInclude Include="Swap.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="UIManager.h" />
+    <ClInclude Include="UI\Map\Map.h" />
     <ClInclude Include="UI\Timer.h" />
     <ClInclude Include="Winmain.h" />
   </ItemGroup>
@@ -152,6 +153,7 @@
     <ClCompile Include="Render.cpp" />
     <ClCompile Include="Swap.cpp" />
     <ClCompile Include="UIManager.cpp" />
+    <ClCompile Include="UI\Map\Map.cpp" />
     <ClCompile Include="UI\Timer.cpp" />
     <ClCompile Include="Winmain.cpp" />
   </ItemGroup>
@@ -161,6 +163,9 @@
   <ItemGroup>
     <Image Include="small.ico" />
     <Image Include="Winmain.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="메모.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
