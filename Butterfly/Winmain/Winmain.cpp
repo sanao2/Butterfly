@@ -113,7 +113,6 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 
     render = new Render(g_hWnd, g_width, g_height);  // Global Render 객체 생성
   
-
     auto& key = InputManager<KeyboardDevice>::GetInstance();    
 
     std::unique_ptr<Move::MoveManager> move = std::make_unique<Move::MoveManager>(key, rect);

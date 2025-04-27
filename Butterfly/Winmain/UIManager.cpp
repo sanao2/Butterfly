@@ -5,7 +5,7 @@ UIManager::UIManager(HWND hwnd, int w_width, int w_height)
 	ObjSize{ 0,0 }, clientsize{ w_width, w_height } {}
 
 UIManager::~UIManager() {
-	DeleteObject(pen);
+	
 }
 
 void UIManager::Update()
@@ -14,12 +14,11 @@ void UIManager::Update()
 }
 
 void UIManager::Render(HDC drawDC)
-{
-	
+{	
 	Rectangle(drawDC,
 		ObjPos.x,
 		ObjPos.y,
-		ObjPos.x + ObjSize.x,
-		ObjPos.y + ObjSize.y);
+		clientsize.x + ObjSize.x,
+		clientsize.y + ObjSize.y);
 }
 
