@@ -21,6 +21,8 @@ public:
     Swap(HWND hWnd, int width, int height);
     ~Swap();
 
+    HDC GetMemDC() const { return memDC; };
+
     void SwapBuffers();
     void ResetNeedSwap();
 
