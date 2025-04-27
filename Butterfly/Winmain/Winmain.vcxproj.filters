@@ -19,6 +19,12 @@
     <Filter Include="소스 파일\Event">
       <UniqueIdentifier>{5641d279-7100-4ed5-b889-f4d31579a3f0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\DoubleBuffering">
+      <UniqueIdentifier>{45ba66eb-df34-4a73-ba9d-c8932479483a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\DoubleBuffering">
+      <UniqueIdentifier>{352cb712-fdac-4d63-b0c5-07d58eccc44e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -45,12 +51,6 @@
     <ClInclude Include="Event\KeyboardInputManager.h">
       <Filter>헤더 파일\Event</Filter>
     </ClInclude>
-    <ClInclude Include="Render.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Swap.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="Move\AIMoveController.h">
       <Filter>소스 파일</Filter>
     </ClInclude>
@@ -66,6 +66,12 @@
     <ClInclude Include="Move\PlayerMoveController.h">
       <Filter>소스 파일</Filter>
     </ClInclude>
+    <ClInclude Include="Swap.h">
+      <Filter>헤더 파일\DoubleBuffering</Filter>
+    </ClInclude>
+    <ClInclude Include="Render.h">
+      <Filter>헤더 파일\DoubleBuffering</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Winmain.cpp">
@@ -77,11 +83,11 @@
     <ClCompile Include="Event\KeyboardInputManager.cpp">
       <Filter>소스 파일\Event</Filter>
     </ClCompile>
-    <ClCompile Include="Render.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="Move\MoveManagers.cpp">
       <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Render.cpp">
+      <Filter>소스 파일\DoubleBuffering</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
