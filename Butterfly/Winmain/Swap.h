@@ -23,8 +23,10 @@ private:
 
 public:
 
-	bool GetisSwaping() { return isSwaping; } // Swaping Check
+	bool GetisSwaping() { return isSwaping; }							// Swaping Check
 	void SetisSwaping(bool _isSwaping) { isSwaping.store(_isSwaping); } // Swaping Check
+	bool GetneedSwap() { return needSwap; }							    // We need Swaping Check
+	void SetneedSwap(bool _needSwap) { needSwap.store(_needSwap); }		// We need Swaping Check 
 	
 	Swap(HWND _hWnd, int w_width, int w_height) : hWnd(_hWnd)
 	{
@@ -41,7 +43,7 @@ public:
 		ReleaseDC(hWnd, clientDC); 
 	}
 
-	void SwapBuffers(HWND _hWnd, int w_width, int w_height)
+	void SwapBuffers(HWND _hWnd)
 	{
 		// Swaping Buffer 		
 		if (isSwaping.load()) return; // Swaping Check 

@@ -5,7 +5,6 @@ void Render::Update(HWND _hwnd)
 {
 	GetBufferSize(_hwnd); // Get Buffer Size 
 	
-	
 }
 
 void Render::render(HDC backDC) // Back Buffer Swap and Render.
