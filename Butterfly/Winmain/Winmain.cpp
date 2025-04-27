@@ -1,7 +1,9 @@
-﻿#include <iostream>
-#include "Winmain.h"
+﻿#include "Global.h"  // 이제 Global.h 하나만 include하면 됨
+#include "Winmain.h" // (필요하면)
+
 #pragma comment(lib, "Msimg32.lib")	
 
+// 타이틀, 클래스명, 사이즈
 LPCTSTR g_title = TEXT("윈도우 타이틀바에 표시할 문자열");
 LPCTSTR g_szClassName = TEXT("윈도우 클래스 이름");
 
@@ -13,20 +15,14 @@ HWND g_hWnd;
 HDC drawDC;
 RECT rect = { 5, 5, 20, 20 };
 
-int boxDraw() // Move Test 
+int boxDraw()
 {
-    // Move Test RECT HDC Init
     drawDC = GetDC(g_hWnd);
 
-    // 클리어 작업
     PatBlt(drawDC, 0, 0, g_width, g_height, WHITENESS);
-
-    // 사각형 그리기
     Rectangle(drawDC, rect.left, rect.top, rect.right, rect.bottom);
 
-    // 리소스 반납
-    ReleaseDC(g_hWnd, drawDC);
-
+    ReleaseDC(g_hWnd, drawDC); // Release 해줘야 리소스 누수 안 생김
     return S_OK;
 }
 
@@ -41,8 +37,8 @@ void InitConsole()
 
 void UninitConsole()
 {
-    fclose(stdout); // 표준 출력 스트림 닫기
-    FreeConsole();  // 콘솔 해제
+    fclose(stdout);
+    FreeConsole();
 }
 
 void PrintLastErrorMessage()
@@ -54,7 +50,7 @@ void PrintLastErrorMessage()
         FORMAT_MESSAGE_ALLOCATE_BUFFER | FORMAT_MESSAGE_FROM_SYSTEM | FORMAT_MESSAGE_IGNORE_INSERTS,
         NULL,
         errorCode,
-        MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT), // 기본 언어
+        MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT),
         (LPSTR)&lpMsgBuf,
         0,
         NULL);
@@ -62,7 +58,7 @@ void PrintLastErrorMessage()
     if (lpMsgBuf)
     {
         printf("오류 코드: %lu\n오류 메시지: %s\n", errorCode, (char*)lpMsgBuf);
-        LocalFree(lpMsgBuf); // 할당된 버퍼 해제
+        LocalFree(lpMsgBuf);
     }
     else
     {
@@ -78,14 +74,13 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
         PostQuitMessage(0);
         break;
     }
-
     return DefWindowProc(hwnd, msg, wParam, lParam);
 }
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
     LPSTR lpCmdLine, int nCmdShow)
 {
-    InitConsole();  // 콘솔 출력 초기화
+    InitConsole();
 
     char szPath[MAX_PATH] = { 0, };
     ::GetCurrentDirectoryA(MAX_PATH, szPath);
@@ -96,8 +91,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
     wc.hInstance = hInstance;
     wc.lpszClassName = g_szClassName;
     wc.hbrBackground = (HBRUSH)(COLOR_WINDOW + 1);
-    wc.hCursor = LoadCursor(NULL, IDC_ARROW);    // 기본 커서 모양
-    wc.hIcon = LoadIcon(NULL, IDI_APPLICATION);  // 기본 아이콘 모양
+    wc.hCursor = LoadCursor(NULL, IDC_ARROW);
+    wc.hIcon = LoadIcon(NULL, IDI_APPLICATION);
     RegisterClass(&wc);
 
     RECT rcClient = { 0, 0, (LONG)g_width, (LONG)g_height };
@@ -116,10 +111,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
     ShowWindow(hwnd, nCmdShow);
     UpdateWindow(hwnd);
 
-    auto& key = InputManager<KeyboardDevice>::GetInstance(); // Get KeyboardManaager Instance 
-    render = new Render(g_hWnd, g_width, g_height);          // Render Create and Initialize 
-
-    // MoveManager 객체를 동적으로 할당
+    auto& key = InputManager<KeyboardDevice>::GetInstance();
+    render = new Render(g_hWnd, g_width, g_height);  // Global Render 객체 생성
     std::unique_ptr<Move::MoveManager> move = std::make_unique<Move::MoveManager>(key, rect);
 
     MSG msg;
@@ -134,12 +127,11 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
             DispatchMessage(&msg);
         }
 
-        boxDraw();    // 사각형 그리기
-        move->MoveUpdate(); // 이동 처리
-		render->Update(g_hWnd); // Render Update 
-
+        boxDraw();
+        move->MoveUpdate();
+        render->Update();
     }
 
-    UninitConsole();  // 콘솔 출력 해제
+    UninitConsole();
     return (int)msg.wParam;
 }

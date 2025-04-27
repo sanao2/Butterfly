@@ -7,7 +7,6 @@
 
 using namespace Input;
 
-Move::MoveManager* move; 
-Render* render; 
-extern HWND g_hWnd; 
-
+extern Move::MoveManager* move;
+extern Render* render;
+extern HWND g_hWnd;

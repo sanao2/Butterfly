@@ -1,71 +1,29 @@
 #pragma once
 #include <windows.h>
-#include <stdio.h>
 #include <mutex>
-using std::mutex;
-#include <thread>
-using std::thread; 
-
+#include <condition_variable>
+#include <atomic>
 
 class Swap
 {
 private:
-	HWND						hWnd;		 // Window ID Handle
-	HDC							memDC;		 //  Back Buffer DC
-	HDC							clientDC;	 // Front Buffer DC
-	HBITMAP						BackBitmap;  // Back Buffer Bitmap
-	
-	mutex						_mtx;
-	thread						thread;		// Multy Thread
-	std::condition_variable     _cv;
-	std::atomic<bool>		    needSwap{ false };
-	std::atomic<bool>           isSwaping{ false };
+    HWND hWnd;
+    HDC memDC;
+    HDC clientDC;
+    HBITMAP backBitmap;
+
+    std::mutex mtx;
+    std::condition_variable cv;
+    std::atomic<bool> needSwap{ false };
+    std::atomic<bool> isSwapping{ false };
 
 public:
+    Swap(HWND hWnd, int width, int height);
+    ~Swap();
 
-	bool GetisSwaping() { return isSwaping; }							// Swaping Check
-	void SetisSwaping(bool _isSwaping) { isSwaping.store(_isSwaping); } // Swaping Check
-	bool GetneedSwap() { return needSwap; }							    // We need Swaping Check
-	void SetneedSwap(bool _needSwap) { needSwap.store(_needSwap); }		// We need Swaping Check 
-	
-	Swap(HWND _hWnd, int w_width, int w_height) : hWnd(_hWnd)
-	{
-		clientDC = GetDC(_hWnd);		// Get Client DC 
-		memDC = CreateCompatibleDC(clientDC);
-		BackBitmap = CreateCompatibleBitmap(memDC, w_width, w_height); // Memory Create 
-		SelectObject(clientDC, BackBitmap); // MemDC Memory Area Specify 
-	}	
-	~Swap()
-	{
-		//MemoryDC Delete
-		DeleteObject(BackBitmap);
-		DeleteDC(memDC); 
-		ReleaseDC(hWnd, clientDC); 
-	}
+    void SwapBuffers();
+    void ResetNeedSwap();
 
-	void SwapBuffers(HWND _hWnd)
-	{
-		// Swaping Buffer 		
-		if (isSwaping.load()) return; // Swaping Check 
-
-		{
-		    // Swap Second : Mutex Lock
-			std::lock_guard<std::mutex> lk(_mtx); // Only one thread can access the resource at a time 
-			std::swap(memDC, clientDC); // BackBuffer and FrontBuffer Swap
-
-		}
-
-		needSwap = true; 
-		_cv.notify_one();
-	}
-
-	void ResetneedSwap()
-	{
-		if (needSwap == false) return; // Swaping Checka == false)
-
-		if (needSwap == true)
-		{
-			needSwap.store(false); // Reset Swap Flag
-		}
-	}
+    bool IsSwapping() const { return isSwapping.load(); }
+    bool NeedSwap() const { return needSwap.load(); }
 };
