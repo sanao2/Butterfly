@@ -1,14 +1,16 @@
 #include "UIManager.h"
 
-UIManager::UIManager() : ObjPos{ 0,0 }, ObjSize{ 0,0 } {}
+
+UIManager::UIManager(HWND hwnd, HDC _dc) : hWnd(hwnd), drawDC(_dc), 
+									 ObjPos{ 0,0 }, ObjSize{ 0,0 }
+{
+}
 
 UIManager::~UIManager() {}
 
-void UIManager::CreateObj(HWND hWnd, HDC drawDC, RECT rc)
+void UIManager::CreateObj()
 {
-	// Create Object Position 
-	ObjPos = { (rc.right - rc.left) / 2 , (rc.bottom - rc.top) / 2 };
-	ObjSize = { rc.right - rc.left , rc.bottom - rc.top }; 
+
 
 
 }

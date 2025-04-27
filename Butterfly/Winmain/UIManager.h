@@ -9,21 +9,23 @@ using std::wstring;
 class UIManager
 {
 private:
+	HWND hWnd; 
+	HDC drawDC; 
 	POINT ObjPos;  // °´Ã¼ À§Ä¡ 
 	POINT ObjSize; // °´Ã¼ Å©±â 
 
 public:
-	UIManager();
+	UIManager(HWND hWnd, HDC _dc);
 	~UIManager();
 
-	void SetObjPos(int x, int y) { ObjPos.x = x; ObjPos.y = y; }
+	void SetObjPos(RECT rc) { ObjPos.x = (rc.right - rc.left); ObjPos.y = (rc.bottom - rc.top); }
 	void SetObjSize(int x, int y) { ObjSize.x = x; ObjSize.y = y; }
 
-	void CreateObj(HWND hWnd, HDC drawDC, RECT rc); // Object Create 
+	void CreateObj(); // Object Create 
 	void DrawObj(HDC drawDC); // Object Draw 
 
 	void Update();
-	void Render();
+	void Render(HDC drawDC);
 
 
 };
