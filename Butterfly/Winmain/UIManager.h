@@ -18,8 +18,8 @@ public:
 	UIManager(HWND hwnd);
 	~UIManager();
 
-	void SetObjPos(RECT rc) { ObjPos.x = (rc.right - rc.left); ObjPos.y = (rc.bottom - rc.top); }
-	void SetObjSize(int x, int y) { ObjSize.x = x; ObjSize.y = y; }
+	void SetObjPos(int x, int y) { ObjPos = { x,y }; }
+	void SetObjSize(int w, int h) { ObjSize = { w,h }; }
 
 	void Update();
 	void Render(HDC drawDC);
