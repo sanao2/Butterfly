@@ -13,7 +13,7 @@ void UIManager::Update()
 
 void UIManager::Render(HDC drawDC)
 {
-	PatBlt(drawDC, 0, 0, clientsize.x, clientsize.y, WHITENESS);
+	
 	Rectangle(drawDC,
 		ObjPos.x,
 		ObjPos.y,

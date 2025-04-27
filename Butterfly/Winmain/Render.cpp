@@ -15,6 +15,7 @@ Render::~Render()
 void Render::Update()
 {
     swap->SwapBuffers();    // 백버퍼 -> 프론트버퍼 복사
+
 }
 
 void Render::RenderScene()
@@ -26,12 +27,12 @@ void Render::RenderScene()
     // 그리기 예제
    PatBlt(memDC, 0, 0, clientSize.x, clientSize.y, WHITENESS);
    /*  Rectangle(memDC, 50, 50, 200, 200);*/
-    UI->SetObjPos(clientSize.x / 2, clientSize.y / 2);
-    UI->SetObjSize(10, 40); 
-	UI->Render(memDC); // UIManager의 Render 메소드 호출  
+
+   UI->Render(memDC); // UIManager의 Render 메소드 호출
 
     // 스왑 메모리 DC에 복사 (swap 내부 메모리 DC를 가져오는 메소드 필요)
    // BitBlt(GetDC(hWnd), 0, 0, clientSize.x, clientSize.y, memDC, 0, 0, SRCCOPY);
+   swap->SwapBuffers(); 
 
     DeleteObject(tempBitmap);
     DeleteDC(memDC);
