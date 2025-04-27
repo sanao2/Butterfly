@@ -24,20 +24,20 @@ namespace Move
 
 	void MoveManager::ApplyMovement(MoveDirection dir)
 	{
-		const int moveSpeed = 1.0f;
+		const float moveSpeed = 1.0f;
 		const int rcWidth = rect.right - rect.left;
 		const int rcHeight = rect.bottom - rect.top;
-
+		
 		std::cout << "[DEBUG] rect (L:" << rect.left << ", T:" << rect.top << ", R:" << rect.right << ", B:" << rect.bottom << "]" << std::endl;
 		std::cout << "[DEBUG] rcWidth: " << rcWidth << " rcHeight: " << rcHeight << "\n";
 		std::cout << "[DEBUG] movePos (X:" << movePos.x << ", Y:" << movePos.y << ")\n";
 
 		switch(dir)
 		{
-			case MoveDirection::Left:  movePos.x -= moveSpeed; isMoving = true; break;
-			case MoveDirection::Right: movePos.x += moveSpeed; isMoving = true; break;
-			case MoveDirection::Up:    movePos.y -= moveSpeed; isMoving = true; break;
-			case MoveDirection::Down:  movePos.y += moveSpeed; isMoving = true; break;
+			case MoveDirection::Left:  Sleep(10); movePos.x -= moveSpeed; isMoving = true; break;
+			case MoveDirection::Right: Sleep(10); movePos.x += moveSpeed; isMoving = true; break;
+			case MoveDirection::Up:    Sleep(10); movePos.y -= moveSpeed; isMoving = true; break;
+			case MoveDirection::Down:  Sleep(10); movePos.y += moveSpeed; isMoving = true; break;
 			default: break;
 		}
 
