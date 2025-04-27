@@ -111,8 +111,11 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
     ShowWindow(hwnd, nCmdShow);
     UpdateWindow(hwnd);
 
-    auto& key = InputManager<KeyboardDevice>::GetInstance();
     render = new Render(g_hWnd, g_width, g_height);  // Global Render 객체 생성
+  
+
+    auto& key = InputManager<KeyboardDevice>::GetInstance();    
+
     std::unique_ptr<Move::MoveManager> move = std::make_unique<Move::MoveManager>(key, rect);
 
     MSG msg;
@@ -130,6 +133,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
         boxDraw();
         move->MoveUpdate();
         render->Update();
+		
     }
 
     UninitConsole();

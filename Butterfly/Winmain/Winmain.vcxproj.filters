@@ -28,6 +28,12 @@
     <Filter Include="소스 파일\Move">
       <UniqueIdentifier>{dcdadb72-25a5-477d-bbb7-0fa3914768f2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\UI">
+      <UniqueIdentifier>{49e62b00-6d80-4adf-af24-138b8b2bc904}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\UI">
+      <UniqueIdentifier>{92a7c4b5-a677-4b26-acdf-07dcc5156126}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -40,9 +46,6 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Winmain.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="UI\Timer.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Event\InputManager.h">
@@ -78,15 +81,15 @@
     <ClInclude Include="Move\PlayerMoveController.h">
       <Filter>소스 파일\Move</Filter>
     </ClInclude>
+    <ClInclude Include="UI\Timer.h">
+      <Filter>헤더 파일\UI</Filter>
+    </ClInclude>
     <ClInclude Include="UIManager.h">
-      <Filter>헤더 파일</Filter>
+      <Filter>헤더 파일\UI</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Winmain.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="UI\Timer.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Event\KeyboardInputManager.cpp">
@@ -104,8 +107,11 @@
     <ClCompile Include="Global.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="UI\Timer.cpp">
+      <Filter>소스 파일\UI</Filter>
+    </ClCompile>
     <ClCompile Include="UIManager.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>소스 파일\UI</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
