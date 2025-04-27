@@ -4,13 +4,18 @@
 void Render::Update(HWND _hwnd)
 {
 	GetBufferSize(_hwnd); // Get Buffer Size 
-	// Swap Buffers 
-	swap->SwapBuffers(_hwnd); // Swap Buffers 
+	
+	if (swap->GetisSwaping() == false) // Swaping Check
+	{
+		swap->SwapBuffers(_hwnd); // Swap Buffers 
+	}
 }
 
 void Render::render(HDC backDC, HWND _hWnd) // Back Buffer Swap and Render.
 {
 	PatBlt(backDC, 0, 0, clientsize.x, clientsize.y, WHITENESS); // Back Buffer Swap and Render 
+
+	swap->SetisSwaping(true); // memDC -> clientDC Swap setting
 
 	BitBlt(clientDC, 0, 0, clientsize.x, clientsize.y, memDC, 0, 0, SRCCOPY); // Back Buffer Swap and Render 
 }
@@ -18,13 +23,13 @@ void Render::render(HDC backDC, HWND _hWnd) // Back Buffer Swap and Render.
 POINT Render::GetBufferSize(HWND _hwnd)
 {
 	RECT Buffersize;
-	GetClientRect(_hwnd, &Buffersize);					// Get Client Area Size
+	GetClientRect(_hwnd, &Buffersize);							// Get Client Area Size
 
 	// Get Client Area Size
-	int clientwidth = Buffersize.right - Buffersize.left;   // Get Client Width 
-	int clientheight = Buffersize.bottom - Buffersize.top;  // Get Client Height 
+	int clientwidth = Buffersize.right - Buffersize.left;		// Get Client Width 
+	int clientheight = Buffersize.bottom - Buffersize.top;		// Get Client Height 
 	
-	clientsize = { clientwidth, clientheight };		    // Get Client Size 
+	clientsize = { clientwidth, clientheight };					// Get Client Size 
 
 	return clientsize; 
 }
@@ -37,6 +42,7 @@ Render::Render(HWND hwnd, int w_width, int w_height) : hWnd(hwnd)
 	g_Bitmap = CreateCompatibleBitmap(clientDC, w_width, w_height); // Create Memory Area
 	SelectObject(memDC, g_Bitmap);									// Specify MemDC Memory Area 
 	clientsize = { 0,0 };											// Buffer Size Saved POINT Init
+
 	swap = new Swap(hwnd, w_width, w_height);
 }
 
