@@ -49,7 +49,7 @@ public:
 		if (isSwaping.load()) return; // Swaping Check 
 
 		{
-		  // Swap Second : Mutex Lock 
+		    // Swap Second : Mutex Lock
 			std::lock_guard<std::mutex> lk(_mtx); // Only one thread can access the resource at a time 
 			std::swap(memDC, clientDC); // BackBuffer and FrontBuffer Swap
 

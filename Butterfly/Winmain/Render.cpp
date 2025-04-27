@@ -7,12 +7,12 @@ void Render::Update(HWND _hwnd)
 	
 }
 
-void Render::render(HDC backDC) // Back Buffer Swap and Render.
+void Render::render(HDC backDC, HWND _hWnd) // Back Buffer Swap and Render.
 {
 	PatBlt(backDC, 0, 0, clientsize.x, clientsize.y, WHITENESS); // Back Buffer Swap and Render 
 
 	// Swap Buffers 
-	swap->SwapBuffers(hWnd, clientsize.x, clientsize.y); // Swap Buffers 
+	swap->SwapBuffers(_hWnd); // Swap Buffers 
 
 	BitBlt(clientDC, 0, 0, clientsize.x, clientsize.y, memDC, 0, 0, SRCCOPY); // Back Buffer Swap and Render 
 }
