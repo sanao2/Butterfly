@@ -117,6 +117,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
     UpdateWindow(hwnd);
 
     auto& key = InputManager<KeyboardDevice>::GetInstance(); // Get KeyboardManaager Instance 
+    render = new Render(g_hWnd, g_width, g_height);          // Render Create and Initialize 
 
     // MoveManager 객체를 동적으로 할당
     std::unique_ptr<Move::MoveManager> move = std::make_unique<Move::MoveManager>(key, rect);
@@ -135,6 +136,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 
         boxDraw();    // 사각형 그리기
         move->MoveUpdate(); // 이동 처리
+		render->Update(g_hWnd); // Render Update 
+
     }
 
     UninitConsole();  // 콘솔 출력 해제

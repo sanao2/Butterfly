@@ -24,7 +24,7 @@ namespace Move
 
 	void MoveManager::ApplyMovement(MoveDirection dir)
 	{
-		const int moveSpeed = 1;
+		const int moveSpeed = 1.0f;
 		const int rcWidth = rect.right - rect.left;
 		const int rcHeight = rect.bottom - rect.top;
 

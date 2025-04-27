@@ -13,6 +13,7 @@ void Render::Update(HWND _hwnd)
 	{
 		swap->ResetneedSwap(); // Reset Swaping Check
 	}
+
 }
 
 void Render::render(HDC backDC, HWND _hWnd) // Back Buffer Swap and Render.
