@@ -1,6 +1,6 @@
-ï»¿//{{NO_DEPENDENCIES}}
-// Microsoft Visual C++ì—ì„œ ìƒì„±í•œ í¬í•¨ íŒŒì¼ì…ë‹ˆë‹¤.
-// Winmain.rcì—ì„œ ì‚¬ìš©ë˜ê³  ìˆìŠµë‹ˆë‹¤.
+//{{NO_DEPENDENCIES}}
+// Microsoft Visual C++¿¡¼­ »ı¼ºÇÑ Æ÷ÇÔ ÆÄÀÏÀÔ´Ï´Ù.
+// Winmain.rc¿¡¼­ »ç¿ëµÇ°í ÀÖ½À´Ï´Ù.
 //
 #define IDC_MYICON                      2
 #define IDD_WINMAIN_DIALOG              102
@@ -12,6 +12,10 @@
 #define IDI_SMALL                       108
 #define IDC_WINMAIN                     109
 #define IDR_MAINFRAME                   128
+#define IDR_TEST1                       129
+#define IDB_PNG1                        130
+#define IDB_PNG2                        131
+#define ID8_Shop                        131
 #define ID_32771                        32771
 #define ID_Menu                         32772
 #define IDC_STATIC                      -1
@@ -21,7 +25,7 @@
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_NO_MFC                     1
-#define _APS_NEXT_RESOURCE_VALUE        129
+#define _APS_NEXT_RESOURCE_VALUE        132
 #define _APS_NEXT_COMMAND_VALUE         32773
 #define _APS_NEXT_CONTROL_VALUE         1000
 #define _APS_NEXT_SYMED_VALUE           110

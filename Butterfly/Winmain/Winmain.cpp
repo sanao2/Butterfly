@@ -4,7 +4,7 @@
 #pragma comment(lib, "Msimg32.lib")	
 
 // 타이틀, 클래스명, 사이즈
-LPCTSTR g_title = TEXT("누구세영?");
+LPCTSTR g_title = TEXT("");
 LPCTSTR g_szClassName = TEXT("윈도우 클래스 이름");
 
 int g_width = 1024;

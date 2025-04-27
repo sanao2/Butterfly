@@ -132,10 +132,21 @@
     <Image Include="Winmain.ico">
       <Filter>리소스 파일</Filter>
     </Image>
+    <Image Include="C:\Users\user\Desktop\리소스\Shop.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="C:\Users\user\Desktop\리소스\shop_8bit.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <Text Include="메모.txt">
       <Filter>소스 파일</Filter>
     </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="test1.bin">
+      <Filter>리소스 파일</Filter>
+    </None>
   </ItemGroup>
 </Project>
