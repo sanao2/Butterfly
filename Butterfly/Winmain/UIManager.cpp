@@ -7,6 +7,7 @@ UIManager::~UIManager() {}
 void UIManager::CreateObj(HWND hWnd, HDC drawDC, RECT rc)
 {
 	// Create Object Position 
+	ObjPos = { (rc.right - rc.left) / 2 , (rc.bottom - rc.top) / 2 };
 
 }
 
