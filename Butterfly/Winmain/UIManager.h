@@ -1,6 +1,5 @@
 #pragma once
 #include <Windows.h> 
-#include <stdio.h>
 #include <string>
 using std::string;
 using std::wstring;
@@ -10,7 +9,6 @@ class UIManager
 {
 private:
 	HWND hWnd;
-	HDC memDC; 
 	POINT ObjPos;  // °´Ã¼ À§Ä¡ 
 	POINT ObjSize; // °´Ã¼ Å©±â 
 

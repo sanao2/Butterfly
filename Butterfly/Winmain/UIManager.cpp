@@ -1,10 +1,6 @@
 #include "UIManager.h"
 
-
-UIManager::UIManager(HWND hwnd) : hWnd(hwnd), ObjPos{ 0,0 }, ObjSize{ 0,0 }
-{
-	memDC = CreateCompatibleDC(NULL);
-}
+UIManager::UIManager(HWND hwnd) : hWnd(hwnd), ObjPos{ 0,0 }, ObjSize{ 0,0 } {}
 
 UIManager::~UIManager() {}
 
