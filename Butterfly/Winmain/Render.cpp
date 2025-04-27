@@ -4,7 +4,7 @@ Render::Render(HWND hwnd, int width, int height)
     : hWnd(hwnd), clientSize{ width, height }
 {
     swap = new Swap(hwnd, width, height);
-	UI = new UIManager(hwnd); // UIManager 按眉 积己 
+	UI = new UIManager(hwnd, width, height); // UIManager 按眉 积己 
 }
 
 Render::~Render()
@@ -26,7 +26,7 @@ void Render::RenderScene()
     // 弊府扁 抗力
    PatBlt(memDC, 0, 0, clientSize.x, clientSize.y, WHITENESS);
    /*  Rectangle(memDC, 50, 50, 200, 200);*/
-    UI->SetObjPos(2, 2); 
+    UI->SetObjPos(clientSize.x / 2, clientSize.y / 2);
     UI->SetObjSize(10, 40); 
 	UI->Render(memDC); // UIManager狼 Render 皋家靛 龋免  
 
