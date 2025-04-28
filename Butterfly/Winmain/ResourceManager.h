@@ -53,8 +53,9 @@ private :
 	HWND		hWnd = NULL;
 	HDC			clientDC = NULL; 
 	HDC			memDC = NULL;			// BackBuffer
+	HBITMAP		memBitmap = NULL; 
 
-	array<vector<SpriteInfo>, SpriteState::SPRITECOUNT> frame; // All Resource Save in array
+	array<Gdiplus::Bitmap*, SpriteState::SPRITECOUNT> Sprites; // All Resource Save in array
 
 	POINT	clientSize = { 0,0 }; 
 	POINT	SpriteSize = { 0,0 };		// Bitmap size 

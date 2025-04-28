@@ -25,3 +25,18 @@ void ResourceManager::Initialize()
 {
 
 }
+
+void ResourceManager::LoadImages(SpriteState SprState)
+{
+	for (int i = 0; i < SPRITECOUNT; ++i)
+	{
+		auto& path = GetResourcePath(SprState);
+
+		if (!path.empty())
+		{
+			Sprites[i] = new Gdiplus::Bitmap(path.c_str()); 
+
+			if (Sprite[i])
+		}
+	}
+}
