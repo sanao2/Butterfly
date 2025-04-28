@@ -78,7 +78,7 @@ public :
 	void Update(); 
 	void Render(HDC drawDC,int x, int y,  int width, int height); 
 
-	void LoadImages(); 
+	void LoadImages(HINSTANCE hInst);
 
 	void SetSpritePos(int x, int y) { SpritePos = { x,y }; }
 	POINT GetSpritePos() { return SpritePos; }

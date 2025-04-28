@@ -43,11 +43,11 @@ void ResourceManager::Render(HDC drawDC, int x, int y, int width, int height)
 	backDCgraphics->DrawImage(Image, Gdiplus::Rect(SpritePos.x, SpritePos.y, SpriteSize.x, SpriteSize.y));
 }
 
-void ResourceManager::LoadImages()
+void ResourceManager::LoadImages(HINSTANCE hInst)
 {
 	for (int i = 0; i < SPRITECOUNT; ++i)
 	{
-		auto& path = GetResourcePath(static_cast<SpriteState>(i));
+		auto& path = new Gdiplus::Bitmap(hInst, MAKEINTRESOURCE(ID8_Shop)); // IDB_BITMAP1 부터 시작
 
 		if (path.empty()) return; 		
 
