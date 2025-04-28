@@ -155,7 +155,6 @@
     <ClCompile Include="Global.cpp" />
     <ClCompile Include="Move\MoveManagers.cpp" />
     <ClCompile Include="Render.cpp" />
-    <ClCompile Include="Resource.cpp" />
     <ClCompile Include="ResourceManager.cpp" />
     <ClCompile Include="Swap.cpp" />
     <ClCompile Include="UI\Map\Map.cpp" />
@@ -169,6 +168,7 @@
     <Image Include="bitmap1.bmp" />
     <Image Include="C:\Users\user\Desktop\리소스\Shop.png" />
     <Image Include="C:\Users\user\Desktop\리소스\shop_8bit.png" />
+    <Image Include="Resource\player_IDLE.png" />
     <Image Include="Resource\shop_8bits.png" />
     <Image Include="small.ico" />
     <Image Include="Winmain.ico" />

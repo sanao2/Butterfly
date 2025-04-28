@@ -8,10 +8,11 @@ using namespace std;
 class ResourceManager
 {
 private : 
-	HWND	hWnd = NULL;
-	HDC		frontDC = NULL;			// FrontBuffer
-	HDC		backDC = NULL;			// BackBuffer
-	
+	HWND		hWnd = NULL;
+	HDC			frontDC = NULL;			// FrontBuffer
+	HDC			backDC = NULL;			// BackBuffer
+
+
 	POINT	BitmapSize = { 0,0 };   // Bitmap size 
 	POINT   BitmapPos = { 0,0 };    // Bitmap Position 
 
@@ -21,7 +22,7 @@ private :
 	Gdiplus::GdiplusStartupInput gsi = NULL; 
 
 public : 
-	ResourceManager(HWND _hWnd, int width, int height); 
+	ResourceManager(HWND _hWnd, int width, int height);
 	~ResourceManager(); 
 
 	void Initialize(); 
