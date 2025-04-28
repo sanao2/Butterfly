@@ -42,7 +42,16 @@ void ResourceManager::Render(HDC drawDC, int x, int y, int width, int height)
 
 	auto& Image = Sprites[currSprState];
 
-	backDCgraphics->DrawImage(Image, Gdiplus::Rect(SpritePos.x, SpritePos.y, SpriteSize.x, SpriteSize.y));
+	if (Image)
+	{
+		backDCgraphics->DrawImage(Image, 
+			Gdiplus::Rect(SpritePos.x, SpritePos.y, 
+						  SpriteSize.x, SpriteSize.y));
+	}
+
+	BitBlt(drawDC, x, y, clientSize.x, clientSize.y, memDC, 0, 0, SRCCOPY);
+
+	
 }
 
 void ResourceManager::LoadImages(HINSTANCE hInst)
@@ -55,6 +64,11 @@ void ResourceManager::LoadImages(HINSTANCE hInst)
 		if (ImgBitmap->GetLastStatus() == Gdiplus::Ok)
 		{
 			Sprites[i] = ImgBitmap; 
+			SetSpriteSize(ImgBitmap); 
+		}
+		else
+		{
+			Sprites[i] = nullptr;
 		}
 
 	}
