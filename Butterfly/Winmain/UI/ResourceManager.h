@@ -15,7 +15,6 @@ using::unordered_map;
 
 extern HINSTANCE* hInst;
 extern SpriteState currSprState;
-const wstring RESOURCE_DIR = L"..\\Resources\\";
 
 enum SpriteState {
 	PLAYER_IDLE, 
