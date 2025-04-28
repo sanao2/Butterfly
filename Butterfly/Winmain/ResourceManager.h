@@ -11,14 +11,16 @@ private :
 	HWND	hWnd = NULL;
 	HDC		frontDC = NULL;	// FrontBuffer
 	HDC		backDC = NULL;		// BackBuffer
-	Gdiplus::Graphics* backDCgraphics = nullptr; 
-	ULONG_PTR GdiplusToken = NULL;
-
+	
 	POINT	BitmapSize = { 0,0 }; // Bitmap size 
 	POINT   BitmapPos = { 0,0 };  // Bitmap Position 
 
+	Gdiplus::Graphics* backDCgraphics = nullptr;
+	ULONG_PTR GdiplusToken = NULL;
+	Gdiplus::GdiplusStartupInput gsi = NULL; 
+
 public : 
-	ResourceManager(); 
+	ResourceManager(HWND _hWnd, int width, int height); 
 	~ResourceManager(); 
 
 	void Initialize(); 
