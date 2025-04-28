@@ -13,7 +13,7 @@ using std::wstring;
 #include "../resource.h"
 using::unordered_map;
 
-extern HINSTANCE* hInst;
+extern HINSTANCE hInst;
 
 enum SpriteState {
 	PLAYER_IDLE, 
@@ -63,12 +63,14 @@ public :
 	ResourceManager(HWND _hWnd, int width, int height);
 	~ResourceManager(); 
 	
+	void Initialize(); 
 	void Update();
 	void Render(HDC drawDC,int x, int y, int width, int height); 
 
 	void LoadImages(HINSTANCE hInst);
-	void ChangeSpriteState(SpriteState newState);
+	void SpriteSetMap(int x, int y); 
 
+	void SetSpriteState(SpriteState newState);
 	void SetSpritePos(int x, int y) { SpritePos = { x,y }; }
 	POINT GetSpritePos() { return SpritePos; }
 	void SetSpriteSize(Gdiplus::Bitmap* Image);

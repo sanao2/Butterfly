@@ -29,8 +29,17 @@ ResourceManager::~ResourceManager()
 	Gdiplus::GdiplusShutdown(GdiplusToken);
 }
 
+void ResourceManager::Initialize()
+{
+	if (currSprState > 0 || currSprState <= SPRITECOUNT) return;
+	
+	LoadImages(hInst);  // Load Images 
+
+}
+
 void ResourceManager::Update()
 {
+	
 	
 }
 
@@ -67,6 +76,15 @@ void ResourceManager::LoadImages(HINSTANCE hInst)
 			Sprites[i] = nullptr;
 		}
 	}	
+}
+
+void ResourceManager::SpriteSetMap(int x, int y)
+{
+	if (currSprState)
+	{
+		SetSpritePos(x, y); // Set Sprite Position 
+	}
+
 }
 
 void ResourceManager::SetSpriteState(SpriteState newState)
