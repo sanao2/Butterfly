@@ -15,6 +15,7 @@ private :
 	POINT	BitmapSize = { 0,0 }; // Bitmap size 
 	POINT   BitmapPos = { 0,0 };  // Bitmap Position 
 
+	Gdiplus::Bitmap* ImgBitmap = nullptr; 
 	Gdiplus::Graphics* backDCgraphics = nullptr;
 	ULONG_PTR GdiplusToken = NULL;
 	Gdiplus::GdiplusStartupInput gsi = NULL; 
