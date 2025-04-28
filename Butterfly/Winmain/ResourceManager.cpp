@@ -18,5 +18,6 @@ ResourceManager::~ResourceManager()
 
 void ResourceManager::Initialize()
 {
+
 }
 
