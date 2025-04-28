@@ -66,7 +66,6 @@ public :
 	ResourceManager(HWND _hWnd, int width, int height);
 	~ResourceManager(); 
 
-	void Initialize(); 
 	void Update(); 
 	void Render(HDC drawDC,int x, int y,  int width, int height); 
 

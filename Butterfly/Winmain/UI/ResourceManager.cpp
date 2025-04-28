@@ -19,17 +19,14 @@ ResourceManager::ResourceManager(HWND _hWnd, int width, int height) : hWnd(_hWnd
 
 ResourceManager::~ResourceManager()
 {
-	DeleteDC(memDC); 
-	DeleteObject(memBitmap); 
+	for (auto bmp : Sprites) delete bmp;
 	delete backDCgraphics;
-	delete ImgBitmap;	
+
+	DeleteObject(memBitmap);
+	DeleteDC(memDC);
+
 	ReleaseDC(hWnd, clientDC);
 	Gdiplus::GdiplusShutdown(GdiplusToken);
-}
-
-void ResourceManager::Initialize()
-{
-
 }
 
 void ResourceManager::Update()
@@ -38,7 +35,7 @@ void ResourceManager::Update()
 
 void ResourceManager::Render(HDC drawDC, int x, int y, int width, int height)
 {
-	PatBlt(drawDC, x, y, clientSize.x, clientSize.y, WHITENESS); 
+	backDCgraphics->Clear(WHITENESS);
 
 	auto& Image = Sprites[currSprState];
 
@@ -49,8 +46,7 @@ void ResourceManager::Render(HDC drawDC, int x, int y, int width, int height)
 						  SpriteSize.x, SpriteSize.y));
 	}
 
-	BitBlt(drawDC, x, y, clientSize.x, clientSize.y, memDC, 0, 0, SRCCOPY);
-
+	BitBlt(drawDC, x, y, width, height, memDC, 0, 0, SRCCOPY); // 원하는 위치에 원하는 길이로 그린다. 
 	
 }
 
@@ -58,8 +54,9 @@ void ResourceManager::LoadImages(HINSTANCE hInst)
 {
 	for (int i = 0; i < SPRITECOUNT; ++i)
 	{
-		auto SpriteID = GetResourcePath(currSprState);
-		ImgBitmap = new Gdiplus::Bitmap(hInst, MAKEINTRESOURCE(SpriteID));
+		auto SprID = static_cast<SpriteState>(i);
+		int resId = GetResourceID(SprID);
+		ImgBitmap = new Gdiplus::Bitmap(hInst, MAKEINTRESOURCE(resId));
 
 		if (ImgBitmap->GetLastStatus() == Gdiplus::Ok)
 		{
@@ -70,10 +67,7 @@ void ResourceManager::LoadImages(HINSTANCE hInst)
 		{
 			Sprites[i] = nullptr;
 		}
-
-	}
-
-	
+	}	
 }
 
 void ResourceManager::SetSpriteSize(Gdiplus::Bitmap* Image) {

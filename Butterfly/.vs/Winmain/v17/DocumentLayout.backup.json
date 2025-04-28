@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "D:\\BF\\Butterfly\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|D:\\BF\\Butterfly\\Winmain\\UI\\ResourceManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|solutionrelative:Winmain\\UI\\ResourceManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|D:\\BF\\Butterfly\\Winmain\\UI\\ResourceManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|solutionrelative:Winmain\\UI\\ResourceManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|D:\\BF\\Butterfly\\Winmain\\UI\\ResourceManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|solutionrelative:Winmain\\UI\\ResourceManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|D:\\BF\\Butterfly\\Winmain\\Render.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -62,13 +62,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "ResourceManager.h",
               "DocumentMoniker": "D:\\BF\\Butterfly\\Winmain\\UI\\ResourceManager.h",
               "RelativeDocumentMoniker": "Winmain\\UI\\ResourceManager.h",
               "ToolTip": "D:\\BF\\Butterfly\\Winmain\\UI\\ResourceManager.h",
               "RelativeToolTip": "Winmain\\UI\\ResourceManager.h",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAIwA8AAAAYAAAAAAAAAA==",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAIwCMAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-04-28T10:42:38.852Z",
               "EditorCaption": ""
@@ -154,13 +154,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "ResourceManager.cpp",
               "DocumentMoniker": "D:\\BF\\Butterfly\\Winmain\\UI\\ResourceManager.cpp",
               "RelativeDocumentMoniker": "Winmain\\UI\\ResourceManager.cpp",
-              "ToolTip": "D:\\BF\\Butterfly\\Winmain\\UI\\ResourceManager.cpp",
-              "RelativeToolTip": "Winmain\\UI\\ResourceManager.cpp",
-              "ViewState": "AgIAAAcAAAAAAAAAAADgvzAAAAABAAAAAAAAAA==",
+              "ToolTip": "D:\\BF\\Butterfly\\Winmain\\UI\\ResourceManager.cpp*",
+              "RelativeToolTip": "Winmain\\UI\\ResourceManager.cpp*",
+              "ViewState": "AgIAACIAAAAAAAAAAAAIwDQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-04-28T10:42:35.867Z",
               "EditorCaption": ""
