@@ -26,21 +26,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 217,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ResourceManager.h",
-              "DocumentMoniker": "D:\\backup\\BF\\Butterfly\\Winmain\\ResourceManager.h",
-              "RelativeDocumentMoniker": "Winmain\\ResourceManager.h",
-              "ToolTip": "D:\\backup\\BF\\Butterfly\\Winmain\\ResourceManager.h",
-              "RelativeToolTip": "Winmain\\ResourceManager.h",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABEAAAAGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-28T05:35:27.106Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
@@ -59,6 +46,19 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ResourceManager.h",
+              "DocumentMoniker": "D:\\backup\\BF\\Butterfly\\Winmain\\ResourceManager.h",
+              "RelativeDocumentMoniker": "Winmain\\ResourceManager.h",
+              "ToolTip": "D:\\backup\\BF\\Butterfly\\Winmain\\ResourceManager.h",
+              "RelativeToolTip": "Winmain\\ResourceManager.h",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAACYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-04-28T05:35:27.106Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 2,
               "Title": "Winmain.cpp",
               "DocumentMoniker": "D:\\backup\\BF\\Butterfly\\Winmain\\Winmain.cpp",
@@ -67,8 +67,7 @@
               "RelativeToolTip": "Winmain\\Winmain.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAADwvxIAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-28T05:33:23.228Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-28T05:33:23.228Z"
             },
             {
               "$type": "Document",
@@ -80,8 +79,7 @@
               "RelativeToolTip": "Winmain\\Winmain.h",
               "ViewState": "AgIAAAAAAAAAAAAAAADwvwYAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-28T05:33:19.276Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-28T05:33:19.276Z"
             }
           ]
         },
@@ -95,9 +93,9 @@
               "Title": "ResourceManager.cpp",
               "DocumentMoniker": "D:\\backup\\BF\\Butterfly\\Winmain\\ResourceManager.cpp",
               "RelativeDocumentMoniker": "Winmain\\ResourceManager.cpp",
-              "ToolTip": "D:\\backup\\BF\\Butterfly\\Winmain\\ResourceManager.cpp",
-              "RelativeToolTip": "Winmain\\ResourceManager.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
+              "ToolTip": "D:\\backup\\BF\\Butterfly\\Winmain\\ResourceManager.cpp*",
+              "RelativeToolTip": "Winmain\\ResourceManager.cpp*",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAcwBsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-04-28T05:33:56.202Z",
               "EditorCaption": ""

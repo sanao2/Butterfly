@@ -2,13 +2,15 @@
 
 
 
-ResourceManager::ResourceManager(HWND _hWnd,int width, int height) : hWnd(_hWnd)
+ResourceManager::ResourceManager(HWND _hWnd, int width, int height) : hWnd(_hWnd)
 {
 	clientDC = GetDC(hWnd);
-	memDC = CreateCompatibleDC(clientDC); 
+	memDC = CreateCompatibleDC(clientDC);
 
 	Gdiplus::GdiplusStartup(&GdiplusToken, &gsi, nullptr);
 	backDCgraphics = Gdiplus::Graphics::FromHDC(memDC);
+
+	clientSize = { width, height };
 }
 
 ResourceManager::~ResourceManager()
@@ -23,4 +25,3 @@ void ResourceManager::Initialize()
 {
 
 }
-

@@ -56,8 +56,9 @@ private :
 
 	array<vector<SpriteInfo>, SpriteState::SPRITECOUNT> frame; // All Resource Save in array
 
-	POINT	BitmapSize = { 0,0 };		// Bitmap size 
-	POINT   BitmapPos = { 0,0 };		// Bitmap Position 
+	POINT	clientSize = { 0,0 }; 
+	POINT	SpriteSize = { 0,0 };		// Bitmap size 
+	POINT   SpritePos = { 0,0 };		// Bitmap Position 
 
 	Gdiplus::Bitmap* ImgBitmap = nullptr; 
 	Gdiplus::Graphics* backDCgraphics = nullptr;
@@ -72,6 +73,11 @@ public :
 	void Update(); 
 	void Render(); 
 
+	void LoadImages(SpriteState SprState); 
 
+	void SetSpritePos(int x, int y) { SpritePos = { x,y }; }
+	POINT GetSpritePos() { return SpritePos; }
+	void SetSpriteSize(int width, int height) { SpriteSize = { width, height }; }
+	POINT GetSpriteSize() { return SpriteSize; }
 };
 
