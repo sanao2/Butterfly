@@ -68,8 +68,7 @@ void ResourceManager::LoadImages(HINSTANCE hInst)
 
 		if (ImgBitmap->GetLastStatus() == Gdiplus::Ok)
 		{
-			Sprites[i] = ImgBitmap; 
-			SetSpriteSize(ImgBitmap); 
+			Sprites[i] = ImgBitmap;
 		}
 		else
 		{
@@ -78,11 +77,12 @@ void ResourceManager::LoadImages(HINSTANCE hInst)
 	}	
 }
 
-void ResourceManager::SpriteSetMap(int x, int y)
+void ResourceManager::SetSpriteRect(int x, int y, Gdiplus::Bitmap* Image)
 {
 	if (currSprState)
 	{
-		SetSpritePos(x, y); // Set Sprite Position 
+		SetSpritePos(x, y);		// Set Sprite Position 
+		SetSpriteSize(Image);   // Set Sprite Size
 	}
 
 }

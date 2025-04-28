@@ -68,7 +68,7 @@ public :
 	void Render(HDC drawDC,int x, int y, int width, int height); 
 
 	void LoadImages(HINSTANCE hInst);
-	void SpriteSetMap(int x, int y); 
+	void SetSpriteRect(int x, int y, Gdiplus::Bitmap* Image);
 
 	void SetSpriteState(SpriteState newState);
 	void SetSpritePos(int x, int y) { SpritePos = { x,y }; }
