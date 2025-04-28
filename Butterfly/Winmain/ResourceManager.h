@@ -12,9 +12,9 @@ using::unordered_map;
 
 enum SpriteState {
 	IDLE, 
-	PICKAX_USE,
-	HOE,			// ±ªÀÌ 
-	WATERINGCAN
+	SHOP,
+	FLOOR_TILE, 
+	POND		 // ¿¬¸ø 
 };
 
 struct SpriteInfo {
@@ -22,7 +22,9 @@ struct SpriteInfo {
 };
 
 const unordered_map<SpriteState, SpriteInfo> resourceMap = {
-	{IDLE, {L"player_IDLE.png"}}
+	{IDLE, {L"player_IDLE.png"}}, 
+	{SHOP, {L"shop_8bits.png"}},
+	{FLOOR_TILE, {L"floorTile_1.png"}},	
 };
 
 class ResourceManager
