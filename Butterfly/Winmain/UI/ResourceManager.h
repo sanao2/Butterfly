@@ -14,7 +14,7 @@ using std::wstring;
 using::unordered_map;
 
 extern HINSTANCE* hInst;
-
+extern SpriteState currSprState;
 const wstring RESOURCE_DIR = L"..\\Resources\\";
 
 enum SpriteState {
@@ -26,7 +26,7 @@ enum SpriteState {
 	SPRITECOUNT 
 };
 
-inline int GetResourcePath(SpriteState SprState)
+inline int GetResourceID(SpriteState SprState)
 {
 	static int pathes[] = {
 		IDB_PLAYER_IDLE,
@@ -50,7 +50,7 @@ private :
 	HDC			memDC = NULL;			// BackBuffer
 	HBITMAP		memBitmap = NULL; 
 
-	SpriteState currSprState;
+
 	array<Gdiplus::Bitmap*, SpriteState::SPRITECOUNT> Sprites; // All Resource Save in array
 
 	POINT	clientSize = { 0,0 }; 

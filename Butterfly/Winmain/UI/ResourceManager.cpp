@@ -1,6 +1,7 @@
 #include "ResourceManager.h"
 
 HINSTANCE* hInst = nullptr;
+SpriteState currSprState;
 
 ResourceManager::ResourceManager(HWND _hWnd, int width, int height) : hWnd(_hWnd)
 {
