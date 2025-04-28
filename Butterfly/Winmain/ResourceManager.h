@@ -14,7 +14,9 @@ enum SpriteState {
 	IDLE, 
 	SHOP,
 	FLOOR_TILE, 
-	POND		 // 연못 
+	POND,		 // 연못 
+	TREE,
+	BRANCH
 };
 
 struct SpriteInfo {
@@ -25,6 +27,8 @@ const unordered_map<SpriteState, SpriteInfo> resourceMap = {
 	{IDLE, {L"player_IDLE.png"}}, 
 	{SHOP, {L"shop_8bits.png"}},
 	{FLOOR_TILE, {L"floorTile_1.png"}},	
+	{POND, {L"Pond.png"}},
+	{TREE, }
 };
 
 class ResourceManager
@@ -33,8 +37,8 @@ private :
 	HWND		hWnd = NULL;
 	HDC			backDC = NULL;			// BackBuffer
 
-	POINT	BitmapSize = { 0,0 };   // Bitmap size 
-	POINT   BitmapPos = { 0,0 };    // Bitmap Position 
+	POINT	BitmapSize = { 0,0 };		// Bitmap size 
+	POINT   BitmapPos = { 0,0 };		// Bitmap Position 
 
 	Gdiplus::Bitmap* ImgBitmap = nullptr; 
 	Gdiplus::Graphics* backDCgraphics = nullptr;
