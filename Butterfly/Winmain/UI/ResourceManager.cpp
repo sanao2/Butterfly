@@ -5,6 +5,8 @@ HINSTANCE* hInst = nullptr;
 ResourceManager::ResourceManager(HWND _hWnd, int width, int height) : hWnd(_hWnd)
 {
 	clientDC = GetDC(hWnd);
+	clientSize = { width, height };
+
 	memDC = CreateCompatibleDC(clientDC);
 	memBitmap = CreateCompatibleBitmap(clientDC, clientSize.x, clientSize.y);
 	SelectObject(memDC, memBitmap);  // memDC and memBitmap linked 
@@ -12,7 +14,7 @@ ResourceManager::ResourceManager(HWND _hWnd, int width, int height) : hWnd(_hWnd
 	Gdiplus::GdiplusStartup(&GdiplusToken, &gsi, nullptr);
 	backDCgraphics = Gdiplus::Graphics::FromHDC(memDC);
 
-	clientSize = { width, height };
+	
 }
 
 ResourceManager::~ResourceManager()
@@ -38,7 +40,7 @@ void ResourceManager::Render(HDC drawDC, int x, int y, int width, int height)
 {
 	PatBlt(drawDC, x, y, clientSize.x, clientSize.y, WHITENESS); 
 
-	auto& Image = Sprites[currState];
+	auto& Image = Sprites[currSprState];
 
 	backDCgraphics->DrawImage(Image, Gdiplus::Rect(SpritePos.x, SpritePos.y, SpriteSize.x, SpriteSize.y));
 }
@@ -47,11 +49,10 @@ void ResourceManager::LoadImages(HINSTANCE hInst)
 {
 	for (int i = 0; i < SPRITECOUNT; ++i)
 	{
-		auto& path = new Gdiplus::Bitmap(hInst, MAKEINTRESOURCE(ID8_Shop)); // IDB_BITMAP1 부터 시작
+		ImgBitmap = new Gdiplus::Bitmap(hInst, MAKEINTRESOURCE(currSprState));
 
-		if (path.empty()) return; 		
-
-		ImgBitmap = new Gdiplus::Bitmap(path.c_str());
+		if (ImgBitmap == nullptr) return;
+		
 
 		SetSpriteSize(ImgBitmap);
 
