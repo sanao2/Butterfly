@@ -4,13 +4,13 @@
 #include <gdiplus.h>
 #include <string> 
 #include <array>
+#include <unordered_map>
+#include "../resource.h"
 #pragma comment(lib, "gdiplus.lib")
 using namespace std;
 using std::array;
 using std::string;
 using std::wstring;
-#include <unordered_map>
-#include "../resource.h"
 using::unordered_map;
 
 extern HINSTANCE hInst;
@@ -19,8 +19,8 @@ enum SpriteState {
 	PLAYER_IDLE, 
 	SHOP,
 	FLOOR_TILE_ONE,
-	POND,		 // 연못 
-	TREE,
+	POND,			// 연못 
+	TREE,			// 나무
 	SPRITECOUNT 
 };
 
@@ -42,15 +42,14 @@ inline int GetResourceID(SpriteState SprState)
 class ResourceManager
 {
 private : 
-	HWND		hWnd = NULL;
-	HDC			clientDC = NULL; 
-	HDC			memDC = NULL;			// BackBuffer
+	HWND		hWnd =		NULL;
+	HDC			clientDC =  NULL; 
+	HDC			memDC =		NULL;			// BackBuffer
 	HBITMAP		memBitmap = NULL; 
 
 	SpriteState currSprState;
 	array<Gdiplus::Bitmap*, SpriteState::SPRITECOUNT> Sprites; // All Resource Save in array
 
-	POINT	clientSize = { 0,0 }; 
 	POINT	SpriteSize = { 0,0 };		// Bitmap size 
 	POINT   SpritePos = { 0,0 };		// Bitmap Position
 

@@ -1,12 +1,11 @@
 #include "ResourceManager.h"
 
-SpriteState ResourceManager::currSprState = PLAYER_IDLE;
+SpriteState currSprState = PLAYER_IDLE;
 
 
 ResourceManager::ResourceManager(HWND _hWnd, int width, int height) : hWnd(_hWnd)
 {
 	clientDC = GetDC(hWnd);
-	clientSize = { width, height };
 
 	memDC = CreateCompatibleDC(clientDC);
 	memBitmap = CreateCompatibleBitmap(clientDC, clientSize.x, clientSize.y);
@@ -39,14 +38,15 @@ void ResourceManager::Initialize()
 
 void ResourceManager::Update()
 {
-	
-	
+
 }
 
 void ResourceManager::Render(HDC drawDC, int x, int y, int width, int height)
 {
 	backDCgraphics->Clear(WHITENESS);
 	auto& Image = Sprites[currSprState];
+
+	SetSpriteRect(x, y, Image); // Set Sprite Rect
 
 	if (Image)
 	{
@@ -79,6 +79,8 @@ void ResourceManager::LoadImages(HINSTANCE hInst)
 
 void ResourceManager::SetSpriteRect(int x, int y, Gdiplus::Bitmap* Image)
 {
+	if (currSprState < 0 || currSprState <= SPRITECOUNT) return;
+
 	if (currSprState)
 	{
 		SetSpritePos(x, y);		// Set Sprite Position 
