@@ -7,6 +7,9 @@
 using namespace std;
 using std::string;
 using std::wstring;
+#include <unordered_map>
+using::unordered_map;
+
 
 class ResourceManager
 {

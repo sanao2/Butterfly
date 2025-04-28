@@ -16,3 +16,7 @@ ResourceManager::~ResourceManager()
 	Gdiplus::GdiplusShutdown(GdiplusToken);
 }
 
+void ResourceManager::Initialize()
+{
+}
+
