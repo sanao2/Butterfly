@@ -15,8 +15,7 @@ enum SpriteState {
 	SHOP,
 	FLOOR_TILE, 
 	POND,		 // ¿¬¸ø 
-	TREE,
-	BRANCH
+	TREE
 };
 
 struct SpriteInfo {
@@ -28,7 +27,7 @@ const unordered_map<SpriteState, SpriteInfo> resourceMap = {
 	{SHOP, {L"shop_8bits.png"}},
 	{FLOOR_TILE, {L"floorTile_1.png"}},	
 	{POND, {L"Pond.png"}},
-	{TREE, }
+	{TREE, {L"Tree.png"}},
 };
 
 class ResourceManager
