@@ -35,6 +35,15 @@ void ResourceManager::Update()
 
 }
 
+void ResourceManager::Render(HDC drawDC, int x, int y, int width, int height)
+{
+	PatBlt(drawDC, x, y, clientSize.x, clientSize.y, WHITENESS); 
+
+	auto& Image = Sprites[static_cast<SpriteState>(currState)];
+
+	backDCgraphics->DrawImage(Image, Gdiplus::Rect(SpritePos.x,SpritePos.y, SpriteSize.x, SpriteSize.y), )
+}
+
 
 
 void ResourceManager::LoadImages()
@@ -45,22 +54,20 @@ void ResourceManager::LoadImages()
 
 		if (path.empty()) return; 		
 
-		auto& Image = new Gdiplus::Bitmap(path.c_str());
+		ImgBitmap = new Gdiplus::Bitmap(path.c_str());
 
-		if (Image->GetLastStatus() == Gdiplus::Ok)
+		SetSpriteSize(ImgBitmap);
+
+		if (ImgBitmap->GetLastStatus() == Gdiplus::Ok)
 		{
-			Sprites[i] = Image; 
-		}
-
-		else {
-			delete Image; 
-			Sprites[i] = nullptr; 
+			Sprites[i] = ImgBitmap;
 		}
 	}
 }
 void ResourceManager::SetSpriteSize(Gdiplus::Bitmap* Image) {
 	int width = Image->GetWidth();
 	int height = Image->GetHeight();
+
 	SpriteSize = { width,height };
 }
 POINT ResourceManager::GetSpriteSize() { return SpriteSize; }

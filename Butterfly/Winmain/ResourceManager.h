@@ -61,6 +61,8 @@ private :
 	POINT	SpriteSize = { 0,0 };		// Bitmap size 
 	POINT   SpritePos = { 0,0 };		// Bitmap Position
 
+	SpriteState currState = nullptr; 
+
 	ULONG_PTR GdiplusToken = NULL;
 	Gdiplus::GdiplusStartupInput gsi = NULL;
 	Gdiplus::Bitmap* ImgBitmap = nullptr; 
@@ -72,7 +74,7 @@ public :
 
 	void Initialize(); 
 	void Update(); 
-	void Render(HDC drawDC, int width, int height); 
+	void Render(HDC drawDC,int x, int y,  int width, int height); 
 
 	void LoadImages(); 
 
