@@ -32,6 +32,7 @@ void ResourceManager::Initialize()
 
 void ResourceManager::Update()
 {
+
 }
 
 
@@ -50,9 +51,16 @@ void ResourceManager::LoadImages()
 		{
 			Sprites[i] = Image; 
 		}
+
 		else {
 			delete Image; 
 			Sprites[i] = nullptr; 
 		}
 	}
 }
+void ResourceManager::SetSpriteSize(Gdiplus::Bitmap* Image) {
+	int width = Image->GetWidth();
+	int height = Image->GetHeight();
+	SpriteSize = { width,height };
+}
+POINT ResourceManager::GetSpriteSize() { return SpriteSize; }

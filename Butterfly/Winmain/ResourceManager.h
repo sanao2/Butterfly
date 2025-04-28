@@ -59,12 +59,12 @@ private :
 
 	POINT	clientSize = { 0,0 }; 
 	POINT	SpriteSize = { 0,0 };		// Bitmap size 
-	POINT   SpritePos = { 0,0 };		// Bitmap Position 
+	POINT   SpritePos = { 0,0 };		// Bitmap Position
 
+	ULONG_PTR GdiplusToken = NULL;
+	Gdiplus::GdiplusStartupInput gsi = NULL;
 	Gdiplus::Bitmap* ImgBitmap = nullptr; 
 	Gdiplus::Graphics* backDCgraphics = nullptr;
-	ULONG_PTR GdiplusToken = NULL;
-	Gdiplus::GdiplusStartupInput gsi = NULL; 
 
 public : 
 	ResourceManager(HWND _hWnd, int width, int height);
@@ -72,14 +72,13 @@ public :
 
 	void Initialize(); 
 	void Update(); 
-	//void Rend
-	// er(); 
+	void Render(HDC drawDC, int width, int height); 
 
 	void LoadImages(); 
 
 	void SetSpritePos(int x, int y) { SpritePos = { x,y }; }
 	POINT GetSpritePos() { return SpritePos; }
-	void SetSpriteSize(int width, int height) { SpriteSize = { width, height }; }
-	POINT GetSpriteSize() { return SpriteSize; }
+	void SetSpriteSize(Gdiplus::Bitmap* Image);
+	POINT GetSpriteSize();
 };
 
