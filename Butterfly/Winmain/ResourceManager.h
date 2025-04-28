@@ -51,7 +51,8 @@ class ResourceManager
 {
 private : 
 	HWND		hWnd = NULL;
-	HDC			backDC = NULL;			// BackBuffer
+	HDC			clientDC = NULL; 
+	HDC			memDC = NULL;			// BackBuffer
 
 	array<vector<SpriteInfo>, SpriteState::SPRITECOUNT> frame; // All Resource Save in array
 

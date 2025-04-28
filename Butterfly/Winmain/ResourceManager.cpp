@@ -4,13 +4,16 @@
 
 ResourceManager::ResourceManager(HWND _hWnd,int width, int height) : hWnd(_hWnd)
 {
+	clientDC = GetDC(hWnd);
+	memDC = CreateCompatibleDC(clientDC); 
+
 	Gdiplus::GdiplusStartup(&GdiplusToken, &gsi, nullptr);
-	backDCgraphics = Gdiplus::Graphics::FromHDC(backDC);
+	backDCgraphics = Gdiplus::Graphics::FromHDC(memDC);
 }
 
 ResourceManager::~ResourceManager()
 {
-	DeleteDC(backDC); 
+	DeleteDC(memDC); 
 	delete backDCgraphics;
 	delete ImgBitmap;
 	Gdiplus::GdiplusShutdown(GdiplusToken);
