@@ -11,7 +11,6 @@ ResourceManager::ResourceManager(HWND _hWnd, int width, int height) : hWnd(_hWnd
 
 	Gdiplus::GdiplusStartup(&GdiplusToken, &gsi, nullptr);
 	backDCgraphics = Gdiplus::Graphics::FromHDC(memDC);
-	
 
 	clientSize = { width, height };
 }
@@ -19,8 +18,10 @@ ResourceManager::ResourceManager(HWND _hWnd, int width, int height) : hWnd(_hWnd
 ResourceManager::~ResourceManager()
 {
 	DeleteDC(memDC); 
+	DeleteObject(memBitmap); 
 	delete backDCgraphics;
-	delete ImgBitmap;
+	delete ImgBitmap;	
+	ReleaseDC(hWnd, clientDC);
 	Gdiplus::GdiplusShutdown(GdiplusToken);
 }
 
@@ -29,17 +30,29 @@ void ResourceManager::Initialize()
 
 }
 
-void ResourceManager::LoadImages(SpriteState SprState)
+void ResourceManager::Update()
+{
+}
+
+
+
+void ResourceManager::LoadImages()
 {
 	for (int i = 0; i < SPRITECOUNT; ++i)
 	{
-		auto& path = GetResourcePath(SprState);
+		auto& path = GetResourcePath(static_cast<SpriteState>(i));
 
-		if (!path.empty())
+		if (path.empty()) return; 		
+
+		auto& Image = new Gdiplus::Bitmap(path.c_str());
+
+		if (Image->GetLastStatus() == Gdiplus::Ok)
 		{
-			Sprites[i] = new Gdiplus::Bitmap(path.c_str()); 
-
-			if (Sprite[i])
+			Sprites[i] = Image; 
+		}
+		else {
+			delete Image; 
+			Sprites[i] = nullptr; 
 		}
 	}
 }

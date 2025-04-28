@@ -72,9 +72,10 @@ public :
 
 	void Initialize(); 
 	void Update(); 
-	void Render(); 
+	//void Rend
+	// er(); 
 
-	void LoadImages(SpriteState SprState); 
+	void LoadImages(); 
 
 	void SetSpritePos(int x, int y) { SpritePos = { x,y }; }
 	POINT GetSpritePos() { return SpritePos; }
