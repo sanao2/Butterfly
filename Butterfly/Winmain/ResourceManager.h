@@ -1,17 +1,22 @@
 #pragma once
 #include <windows.h>
 #include <iostream> 
-using namespace std; 
+#include <gdiplus.h>
+#pragma comment(lib, "gdiplus.lib")
+using namespace std;
 
 class ResourceManager
 {
 private : 
-	HWND	hWnd; 
-	HDC		frontDC;	// FrontBuffer
-	HDC		backDC;		// BackBuffer
-	HBITMAP backBitmap; // BackBuffer Linked Bitmap
-	POINT	BitmapSize; // Bitmap size 
-	POINT   BitmapPos;  // Bitmap Position 
+	HWND	hWnd = NULL;
+	HDC		frontDC = NULL;	// FrontBuffer
+	HDC		backDC = NULL;		// BackBuffer
+	Gdiplus::Graphics* backDCgraphics = nullptr; 
+	ULONG_PTR GdiplusToken = NULL;
+
+	POINT	BitmapSize = { 0,0 }; // Bitmap size 
+	POINT   BitmapPos = { 0,0 };  // Bitmap Position 
+
 public : 
 	ResourceManager(); 
 	~ResourceManager(); 
