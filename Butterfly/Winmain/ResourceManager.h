@@ -10,12 +10,25 @@ using std::wstring;
 #include <unordered_map>
 using::unordered_map;
 
+enum SpriteState {
+	IDLE, 
+	PICKAX_USE,
+	HOE,			// ±ªÀÌ 
+	WATERINGCAN
+};
+
+struct SpriteInfo {
+	wstring SpriteImg;
+};
+
+const unordered_map<SpriteState, SpriteInfo> resourceMap = {
+	{IDLE, {L"player_IDLE.png"}}
+};
 
 class ResourceManager
 {
 private : 
 	HWND		hWnd = NULL;
-	HDC			frontDC = NULL;			// FrontBuffer
 	HDC			backDC = NULL;			// BackBuffer
 
 	POINT	BitmapSize = { 0,0 };   // Bitmap size 
