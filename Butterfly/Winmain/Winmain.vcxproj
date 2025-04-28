@@ -169,7 +169,9 @@
     <Image Include="C:\Users\user\Desktop\리소스\Shop.png" />
     <Image Include="C:\Users\user\Desktop\리소스\shop_8bit.png" />
     <Image Include="Resource\player_IDLE.png" />
+    <Image Include="Resource\Pond.png" />
     <Image Include="Resource\shop_8bits.png" />
+    <Image Include="Resource\Tree.png" />
     <Image Include="small.ico" />
     <Image Include="Winmain.ico" />
   </ItemGroup>

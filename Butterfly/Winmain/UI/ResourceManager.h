@@ -26,12 +26,12 @@ enum SpriteState {
 };
 
 struct SpriteInfo {
-	wstring SpriteImg;
+	wstring SpriteID;
 };
 
 const unordered_map<SpriteState, SpriteInfo> resourceMap = {
-	{PLAYER_IDLE, {L"player_IDLE.png"}}, 
-	{SHOP, {L"shop_8bits.png"}},
+	{PLAYER_IDLE, {L"IDB_PLAYER_IDLE"}}, 
+	{SHOP, {L"IDB_SHOP"}},
 	{FLOOR_TILE, {L"floorTile_1.png"}},	
 	{POND, {L"Pond.png"}},
 	{TREE, {L"Tree.png"}},
@@ -43,7 +43,7 @@ const wstring GetResourcePath(SpriteState SprState)
 
 	if (iter != resourceMap.end())
 	{
-		return RESOURCE_DIR + iter->second.SpriteImg; 
+		return RESOURCE_DIR + iter->second.SpriteID; 
 	}
 
 	return L""; 

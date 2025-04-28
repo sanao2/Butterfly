@@ -49,18 +49,14 @@ void ResourceManager::LoadImages(HINSTANCE hInst)
 {
 	for (int i = 0; i < SPRITECOUNT; ++i)
 	{
-		ImgBitmap = new Gdiplus::Bitmap(hInst, MAKEINTRESOURCE(currSprState));
 
-		if (ImgBitmap == nullptr) return;
-		
-
-		SetSpriteSize(ImgBitmap);
-
-		if (ImgBitmap->GetLastStatus() == Gdiplus::Ok)
-		{
-			Sprites[i] = ImgBitmap;
-		}
 	}
+
+	if (ImgBitmap->GetLastStatus() == Gdiplus::Ok)
+	{
+		
+	}
+	
 }
 
 void ResourceManager::SetSpriteSize(Gdiplus::Bitmap* Image) {
