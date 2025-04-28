@@ -49,6 +49,7 @@ void ResourceManager::LoadImages(HINSTANCE hInst)
 {
 	for (int i = 0; i < SPRITECOUNT; ++i)
 	{
+		auto& SpriteID = GetResourcePath(currSprState);
 
 	}
 

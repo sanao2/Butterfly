@@ -168,6 +168,7 @@
     <Image Include="bitmap1.bmp" />
     <Image Include="C:\Users\user\Desktop\리소스\Shop.png" />
     <Image Include="C:\Users\user\Desktop\리소스\shop_8bit.png" />
+    <Image Include="Resource\One%27sResource\floorTile\floorTile_4.png" />
     <Image Include="Resource\player_IDLE.png" />
     <Image Include="Resource\Pond.png" />
     <Image Include="Resource\shop_8bits.png" />

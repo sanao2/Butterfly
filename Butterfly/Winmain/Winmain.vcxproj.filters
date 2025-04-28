@@ -153,6 +153,9 @@
     <Image Include="Resource\Pond.png">
       <Filter>리소스 파일</Filter>
     </Image>
+    <Image Include="Resource\One%27sResource\floorTile\floorTile_4.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <Text Include="메모.txt">

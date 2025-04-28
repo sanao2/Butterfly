@@ -1,13 +1,9 @@
 ﻿  Global.cpp
   Render.cpp
   ResourceManager.cpp
-D:\BF\Butterfly\Winmain\UI\ResourceManager.cpp(50,16): error C3861: 'GetResourcePath': 식별자를 찾을 수 없습니다.
-D:\BF\Butterfly\Winmain\UI\ResourceManager.cpp(54,34): error C2512: 'Gdiplus::Bitmap::Bitmap': 사용할 수 있는 적절한 기본 생성자가 없습니다.
-      D:\BF\Butterfly\Winmain\UI\ResourceManager.cpp(54,34):
-      인수 목록 '()'을(를) 일치시키는 동안
-  
   Winmain.cpp
 D:\BF\Butterfly\Winmain\Event\InputConstants.h(7,40): warning C4309: '초기화 중': 상수 값이 잘립니다.
   (소스 파일 'Winmain.cpp'을(를) 컴파일하는 중)
   
   코드를 생성하고 있습니다...
+  Winmain.vcxproj -> D:\BF\Butterfly\x64\Debug\Winmain.exe

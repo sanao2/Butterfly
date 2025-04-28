@@ -10,6 +10,7 @@ using std::array;
 using std::string;
 using std::wstring;
 #include <unordered_map>
+#include "../resource.h"
 using::unordered_map;
 
 extern HINSTANCE* hInst;
@@ -19,35 +20,27 @@ const wstring RESOURCE_DIR = L"..\\Resources\\";
 enum SpriteState {
 	PLAYER_IDLE, 
 	SHOP,
-	FLOOR_TILE, 
+	FLOOR_TILE_ONE,
 	POND,		 // ¿¬¸ø 
 	TREE,
 	SPRITECOUNT 
 };
 
-struct SpriteInfo {
-	wstring SpriteID;
-};
-
-const unordered_map<SpriteState, SpriteInfo> resourceMap = {
-	{PLAYER_IDLE, {L"IDB_PLAYER_IDLE"}}, 
-	{SHOP, {L"IDB_SHOP"}},
-	{FLOOR_TILE, {L"floorTile_1.png"}},	
-	{POND, {L"Pond.png"}},
-	{TREE, {L"Tree.png"}},
-};
-
-const wstring GetResourcePath(SpriteState SprState)
+inline int GetResourcePath(SpriteState SprState)
 {
-	auto iter = resourceMap.find(SprState); 
+	static int pathes[] = {
+		IDB_PLAYER_IDLE,
+		IDB_SHOP,
+		IDB_FLOOR_TILE_ONE,
+		IDB_POND,
+		IDB_TREE
+	};
 
-	if (iter != resourceMap.end())
-	{
-		return RESOURCE_DIR + iter->second.SpriteID; 
-	}
+	if (SprState < 0 || SprState >= SPRITECOUNT) return NULL;
 
-	return L""; 
-}
+	return pathes[SprState];
+};
+
 
 class ResourceManager
 {
