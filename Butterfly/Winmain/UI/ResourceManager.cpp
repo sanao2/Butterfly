@@ -1,7 +1,7 @@
 #include "ResourceManager.h"
 
-HINSTANCE* hInst = nullptr;
-SpriteState currSprState;
+SpriteState ResourceManager::currSprState = PLAYER_IDLE;
+
 
 ResourceManager::ResourceManager(HWND _hWnd, int width, int height) : hWnd(_hWnd)
 {
@@ -14,8 +14,7 @@ ResourceManager::ResourceManager(HWND _hWnd, int width, int height) : hWnd(_hWnd
 
 	Gdiplus::GdiplusStartup(&GdiplusToken, &gsi, nullptr);
 	backDCgraphics = Gdiplus::Graphics::FromHDC(memDC);
-
-	
+		
 }
 
 ResourceManager::~ResourceManager()
@@ -32,12 +31,12 @@ ResourceManager::~ResourceManager()
 
 void ResourceManager::Update()
 {
+	
 }
 
 void ResourceManager::Render(HDC drawDC, int x, int y, int width, int height)
 {
 	backDCgraphics->Clear(WHITENESS);
-
 	auto& Image = Sprites[currSprState];
 
 	if (Image)
@@ -48,7 +47,6 @@ void ResourceManager::Render(HDC drawDC, int x, int y, int width, int height)
 	}
 
 	BitBlt(drawDC, x, y, width, height, memDC, 0, 0, SRCCOPY); // 원하는 위치에 원하는 길이로 그린다. 
-	
 }
 
 void ResourceManager::LoadImages(HINSTANCE hInst)
@@ -69,6 +67,13 @@ void ResourceManager::LoadImages(HINSTANCE hInst)
 			Sprites[i] = nullptr;
 		}
 	}	
+}
+
+void ResourceManager::SetSpriteState(SpriteState newState)
+{
+	if (currSprState == newState && (newState < 0 || newState >= SPRITECOUNT)) return;
+
+	currSprState = newState; 
 }
 
 void ResourceManager::SetSpriteSize(Gdiplus::Bitmap* Image) {

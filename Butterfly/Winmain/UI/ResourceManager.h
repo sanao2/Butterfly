@@ -14,7 +14,6 @@ using std::wstring;
 using::unordered_map;
 
 extern HINSTANCE* hInst;
-extern SpriteState currSprState;
 
 enum SpriteState {
 	PLAYER_IDLE, 
@@ -40,7 +39,6 @@ inline int GetResourceID(SpriteState SprState)
 	return pathes[SprState];
 };
 
-
 class ResourceManager
 {
 private : 
@@ -49,7 +47,7 @@ private :
 	HDC			memDC = NULL;			// BackBuffer
 	HBITMAP		memBitmap = NULL; 
 
-
+	SpriteState currSprState;
 	array<Gdiplus::Bitmap*, SpriteState::SPRITECOUNT> Sprites; // All Resource Save in array
 
 	POINT	clientSize = { 0,0 }; 
@@ -64,11 +62,12 @@ private :
 public : 
 	ResourceManager(HWND _hWnd, int width, int height);
 	~ResourceManager(); 
-
-	void Update(); 
-	void Render(HDC drawDC,int x, int y,  int width, int height); 
+	
+	void Update();
+	void Render(HDC drawDC,int x, int y, int width, int height); 
 
 	void LoadImages(HINSTANCE hInst);
+	void ChangeSpriteState(SpriteState newState);
 
 	void SetSpritePos(int x, int y) { SpritePos = { x,y }; }
 	POINT GetSpritePos() { return SpritePos; }
