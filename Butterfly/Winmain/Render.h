@@ -1,6 +1,7 @@
 #pragma once
 #include <windows.h>
 #include "Swap.h"
+#include "UI/ResourceManager.h"
 
 class Render
 {
@@ -8,6 +9,7 @@ private:
     HWND hWnd;
     POINT clientSize;
     Swap* swap;
+	ResourceManager* RcManager; // ResourceManager 객체를 사용하기 위한 포인터
 
 public:
     Render(HWND hwnd, int width, int height);

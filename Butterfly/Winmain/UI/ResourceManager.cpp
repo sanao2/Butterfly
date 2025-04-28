@@ -32,7 +32,6 @@ void ResourceManager::Initialize()
 
 void ResourceManager::Update()
 {
-
 }
 
 void ResourceManager::Render(HDC drawDC, int x, int y, int width, int height)
