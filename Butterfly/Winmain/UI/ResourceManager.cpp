@@ -1,6 +1,6 @@
 #include "ResourceManager.h"
 
-
+HINSTANCE* hInst = nullptr;
 
 ResourceManager::ResourceManager(HWND _hWnd, int width, int height) : hWnd(_hWnd)
 {

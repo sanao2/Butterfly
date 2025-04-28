@@ -131,7 +131,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 
         boxDraw();
         move->MoveUpdate();
-		render->RenderScene(); // 렌더링 호출
+		render->RenderScene(hPrevInstance); // 렌더링 호출
 		
     }
 

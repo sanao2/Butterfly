@@ -12,3 +12,4 @@ using namespace Input;
 extern Move::MoveManager* move;
 extern Render* render;
 extern HWND g_hWnd;
+

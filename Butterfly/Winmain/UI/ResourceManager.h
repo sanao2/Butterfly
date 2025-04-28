@@ -12,6 +12,8 @@ using std::wstring;
 #include <unordered_map>
 using::unordered_map;
 
+extern HINSTANCE* hInst;
+
 const wstring RESOURCE_DIR = L"..\\Resources\\";
 
 enum SpriteState {
@@ -23,29 +25,29 @@ enum SpriteState {
 	SPRITECOUNT 
 };
 
-struct SpriteInfo {
-	wstring SpriteImg;
-};
-
-const unordered_map<SpriteState, SpriteInfo> resourceMap = {
-	{PLAYER_IDLE, {L"player_IDLE.png"}}, 
-	{SHOP, {L"shop_8bits.png"}},
-	{FLOOR_TILE, {L"floorTile_1.png"}},	
-	{POND, {L"Pond.png"}},
-	{TREE, {L"Tree.png"}},
-};
-
-const wstring GetResourcePath(SpriteState SprState)
-{
-	auto iter = resourceMap.find(SprState); 
-
-	if (iter != resourceMap.end())
-	{
-		return RESOURCE_DIR + iter->second.SpriteImg; 
-	}
-
-	return L""; 
-}
+//struct SpriteInfo {
+//	wstring SpriteImg;
+//};
+//
+//const unordered_map<SpriteState, SpriteInfo> resourceMap = {
+//	{PLAYER_IDLE, {L"player_IDLE.png"}}, 
+//	{SHOP, {L"shop_8bits.png"}},
+//	{FLOOR_TILE, {L"floorTile_1.png"}},	
+//	{POND, {L"Pond.png"}},
+//	{TREE, {L"Tree.png"}},
+//};
+//
+//const wstring GetResourcePath(SpriteState SprState)
+//{
+//	auto iter = resourceMap.find(SprState); 
+//
+//	if (iter != resourceMap.end())
+//	{
+//		return RESOURCE_DIR + iter->second.SpriteImg; 
+//	}
+//
+//	return L""; 
+//}
 
 class ResourceManager
 {
