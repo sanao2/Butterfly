@@ -6,9 +6,12 @@ ResourceManager::ResourceManager(HWND _hWnd, int width, int height) : hWnd(_hWnd
 {
 	clientDC = GetDC(hWnd);
 	memDC = CreateCompatibleDC(clientDC);
+	memBitmap = CreateCompatibleBitmap(clientDC, clientSize.x, clientSize.y);
+	SelectObject(memDC, memBitmap);  // memDC and memBitmap linked 
 
 	Gdiplus::GdiplusStartup(&GdiplusToken, &gsi, nullptr);
 	backDCgraphics = Gdiplus::Graphics::FromHDC(memDC);
+	
 
 	clientSize = { width, height };
 }
