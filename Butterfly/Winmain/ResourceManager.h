@@ -2,8 +2,11 @@
 #include <windows.h>
 #include <iostream> 
 #include <gdiplus.h>
+#include <string> 
 #pragma comment(lib, "gdiplus.lib")
 using namespace std;
+using std::string;
+using std::wstring;
 
 class ResourceManager
 {
@@ -11,7 +14,6 @@ private :
 	HWND		hWnd = NULL;
 	HDC			frontDC = NULL;			// FrontBuffer
 	HDC			backDC = NULL;			// BackBuffer
-
 
 	POINT	BitmapSize = { 0,0 };   // Bitmap size 
 	POINT   BitmapPos = { 0,0 };    // Bitmap Position 
