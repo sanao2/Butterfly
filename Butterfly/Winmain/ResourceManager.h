@@ -61,7 +61,7 @@ private :
 	POINT	SpriteSize = { 0,0 };		// Bitmap size 
 	POINT   SpritePos = { 0,0 };		// Bitmap Position
 
-	SpriteState currState = nullptr; 
+	SpriteState currState; 
 
 	ULONG_PTR GdiplusToken = NULL;
 	Gdiplus::GdiplusStartupInput gsi = NULL;

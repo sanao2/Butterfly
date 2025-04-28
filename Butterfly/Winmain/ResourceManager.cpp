@@ -39,12 +39,10 @@ void ResourceManager::Render(HDC drawDC, int x, int y, int width, int height)
 {
 	PatBlt(drawDC, x, y, clientSize.x, clientSize.y, WHITENESS); 
 
-	auto& Image = Sprites[static_cast<SpriteState>(currState)];
+	auto& Image = Sprites[currState];
 
-	backDCgraphics->DrawImage(Image, Gdiplus::Rect(SpritePos.x,SpritePos.y, SpriteSize.x, SpriteSize.y), )
+	backDCgraphics->DrawImage(Image, Gdiplus::Rect(SpritePos.x, SpritePos.y, SpriteSize.x, SpriteSize.y));
 }
-
-
 
 void ResourceManager::LoadImages()
 {
@@ -64,6 +62,7 @@ void ResourceManager::LoadImages()
 		}
 	}
 }
+
 void ResourceManager::SetSpriteSize(Gdiplus::Bitmap* Image) {
 	int width = Image->GetWidth();
 	int height = Image->GetHeight();
