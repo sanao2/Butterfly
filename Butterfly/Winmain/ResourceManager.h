@@ -9,11 +9,11 @@ class ResourceManager
 {
 private : 
 	HWND	hWnd = NULL;
-	HDC		frontDC = NULL;	// FrontBuffer
-	HDC		backDC = NULL;		// BackBuffer
+	HDC		frontDC = NULL;			// FrontBuffer
+	HDC		backDC = NULL;			// BackBuffer
 	
-	POINT	BitmapSize = { 0,0 }; // Bitmap size 
-	POINT   BitmapPos = { 0,0 };  // Bitmap Position 
+	POINT	BitmapSize = { 0,0 };   // Bitmap size 
+	POINT   BitmapPos = { 0,0 };    // Bitmap Position 
 
 	Gdiplus::Bitmap* ImgBitmap = nullptr; 
 	Gdiplus::Graphics* backDCgraphics = nullptr;
