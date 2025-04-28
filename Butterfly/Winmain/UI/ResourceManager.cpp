@@ -49,14 +49,16 @@ void ResourceManager::LoadImages(HINSTANCE hInst)
 {
 	for (int i = 0; i < SPRITECOUNT; ++i)
 	{
-		auto& SpriteID = GetResourcePath(currSprState);
+		auto SpriteID = GetResourcePath(currSprState);
+		ImgBitmap = new Gdiplus::Bitmap(hInst, MAKEINTRESOURCE(SpriteID));
+
+		if (ImgBitmap->GetLastStatus() == Gdiplus::Ok)
+		{
+			Sprites[i] = ImgBitmap; 
+		}
 
 	}
 
-	if (ImgBitmap->GetLastStatus() == Gdiplus::Ok)
-	{
-		
-	}
 	
 }
 

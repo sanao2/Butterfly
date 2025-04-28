@@ -50,13 +50,12 @@ private :
 	HDC			memDC = NULL;			// BackBuffer
 	HBITMAP		memBitmap = NULL; 
 
+	SpriteState currSprState;
 	array<Gdiplus::Bitmap*, SpriteState::SPRITECOUNT> Sprites; // All Resource Save in array
 
 	POINT	clientSize = { 0,0 }; 
 	POINT	SpriteSize = { 0,0 };		// Bitmap size 
 	POINT   SpritePos = { 0,0 };		// Bitmap Position
-
-	SpriteState currSprState; 
 
 	ULONG_PTR GdiplusToken = NULL;
 	Gdiplus::GdiplusStartupInput gsi = NULL;
