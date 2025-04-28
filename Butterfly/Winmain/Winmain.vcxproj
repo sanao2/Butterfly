@@ -143,10 +143,10 @@
     <ClInclude Include="Move\PlayerMoveController.h" />
     <ClInclude Include="Render.h" />
     <ClInclude Include="Resource.h" />
-    <ClInclude Include="ResourceManager.h" />
     <ClInclude Include="Swap.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="UI\Map\Map.h" />
+    <ClInclude Include="UI\ResourceManager.h" />
     <ClInclude Include="UI\Timer.h" />
     <ClInclude Include="Winmain.h" />
   </ItemGroup>
@@ -155,9 +155,9 @@
     <ClCompile Include="Global.cpp" />
     <ClCompile Include="Move\MoveManagers.cpp" />
     <ClCompile Include="Render.cpp" />
-    <ClCompile Include="ResourceManager.cpp" />
     <ClCompile Include="Swap.cpp" />
     <ClCompile Include="UI\Map\Map.cpp" />
+    <ClCompile Include="UI\ResourceManager.cpp" />
     <ClCompile Include="UI\Timer.cpp" />
     <ClCompile Include="Winmain.cpp" />
   </ItemGroup>

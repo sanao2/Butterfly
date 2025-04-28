@@ -57,8 +57,7 @@
               "ToolTip": "D:\\backup\\BF\\Butterfly\\Winmain\\Winmain.rc - IDD_ABOUTBOX - Dialog",
               "RelativeToolTip": "Winmain\\Winmain.rc - IDD_ABOUTBOX - Dialog",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
-              "WhenOpened": "2025-04-28T07:14:25.759Z",
-              "EditorCaption": " - IDD_ABOUTBOX - Dialog"
+              "WhenOpened": "2025-04-28T07:14:25.759Z"
             },
             {
               "$type": "Document",
@@ -68,7 +67,7 @@
               "RelativeDocumentMoniker": "Winmain\\ResourceManager.h",
               "ToolTip": "D:\\backup\\BF\\Butterfly\\Winmain\\ResourceManager.h",
               "RelativeToolTip": "Winmain\\ResourceManager.h",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAAAEEAAAAfAAAAAAAAAA==",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAAD8AAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-04-28T05:35:27.106Z",
               "EditorCaption": ""
@@ -111,7 +110,7 @@
               "RelativeDocumentMoniker": "Winmain\\ResourceManager.cpp",
               "ToolTip": "D:\\backup\\BF\\Butterfly\\Winmain\\ResourceManager.cpp",
               "RelativeToolTip": "Winmain\\ResourceManager.cpp",
-              "ViewState": "AgIAABQAAAAAAAAAAAArwCEAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAA4AAAAAAAAAAAArwCUAAABNAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-04-28T05:33:56.202Z",
               "EditorCaption": ""
