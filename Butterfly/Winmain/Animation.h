@@ -40,13 +40,16 @@ const wstring AnimPath = L"../Resource/";
 //	return playerMotion[Anistate]; 
 //};
 struct ResourceInfo {
-	int ImageID[]; 
+	vector<int> ImageID; 
+	ResourceInfo(std::initializer_list<int> list)
+		: ImageID(list) {} 
 };
+
 
 const unordered_map<Animstate, ResourceInfo> AnimationMap = {
 	{PLAYER_RIGHTWALK,{IDB_PLAYER_RIGHT_IDLE,IDB_PLAYER_RIGHT_ONE,
-				    IDB_PLAYER_RIGHT_SECOND, IDB_PLAYER_RIGHT_THREE,
-				  IDB_PLAYER_RIGHT_FOUR}},
+				       IDB_PLAYER_RIGHT_SECOND, IDB_PLAYER_RIGHT_THREE,
+				       IDB_PLAYER_RIGHT_FOUR}},
 	{ PLAYER_LEFTWALK, { IDB_LEFTWALK_ONE,IDB_LEFTWALK_SECOND,
 						 IDB_PLAYER_LEFTWALK_THREE, IDB_LEFTWALK_FOUR}},
 	{ PLAYER_DOWNWALK, { IDB_PLAYER_DOWNWALK_IDLE, IDB_PLAYER_DOWNWALK_ONE,
@@ -59,13 +62,16 @@ const unordered_map<Animstate, ResourceInfo> AnimationMap = {
 	{ PLAYER_USEPIKAX_UP,{IDB_USEPIKAX_UP_ONE, IDB_USEPIKAX_UP_SECOND}}
 };
 
-//const int GetAnimMotionImage(Animstate animstate)
-//{
-//	auto it = AnimationMap.find(animstate); 
-//
-//	
-//
-//}
+const int GetAnimMotionImage(Animstate animstate)
+{
+	auto it = AnimationMap.find(animstate); 
+
+	if (it == AnimationMap.end())
+	{
+		return i
+	}
+
+}
 
 class Animation
 {
