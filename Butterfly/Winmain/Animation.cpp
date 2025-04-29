@@ -20,16 +20,19 @@ Animation::~Animation()
 }
 
 void Animation::createAnimation(HINSTANCE hInst, float frameTime)  
-{  
-   if (!frames.empty()) return;
+{    
+    if (!frames.empty()) return;
+    frames.resize(PLAYER_ANIMCOUNT);
 
-   for (int i = 0; i < PLAYER_ANIMCOUNT; ++i)
-   {
-	   auto frame = GetAnimationFrameID(currAnim, i);
-
-	   frames.push_back({ static_cast<Animstate>(frame) }); // Properly store the frame in the vector
-   }     
+    for (int state = 0; state < PLAYER_ANIMCOUNT; ++state) {
+        int frameCount = AnimStateFrameMap.at(static_cast<Animstate>(state)).ImageID.size();
+      
+        for (int i = 0; i < frameCount; ++i) {
+            frames[state].push_back( GetAnimationFrameID(static_cast<Animstate>(state), i) );
+        }
+    }
 }
+
 
 vector<int> Animation::findAnimation(Animstate animState)
 {	
