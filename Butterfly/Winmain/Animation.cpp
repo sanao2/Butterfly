@@ -83,9 +83,8 @@ void Animation::Render()
 		
 	for (int i = 0; i < frames[currAnim].size(); ++i) {
 		hBitmap = (HBITMAP)LoadImage(hInst, MAKEINTRESOURCE(frames[currAnim][i]), IMAGE_BITMAP, 0, 0, LR_CREATEDIBSECTION);
-		 
-	
-		backDCgraphics->DrawImage(&bitmap, 0, 0, bitmap.GetWidth(), bitmap.GetHeight());
+		 	
+		backDCgraphics->DrawImage(bitmap, 0, 0, bitmap->GetWidth(), bitmap->GetHeight());
 
 		if (currFrame == i) return; 
 
