@@ -1,6 +1,6 @@
 #include "Animation.h"
 
-Animstate Animation::currAnim = PLAYER_IDLE;
+Animstate Animation::currAnim = PLAYER_IDLE_ANIM;
 
 Animation::Animation(HWND hwnd, int width, int height) : hWnd(hwnd)
 {
