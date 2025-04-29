@@ -68,6 +68,7 @@ class Animation
 private:
 	Animstate currAnim;				  // current AnimationMotion Setting 
 	vector<vector<Animstate>> frame;  // All Animation Save vector
+	float DeltaTime;  
 
 public:
 	Animation(); 
