@@ -15,15 +15,20 @@ Animation::~Animation()
 
 }
 
-void Animation::createAnimation()  
+void Animation::createAnimation(HINSTANCE hInst)  
 {  
    if (!frame.empty()) return;  
 
-   for (int i = 0; i < PLAYER_ANIMCOUNT; ++i)  
-   {  
-       auto frames = GetAnimationFrameID(currAnim, i);  
+   for (int i = 0; i < PLAYER_ANIMCOUNT; ++i)
+   {
+	   auto frames = GetAnimationFrameID(currAnim, i);
+	   
+	   Gdiplus::Bitmap bitmap(hInst, frames); 
+   
        frame.push_back({ static_cast<Animstate>(frames) }); // Properly store the frame in the vector  
    }  
+
+   
 }
 
 void Animation::findAnimation(Animstate animState, int frameIndex)
@@ -42,7 +47,7 @@ void Animation::Initialize()
 void Animation::Update()
 {
 	Time::UpdateTime();
-	deltaTime = Time::GetDeltaTime(); // Get Frame deltaTime 
+	DeltaTime = Time::GetDeltaTime(); // Get Frame deltaTime 
 
 	if ()
 
