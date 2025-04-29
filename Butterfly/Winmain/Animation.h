@@ -11,13 +11,11 @@ using std::wstring;
 
 enum Animstate
 {
-	PLAYER_IDLE,
-	PLAYER_RIGHT,
-	PLAYER_LEFT,
-	PLAYER_DOWN,
-	PLAYER_UP
+	PLAYER_WALK, 
+	PLAYER_PICKAX,
+	PLAYER_HOE, 
+	PLAYER_POT
 };
-
 
 const wstring AnimPath = L"../Resource";
 
@@ -42,4 +40,10 @@ private:
 public:
 	Animation(); 
 	~Animation(); 
+
+	void createAnimation(); 
+	void findAnimation(); 
+
+	void Update(); 
+	void Render(); 
 };
