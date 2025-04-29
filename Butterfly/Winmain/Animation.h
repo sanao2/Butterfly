@@ -70,6 +70,7 @@ extern int g_height;
 class Animation
 {
 private:
+	HDC clientDC = nullptr; 
 	HINSTANCE hInst = nullptr;
 
 	static Animstate currAnim;
@@ -89,7 +90,7 @@ private:
 	Gdiplus::Bitmap* bitmap = nullptr; 
 
 public:
-	Animation(HDC clientdc, HDC memdc, int width, int height);
+	Animation(HWND hwnd, HDC memdc, int width, int height);
 	~Animation(); 
  
 	void createAnimation(HINSTANCE hInst, float frameTime);

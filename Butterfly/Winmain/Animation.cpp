@@ -2,14 +2,14 @@
 
 Animstate Animation::currAnim = PLAEYR_DEFAULT;
 
-
-Animation::Animation(HDC clientdc, HDC memdc, int width, int height)
+Animation::Animation(HWND hwnd, HDC memdc, int width, int height)
 {
+	clientDC =  GetDC(hwnd);
 	hInst = GetModuleHandle(nullptr);
 	
 	Gdiplus::GdiplusStartup(&GdiplusToken, &gsi, nullptr);
 	backDCgraphics = Gdiplus::Graphics::FromHDC(memdc);
-	hBitmap = CreateCompatibleBitmap(clientdc, width, height);  // Create Bitmap
+	hBitmap = CreateCompatibleBitmap(clientDC, width, height);  // Create Bitmap
 	bitmap = new Gdiplus::Bitmap(hBitmap, nullptr);
 }
 

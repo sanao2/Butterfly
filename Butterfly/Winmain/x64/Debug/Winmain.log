@@ -1,11 +1,22 @@
 ﻿  Animation.cpp
-D:\BF\Butterfly\Winmain\Animation.cpp(32,24): warning C4267: '초기화 중': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-D:\BF\Butterfly\Winmain\Animation.cpp(71,6): warning C4804: '>=': 연산에 'bool' 형식을 사용하는 것은 안전하지 않습니다.
+D:\BF\Butterfly\Winmain\Animation.cpp(29,24): warning C4267: '초기화 중': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\BF\Butterfly\Winmain\Animation.cpp(68,6): warning C4804: '>=': 연산에 'bool' 형식을 사용하는 것은 안전하지 않습니다.
+D:\BF\Butterfly\Winmain\Animation.cpp(81,2): error C2660: 'PatBlt': 함수는 4개의 인수를 사용하지 않습니다.
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\wingdi.h(4552,24):
+      'PatBlt' 선언을 참조하십시오.
+      D:\BF\Butterfly\Winmain\Animation.cpp(81,2):
+      인수 목록 '(HDC, int, int, DWORD)'을(를) 일치시키는 동안
+  
   Global.cpp
   Render.cpp
+D:\BF\Butterfly\Winmain\Render.cpp(8,22): error C2661: 'Animation::Animation': 오버로드된 함수에서 3개의 인수를 사용하지 않습니다.
+      D:\BF\Butterfly\Winmain\Render.cpp(8,22):
+      인수 목록 '(HWND, int, int)'을(를) 일치시키는 동안
+  
+D:\BF\Butterfly\Winmain\Render.cpp(31,17): error C2065: 'clientDC': 선언되지 않은 식별자입니다.
+D:\BF\Butterfly\Winmain\Render.cpp(31,34): error C2059: 구문 오류: ')'
   Winmain.cpp
 D:\BF\Butterfly\Winmain\Event\InputConstants.h(7,40): warning C4309: '초기화 중': 상수 값이 잘립니다.
   (소스 파일 'Winmain.cpp'을(를) 컴파일하는 중)
   
   코드를 생성하고 있습니다...
-  Winmain.vcxproj -> D:\BF\Butterfly\x64\Debug\Winmain.exe
