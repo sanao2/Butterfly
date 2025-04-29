@@ -28,10 +28,7 @@ void Animation::createAnimation(HINSTANCE hInst, float frameTime)
 	   auto frame = GetAnimationFrameID(currAnim, i);
 
 	   frames.push_back({ static_cast<Animstate>(frame) }); // Properly store the frame in the vector
-
-   }  
-
-   
+   }     
 }
 
 void Animation::findAnimation(Animstate animState, int frameIndex)
@@ -43,20 +40,19 @@ void Animation::findAnimation(Animstate animState, int frameIndex)
 
 void Animation::Initialize()
 {
-	Time::InitTime(); // Timer start  Initialization 
+
 	TotalTime = Time::GetTotalTime(); 
 	DeltaTime = Time::GetDeltaTime(); 
 }
 
 void Animation::Update()
 {
-	Time::UpdateTime();
-
+	
 	frameTime += DeltaTime;
 
 	if (frameTime >= timer.IsElapsed(5)) {
 		timer.Reset();  // Timer Reset 
-		currTime = (currTime + 1) % frames.size();
+		currFrame = (currFrame + 1) % frames.size();
 	}
 	
 	return;

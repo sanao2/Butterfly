@@ -5,6 +5,7 @@ Render::Render(HWND hwnd, int width, int height)
 {
     swap = new Swap(hwnd, width, height);
     RcManager = new ResourceManager(hwnd, width, height); // ResourceManager 객체 생성 
+    Time::InitTime(); // Timer start  Initialization 
 }
 
 Render::~Render()
@@ -14,6 +15,7 @@ Render::~Render()
 
 void Render::Update()
 {
+    Time::UpdateTime();
     swap->SwapBuffers();    // 백버퍼 -> 프론트버퍼 복사
 
 }
