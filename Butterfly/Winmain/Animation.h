@@ -78,6 +78,8 @@ private:
 	HDC memDC = nullptr; 
 
 	static Animstate currAnim;
+	Animstate prevAnim;  
+
 	vector<vector<int>> frames;      // All Animation Save vector
 	float DeltaTime = 0.0f;			 // 마지막 프레임 갱신 시점과의 차이(초)를 계산 → deltaTime
 	float frameTime = 0.0f;			 // 애니메이션 프레임 재생 시간 
@@ -95,6 +97,7 @@ public:
  
 	void createAnimation(HINSTANCE hInst, float frameTime);
 	vector<int> findAnimation(Animstate animState);
+	void currentAnimCheck(); 
 
 	void Initialize(); 
 	void Update(); 

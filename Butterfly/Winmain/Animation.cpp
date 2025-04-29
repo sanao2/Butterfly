@@ -39,6 +39,18 @@ vector<int> Animation::findAnimation(Animstate animState)
 	return frames[static_cast<int>(animState)];
 }
 
+void Animation::currentAnimCheck()
+{
+	if (currAnim == NULL) return; 
+
+	if (currAnim == prevAnim)
+	{
+		frames[prevAnim].clear();
+	}
+
+	return;
+}
+
 void Animation::Initialize()
 {
 	Time::InitTime(); 
@@ -66,7 +78,6 @@ void Animation::Render()
 
 	for(int i = 0; i < PLAYER_ANIMCOUNT; ++i)
 	{ 
-		int frameID = frames[currAnim][i];
 		
 
 	}
