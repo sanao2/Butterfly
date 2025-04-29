@@ -13,7 +13,7 @@ using::unordered_map;
 
 enum Animstate
 {
-	PLAYER_WALK, 
+	PLAYER_WALK_IDLE, 
 	PLAYER_RIGHTWALK,
 	PLAYER_LEFTWALK, 
 	PLAYER_DOWNWALK,
@@ -23,19 +23,28 @@ enum Animstate
 
 const wstring AnimPath = L"../Resource/";
 
-inline int GetAnimationID(Animstate Anistate)
-{
-	static int playerMotion[] = {
-		IDB_PLAYER_IDLE,
-		IDB_PLAYER_RIGHT_ONE,
-		IDB_PLAYER_RIGHT_SECOND,
-		IDB_PLAYER_RIGHT_THREE,
-		IDB_PLAYER_RIGHT_FOUR
-	};
-	if (Anistate < 0 || Anistate >= PLAEYR_ANIMCOUNT) return -1;
-
-	return playerMotion[Anistate]; 
+//inline int GetAnimationID(Animstate Anistate)
+//{
+//	static int playerMotion[] = {
+//		IDB_PLAYER_IDLE,
+//		IDB_PLAYER_RIGHT_ONE,
+//		IDB_PLAYER_RIGHT_SECOND,
+//		IDB_PLAYER_RIGHT_THREE,
+//		IDB_PLAYER_RIGHT_FOUR
+//	};
+//	if (Anistate < 0 || Anistate >= PLAEYR_ANIMCOUNT) return -1;
+//
+//	return playerMotion[Anistate]; 
+//};
+struct ResourceInfo {
+	int ImageID[]; 
 };
+
+const unordered_map<Animstate, ResourceInfo> AnimationMap = {
+	{PLAYER_WALK_IDLE, {IDB_PLAYER_IDLE, IDB_PLAYER_RIGHT_IDLE,
+						IDB_PLAYER_RIGHT_ONE, IDB_PLAYER_RIGHT_SECOND,
+						 IDB_PLAYER_RIGHT_THREE,IDB_PLAYER_RIGHT_FOUR}}
+}
 
 class Animation
 {
