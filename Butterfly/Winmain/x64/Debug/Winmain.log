@@ -1,10 +1,13 @@
 ﻿  Animation.cpp
-  Global.cpp
-  Render.cpp
+D:\backup\BF\Butterfly\Winmain\Animation.cpp(56,6): warning C4804: '>=': 연산에 'bool' 형식을 사용하는 것은 안전하지 않습니다.
   ResourceManager.cpp
+D:\backup\BF\Butterfly\Winmain\UI\ResourceManager.cpp(11,22): error C2065: 'hBitmap': 선언되지 않은 식별자입니다.
+  Timer.cpp
+D:\backup\BF\Butterfly\Winmain\UI\Timer.cpp(6,39): error C2614: 'Time::GlobalTimer': 멤버 초기화가 잘못되었습니다. 'totalTime'이(가) 기본 또는 멤버가 아닙니다.
+D:\backup\BF\Butterfly\Winmain\UI\Timer.cpp(25,3): error C2065: 'totalTime': 선언되지 않은 식별자입니다.
+D:\backup\BF\Butterfly\Winmain\UI\Timer.cpp(30,51): error C2065: 'totalTime': 선언되지 않은 식별자입니다.
   Winmain.cpp
 D:\backup\BF\Butterfly\Winmain\Event\InputConstants.h(7,40): warning C4309: '초기화 중': 상수 값이 잘립니다.
   (소스 파일 'Winmain.cpp'을(를) 컴파일하는 중)
   
   코드를 생성하고 있습니다...
-  Winmain.vcxproj -> D:\backup\BF\Butterfly\x64\Debug\Winmain.exe

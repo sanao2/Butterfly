@@ -26,21 +26,9 @@ void Animation::createAnimation(HINSTANCE hInst)
    for (int i = 0; i < PLAYER_ANIMCOUNT; ++i)
    {
 	   auto frames = GetAnimationFrameID(currAnim, i);
+
 	   frameId.push_back({ static_cast<Animstate>(frames) }); // Properly store the frame in the vector
 
-	   Gdiplus::Bitmap* Images = Gdiplus::Bitmap::FromBITMAPINFO(
-		   hInst , 
-		   MAKEINTRESOURCE(frames),
-		   L"PNG"
-	   )
-
-	   if (bmp.GetLastStatus() == Gdiplus::Ok)
-	   {
-		   UINT width = bmp.GetWidth(); 
-		   UINT height = bmp.GetHeight();
-	   }
-   
-      
    }  
 
    
@@ -56,13 +44,19 @@ void Animation::findAnimation(Animstate animState, int frameIndex)
 
 void Animation::Initialize()
 {
-	Time::InitTime(); // Timer Initialization
+	Time::InitTime(); // Timer start  Initialization 
+	
 }
 
 void Animation::Update()
 {
 	Time::UpdateTime();
 	DeltaTime = Time::GetDeltaTime(); // Get Frame deltaTime 
+	
+	if (frameTime >= time.IsElapsed(5)) {
+		time.Reset(); 
+		return;
+	}
 
 
 }

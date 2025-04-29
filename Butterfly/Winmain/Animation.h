@@ -63,6 +63,7 @@ const int GetAnimationFrameID(Animstate animstate, size_t frameIndex)
 	return it->second.ImageID[frameIndex]; // frameindex ind second Image return
 
 }
+ 
 
 class Animation
 {
@@ -73,12 +74,15 @@ private:
 	HDC memDC = nullptr; 
 
 	Animstate currAnim;				  // current AnimationMotion Setting 
-	vector<vector<int>> frameId;  // All Animation Save vector
+	vector<vector<int>> frameId;      // All Animation Save vector
 	float DeltaTime;		// 마지막 프레임 갱신 시점과의 차이(초)를 계산 → deltaTime
 	float frameTime;		// 애니메이션 프레임 재생 시간 
 
+	Time::Timer<> time;
+
 	ULONG_PTR GdiplusToken = NULL;
 	Gdiplus::Graphics* backDCgraphics = nullptr;
+	Time::GlobalTimer* GLT; 
 
 public:
 	Animation(HWND hwnd, int width, int height);

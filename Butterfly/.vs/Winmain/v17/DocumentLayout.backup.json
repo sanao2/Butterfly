@@ -3,16 +3,24 @@
   "WorkspaceRootPath": "D:\\backup\\BF\\Butterfly\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|D:\\backup\\BF\\Butterfly\\Winmain\\Animation.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|solutionrelative:Winmain\\Animation.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|D:\\backup\\BF\\Butterfly\\Winmain\\UI\\Timer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|solutionrelative:Winmain\\UI\\Timer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|D:\\backup\\BF\\Butterfly\\Winmain\\Animation.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|solutionrelative:Winmain\\Animation.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|D:\\backup\\BF\\Butterfly\\Winmain\\UI\\Timer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|solutionrelative:Winmain\\UI\\Timer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|D:\\backup\\BF\\Butterfly\\Winmain\\UI\\ResourceManager.h||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|solutionrelative:Winmain\\UI\\ResourceManager.h||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|D:\\backup\\BF\\Butterfly\\Winmain\\Animation.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|solutionrelative:Winmain\\Animation.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|D:\\backup\\BF\\Butterfly\\Winmain\\UI\\ResourceManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|solutionrelative:Winmain\\UI\\ResourceManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|D:\\backup\\BF\\Butterfly\\Winmain\\UI\\Timer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -26,8 +34,22 @@
       "DocumentGroups": [
         {
           "DockedWidth": 220,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Timer.h",
+              "DocumentMoniker": "D:\\backup\\BF\\Butterfly\\Winmain\\UI\\Timer.h",
+              "RelativeDocumentMoniker": "Winmain\\UI\\Timer.h",
+              "ToolTip": "D:\\backup\\BF\\Butterfly\\Winmain\\UI\\Timer.h",
+              "RelativeToolTip": "Winmain\\UI\\Timer.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-04-29T04:27:39.812Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
@@ -46,45 +68,58 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Timer.h",
-              "DocumentMoniker": "D:\\backup\\BF\\Butterfly\\Winmain\\UI\\Timer.h",
-              "RelativeDocumentMoniker": "Winmain\\UI\\Timer.h",
-              "ToolTip": "D:\\backup\\BF\\Butterfly\\Winmain\\UI\\Timer.h",
-              "RelativeToolTip": "Winmain\\UI\\Timer.h",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAAA4AAAAUAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "Animation.h",
+              "DocumentMoniker": "D:\\backup\\BF\\Butterfly\\Winmain\\Animation.h",
+              "RelativeDocumentMoniker": "Winmain\\Animation.h",
+              "ToolTip": "D:\\backup\\BF\\Butterfly\\Winmain\\Animation.h",
+              "RelativeToolTip": "Winmain\\Animation.h",
+              "ViewState": "AgIAAD4AAAAAAAAAAAAgwE0AAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-29T04:27:39.812Z",
+              "WhenOpened": "2025-04-29T02:52:17.413Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Animation.h",
-              "DocumentMoniker": "D:\\backup\\BF\\Butterfly\\Winmain\\Animation.h",
-              "RelativeDocumentMoniker": "Winmain\\Animation.h",
-              "ToolTip": "D:\\backup\\BF\\Butterfly\\Winmain\\Animation.h*",
-              "RelativeToolTip": "Winmain\\Animation.h*",
-              "ViewState": "AgIAADYAAAAAAAAAAAAAAEkAAAAPAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "ResourceManager.h",
+              "DocumentMoniker": "D:\\backup\\BF\\Butterfly\\Winmain\\UI\\ResourceManager.h",
+              "RelativeDocumentMoniker": "Winmain\\UI\\ResourceManager.h",
+              "ToolTip": "D:\\backup\\BF\\Butterfly\\Winmain\\UI\\ResourceManager.h*",
+              "RelativeToolTip": "Winmain\\UI\\ResourceManager.h*",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAADYAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-29T02:52:17.413Z",
+              "WhenOpened": "2025-04-29T05:44:00.531Z",
               "EditorCaption": ""
             }
           ]
         },
         {
           "DockedWidth": 220,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
+              "Title": "ResourceManager.cpp",
+              "DocumentMoniker": "D:\\backup\\BF\\Butterfly\\Winmain\\UI\\ResourceManager.cpp",
+              "RelativeDocumentMoniker": "Winmain\\UI\\ResourceManager.cpp",
+              "ToolTip": "D:\\backup\\BF\\Butterfly\\Winmain\\UI\\ResourceManager.cpp",
+              "RelativeToolTip": "Winmain\\UI\\ResourceManager.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-04-29T05:43:22.348Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "Timer.cpp",
               "DocumentMoniker": "D:\\backup\\BF\\Butterfly\\Winmain\\UI\\Timer.cpp",
               "RelativeDocumentMoniker": "Winmain\\UI\\Timer.cpp",
               "ToolTip": "D:\\backup\\BF\\Butterfly\\Winmain\\UI\\Timer.cpp",
               "RelativeToolTip": "Winmain\\UI\\Timer.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAmAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-04-29T04:37:50.429Z",
               "EditorCaption": ""
@@ -97,7 +132,7 @@
               "RelativeDocumentMoniker": "Winmain\\Animation.cpp",
               "ToolTip": "D:\\backup\\BF\\Butterfly\\Winmain\\Animation.cpp*",
               "RelativeToolTip": "Winmain\\Animation.cpp*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAADUAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-04-29T04:43:56.574Z",
               "EditorCaption": ""
