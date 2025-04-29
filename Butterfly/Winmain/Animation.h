@@ -90,9 +90,11 @@ private:
 	Gdiplus::GdiplusStartupInput gsi;
 	ULONG_PTR GdiplusToken = NULL;
 	Gdiplus::Graphics* backDCgraphics = nullptr;
+	HBITMAP hBitmap = nullptr; 
+	Gdiplus::Bitmap* bitmap = nullptr; 
 
 public:
-	Animation(HWND hwnd);
+	Animation(HWND hwnd, int width, int height);
 	~Animation(); 
  
 	void createAnimation(HINSTANCE hInst, float frameTime);

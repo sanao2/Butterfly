@@ -2,7 +2,7 @@
 
 Animstate Animation::currAnim = PLAYER_IDLE;
 
-Animation::Animation(HWND hwnd) : hWnd(hwnd)
+Animation::Animation(HWND hwnd, int width, int height) : hWnd(hwnd)
 {
 	clientDC = GetDC(hWnd);
 	memDC = CreateCompatibleDC(clientDC);
@@ -10,6 +10,8 @@ Animation::Animation(HWND hwnd) : hWnd(hwnd)
 	
 	Gdiplus::GdiplusStartup(&GdiplusToken, &gsi, nullptr);
 	backDCgraphics = Gdiplus::Graphics::FromHDC(memDC);
+	hBitmap = CreateCompatibleBitmap(clientDC, width, height);  // Create Bitmap
+	bitmap = new Gdiplus::Bitmap(hBitmap, nullptr);
 }
 
 Animation::~Animation()
@@ -18,6 +20,7 @@ Animation::~Animation()
 	Gdiplus::GdiplusShutdown(GdiplusToken);
 	ReleaseDC(hWnd, clientDC);
 	DeleteDC(memDC);
+
 }
 
 void Animation::createAnimation(HINSTANCE hInst, float frameTime)  
@@ -43,10 +46,12 @@ void Animation::currentAnimCheck()
 {
 	if (currAnim == NULL) return; 
 
-	if (currAnim == prevAnim)
-	{
+	if (currAnim == prevAnim) {
+		prevAnim = currAnim;
+		frameTime = 0.0f;
+		currFrame = 0;
 		frames[prevAnim].clear();
-	}
+	}	
 
 	return;
 }
@@ -75,10 +80,15 @@ void Animation::Update()
 void Animation::Render()
 {
 	if (currAnim == NULL) return;
-
-	for(int i = 0; i < PLAYER_ANIMCOUNT; ++i)
-	{ 
 		
+	for (int i = 0; i < frames[currAnim].size(); ++i) {
+		hBitmap = (HBITMAP)LoadImage(hInst, MAKEINTRESOURCE(frames[currAnim][i]), IMAGE_BITMAP, 0, 0, LR_CREATEDIBSECTION);
+		 
+	
+		backDCgraphics->DrawImage(&bitmap, 0, 0, bitmap.GetWidth(), bitmap.GetHeight());
+
+		if (currFrame == i) return; 
 
 	}
+	
 }
