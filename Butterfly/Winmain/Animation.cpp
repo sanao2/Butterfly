@@ -2,8 +2,11 @@
 
 Animation::Animation(HWND hwnd,int width, int height ) : hWnd(hwnd)
 {
+	clientDC = GetDC(hWnd);
+	memDC = CreateCompatibleDC(clientDC);
 	hInst = GetModuleHandle(nullptr);
-	ResMgr = new ResourceManager(hwnd, width, height);
+	Gdiplus::GdiplusStartup(&GdiplusToken, &gsi, nullptr);
+	backDCgraphics = Gdiplus::Graphics::FromHDC(memDC);
 }
 
 Animation::~Animation()

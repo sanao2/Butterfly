@@ -69,7 +69,9 @@ class Animation
 private:
 	HWND hWnd = nullptr;
 	HINSTANCE hInst = nullptr;
-	
+	HDC clientDC = nullptr; 
+	HDC memDC = nullptr; 
+
 	Animstate currAnim;				  // current AnimationMotion Setting 
 	vector<vector<Animstate>> frame;  // All Animation Save vector
 	int	currframe;
@@ -79,7 +81,6 @@ private:
 	Gdiplus::GdiplusStartupInput gsi = NULL;
 	Gdiplus::Bitmap* ImgBitmap = nullptr;
 	Gdiplus::Graphics* backDCgraphics = nullptr;
-
 
 public:
 	Animation(HWND hwnd, int width, int height);
