@@ -24,6 +24,12 @@
 #define IDB_POND                        135
 #define IDB_FLOOR_TILE_1                139
 #define IDB_FLOOR_TILE_ONE              139
+#define IDB_PLAYER_RIGHT_THREE          140
+#define IDB_PLAYER_RIGHT_ONE            141
+#define IDB_PLAYER_RIGHT_SECOND         142
+#define IDB_PNG7                        143
+#define IDB_PLAYER_RIGHT_FOUR           143
+#define IDB_PLAYER_RIGHT_IDLE           144
 #define ID_32771                        32771
 #define ID_Menu                         32772
 #define IDC_STATIC                      -1
@@ -32,7 +38,7 @@
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
-#define _APS_NEXT_RESOURCE_VALUE        140
+#define _APS_NEXT_RESOURCE_VALUE        145
 #define _APS_NEXT_COMMAND_VALUE         32773
 #define _APS_NEXT_CONTROL_VALUE         1000
 #define _APS_NEXT_SYMED_VALUE           110

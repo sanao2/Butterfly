@@ -131,6 +131,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Animation.h" />
     <ClInclude Include="Event\InputConstants.h" />
     <ClInclude Include="Event\InputManager.h" />
     <ClInclude Include="Event\KeyboardInputManager.h" />
@@ -151,6 +152,7 @@
     <ClInclude Include="Winmain.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Animation.cpp" />
     <ClCompile Include="Event\KeyboardInputManager.cpp" />
     <ClCompile Include="Global.cpp" />
     <ClCompile Include="Move\MoveManagers.cpp" />
@@ -169,6 +171,11 @@
     <Image Include="C:\Users\user\Desktop\리소스\Shop.png" />
     <Image Include="C:\Users\user\Desktop\리소스\shop_8bit.png" />
     <Image Include="Resource\One%27sResource\floorTile\floorTile_4.png" />
+    <Image Include="Resource\One%27sResource\player\Player_RightWalk_Four.png" />
+    <Image Include="Resource\One%27sResource\player\Player_RightWalk_IDLE.png" />
+    <Image Include="Resource\One%27sResource\player\Player_RightWalk_one.png" />
+    <Image Include="Resource\One%27sResource\player\Player_RightWalk_Second.png" />
+    <Image Include="Resource\One%27sResource\player\Player_RightWalk_Three.png" />
     <Image Include="Resource\player_IDLE.png" />
     <Image Include="Resource\Pond.png" />
     <Image Include="Resource\shop_8bits.png" />

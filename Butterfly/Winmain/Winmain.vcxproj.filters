@@ -90,6 +90,9 @@
     <ClInclude Include="UI\ResourceManager.h">
       <Filter>헤더 파일\UI</Filter>
     </ClInclude>
+    <ClInclude Include="Animation.h">
+      <Filter>헤더 파일\UI</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Winmain.cpp">
@@ -118,6 +121,9 @@
     </ClCompile>
     <ClCompile Include="UI\ResourceManager.cpp">
       <Filter>소스 파일\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="Animation.cpp">
+      <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -154,6 +160,21 @@
       <Filter>리소스 파일</Filter>
     </Image>
     <Image Include="Resource\One%27sResource\floorTile\floorTile_4.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\One%27sResource\player\Player_RightWalk_Four.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\One%27sResource\player\Player_RightWalk_one.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\One%27sResource\player\Player_RightWalk_Second.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\One%27sResource\player\Player_RightWalk_Three.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\One%27sResource\player\Player_RightWalk_IDLE.png">
       <Filter>리소스 파일</Filter>
     </Image>
   </ItemGroup>
