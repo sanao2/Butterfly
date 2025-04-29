@@ -20,6 +20,7 @@
 #define IDB_BITMAP1                     132
 #define IDB_PNG3                        133
 #define IDB_PLAYER_IDLE                 133
+#define IDB_PLAYER_DOWNWALK_IDLE        133
 #define IDB_TREE                        134
 #define IDB_POND                        135
 #define IDB_FLOOR_TILE_1                139
@@ -27,9 +28,18 @@
 #define IDB_PLAYER_RIGHT_THREE          140
 #define IDB_PLAYER_RIGHT_ONE            141
 #define IDB_PLAYER_RIGHT_SECOND         142
-#define IDB_PNG7                        143
 #define IDB_PLAYER_RIGHT_FOUR           143
+#define IDB_PNG7                        143
 #define IDB_PLAYER_RIGHT_IDLE           144
+#define IDB_LEFTWALK_FOUR               145
+#define IDB_LEFTWALK_ONE                146
+#define IDB_PNG6                        147
+#define IDB_LEFTWALK_SECOND             147
+#define IDB_PLAYER_LEFTWALK_THREE       148
+#define IDB_PLAYER_DOWNWALK_ONE         150
+#define IDB_PLAYER_DOWNWALK_SECOND      151
+#define IDB_PNG8                        152
+#define IDB_PLAYER_DOWNWALK_THREE       152
 #define ID_32771                        32771
 #define ID_Menu                         32772
 #define IDC_STATIC                      -1
@@ -38,7 +48,7 @@
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
-#define _APS_NEXT_RESOURCE_VALUE        145
+#define _APS_NEXT_RESOURCE_VALUE        153
 #define _APS_NEXT_COMMAND_VALUE         32773
 #define _APS_NEXT_CONTROL_VALUE         1000
 #define _APS_NEXT_SYMED_VALUE           110
