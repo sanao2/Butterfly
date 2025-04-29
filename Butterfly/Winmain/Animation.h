@@ -21,9 +21,9 @@ enum Animstate
 
 const wstring AnimPath = L"../Resource";
 
-inline int GetAnimPath()
+inline int GetAnimationID()
 {
-	static int playerPath[] = {
+	static int playerMotion[] = {
 		IDB_PLAYER_IDLE,
 		IDB_PLAYER_RIGHT_ONE,
 		IDB_PLAYER_RIGHT_SECOND,
@@ -35,7 +35,11 @@ inline int GetAnimPath()
 
 class Animation
 {
-private : 
+private:
+	Animstate currAnim;				  // current AnimationMotion Setting 
+	vector<vector<Animstate>> frame;  // All Animation Save vector
 
-public : 
+public:
+	Animation(); 
+	~Animation(); 
 };
