@@ -3,8 +3,10 @@
 #include <vector> 
 #include <iostream>
 #include <unordered_map>
-#include "UI/ResourceManager.h"
+#include <gdiplus.h>
 #include "UI/timer.h"
+#include "resource.h"
+#pragma comment(lib, "gdiplus.lib")
 using namespace std; 
 using std::vector;
 using std::string; 
@@ -67,13 +69,17 @@ class Animation
 private:
 	HWND hWnd = nullptr;
 	HINSTANCE hInst = nullptr;
-	ResourceManager* ResMgr = nullptr; 
-	Gdiplus::Image* bitmap;
-
+	
 	Animstate currAnim;				  // current AnimationMotion Setting 
 	vector<vector<Animstate>> frame;  // All Animation Save vector
 	int	currframe;
 	float DeltaTime;  
+
+	ULONG_PTR GdiplusToken = NULL;
+	Gdiplus::GdiplusStartupInput gsi = NULL;
+	Gdiplus::Bitmap* ImgBitmap = nullptr;
+	Gdiplus::Graphics* backDCgraphics = nullptr;
+
 
 public:
 	Animation(HWND hwnd, int width, int height);
