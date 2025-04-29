@@ -32,8 +32,6 @@ void ResourceManager::Initialize()
 {
 	if (currSprState > 0 || currSprState <= SPRITECOUNT) return;
 	
-	LoadImages(hInst);  // Load Images 
-
 }
 
 void ResourceManager::Update()

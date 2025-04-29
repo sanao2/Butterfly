@@ -4,15 +4,22 @@ Animation::~Animation()
 {
 }
 
-void Animation::frameinAnimation()
-{
 
-}
-
-void Animation::createAnimation(int AnimID, Animstate Anistate)
-{
-}
 
 void Animation::findAnimation()
+{
+}
+
+void Animation::Initialize()
+{
+	Time::InitTime(); // Timer Initialization
+}
+
+void Animation::Update()
+{
+	float deltaTime = Time::GetDeltaTime(); // Get Frame deltaTime 
+}
+
+void Animation::Render()
 {
 }

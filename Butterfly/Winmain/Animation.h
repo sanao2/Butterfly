@@ -72,9 +72,7 @@ private:
 public:
 	Animation(); 
 	~Animation(); 
-
-	void frameinAnimation();
-	void createAnimation(int AnimID, Animstate Anistate); 
+ 
 	void findAnimation(); 
 
 	void Initialize(); 

@@ -13,8 +13,6 @@ using std::string;
 using std::wstring;
 using::unordered_map;
 
-extern HINSTANCE hInst;
-
 enum SpriteState {
 	PLAYER_IDLE, 
 	SHOP,
