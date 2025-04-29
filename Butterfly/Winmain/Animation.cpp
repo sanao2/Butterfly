@@ -23,7 +23,7 @@ void Animation::createAnimation(HINSTANCE hInst)
    {
 	   auto frames = GetAnimationFrameID(currAnim, i);
 	   
-	   Gdiplus::Bitmap bitmap(hInst, frames); 
+	   Gdiplus::Bitmap bmp(hBitmap, nullptr);
    
        frame.push_back({ static_cast<Animstate>(frames) }); // Properly store the frame in the vector  
    }  

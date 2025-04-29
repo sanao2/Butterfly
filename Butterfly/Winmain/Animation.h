@@ -71,6 +71,7 @@ private:
 	HINSTANCE hInst = nullptr;
 	HDC clientDC = nullptr; 
 	HDC memDC = nullptr; 
+	HBITMAP hBitmap; 
 
 	Animstate currAnim;				  // current AnimationMotion Setting 
 	vector<vector<Animstate>> frame;  // All Animation Save vector
@@ -79,7 +80,7 @@ private:
 
 	ULONG_PTR GdiplusToken = NULL;
 	Gdiplus::GdiplusStartupInput gsi = NULL;
-	Gdiplus::Image* ImgBitmap = nullptr;
+	Gdiplus::Bitmap* ImgBitmap = nullptr;
 	Gdiplus::Graphics* backDCgraphics = nullptr;
 
 public:
