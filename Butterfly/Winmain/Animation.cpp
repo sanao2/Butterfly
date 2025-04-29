@@ -1,93 +1,89 @@
 #include "Animation.h"
 
-Animstate Animation::currAnim = PLAEYR_DEFAULT;
-Animstate Animation::prevAnim;
+Animstate Animation::currAnim = PLAYER_DEFAULT;
+Animstate Animation::prevAnim = PLAYER_DEFAULT;
 
 Animation::Animation(HWND hwnd, int width, int height)
 {
-	clientDC =  GetDC(hwnd);
-	memDC = CreateCompatibleDC(clientDC); // Create Compatible DC 
-	hInst = GetModuleHandle(nullptr);
-	
-	Gdiplus::GdiplusStartup(&GdiplusToken, &gsi, nullptr);
-	backDCgraphics = Gdiplus::Graphics::FromHDC(memDC);
-	hBitmap = CreateCompatibleBitmap(clientDC, width, height);  // Create Bitmap
-	bitmap = new Gdiplus::Bitmap(hBitmap, nullptr);
-
+    clientDC = GetDC(hwnd);
 }
 
 Animation::~Animation()
 {
-	delete backDCgraphics;
-	Gdiplus::GdiplusShutdown(GdiplusToken);
-
-}
-
-void Animation::createAnimation(HINSTANCE hInst, float frameTime)  
-{    
-    if (!frames.empty()) return;
-    frames.resize(PLAYER_ANIMCOUNT);
-
-    for (int state = 0; state < PLAYER_ANIMCOUNT; ++state) {
-        int frameCount = AnimStateFrameMap.at(static_cast<Animstate>(state)).ImageID.size();
-      
-        for (int i = 0; i < frameCount; ++i) {
-            frames[state].push_back( GetAnimationFrameID(static_cast<Animstate>(state), i));
-        }
+    if (bitmap)
+    {
+        delete bitmap;
+        bitmap = nullptr;
     }
+    if (backDCgraphics)
+    {
+        delete backDCgraphics;
+        backDCgraphics = nullptr;
+    }
+    if (hBitmap)
+    {
+        DeleteObject(hBitmap);
+        hBitmap = nullptr;
+    }
+    if (memDC)
+    {
+        DeleteDC(memDC);
+        memDC = nullptr;
+    }
+    Gdiplus::GdiplusShutdown(GdiplusToken);
 }
 
-vector<int> Animation::findAnimation(Animstate animState)
-{	
-	return frames[static_cast<int>(animState)];
-}
-
-void Animation::currentAnimCheck()
+void Animation::createAnimation(HINSTANCE hInst, float frameTime)
 {
-	if (currAnim == NULL) return; 
-
-	if (currAnim == prevAnim) {
-		prevAnim = currAnim;
-		frameTime = 0.0f;
-		currFrame = 0;
-		frames[prevAnim].clear();
-	}	
-
-	return;
+    this->hInst = hInst;
+    this->frameTime = frameTime;
 }
 
 void Animation::Initialize()
 {
-	Time::InitTime(); 
-	TotalTime = Time::GetTotalTime(); 
-	DeltaTime = Time::GetDeltaTime(); 
+    Gdiplus::GdiplusStartup(&GdiplusToken, &gsi, nullptr);
+
+    memDC = CreateCompatibleDC(nullptr);
+    hBitmap = CreateCompatibleBitmap(GetDC(nullptr), g_width, g_height);
+    SelectObject(memDC, hBitmap);
+
+    backDCgraphics = new Gdiplus::Graphics(memDC);
+
+    timer.Elapsed();
 }
 
 void Animation::Update()
-{	
-	Time::UpdateTime();
-	frameTime += DeltaTime;
+{
+    DeltaTime = timer.Elapsed();
+    TotalTime += DeltaTime;
 
-	if (frameTime >= timer.IsElapsed(5.0f)) {
-		timer.Reset();  // Timer Reset 
-		currFrame = (currFrame + 1) % frames[currAnim].size();
-	}
-	
-	return;
+    if (TotalTime >= frameTime)
+    {
+        currFrame++;
+        TotalTime = 0.0f;
+
+        size_t frameCount = AnimStateFrameMap.at(currAnim).ImageID.size();
+        if (currFrame >= frameCount)
+            currFrame = 0;
+    }
+
+    timer.Reset();
 }
-	
 
 void Animation::Render(HDC drawDC)
 {
-	if (currAnim == NULL) return;		
+    int frameID = GetAnimationFrameID(currAnim, currFrame);
+    if (frameID == -1) return;
 
-	for (int i = 0; i < frames[currAnim].size(); ++i) {
-		hBitmap = (HBITMAP)LoadImage(hInst, MAKEINTRESOURCE(frames[currAnim][i]), IMAGE_BITMAP, 0, 0, LR_CREATEDIBSECTION);
-		 	
-		backDCgraphics->DrawImage(bitmap, 0, 0, bitmap->GetWidth(), bitmap->GetHeight());
+    HBITMAP hBmp = LoadBitmap(hInst, MAKEINTRESOURCE(frameID));
+    if (!hBmp) return;
 
-		if (currFrame == i) return; 
+    HDC tempDC = CreateCompatibleDC(drawDC);
+    HBITMAP oldBmp = (HBITMAP)SelectObject(tempDC, hBmp);
 
-	}
-	
+    BitBlt(drawDC, 0, 0, g_width, g_height, tempDC, 0, 0, SRCCOPY);
+
+    SelectObject(tempDC, oldBmp);
+    DeleteObject(hBmp);
+    DeleteDC(tempDC);
 }

@@ -18,22 +18,32 @@ void Render::Update()
     swap->SwapBuffers();    // 백버퍼 -> 프론트버퍼 복사
     anim->Update(); // Animation Update 
 }
+
 void Render::RenderScene(HINSTANCE hInst)
 {
-    memDC = swap->GetMemDC(); 
+    memDC = swap->GetMemDC();
     HBITMAP tempBitmap = CreateCompatibleBitmap(GetDC(hWnd), clientSize.x, clientSize.y);
     SelectObject(memDC, tempBitmap);
 
-    // 그리기 예제
-   PatBlt(memDC, 0, 0, clientSize.x, clientSize.y, WHITENESS);
-   /*  Rectangle(memDC, 50, 50, 200, 200);*/
-  // RcManager->Render(memDC, 0, 0, clientSize.x / 2, clientSize.y / 2); 
-   anim->Render(memDC);
+    // 화면 초기화 (배경을 흰색으로 채우기)
+    PatBlt(memDC, 0, 0, clientSize.x, clientSize.y, WHITENESS);
+
+    // 리소스 로딩 - 이미지를 로드하기 위해 LoadImages 호출
+    try {
+        RcManager->LoadImages(hInst);  // 이미지를 로드하는 함수 호출
+    }
+    catch (const std::exception& e) {
+        std::cerr << "Error loading images: " << e.what() << std::endl;
+    }
+
+    // 애니메이션 업데이트 및 렌더링
+    anim->Update(); // 애니메이션 업데이트
+    anim->Render(memDC); // 애니메이션 렌더링
 
     // 스왑 메모리 DC에 복사 (swap 내부 메모리 DC를 가져오는 메소드 필요)
-   // BitBlt(GetDC(hWnd), 0, 0, clientSize.x, clientSize.y, memDC, 0, 0, SRCCOPY);
-   swap->SwapBuffers(); 
+    swap->SwapBuffers();
 
+    // 리소스 해제
     DeleteObject(tempBitmap);
     DeleteDC(memDC);
 }

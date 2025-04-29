@@ -18,7 +18,6 @@
 #define ID8_Shop                        131
 #define IDB_SHOP                        131
 #define IDB_BITMAP1                     132
-#define IDB_PNG3                        133
 #define IDB_PLAYER_IDLE                 133
 #define IDB_PLAYER_DOWNWALK_IDLE        133
 #define IDB_TREE                        134

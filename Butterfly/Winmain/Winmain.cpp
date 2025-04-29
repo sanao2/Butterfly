@@ -133,11 +133,11 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 
         Time::UpdateTime();
         float TotalTime = Time::GetTotalTime(); 
-        cout << "[" << TotalTime << "]" << endl;
+        std::cout << "[" << TotalTime << "]" << std::endl;
 
         boxDraw();
         move->MoveUpdate();
-		render->RenderScene(hPrevInstance); // 렌더링 호출
+		render->RenderScene(hInstance); // 렌더링 호출
 		
     }
 
