@@ -62,14 +62,16 @@ const unordered_map<Animstate, ResourceInfo> AnimationMap = {
 	{ PLAYER_USEPIKAX_UP,{IDB_USEPIKAX_UP_ONE, IDB_USEPIKAX_UP_SECOND}}
 };
 
-const int GetAnimMotionImage(Animstate animstate)
+const int GetAnimMotionImage(Animstate animstate, size_t frameIndex)
 {
 	auto it = AnimationMap.find(animstate); 
 
-	if (it == AnimationMap.end())
+	if (it == AnimationMap.end() || frameIndex >= it->second.ImageID.size())
 	{
-		return i
+		return -1;
 	}
+
+	return it->second.ImageID[frameIndex];
 
 }
 
