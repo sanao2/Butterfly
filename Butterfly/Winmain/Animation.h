@@ -39,7 +39,8 @@ struct ResourceInfo {
 
 
 const unordered_map<Animstate, ResourceInfo> AnimStateFrameMap = {
-	{PLAYER_IDLE, {}},
+	{PLAYER_IDLE, {IDB_PLAYER_DOWNWALK_IDLE, IDB_PLAYER_RIGHT_IDLE,
+				   IDB_LEFTWALK_ONE, IDB_PLAYER_UPWALK_IDLE}},
 	{PLAYER_RIGHTWALK,{IDB_PLAYER_RIGHT_IDLE,IDB_PLAYER_RIGHT_ONE,
 				       IDB_PLAYER_RIGHT_SECOND, IDB_PLAYER_RIGHT_THREE,
 				       IDB_PLAYER_RIGHT_FOUR}},
@@ -89,7 +90,7 @@ private:
 	Gdiplus::Graphics* backDCgraphics = nullptr;
 
 public:
-	Animation(HWND hwnd, int width, int height);
+	Animation(HWND hwnd);
 	~Animation(); 
  
 	void createAnimation(HINSTANCE hInst, float frameTime);

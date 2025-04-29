@@ -2,12 +2,11 @@
 
 Animstate Animation::currAnim = PLAYER_IDLE;
 
-Animation::Animation(HWND hwnd,int width, int height ) : hWnd(hwnd)
+Animation::Animation(HWND hwnd) : hWnd(hwnd)
 {
 	clientDC = GetDC(hWnd);
 	memDC = CreateCompatibleDC(clientDC);
 	hInst = GetModuleHandle(nullptr);
-
 	
 	Gdiplus::GdiplusStartup(&GdiplusToken, &gsi, nullptr);
 	backDCgraphics = Gdiplus::Graphics::FromHDC(memDC);
@@ -63,4 +62,12 @@ void Animation::Update()
 
 void Animation::Render()
 {
+	if (currAnim == NULL) return;
+
+	for(int i = 0; i < PLAYER_ANIMCOUNT; ++i)
+	{ 
+		int frameID = frames[currAnim][i];
+		
+
+	}
 }
