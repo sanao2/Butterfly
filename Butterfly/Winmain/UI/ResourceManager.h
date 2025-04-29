@@ -43,6 +43,7 @@ private :
 	HWND		hWnd =		NULL;
 	HDC			clientDC =  NULL; 
 	HDC			memDC =		NULL;			// BackBuffer
+	HBITMAP		hBitmap = NULL; 
 
 	SpriteState currSprState;
 	array<Gdiplus::Bitmap*, SpriteState::SPRITECOUNT> Sprites; // All Resource Save in array

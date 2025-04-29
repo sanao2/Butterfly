@@ -7,5 +7,4 @@ D:\backup\BF\Butterfly\Winmain\Event\InputConstants.h(7,40): warning C4309: '초
   (소스 파일 'Winmain.cpp'을(를) 컴파일하는 중)
   
   코드를 생성하고 있습니다...
-ResourceManager.obj : error LNK2001: 확인할 수 없는 외부 기호 "struct HINSTANCE__ * hInst" (?hInst@@3PEAUHINSTANCE__@@EA)
-D:\backup\BF\Butterfly\x64\Debug\Winmain.exe : fatal error LNK1120: 1개의 확인할 수 없는 외부 참조입니다.
+  Winmain.vcxproj -> D:\backup\BF\Butterfly\x64\Debug\Winmain.exe

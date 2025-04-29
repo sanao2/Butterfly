@@ -23,8 +23,8 @@ namespace Time
 
         TimePoint start;
         TimePoint last;
-        float deltaTime;
-        float totalTime;
+        float deltaTime; // 마지막 프레임 갱신 시점과의 차이(초)를 계산 → deltaTime
+        float frameTime; // 애니메이션 프레임 재생 시간 
     };
 
     void InitTime();

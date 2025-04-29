@@ -8,7 +8,6 @@ ResourceManager::ResourceManager(HWND _hWnd, int width, int height) : hWnd(_hWnd
 	clientDC = GetDC(hWnd);
 
 	memDC = CreateCompatibleDC(clientDC);
-	hBitmap = CreateCompatibleBitmap(clientDC,width,height);
 	SelectObject(memDC, hBitmap);  // memDC and memBitmap linked 
 
 	Gdiplus::GdiplusStartup(&GdiplusToken, &gsi, nullptr);
@@ -21,7 +20,7 @@ ResourceManager::~ResourceManager()
 	for (auto bmp : Sprites) delete bmp;
 	delete backDCgraphics;
 
-	DeleteObject(hBitmap);
+	DeleteObject(ImgBitmap);
 	DeleteDC(memDC);
 
 	ReleaseDC(hWnd, clientDC);
