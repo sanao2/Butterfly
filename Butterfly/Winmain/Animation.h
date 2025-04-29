@@ -17,9 +17,9 @@ enum Animstate
 	PLAYER_POT
 };
 
-const wstring AnimPath = L"../Resource";
+const wstring AnimPath = L"../Resource/";
 
-inline int GetAnimationID()
+inline int GetAnimationID(Animstate Animstate)
 {
 	static int playerMotion[] = {
 		IDB_PLAYER_IDLE,
@@ -41,9 +41,11 @@ public:
 	Animation(); 
 	~Animation(); 
 
+	void frameinAnimation();
 	void createAnimation(); 
 	void findAnimation(); 
 
+	void Initialize(); 
 	void Update(); 
 	void Render(); 
 };
