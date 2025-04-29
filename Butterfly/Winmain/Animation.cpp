@@ -6,26 +6,41 @@ Animation::Animation(HWND hwnd,int width, int height ) : hWnd(hwnd)
 	memDC = CreateCompatibleDC(clientDC);
 	hInst = GetModuleHandle(nullptr);
 
+	Gdiplus::GdiplusStartupInput gsi;
 	Gdiplus::GdiplusStartup(&GdiplusToken, &gsi, nullptr);
 	backDCgraphics = Gdiplus::Graphics::FromHDC(memDC);
 }
 
 Animation::~Animation()
 {
-
+	delete backDCgraphics;
+	Gdiplus::GdiplusShutdown(GdiplusToken);
+	ReleaseDC(hWnd, clientDC);
+	DeleteDC(memDC);
 }
 
 void Animation::createAnimation(HINSTANCE hInst)  
 {  
-   if (!frame.empty()) return;  
+   if (!frameId.empty()) return;
 
    for (int i = 0; i < PLAYER_ANIMCOUNT; ++i)
    {
 	   auto frames = GetAnimationFrameID(currAnim, i);
-	   
-	   Gdiplus::Bitmap bmp(hBitmap, nullptr);
+	   frameId.push_back({ static_cast<Animstate>(frames) }); // Properly store the frame in the vector
+
+	   Gdiplus::Bitmap* Images = Gdiplus::Bitmap::FromBITMAPINFO(
+		   hInst , 
+		   MAKEINTRESOURCE(frames),
+		   L"PNG"
+	   )
+
+	   if (bmp.GetLastStatus() == Gdiplus::Ok)
+	   {
+		   UINT width = bmp.GetWidth(); 
+		   UINT height = bmp.GetHeight();
+	   }
    
-       frame.push_back({ static_cast<Animstate>(frames) }); // Properly store the frame in the vector  
+      
    }  
 
    
@@ -48,8 +63,6 @@ void Animation::Update()
 {
 	Time::UpdateTime();
 	DeltaTime = Time::GetDeltaTime(); // Get Frame deltaTime 
-
-	if ()
 
 
 }

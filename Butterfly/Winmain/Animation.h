@@ -71,16 +71,13 @@ private:
 	HINSTANCE hInst = nullptr;
 	HDC clientDC = nullptr; 
 	HDC memDC = nullptr; 
-	HBITMAP hBitmap; 
 
 	Animstate currAnim;				  // current AnimationMotion Setting 
-	vector<vector<Animstate>> frame;  // All Animation Save vector
+	vector<vector<int>> frameId;  // All Animation Save vector
 	float DeltaTime;		// 마지막 프레임 갱신 시점과의 차이(초)를 계산 → deltaTime
 	float frameTime;		// 애니메이션 프레임 재생 시간 
 
 	ULONG_PTR GdiplusToken = NULL;
-	Gdiplus::GdiplusStartupInput gsi = NULL;
-	Gdiplus::Bitmap* ImgBitmap = nullptr;
 	Gdiplus::Graphics* backDCgraphics = nullptr;
 
 public:
