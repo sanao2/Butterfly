@@ -2,8 +2,7 @@
 
 Animation::Animation()
 {
-	Gtimer = &Time::GlobalTimer::GetInstance();
-	
+	hInst = GetModuleHandle(nullptr);
 }
 
 Animation::~Animation()
@@ -22,14 +21,21 @@ void Animation::createAnimation()
 	}
 }
 
-void Animation::findAnimation()
+void Animation::findAnimation(Animstate animState, int frameIndex)
 {
+	
+	
+	auto ResPath = GetAnimMotionImage(animState, frameIndex);
+
+	HRSRC hResInfo = FindResource(hInst,
+					 MAKEINTRESOURCE(ResPath),
+					 RT_BITMAP
+					 );
 }
 
 void Animation::Initialize()
 {
 	Time::InitTime(); // Timer Initialization
-	TimeInstance.Init();
 }
 
 void Animation::Update()

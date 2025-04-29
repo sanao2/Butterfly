@@ -66,9 +66,10 @@ const int GetAnimMotionImage(Animstate animstate, size_t frameIndex)
 class Animation
 {
 private:
+	HWND hWnd = nullptr; 
+	HINSTANCE hInst = nullptr;
 	Animstate currAnim;				  // current AnimationMotion Setting 
 	vector<vector<Animstate>> frame;  // All Animation Save vector
-	Time::GlobalTimer* Gtimer = nullptr; 
 	int	currframe;
 	float DeltaTime;  
 
@@ -77,7 +78,7 @@ public:
 	~Animation(); 
  
 	void createAnimation(); 
-	void findAnimation(); 
+	void findAnimation(Animstate animState, int frameIndex);
 
 	void Initialize(); 
 	void Update(); 
