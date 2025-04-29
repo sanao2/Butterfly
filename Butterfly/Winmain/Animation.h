@@ -34,7 +34,7 @@ struct ResourceInfo {
 };
 
 
-const unordered_map<Animstate, ResourceInfo> AnimationMap = {
+const unordered_map<Animstate, ResourceInfo> AnimStateFrameMap = {
 	{PLAYER_RIGHTWALK,{IDB_PLAYER_RIGHT_IDLE,IDB_PLAYER_RIGHT_ONE,
 				       IDB_PLAYER_RIGHT_SECOND, IDB_PLAYER_RIGHT_THREE,
 				       IDB_PLAYER_RIGHT_FOUR}},
@@ -50,11 +50,11 @@ const unordered_map<Animstate, ResourceInfo> AnimationMap = {
 	{ PLAYER_USEPIKAX_UP,{IDB_USEPIKAX_UP_ONE, IDB_USEPIKAX_UP_SECOND}}
 };
 
-const int GetAnimMotionImage(Animstate animstate, size_t frameIndex)
+const int GetAnimationFrameID(Animstate animstate, size_t frameIndex)
 {
-	auto it = AnimationMap.find(animstate); 
+	auto it = AnimStateFrameMap.find(animstate); 
 
-	if (it == AnimationMap.end() || frameIndex >= it->second.ImageID.size())
+	if (it == AnimStateFrameMap.end() || frameIndex >= it->second.ImageID.size())
 	{
 		return -1;
 	}
@@ -68,13 +68,16 @@ class Animation
 private:
 	HWND hWnd = nullptr; 
 	HINSTANCE hInst = nullptr;
+	HBITMAP hBitmap = nullptr; 
+	BITMAP* Image = nullptr; 
+
 	Animstate currAnim;				  // current AnimationMotion Setting 
 	vector<vector<Animstate>> frame;  // All Animation Save vector
 	int	currframe;
 	float DeltaTime;  
 
 public:
-	Animation(); 
+	Animation(HWND hWnd); 
 	~Animation(); 
  
 	void createAnimation(); 
