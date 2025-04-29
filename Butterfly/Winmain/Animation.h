@@ -13,8 +13,7 @@ using std::string;
 using std::wstring; 
 using::unordered_map;
 
-extern int currFrame;
-extern Animstate currAnim;
+
 
 enum Animstate
 { 
@@ -75,12 +74,12 @@ private:
 	HINSTANCE hInst = nullptr;
 	HDC clientDC = nullptr; 
 	HDC memDC = nullptr; 
-
+	Animstate currAnim;
 	vector<vector<int>> frames;      // All Animation Save vector
 	float DeltaTime = 0.0f;		// 마지막 프레임 갱신 시점과의 차이(초)를 계산 → deltaTime
 	float frameTime = 0.0f;		// 애니메이션 프레임 재생 시간 
 	float TotalTime = 0.0f; 
-	 
+	int currFrame = 0;
 	Time::Timer<> timer;
 
 	ULONG_PTR GdiplusToken = NULL;

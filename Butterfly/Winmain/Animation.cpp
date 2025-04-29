@@ -1,10 +1,5 @@
 #include "Animation.h"
 
-//extern 
-Time::Timer<> timer;
-int currFrame = 0; 
-Animstate currAnim; 
-
 Animation::Animation(HWND hwnd,int width, int height ) : hWnd(hwnd)
 {
 	clientDC = GetDC(hWnd);
