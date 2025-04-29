@@ -24,6 +24,7 @@ namespace Time
         TimePoint start;
         TimePoint last;
         float deltaTime;
+        float totalTime;
     };
 
     void InitTime();

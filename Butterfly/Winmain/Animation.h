@@ -74,11 +74,12 @@ private:
 	HDC memDC = nullptr; 
 
 	Animstate currAnim;				  // current AnimationMotion Setting 
-	vector<vector<int>> frameId;      // All Animation Save vector
+	vector<vector<int>> frames;      // All Animation Save vector
 	float DeltaTime;		// 마지막 프레임 갱신 시점과의 차이(초)를 계산 → deltaTime
 	float frameTime;		// 애니메이션 프레임 재생 시간 
-
-	Time::Timer<> time;
+	float TotalTime; 
+	int currTime; 
+	Time::Timer<> timer;
 
 	ULONG_PTR GdiplusToken = NULL;
 	Gdiplus::Graphics* backDCgraphics = nullptr;

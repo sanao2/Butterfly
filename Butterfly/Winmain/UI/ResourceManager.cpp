@@ -6,13 +6,10 @@ SpriteState currSprState = PLAYER_IDLE;
 ResourceManager::ResourceManager(HWND _hWnd, int width, int height) : hWnd(_hWnd)
 {
 	clientDC = GetDC(hWnd);
-
 	memDC = CreateCompatibleDC(clientDC);
-	SelectObject(memDC, hBitmap);  // memDC and memBitmap linked 
 
 	Gdiplus::GdiplusStartup(&GdiplusToken, &gsi, nullptr);
-	backDCgraphics = Gdiplus::Graphics::FromHDC(memDC);
-		
+	backDCgraphics = Gdiplus::Graphics::FromHDC(memDC);		
 }
 
 ResourceManager::~ResourceManager()

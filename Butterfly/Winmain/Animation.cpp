@@ -21,13 +21,13 @@ Animation::~Animation()
 
 void Animation::createAnimation(HINSTANCE hInst, float frameTime)  
 {  
-   if (!frameId.empty()) return;
+   if (!frames.empty()) return;
 
    for (int i = 0; i < PLAYER_ANIMCOUNT; ++i)
    {
-	   auto frames = GetAnimationFrameID(currAnim, i);
+	   auto frame = GetAnimationFrameID(currAnim, i);
 
-	   frameId.push_back({ static_cast<Animstate>(frames) }); // Properly store the frame in the vector
+	   frames.push_back({ static_cast<Animstate>(frame) }); // Properly store the frame in the vector
 
    }  
 
@@ -44,21 +44,22 @@ void Animation::findAnimation(Animstate animState, int frameIndex)
 void Animation::Initialize()
 {
 	Time::InitTime(); // Timer start  Initialization 
-	
+	TotalTime = Time::GetTotalTime(); 
+	DeltaTime = Time::GetDeltaTime(); 
 }
 
 void Animation::Update()
 {
 	Time::UpdateTime();
-	DeltaTime = Time::GetDeltaTime(); // Get Frame deltaTime 
-	
+
+	frameTime += DeltaTime;
+
 	if (frameTime >= timer.IsElapsed(5)) {
-		Time::Clock(); // now time Save 
 		timer.Reset();  // Timer Reset 
-		return;
+		currTime = (currTime + 1) % frames.size();
 	}
-
-
+	
+	return;
 }
 	
 
