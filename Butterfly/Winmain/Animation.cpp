@@ -1,16 +1,15 @@
 #include "Animation.h"
 
-Animstate Animation::currAnim = PLAYER_IDLE_ANIM;
+Animstate Animation::currAnim = PLAEYR_DEFAULT;
 
-Animation::Animation(HWND hwnd, int width, int height) : hWnd(hwnd)
+
+Animation::Animation(HDC clientdc, HDC memdc, int width, int height)
 {
-	clientDC = GetDC(hWnd);
-	memDC = CreateCompatibleDC(clientDC);
 	hInst = GetModuleHandle(nullptr);
 	
 	Gdiplus::GdiplusStartup(&GdiplusToken, &gsi, nullptr);
-	backDCgraphics = Gdiplus::Graphics::FromHDC(memDC);
-	hBitmap = CreateCompatibleBitmap(clientDC, width, height);  // Create Bitmap
+	backDCgraphics = Gdiplus::Graphics::FromHDC(memdc);
+	hBitmap = CreateCompatibleBitmap(clientdc, width, height);  // Create Bitmap
 	bitmap = new Gdiplus::Bitmap(hBitmap, nullptr);
 }
 
@@ -18,8 +17,6 @@ Animation::~Animation()
 {
 	delete backDCgraphics;
 	Gdiplus::GdiplusShutdown(GdiplusToken);
-	ReleaseDC(hWnd, clientDC);
-	DeleteDC(memDC);
 
 }
 
@@ -77,10 +74,11 @@ void Animation::Update()
 }
 	
 
-void Animation::Render()
+void Animation::Render(HDC drawDC)
 {
 	if (currAnim == NULL) return;
 		
+	PatBlt(drawDC, 0, 0,  WHITENESS); // Clear Screen 
 	for (int i = 0; i < frames[currAnim].size(); ++i) {
 		hBitmap = (HBITMAP)LoadImage(hInst, MAKEINTRESOURCE(frames[currAnim][i]), IMAGE_BITMAP, 0, 0, LR_CREATEDIBSECTION);
 		 	

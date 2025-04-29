@@ -17,7 +17,7 @@ using::unordered_map;
 
 enum Animstate
 {
-	PLAYER_IDLE_ANIM, 
+	PLAEYR_DEFAULT, 
 	PLAYER_RIGHTWALK,
 	PLAYER_LEFTWALK, 
 	PLAYER_DOWNWALK,
@@ -53,7 +53,7 @@ const unordered_map<Animstate, ResourceInfo> AnimStateFrameMap = {
 	{ PLAYER_USEPIKAX_UP,{IDB_USEPIKAX_UP_ONE, IDB_USEPIKAX_UP_SECOND}}
 };
 
-const int GetAnimationFrameID(Animstate animstate, size_t frameIndex)
+inline const int GetAnimationFrameID(Animstate animstate, size_t frameIndex)
 {
 	auto it = AnimStateFrameMap.find(animstate); 
 
@@ -65,14 +65,12 @@ const int GetAnimationFrameID(Animstate animstate, size_t frameIndex)
 	return it->second.ImageID[frameIndex]; // frameindex ind second Image return
 
 }
- 
+extern int g_width; 
+extern int g_height; 
 class Animation
 {
 private:
-	HWND hWnd = nullptr;
 	HINSTANCE hInst = nullptr;
-	HDC clientDC = nullptr; 
-	HDC memDC = nullptr; 
 
 	static Animstate currAnim;
 	Animstate prevAnim;  
@@ -91,7 +89,7 @@ private:
 	Gdiplus::Bitmap* bitmap = nullptr; 
 
 public:
-	Animation(HWND hwnd, int width, int height);
+	Animation(HDC clientdc, HDC memdc, int width, int height);
 	~Animation(); 
  
 	void createAnimation(HINSTANCE hInst, float frameTime);
@@ -100,7 +98,7 @@ public:
 
 	void Initialize(); 
 	void Update(); 
-	void Render(); 
+	void Render(HDC drawDC);
 
 	void SetcurrAnimState(Animstate animstate) { currAnim = animstate; }
 	Animstate GetcurrAnimState() { return currAnim; }
