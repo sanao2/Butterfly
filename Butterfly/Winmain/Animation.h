@@ -12,8 +12,7 @@ using std::wstring;
 using::unordered_map;
 
 enum Animstate
-{
-	PLAYER_WALK_IDLE, 
+{ 
 	PLAYER_RIGHTWALK,
 	PLAYER_LEFTWALK, 
 	PLAYER_DOWNWALK,
@@ -41,9 +40,18 @@ struct ResourceInfo {
 };
 
 const unordered_map<Animstate, ResourceInfo> AnimationMap = {
-	{PLAYER_WALK_IDLE, {IDB_PLAYER_IDLE, IDB_PLAYER_RIGHT_IDLE,
-						IDB_PLAYER_RIGHT_ONE, IDB_PLAYER_RIGHT_SECOND,
-						 IDB_PLAYER_RIGHT_THREE,IDB_PLAYER_RIGHT_FOUR}}
+	{PLAYER_RIGHTWALK,{IDB_PLAYER_RIGHT_IDLE,IDB_PLAYER_RIGHT_ONE,
+				    IDB_PLAYER_RIGHT_SECOND, IDB_PLAYER_RIGHT_THREE,
+				  IDB_PLAYER_RIGHT_FOUR}}
+
+};
+
+const int GetAnimMotionImage(Animstate animstate)
+{
+	auto it = AnimationMap.find(animstate); 
+
+	
+
 }
 
 class Animation
