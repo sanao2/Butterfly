@@ -117,6 +117,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 
     std::unique_ptr<Move::MoveManager> move = std::make_unique<Move::MoveManager>(key, rect);
 
+    Time::InitTime(); // Timer start  Initialization 
+
     MSG msg;
     while (true)
     {
@@ -128,6 +130,10 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
             TranslateMessage(&msg);
             DispatchMessage(&msg);
         }
+
+        Time::UpdateTime();
+        float TotalTime = Time::GetTotalTime(); 
+        cout << "[" << TotalTime << "]" << endl;
 
         boxDraw();
         move->MoveUpdate();
