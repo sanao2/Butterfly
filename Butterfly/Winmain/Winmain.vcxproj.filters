@@ -34,6 +34,15 @@
     <Filter Include="헤더 파일\UI">
       <UniqueIdentifier>{92a7c4b5-a677-4b26-acdf-07dcc5156126}</UniqueIdentifier>
     </Filter>
+    <Filter Include="리소스 파일\player">
+      <UniqueIdentifier>{01f4dfe0-f0dd-47bc-936b-9b614092bd9b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="리소스 파일\Object">
+      <UniqueIdentifier>{6cbe1beb-87c8-4c09-95a8-fa862f3050a6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="리소스 파일\player\UsePikax">
+      <UniqueIdentifier>{1f64edfc-4fad-4e03-9d36-c12c819a3e62}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -138,43 +147,100 @@
     <Image Include="Winmain.ico">
       <Filter>리소스 파일</Filter>
     </Image>
-    <Image Include="C:\Users\user\Desktop\리소스\Shop.png">
-      <Filter>리소스 파일</Filter>
-    </Image>
-    <Image Include="C:\Users\user\Desktop\리소스\shop_8bit.png">
-      <Filter>리소스 파일</Filter>
-    </Image>
     <Image Include="bitmap1.bmp">
-      <Filter>리소스 파일</Filter>
-    </Image>
-    <Image Include="Resource\shop_8bits.png">
-      <Filter>리소스 파일</Filter>
-    </Image>
-    <Image Include="Resource\player_IDLE.png">
       <Filter>리소스 파일</Filter>
     </Image>
     <Image Include="Resource\Tree.png">
       <Filter>리소스 파일</Filter>
     </Image>
-    <Image Include="Resource\Pond.png">
-      <Filter>리소스 파일</Filter>
+    <Image Include="Resource\One%27sResource\player\Player_downwalk_IDLE.png">
+      <Filter>리소스 파일\player</Filter>
     </Image>
-    <Image Include="Resource\One%27sResource\floorTile\floorTile_4.png">
-      <Filter>리소스 파일</Filter>
+    <Image Include="Resource\One%27sResource\player\Player_downwalk_one.png">
+      <Filter>리소스 파일\player</Filter>
+    </Image>
+    <Image Include="Resource\One%27sResource\player\Player_downwalk_second.png">
+      <Filter>리소스 파일\player</Filter>
+    </Image>
+    <Image Include="Resource\One%27sResource\player\Player_downwalk_three.png">
+      <Filter>리소스 파일\player</Filter>
+    </Image>
+    <Image Include="Resource\player_IDLE.png">
+      <Filter>리소스 파일\player</Filter>
+    </Image>
+    <Image Include="Resource\One%27sResource\player\Player_LeftWalk_Four.png">
+      <Filter>리소스 파일\player</Filter>
+    </Image>
+    <Image Include="Resource\One%27sResource\player\Player_LeftWalk_one.png">
+      <Filter>리소스 파일\player</Filter>
+    </Image>
+    <Image Include="Resource\One%27sResource\player\Player_LeftWalk_Second.png">
+      <Filter>리소스 파일\player</Filter>
+    </Image>
+    <Image Include="Resource\One%27sResource\player\Player_LeftWalk_Three.png">
+      <Filter>리소스 파일\player</Filter>
     </Image>
     <Image Include="Resource\One%27sResource\player\Player_RightWalk_Four.png">
-      <Filter>리소스 파일</Filter>
-    </Image>
-    <Image Include="Resource\One%27sResource\player\Player_RightWalk_one.png">
-      <Filter>리소스 파일</Filter>
-    </Image>
-    <Image Include="Resource\One%27sResource\player\Player_RightWalk_Second.png">
-      <Filter>리소스 파일</Filter>
-    </Image>
-    <Image Include="Resource\One%27sResource\player\Player_RightWalk_Three.png">
-      <Filter>리소스 파일</Filter>
+      <Filter>리소스 파일\player</Filter>
     </Image>
     <Image Include="Resource\One%27sResource\player\Player_RightWalk_IDLE.png">
+      <Filter>리소스 파일\player</Filter>
+    </Image>
+    <Image Include="Resource\One%27sResource\player\Player_RightWalk_one.png">
+      <Filter>리소스 파일\player</Filter>
+    </Image>
+    <Image Include="Resource\One%27sResource\player\Player_RightWalk_Second.png">
+      <Filter>리소스 파일\player</Filter>
+    </Image>
+    <Image Include="Resource\One%27sResource\player\Player_RightWalk_Three.png">
+      <Filter>리소스 파일\player</Filter>
+    </Image>
+    <Image Include="Resource\shop_8bits.png">
+      <Filter>리소스 파일\Object</Filter>
+    </Image>
+    <Image Include="Resource\Pond.png">
+      <Filter>리소스 파일\Object</Filter>
+    </Image>
+    <Image Include="Resource\One%27sResource\floorTile\floorTile_4.png">
+      <Filter>리소스 파일\Object</Filter>
+    </Image>
+    <Image Include="Resource\One%27sResource\player\Player_UpWalk_IDLE.png">
+      <Filter>리소스 파일\player</Filter>
+    </Image>
+    <Image Include="Resource\One%27sResource\player\Player_UpWalk_one.png">
+      <Filter>리소스 파일\player</Filter>
+    </Image>
+    <Image Include="Resource\One%27sResource\player\Player_UpWalk_Second.png">
+      <Filter>리소스 파일\player</Filter>
+    </Image>
+    <Image Include="Resource\One%27sResource\player\Player_UpWalk_Three.png">
+      <Filter>리소스 파일\player</Filter>
+    </Image>
+    <Image Include="Resource\One%27sResource\Usepikax\Usepikax_Down_1.png">
+      <Filter>리소스 파일\player\UsePikax</Filter>
+    </Image>
+    <Image Include="Resource\One%27sResource\Usepikax\Usepikax_Down_2.png">
+      <Filter>리소스 파일\player\UsePikax</Filter>
+    </Image>
+    <Image Include="Resource\One%27sResource\Usepikax\Usepikax_RIGHT_1.png">
+      <Filter>리소스 파일\player\UsePikax</Filter>
+    </Image>
+    <Image Include="Resource\One%27sResource\Usepikax\Usepikax_RIGHT_2.png">
+      <Filter>리소스 파일\player\UsePikax</Filter>
+    </Image>
+    <Image Include="Resource\One%27sResource\Usepikax\Usepikax_RIGHT_3.png">
+      <Filter>리소스 파일\player\UsePikax</Filter>
+    </Image>
+    <Image Include="Resource\One%27sResource\Usepikax\Usepikax_UP_1.png">
+      <Filter>리소스 파일\player\UsePikax</Filter>
+    </Image>
+    <Image Include="Resource\One%27sResource\Usepikax\Usepikax_UP_2.png">
+      <Filter>리소스 파일\player\UsePikax</Filter>
+    </Image>
+    <Image Include="Resource\One%27sResource\Usepikax\Usepikax_RIGHT_ONE.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\One%27sResource\Usepikax\Usepikax_LEFT_2.png">
       <Filter>리소스 파일</Filter>
     </Image>
   </ItemGroup>

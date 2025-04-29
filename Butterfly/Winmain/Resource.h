@@ -45,6 +45,20 @@
 #define IDB_PNG9                        155
 #define IDB_PLAYER_UPWALK_SECOND        156
 #define IDB_PLAYER_UPWALK_THREE         157
+#define IDB_PNG4                        158
+#define IDB_USEPIKAX_DOWN_ONE           158
+#define IDB_PNG5                        159
+#define IDB_USEPIKAX_DOWN_SECOND        159
+#define IDB_USEPIKAX_LEFT_ONE           160
+#define IDB_USEPIKAX_RIGHT_SECOND       161
+#define IDB_USEPIKAX_RIGHT_THREE        162
+#define IDB_USEPIKAX_UP_ONE             163
+#define IDB_PNG14                       164
+#define IDB_USEPIKAX_LEFT_SECOND        164
+#define IDB_USEPIKAX_UP_SECOND          165
+#define IDB_PNG10                       166
+#define IDB_USEPIKAX_RIGHT_ONE          166
+#define IDB_PNG11                       167
 #define ID_32771                        32771
 #define ID_Menu                         32772
 #define IDC_STATIC                      -1
@@ -53,7 +67,7 @@
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
-#define _APS_NEXT_RESOURCE_VALUE        157
+#define _APS_NEXT_RESOURCE_VALUE        168
 #define _APS_NEXT_COMMAND_VALUE         32773
 #define _APS_NEXT_CONTROL_VALUE         1000
 #define _APS_NEXT_SYMED_VALUE           110

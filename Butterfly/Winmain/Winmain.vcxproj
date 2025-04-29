@@ -168,14 +168,33 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="bitmap1.bmp" />
-    <Image Include="C:\Users\user\Desktop\리소스\Shop.png" />
-    <Image Include="C:\Users\user\Desktop\리소스\shop_8bit.png" />
     <Image Include="Resource\One%27sResource\floorTile\floorTile_4.png" />
+    <Image Include="Resource\One%27sResource\player\Player_downwalk_IDLE.png" />
+    <Image Include="Resource\One%27sResource\player\Player_downwalk_one.png" />
+    <Image Include="Resource\One%27sResource\player\Player_downwalk_second.png" />
+    <Image Include="Resource\One%27sResource\player\Player_downwalk_three.png" />
+    <Image Include="Resource\One%27sResource\player\Player_LeftWalk_Four.png" />
+    <Image Include="Resource\One%27sResource\player\Player_LeftWalk_one.png" />
+    <Image Include="Resource\One%27sResource\player\Player_LeftWalk_Second.png" />
+    <Image Include="Resource\One%27sResource\player\Player_LeftWalk_Three.png" />
     <Image Include="Resource\One%27sResource\player\Player_RightWalk_Four.png" />
     <Image Include="Resource\One%27sResource\player\Player_RightWalk_IDLE.png" />
     <Image Include="Resource\One%27sResource\player\Player_RightWalk_one.png" />
     <Image Include="Resource\One%27sResource\player\Player_RightWalk_Second.png" />
     <Image Include="Resource\One%27sResource\player\Player_RightWalk_Three.png" />
+    <Image Include="Resource\One%27sResource\player\Player_UpWalk_IDLE.png" />
+    <Image Include="Resource\One%27sResource\player\Player_UpWalk_one.png" />
+    <Image Include="Resource\One%27sResource\player\Player_UpWalk_Second.png" />
+    <Image Include="Resource\One%27sResource\player\Player_UpWalk_Three.png" />
+    <Image Include="Resource\One%27sResource\Usepikax\Usepikax_Down_1.png" />
+    <Image Include="Resource\One%27sResource\Usepikax\Usepikax_Down_2.png" />
+    <Image Include="Resource\One%27sResource\Usepikax\Usepikax_LEFT_2.png" />
+    <Image Include="Resource\One%27sResource\Usepikax\Usepikax_RIGHT_1.png" />
+    <Image Include="Resource\One%27sResource\Usepikax\Usepikax_RIGHT_2.png" />
+    <Image Include="Resource\One%27sResource\Usepikax\Usepikax_RIGHT_3.png" />
+    <Image Include="Resource\One%27sResource\Usepikax\Usepikax_RIGHT_ONE.png" />
+    <Image Include="Resource\One%27sResource\Usepikax\Usepikax_UP_1.png" />
+    <Image Include="Resource\One%27sResource\Usepikax\Usepikax_UP_2.png" />
     <Image Include="Resource\player_IDLE.png" />
     <Image Include="Resource\Pond.png" />
     <Image Include="Resource\shop_8bits.png" />
