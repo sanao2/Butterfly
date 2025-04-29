@@ -68,12 +68,15 @@ class Animation
 private:
 	Animstate currAnim;				  // current AnimationMotion Setting 
 	vector<vector<Animstate>> frame;  // All Animation Save vector
+	Time::GlobalTimer* Gtimer = nullptr; 
+	int	currframe;
 	float DeltaTime;  
 
 public:
 	Animation(); 
 	~Animation(); 
  
+	void createAnimation(); 
 	void findAnimation(); 
 
 	void Initialize(); 
