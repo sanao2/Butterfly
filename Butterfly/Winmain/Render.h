@@ -12,6 +12,7 @@ private:
     Swap* swap;
 	ResourceManager* RcManager; // ResourceManager 객체를 사용하기 위한 포인터
     Animation* anim; 
+    HDC memDC = nullptr;
 
 public:
     Render(HWND hwnd, int width, int height);

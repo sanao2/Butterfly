@@ -3,13 +3,14 @@
 Animstate Animation::currAnim = PLAEYR_DEFAULT;
 Animstate Animation::prevAnim;
 
-Animation::Animation(HWND hwnd, HDC memdc, int width, int height)
+Animation::Animation(HWND hwnd, int width, int height)
 {
 	clientDC =  GetDC(hwnd);
+	memDC = CreateCompatibleDC(clientDC); // Create Compatible DC 
 	hInst = GetModuleHandle(nullptr);
 	
 	Gdiplus::GdiplusStartup(&GdiplusToken, &gsi, nullptr);
-	backDCgraphics = Gdiplus::Graphics::FromHDC(memdc);
+	backDCgraphics = Gdiplus::Graphics::FromHDC(memDC);
 	hBitmap = CreateCompatibleBitmap(clientDC, width, height);  // Create Bitmap
 	bitmap = new Gdiplus::Bitmap(hBitmap, nullptr);
 
@@ -78,9 +79,8 @@ void Animation::Update()
 
 void Animation::Render(HDC drawDC)
 {
-	if (currAnim == NULL) return;
-		
-	PatBlt(drawDC, 0, 0,  WHITENESS); // Clear Screen 
+	if (currAnim == NULL) return;		
+
 	for (int i = 0; i < frames[currAnim].size(); ++i) {
 		hBitmap = (HBITMAP)LoadImage(hInst, MAKEINTRESOURCE(frames[currAnim][i]), IMAGE_BITMAP, 0, 0, LR_CREATEDIBSECTION);
 		 	

@@ -20,7 +20,7 @@ void Render::Update()
 }
 void Render::RenderScene(HINSTANCE hInst)
 {
-    HDC memDC = swap->GetMemDC(); 
+    memDC = swap->GetMemDC(); 
     HBITMAP tempBitmap = CreateCompatibleBitmap(GetDC(hWnd), clientSize.x, clientSize.y);
     SelectObject(memDC, tempBitmap);
 

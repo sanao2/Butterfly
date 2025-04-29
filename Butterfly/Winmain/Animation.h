@@ -71,6 +71,7 @@ class Animation
 {
 private:
 	HDC clientDC = nullptr; 
+	HDC memDC = nullptr; 
 	HINSTANCE hInst = nullptr;
 
 	static Animstate currAnim;
@@ -90,7 +91,7 @@ private:
 	Gdiplus::Bitmap* bitmap = nullptr; 
 
 public:
-	Animation(HWND hwnd, HDC memdc, int width, int height);
+	Animation(HWND hwnd ,int width, int height);
 	~Animation(); 
  
 	void createAnimation(HINSTANCE hInst, float frameTime);
