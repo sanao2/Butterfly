@@ -28,11 +28,10 @@ void Animation::createAnimation(HINSTANCE hInst, float frameTime)
         int frameCount = AnimStateFrameMap.at(static_cast<Animstate>(state)).ImageID.size();
       
         for (int i = 0; i < frameCount; ++i) {
-            frames[state].push_back( GetAnimationFrameID(static_cast<Animstate>(state), i) );
+            frames[state].push_back( GetAnimationFrameID(static_cast<Animstate>(state), i));
         }
     }
 }
-
 
 vector<int> Animation::findAnimation(Animstate animState)
 {	
