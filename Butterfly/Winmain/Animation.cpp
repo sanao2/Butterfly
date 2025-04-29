@@ -1,12 +1,14 @@
 #include "Animation.h"
 
-Animation::Animation(HWND hwnd) : hWnd(hwnd)
+Animation::Animation(HWND hwnd,int width, int height ) : hWnd(hwnd)
 {
 	hInst = GetModuleHandle(nullptr);
+	ResMgr = new ResourceManager(hwnd, width, height);
 }
 
 Animation::~Animation()
 {
+
 }
 
 void Animation::createAnimation()
@@ -23,10 +25,7 @@ void Animation::findAnimation(Animstate animState, int frameIndex)
 {	
 	auto ResPath = GetAnimationFrameID(animState, frameIndex);
 
-	// Resource Info Handler
-	HRSRC hResInfo = FindResource(hInst,
-					 MAKEINTRESOURCE(ResPath),
-					 RT_BITMAP );
+	
 }
 
 void Animation::Initialize()
@@ -38,8 +37,7 @@ void Animation::Update()
 {
 	Time::UpdateTime();
 	DeltaTime = Time::GetDeltaTime(); // Get Frame deltaTime 
-	
-	if ()
+
 
 
 }

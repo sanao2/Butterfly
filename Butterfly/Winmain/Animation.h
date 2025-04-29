@@ -2,9 +2,8 @@
 #include <windows.h>
 #include <vector> 
 #include <iostream>
-#include <string>
 #include <unordered_map>
-#include "resource.h"
+#include "UI/ResourceManager.h"
 #include "UI/timer.h"
 using namespace std; 
 using std::vector;
@@ -66,10 +65,10 @@ const int GetAnimationFrameID(Animstate animstate, size_t frameIndex)
 class Animation
 {
 private:
-	HWND hWnd = nullptr; 
+	HWND hWnd = nullptr;
 	HINSTANCE hInst = nullptr;
-	HBITMAP hBitmap = nullptr; 
-	BITMAP* Image = nullptr; 
+	ResourceManager* ResMgr = nullptr; 
+	Gdiplus::Image* bitmap;
 
 	Animstate currAnim;				  // current AnimationMotion Setting 
 	vector<vector<Animstate>> frame;  // All Animation Save vector
@@ -77,7 +76,7 @@ private:
 	float DeltaTime;  
 
 public:
-	Animation(HWND hWnd); 
+	Animation(HWND hwnd, int width, int height);
 	~Animation(); 
  
 	void createAnimation(); 
