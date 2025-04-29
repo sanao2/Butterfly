@@ -74,7 +74,7 @@ private:
 	HINSTANCE hInst = nullptr;
 
 	static Animstate currAnim;
-	Animstate prevAnim;  
+	static Animstate prevAnim;  
 
 	vector<vector<int>> frames;      // All Animation Save vector
 	float DeltaTime = 0.0f;			 // 마지막 프레임 갱신 시점과의 차이(초)를 계산 → deltaTime

@@ -18,6 +18,6 @@ public:
     ~Render();
     
     void Update();          // 렌더 업데이트 및 스왑 호출
-    void RenderScene(HINSTANCE hInst);     // 실제 그리기 동작
+    void RenderScene(HWND hWnd, HINSTANCE hInst);     // 실제 그리기 동작
     POINT GetBufferSize() const;
 };

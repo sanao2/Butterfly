@@ -1,6 +1,7 @@
 #include "Animation.h"
 
 Animstate Animation::currAnim = PLAEYR_DEFAULT;
+Animstate Animation::prevAnim;
 
 Animation::Animation(HWND hwnd, HDC memdc, int width, int height)
 {
@@ -11,6 +12,7 @@ Animation::Animation(HWND hwnd, HDC memdc, int width, int height)
 	backDCgraphics = Gdiplus::Graphics::FromHDC(memdc);
 	hBitmap = CreateCompatibleBitmap(clientDC, width, height);  // Create Bitmap
 	bitmap = new Gdiplus::Bitmap(hBitmap, nullptr);
+
 }
 
 Animation::~Animation()
