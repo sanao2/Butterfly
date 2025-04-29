@@ -173,6 +173,7 @@
     <Image Include="Resource\One%27sResource\player\Player_downwalk_one.png" />
     <Image Include="Resource\One%27sResource\player\Player_downwalk_second.png" />
     <Image Include="Resource\One%27sResource\player\Player_downwalk_three.png" />
+    <Image Include="Resource\One%27sResource\player\Player_IDLE.png" />
     <Image Include="Resource\One%27sResource\player\Player_LeftWalk_Four.png" />
     <Image Include="Resource\One%27sResource\player\Player_LeftWalk_one.png" />
     <Image Include="Resource\One%27sResource\player\Player_LeftWalk_Second.png" />

@@ -243,6 +243,9 @@
     <Image Include="Resource\One%27sResource\Usepikax\Usepikax_LEFT_2.png">
       <Filter>리소스 파일</Filter>
     </Image>
+    <Image Include="Resource\One%27sResource\player\Player_IDLE.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <Text Include="메모.txt">

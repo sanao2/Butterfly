@@ -1,1 +1,9 @@
-﻿  Winmain.vcxproj -> D:\BF\Butterfly\x64\Debug\Winmain.exe
+﻿  Animation.cpp
+D:\BF\Butterfly\Winmain\Animation.cpp(30,24): warning C4267: '초기화 중': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\BF\Butterfly\Winmain\Animation.cpp(55,6): warning C4804: '>=': 연산에 'bool' 형식을 사용하는 것은 안전하지 않습니다.
+  Winmain.cpp
+D:\BF\Butterfly\Winmain\Event\InputConstants.h(7,40): warning C4309: '초기화 중': 상수 값이 잘립니다.
+  (소스 파일 'Winmain.cpp'을(를) 컴파일하는 중)
+  
+  코드를 생성하고 있습니다...
+  Winmain.vcxproj -> D:\BF\Butterfly\x64\Debug\Winmain.exe

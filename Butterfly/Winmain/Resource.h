@@ -29,36 +29,28 @@
 #define IDB_PLAYER_RIGHT_ONE            141
 #define IDB_PLAYER_RIGHT_SECOND         142
 #define IDB_PLAYER_RIGHT_FOUR           143
-#define IDB_PNG7                        143
 #define IDB_PLAYER_RIGHT_IDLE           144
 #define IDB_LEFTWALK_FOUR               145
 #define IDB_LEFTWALK_ONE                146
-#define IDB_PNG6                        147
 #define IDB_LEFTWALK_SECOND             147
 #define IDB_PLAYER_LEFTWALK_THREE       148
 #define IDB_PLAYER_DOWNWALK_ONE         150
 #define IDB_PLAYER_DOWNWALK_SECOND      151
-#define IDB_PNG8                        152
 #define IDB_PLAYER_DOWNWALK_THREE       152
 #define IDB_PLAYER_UPWALK_IDLE          153
 #define IDB_PLAYER_UPWALK_ONE           154
-#define IDB_PNG9                        155
 #define IDB_PLAYER_UPWALK_SECOND        156
 #define IDB_PLAYER_UPWALK_THREE         157
-#define IDB_PNG4                        158
 #define IDB_USEPIKAX_DOWN_ONE           158
-#define IDB_PNG5                        159
 #define IDB_USEPIKAX_DOWN_SECOND        159
 #define IDB_USEPIKAX_LEFT_ONE           160
 #define IDB_USEPIKAX_RIGHT_SECOND       161
 #define IDB_USEPIKAX_RIGHT_THREE        162
 #define IDB_USEPIKAX_UP_ONE             163
-#define IDB_PNG14                       164
 #define IDB_USEPIKAX_LEFT_SECOND        164
 #define IDB_USEPIKAX_UP_SECOND          165
-#define IDB_PNG10                       166
 #define IDB_USEPIKAX_RIGHT_ONE          166
-#define IDB_PNG11                       167
+#define IDB_PNG12                       169
 #define ID_32771                        32771
 #define ID_Menu                         32772
 #define IDC_STATIC                      -1
@@ -67,7 +59,7 @@
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
-#define _APS_NEXT_RESOURCE_VALUE        168
+#define _APS_NEXT_RESOURCE_VALUE        170
 #define _APS_NEXT_COMMAND_VALUE         32773
 #define _APS_NEXT_CONTROL_VALUE         1000
 #define _APS_NEXT_SYMED_VALUE           110

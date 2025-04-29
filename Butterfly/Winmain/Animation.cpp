@@ -1,5 +1,7 @@
 #include "Animation.h"
 
+Animstate Animation::currAnim = PLAYER_IDLE;
+
 Animation::Animation(HWND hwnd,int width, int height ) : hWnd(hwnd)
 {
 	clientDC = GetDC(hWnd);
@@ -52,7 +54,7 @@ void Animation::Update()
 
 	if (frameTime >= timer.IsElapsed(5.0f)) {
 		timer.Reset();  // Timer Reset 
-		currFrame = (currFrame + 1) % frames.size();
+		currFrame = (currFrame + 1) % frames[currAnim].size();
 	}
 	
 	return;
