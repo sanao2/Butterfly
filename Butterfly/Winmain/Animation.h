@@ -82,13 +82,12 @@ private:
 
 	ULONG_PTR GdiplusToken = NULL;
 	Gdiplus::Graphics* backDCgraphics = nullptr;
-	Time::GlobalTimer* GLT; 
 
 public:
 	Animation(HWND hwnd, int width, int height);
 	~Animation(); 
  
-	void createAnimation(HINSTANCE hInst);
+	void createAnimation(HINSTANCE hInst, float frameTime);
 	void findAnimation(Animstate animState, int frameIndex);
 
 	void Initialize(); 

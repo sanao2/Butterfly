@@ -19,7 +19,7 @@ Animation::~Animation()
 	DeleteDC(memDC);
 }
 
-void Animation::createAnimation(HINSTANCE hInst)  
+void Animation::createAnimation(HINSTANCE hInst, float frameTime)  
 {  
    if (!frameId.empty()) return;
 
@@ -37,8 +37,7 @@ void Animation::createAnimation(HINSTANCE hInst)
 void Animation::findAnimation(Animstate animState, int frameIndex)
 {	
 	auto ResPath = GetAnimationFrameID(animState, frameIndex);
-
-	
+		
 	
 }
 
@@ -53,8 +52,9 @@ void Animation::Update()
 	Time::UpdateTime();
 	DeltaTime = Time::GetDeltaTime(); // Get Frame deltaTime 
 	
-	if (frameTime >= time.IsElapsed(5)) {
-		time.Reset(); 
+	if (frameTime >= timer.IsElapsed(5)) {
+		Time::Clock(); // now time Save 
+		timer.Reset();  // Timer Reset 
 		return;
 	}
 
