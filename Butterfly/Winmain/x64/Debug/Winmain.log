@@ -1,9 +1,33 @@
-﻿  Global.cpp
+﻿  Animation.cpp
+D:\backup\BF\Butterfly\Winmain\Animation.h(39,6): warning C4200: 비표준 확장이 사용됨: 구조체/공용 구조체의 배열 크기가 0입니다.
+  (소스 파일 'Animation.cpp'을(를) 컴파일하는 중)
+      D:\backup\BF\Butterfly\Winmain\Animation.h(39,6):
+      이 멤버는 기본값으로 설정된 생성자 또는 복사/이동 대입 연산자에서 무시됩니다.
+  
+  KeyboardInputManager.cpp
+D:\backup\BF\Butterfly\Winmain\Event\InputConstants.h(7,40): warning C4309: '초기화 중': 상수 값이 잘립니다.
+  (소스 파일 'Event/KeyboardInputManager.cpp'을(를) 컴파일하는 중)
+  
+  Global.cpp
+  MoveManagers.cpp
+D:\backup\BF\Butterfly\Winmain\Event\InputConstants.h(7,40): warning C4309: '초기화 중': 상수 값이 잘립니다.
+  (소스 파일 'Move/MoveManagers.cpp'을(를) 컴파일하는 중)
+  
+D:\backup\BF\Butterfly\Winmain\Move\MoveManagers.cpp(37,45): warning C4244: '-=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\backup\BF\Butterfly\Winmain\Move\MoveManagers.cpp(38,45): warning C4244: '+=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\backup\BF\Butterfly\Winmain\Move\MoveManagers.cpp(39,45): warning C4244: '-=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\backup\BF\Butterfly\Winmain\Move\MoveManagers.cpp(40,45): warning C4244: '+=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   Render.cpp
+  Swap.cpp
+  Map.cpp
   ResourceManager.cpp
+  Timer.cpp
   Winmain.cpp
-D:\BF\Butterfly\Winmain\Event\InputConstants.h(7,40): warning C4309: '초기화 중': 상수 값이 잘립니다.
+D:\backup\BF\Butterfly\Winmain\Event\InputConstants.h(7,40): warning C4309: '초기화 중': 상수 값이 잘립니다.
   (소스 파일 'Winmain.cpp'을(를) 컴파일하는 중)
   
   코드를 생성하고 있습니다...
-  Winmain.vcxproj -> D:\BF\Butterfly\x64\Debug\Winmain.exe
+D:\backup\BF\Butterfly\Winmain\Animation.h(55,1): error C4716: 'GetAnimMotionImage': 값을 반환해야 합니다.
+D:\backup\BF\Butterfly\Winmain\Animation.h(42,1): error C4789: 함수 ‘void __cdecl `dynamic initializer for 'AnimationMap''(void)’ 버퍼 ''(크기: 8바이트)이(가) 오버런됩니다. 4바이트가 오프셋 16부터 쓰입니다.
+D:\backup\BF\Butterfly\Winmain\Animation.h(42,1): error C4789: 함수 ‘void __cdecl `dynamic initializer for 'AnimationMap''(void)’ 버퍼 ''(크기: 8바이트)이(가) 오버런됩니다. 4바이트가 오프셋 12부터 쓰입니다.
+D:\backup\BF\Butterfly\Winmain\Animation.h(42,1): error C4789: 함수 ‘void __cdecl `dynamic initializer for 'AnimationMap''(void)’ 버퍼 ''(크기: 8바이트)이(가) 오버런됩니다. 4바이트가 오프셋 8부터 쓰입니다.

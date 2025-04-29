@@ -46,13 +46,13 @@ const unordered_map<Animstate, ResourceInfo> AnimationMap = {
 
 };
 
-const int GetAnimMotionImage(Animstate animstate)
-{
-	auto it = AnimationMap.find(animstate); 
-
-	
-
-}
+//const int GetAnimMotionImage(Animstate animstate)
+//{
+//	auto it = AnimationMap.find(animstate); 
+//
+//	
+//
+//}
 
 class Animation
 {

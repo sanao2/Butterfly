@@ -8,7 +8,7 @@ ResourceManager::ResourceManager(HWND _hWnd, int width, int height) : hWnd(_hWnd
 	clientDC = GetDC(hWnd);
 
 	memDC = CreateCompatibleDC(clientDC);
-	memBitmap = CreateCompatibleBitmap(clientDC, clientSize.x, clientSize.y);
+	memBitmap = CreateCompatibleBitmap(clientDC,width,height);
 	SelectObject(memDC, memBitmap);  // memDC and memBitmap linked 
 
 	Gdiplus::GdiplusStartup(&GdiplusToken, &gsi, nullptr);
