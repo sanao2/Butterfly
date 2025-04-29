@@ -3,11 +3,13 @@
 #include <vector> 
 #include <iostream>
 #include <string>
+#include <unordered_map>
 #include "resource.h"
 using namespace std; 
 using std::vector;
 using std::string; 
 using std::wstring; 
+using::unordered_map;
 
 enum Animstate
 {
@@ -28,8 +30,10 @@ inline int GetAnimationID(Animstate Animstate)
 		IDB_PLAYER_RIGHT_THREE,
 		IDB_PLAYER_RIGHT_FOUR
 	};
-	
+
+	return playerMotion[Animstate]; 
 };
+
 
 class Animation
 {
