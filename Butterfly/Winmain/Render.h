@@ -2,6 +2,7 @@
 #include <windows.h>
 #include "Swap.h"
 #include "UI/ResourceManager.h"
+#include "Animation.h"
 
 class Render
 {
@@ -10,6 +11,7 @@ private:
     POINT clientSize;
     Swap* swap;
 	ResourceManager* RcManager; // ResourceManager 객체를 사용하기 위한 포인터
+    Animation* anim; 
 
 public:
     Render(HWND hwnd, int width, int height);
