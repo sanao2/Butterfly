@@ -14,14 +14,16 @@ using::unordered_map;
 enum Animstate
 {
 	PLAYER_WALK, 
-	PLAYER_PICKAX,
-	PLAYER_HOE, 
-	PLAYER_POT
+	PLAYER_RIGHTWALK,
+	PLAYER_LEFTWALK, 
+	PLAYER_DOWNWALK,
+	PLAYER_UPWALK,
+	PLAEYR_ANIMCOUNT
 };
 
 const wstring AnimPath = L"../Resource/";
 
-inline int GetAnimationID(Animstate Animstate)
+inline int GetAnimationID(Animstate Anistate)
 {
 	static int playerMotion[] = {
 		IDB_PLAYER_IDLE,
@@ -30,10 +32,10 @@ inline int GetAnimationID(Animstate Animstate)
 		IDB_PLAYER_RIGHT_THREE,
 		IDB_PLAYER_RIGHT_FOUR
 	};
+	if (Anistate < 0 || Anistate >= PLAEYR_ANIMCOUNT) return -1;
 
-	return playerMotion[Animstate]; 
+	return playerMotion[Anistate]; 
 };
-
 
 class Animation
 {
@@ -46,10 +48,13 @@ public:
 	~Animation(); 
 
 	void frameinAnimation();
-	void createAnimation(); 
+	void createAnimation(int AnimID, Animstate Anistate); 
 	void findAnimation(); 
 
 	void Initialize(); 
 	void Update(); 
 	void Render(); 
+
+	void SetcurrAnimState(Animstate animstate) { currAnim = animstate; }
+	Animstate GetcurrAnimState() { return currAnim; }
 };
