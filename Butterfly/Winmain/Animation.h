@@ -5,6 +5,7 @@
 #include <string>
 #include <unordered_map>
 #include "resource.h"
+#include "UI/timer.h"
 using namespace std; 
 using std::vector;
 using std::string; 
@@ -21,24 +22,11 @@ enum Animstate
 	PLAYER_USEPIKAX_LEFT, 
 	PLAYER_USEPIKAX_DOWN, 
 	PLAYER_USEPIKAX_UP, 
-	PLAEYR_ANIMCOUNT
+	PLAYER_ANIMCOUNT
 };
 
 const wstring AnimPath = L"../Resource/";
 
-//inline int GetAnimationID(Animstate Anistate)
-//{
-//	static int playerMotion[] = {
-//		IDB_PLAYER_IDLE,
-//		IDB_PLAYER_RIGHT_ONE,
-//		IDB_PLAYER_RIGHT_SECOND,
-//		IDB_PLAYER_RIGHT_THREE,
-//		IDB_PLAYER_RIGHT_FOUR
-//	};
-//	if (Anistate < 0 || Anistate >= PLAEYR_ANIMCOUNT) return -1;
-//
-//	return playerMotion[Anistate]; 
-//};
 struct ResourceInfo {
 	vector<int> ImageID; 
 	ResourceInfo(std::initializer_list<int> list)
@@ -71,7 +59,7 @@ const int GetAnimMotionImage(Animstate animstate, size_t frameIndex)
 		return -1;
 	}
 
-	return it->second.ImageID[frameIndex];
+	return it->second.ImageID[frameIndex]; // frameindex ind second Image return
 
 }
 

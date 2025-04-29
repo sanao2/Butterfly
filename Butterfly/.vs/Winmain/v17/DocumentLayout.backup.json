@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "D:\\backup\\BF\\Butterfly\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|D:\\backup\\BF\\Butterfly\\Winmain\\Animation.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|solutionrelative:Winmain\\Animation.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|D:\\backup\\BF\\Butterfly\\Winmain\\UI\\ResourceManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|solutionrelative:Winmain\\UI\\ResourceManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
@@ -35,6 +39,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Animation.h",
+              "DocumentMoniker": "D:\\backup\\BF\\Butterfly\\Winmain\\Animation.h",
+              "RelativeDocumentMoniker": "Winmain\\Animation.h",
+              "ToolTip": "D:\\backup\\BF\\Butterfly\\Winmain\\Animation.h",
+              "RelativeToolTip": "Winmain\\Animation.h",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAvwCYAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-04-29T02:52:17.413Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "ResourceManager.cpp",
               "DocumentMoniker": "D:\\backup\\BF\\Butterfly\\Winmain\\UI\\ResourceManager.cpp",
               "RelativeDocumentMoniker": "Winmain\\UI\\ResourceManager.cpp",
@@ -42,8 +59,7 @@
               "RelativeToolTip": "Winmain\\UI\\ResourceManager.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-29T02:51:59.368Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-29T02:51:59.368Z"
             }
           ]
         }
