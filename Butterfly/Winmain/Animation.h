@@ -3,22 +3,39 @@
 #include <vector> 
 #include <iostream>
 #include <string>
-#include "../Resource/resource.h" // Updated path to match typical project structure
+#include "resource.h"
 using namespace std; 
 using std::vector;
 using std::string; 
 using std::wstring; 
 
+enum Animstate
+{
+	PLAYER_IDLE,
+	PLAYER_RIGHT,
+	PLAYER_LEFT,
+	PLAYER_DOWN,
+	PLAYER_UP
+};
+
+
 const wstring AnimPath = L"../Resource";
 
 inline int GetAnimPath()
 {
-static int playerPath[] = {
-	IDB_PLAYER_RIGHT_ONE, 
+	static int playerPath[] = {
+		IDB_PLAYER_IDLE,
+		IDB_PLAYER_RIGHT_ONE,
+		IDB_PLAYER_RIGHT_SECOND,
+		IDB_PLAYER_RIGHT_THREE,
+		IDB_PLAYER_RIGHT_FOUR
+	};
+	
 };
-return 0; // Added return statement to fix incomplete function
-}
 
 class Animation
 {
+private : 
+
+public : 
 };
