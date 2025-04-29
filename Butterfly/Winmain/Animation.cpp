@@ -6,7 +6,7 @@ Animation::Animation(HWND hwnd,int width, int height ) : hWnd(hwnd)
 	memDC = CreateCompatibleDC(clientDC);
 	hInst = GetModuleHandle(nullptr);
 
-	Gdiplus::GdiplusStartupInput gsi;
+	
 	Gdiplus::GdiplusStartup(&GdiplusToken, &gsi, nullptr);
 	backDCgraphics = Gdiplus::Graphics::FromHDC(memDC);
 }
@@ -31,26 +31,24 @@ void Animation::createAnimation(HINSTANCE hInst, float frameTime)
    }     
 }
 
-void Animation::findAnimation(Animstate animState, int frameIndex)
+vector<int> Animation::findAnimation(Animstate animState)
 {	
-	auto ResPath = GetAnimationFrameID(animState, frameIndex);
-		
-	
+	return frames[static_cast<int>(animState)];
 }
 
 void Animation::Initialize()
 {
-
+	Time::InitTime(); 
 	TotalTime = Time::GetTotalTime(); 
 	DeltaTime = Time::GetDeltaTime(); 
 }
 
 void Animation::Update()
-{
-	
+{	
+	Time::UpdateTime();
 	frameTime += DeltaTime;
 
-	if (frameTime >= timer.IsElapsed(5)) {
+	if (frameTime >= timer.IsElapsed(5.0f)) {
 		timer.Reset();  // Timer Reset 
 		currFrame = (currFrame + 1) % frames.size();
 	}

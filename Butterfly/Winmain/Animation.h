@@ -74,6 +74,7 @@ private:
 	HINSTANCE hInst = nullptr;
 	HDC clientDC = nullptr; 
 	HDC memDC = nullptr; 
+
 	Animstate currAnim;
 	vector<vector<int>> frames;      // All Animation Save vector
 	float DeltaTime = 0.0f;		// 마지막 프레임 갱신 시점과의 차이(초)를 계산 → deltaTime
@@ -82,6 +83,7 @@ private:
 	int currFrame = 0;
 	Time::Timer<> timer;
 
+	Gdiplus::GdiplusStartupInput gsi;
 	ULONG_PTR GdiplusToken = NULL;
 	Gdiplus::Graphics* backDCgraphics = nullptr;
 
@@ -90,7 +92,7 @@ public:
 	~Animation(); 
  
 	void createAnimation(HINSTANCE hInst, float frameTime);
-	void findAnimation(Animstate animState, int frameIndex);
+	vector<int> findAnimation(Animstate animState);
 
 	void Initialize(); 
 	void Update(); 
