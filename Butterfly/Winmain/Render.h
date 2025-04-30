@@ -14,10 +14,12 @@ private:
     //Animation* anim; 
     HDC memDC = nullptr;
 
+    ULONG_PTR GdiPlusToken;
+    HBITMAP hBitmap = nullptr;
     Gdiplus::Graphics* graphics = nullptr; 
 
 public:
-    Render(HWND hwnd, int width, int height);
+    Render(HDC drawDC, HWND hwnd, int width, int height);
     ~Render();
     
     void Update();          // 렌더 업데이트 및 스왑 호출

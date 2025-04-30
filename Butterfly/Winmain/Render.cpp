@@ -1,13 +1,17 @@
 #include "Render.h"
 #include <iostream>
 
-Render::Render(HWND hwnd, int width, int height)
+Render::Render(HDC drawDC, HWND hwnd,  int width, int height)
     : hWnd(hwnd), clientSize{ width, height }
 {
     swap = new Swap(hwnd, width, height);
 	ResMgr = new ResourceManger(hwnd); // 府家胶 概聪历 按眉 积己
 	//anim = new Animation(hwnd, width, height); // Animation 按眉 积己 
 
+
+    Gdiplus::GdiplusStartupInput gsi;
+    Gdiplus::GdiplusStartup(&GdiPlusToken, &gsi, nullptr);
+    graphics = new Gdiplus::Graphics(drawDC);
 
 }
 

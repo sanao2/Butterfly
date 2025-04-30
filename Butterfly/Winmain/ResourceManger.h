@@ -14,16 +14,14 @@ class ResourceManger
 private : 
 	ImageResource* imageResource = nullptr;
 	IImageRenderer* imageRenderer = nullptr; 
-	HINSTANCE hInst = nullptr; 
+ 
 
-	ULONG_PTR GdiPlusToken;
-	HBITMAP hBitmap = nullptr; 
-	Gdiplus::Graphics* graphics = nullptr;
+
 	Gdiplus::Bitmap* bitmap = nullptr; 
 	POINT ResPos = { 0, 0 }; 
 
 public : 
-	ResourceManger(HDC drawDC, HINSTANCE hInstance, int width, int height);
+	ResourceManger(HDC drawDC,int width, int height);
 	~ResourceManger();
 
 	void Initialize(); 
