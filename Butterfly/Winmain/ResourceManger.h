@@ -10,8 +10,8 @@
 #include <iostream>
 using namespace std; 
 
-const int RESOURCE_ID = IDB_PLAYER_DOWNWALK_IDLE; 
-const wchar_t* RESOURCE_TYPE = L"PNG"; 
+extern const int RESOURCE_ID; 
+extern const wchar_t RESOURCE_TYPE[];
 
 class ResourceManger
 {

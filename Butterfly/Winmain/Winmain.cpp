@@ -15,11 +15,8 @@ HWND g_hWnd;
 HDC drawDC;
 RECT rect = { 5, 5, 20, 20 };
 
-
-
 int boxDraw()
-{
-    drawDC = GetDC(g_hWnd);
+{  
 
     PatBlt(drawDC, 0, 0, g_width, g_height, WHITENESS);
     Rectangle(drawDC, rect.left, rect.top, rect.right, rect.bottom);
@@ -112,6 +109,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 
     ShowWindow(hwnd, nCmdShow);
     UpdateWindow(hwnd);
+
+    drawDC = GetDC(g_hWnd);
 
     render = new Render(drawDC, g_hWnd, g_width, g_height);  // Global Render 객체 생성
     auto& key = InputManager<KeyboardDevice>::GetInstance();    

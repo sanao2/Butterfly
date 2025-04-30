@@ -1,5 +1,7 @@
 #include "ImageResource.h"
 
+
+
 ImageResource::~ImageResource()
 {
 	if (bitmap) delete bitmap; 
@@ -20,6 +22,7 @@ bool ImageResource::LoadFromResource(HINSTANCE hInstance, int resourceID, const 
 
 	IStream* pStream = nullptr; 
 	CreateStreamOnHGlobal(hBuffer, TRUE, &pStream);
+
 	bitmap = Gdiplus::Bitmap::FromStream(pStream);
 	pStream->Release();
 
