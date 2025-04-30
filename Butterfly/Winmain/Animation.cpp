@@ -49,8 +49,7 @@ void Animation::createAnimation(HINSTANCE hInst, float frameTime)
         for (int i = 0; i < 6; ++i)
         {
           RESOURCE_ID[frameCount] = GetAnimationFrameID(currAnim, frameCount);
-        }    
-
+        }  
     }
 
     ResMgr->LoadImages(hInst); // 리소스 매니저를 통해 이미지 로드 
@@ -59,9 +58,11 @@ void Animation::createAnimation(HINSTANCE hInst, float frameTime)
 
 void Animation::Update()
 {
+
     DeltaTime = timer.Elapsed();
     TotalTime += DeltaTime;
 
+    try {
     if (TotalTime >= frameTime)
     {
         frameCount++;
@@ -79,6 +80,13 @@ void Animation::Update()
     }
 
     timer.Reset();
+    }
+    catch (const std::exception& e) {
+        std::cerr << "Animation::Update 예외 발생: " << e.what() << std::endl;
+    }
+    catch (...) {
+        std::cerr << "Animation::Update 알 수 없는 예외 발생" << std::endl;
+    }
 }
 
 void Animation::Render(HDC drawDC)
