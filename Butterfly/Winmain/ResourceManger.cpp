@@ -4,7 +4,7 @@
 vector<int> RESOURCE_ID = { 0, };
 constexpr wchar_t RESOURCE_TYPE[] = L"PNG";
 
-ResourceManger::ResourceManger(HDC drawDC, int width, int height) 
+ResourceManger::ResourceManger(HDC drawDC, HINSTANCE hInstance,int width, int height) : hInst(hInstance)
 {											
 	imageResource = new ImageResource();
 	imageRenderer = new GdiPlusImageRenderer(); // Correctly references the class
@@ -12,7 +12,9 @@ ResourceManger::ResourceManger(HDC drawDC, int width, int height)
 	// Gdiplus 초기화 
 	Gdiplus::GdiplusStartupInput gsi;
 	Gdiplus::GdiplusStartup(&GdiPlusToken, &gsi, nullptr);
-	graphics = new Gdiplus::Graphics(drawDC); // GDI+ 그래픽스 객체 생성 
+	graphics = new Gdiplus::Graphics(drawDC); // GDI+ 그래픽스 객체 생성
+	
+	animation = new Animation(drawDC, hInstance); // 애니메이션 객체 생성);
 }
 
 ResourceManger::~ResourceManger()
@@ -29,7 +31,7 @@ void ResourceManger::LoadImages(HINSTANCE hInst)
 	try {
 		for (int i = 0; i < RESOURCE_ID.size(); ++i)
 		{
-			RESOURCE_ID[i] = GetAnimationFrameID(GetAnimationState(), i);
+			RESOURCE_ID[i] = GetAnimationFrameID(animation->GetAnimationState(), i);
 
 			auto Res = imageResource->LoadFromResource(hInst, RESOURCE_ID[i], RESOURCE_TYPE);
 		} 		

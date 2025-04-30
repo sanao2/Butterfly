@@ -24,7 +24,7 @@ private :
 	IImageRenderer* imageRenderer = nullptr; 
 	Animation* animation = nullptr; 
 
-	POINT ResPos = { 0, 0 }; 
+	HINSTANCE hInst = nullptr; 
 
 	ULONG_PTR GdiPlusToken;
 	HBITMAP hBitmap = nullptr;
@@ -32,7 +32,7 @@ private :
 	Gdiplus::Image* image = nullptr;
 
 public : 
-	ResourceManger(HDC drawDC,int width, int height);
+	ResourceManger(HDC drawDC, HINSTANCE hInstance, int width, int height);
 	~ResourceManger();
 
 	void LoadImages(HINSTANCE hInst); 
