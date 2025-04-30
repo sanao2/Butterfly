@@ -15,14 +15,15 @@ private :
 	ImageResource* imageResource = nullptr;
 	IImageRenderer* imageRenderer = nullptr; 
 	HINSTANCE hInst = nullptr; 
-	HDC clientDC = nullptr; 
-	HDC memDC = nullptr; 
+
+	ULONG_PTR GdiPlusToken;
 	HBITMAP hBitmap = nullptr; 
+	Gdiplus::Graphics* graphics = nullptr;
 	Gdiplus::Bitmap* bitmap = nullptr; 
 	POINT ResPos = { 0, 0 }; 
 
 public : 
-	ResourceManger(HWND hWnd, HINSTANCE hInstance, int width, int height);
+	ResourceManger(HDC drawDC, HINSTANCE hInstance, int width, int height);
 	~ResourceManger();
 
 	void Initialize(); 

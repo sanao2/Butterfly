@@ -1,24 +1,30 @@
 #include "ResourceManger.h"
 
-ResourceManger::ResourceManger(HWND hWnd, HINSTANCE hInstance, int width, int height) 
+ResourceManger::ResourceManger(HDC drawDC,  HINSTANCE hInstance, int width, int height) 
 																	: hInst(hInstance)
 {
-	clientDC = GetDC(hWnd); 
-	memDC = CreateCompatibleDC(clientDC); 
-	hBitmap = CreateCompatibleBitmap(clientDC, width, height);
-	SelectObject(memDC, bitmap); 
+	imageResource = new ImageResource();
+		
+	Gdiplus::GdiplusStartupInput gsi; 
+	Gdiplus::GdiplusStartup(&GdiPlusToken, &gsi, nullptr); 
+	graphics = new Gdiplus::Graphics(hWnd); 
 
 }
 
 ResourceManger::~ResourceManger()
-{
-	delete hInst; 
+{	
 	DeleteObject(bitmap); 
+	delete hInst;
+	delete imageResource;
+	delete imageRenderer; 
+	delete graphics;
+	Gdiplus::GdiplusShutdown(GdiPlusToken);
+
 }
 
 void ResourceManger::Initialize()
 {
-	imageResource = new ImageResource();
+	
 }
 
 void ResourceManger::LoadImages(HINSTANCE hInst)
