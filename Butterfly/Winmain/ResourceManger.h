@@ -1,13 +1,17 @@
 #pragma once
-#include "Global.h"
+#include <windows.h>
+#include <cstdint> 
+#include <gdiplus.h>
+#pragma comment(lib, "gdiplus.lib")
 #include "ImageResource.h"
 #include "IImageRenderer.h"
+#include "GdiplusImageRenderer.h" // Ensure this header is included
 #include "resource.h"
 #include <iostream>
 using namespace std; 
 
 const int RESOURCE_ID = IDB_PLAYER_DOWNWALK_IDLE; 
-const wchar_t* RESOURCE_TYPE = L".PNG"; 
+const wchar_t* RESOURCE_TYPE = L"PNG"; 
 
 class ResourceManger
 {
@@ -15,8 +19,6 @@ private :
 	ImageResource* imageResource = nullptr;
 	IImageRenderer* imageRenderer = nullptr; 
  
-
-
 	Gdiplus::Bitmap* bitmap = nullptr; 
 	POINT ResPos = { 0, 0 }; 
 

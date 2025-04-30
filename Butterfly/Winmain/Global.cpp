@@ -1,3 +1,3 @@
 #include "Global.h"
 
-Render* render = nullptr;
+//Render* render = nullptr;

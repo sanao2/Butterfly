@@ -15,6 +15,10 @@ HWND g_hWnd;
 HDC drawDC;
 RECT rect = { 5, 5, 20, 20 };
 
+Move::MoveManager* move = nullptr; 
+Render* render = nullptr; // 렌더링 객체
+ResourceManger* ResMgr = nullptr; // 리소스 매니저 객체
+
 int boxDraw()
 {
     drawDC = GetDC(g_hWnd);
@@ -111,8 +115,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
     ShowWindow(hwnd, nCmdShow);
     UpdateWindow(hwnd);
 
-    render = new Render(g_hWnd, g_width, g_height);  // Global Render 객체 생성
-	ResMgr = new ResourceManger(hInstance); // 리소스 매니저 객체 생성
+    render = new Render(drawDC, g_hWnd, g_width, g_height);  // Global Render 객체 생성
+	ResMgr = new ResourceManger(); // 리소스 매니저 객체 생성
     auto& key = InputManager<KeyboardDevice>::GetInstance();    
 
     std::unique_ptr<Move::MoveManager> move = std::make_unique<Move::MoveManager>(key, rect);

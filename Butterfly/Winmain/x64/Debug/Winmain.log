@@ -1,5 +1,23 @@
-﻿  Winmain.cpp
+﻿  Global.cpp
+  ImageResource.cpp
+  Render.cpp
+  ResourceManger.cpp
+  Winmain.cpp
 D:\backup\BF\Butterfly\Winmain\Event\InputConstants.h(7,40): warning C4309: '초기화 중': 상수 값이 잘립니다.
   (소스 파일 'Winmain.cpp'을(를) 컴파일하는 중)
   
-  Winmain.vcxproj -> D:\backup\BF\Butterfly\x64\Debug\Winmain.exe
+D:\backup\BF\Butterfly\Winmain\Winmain.cpp(118,24): error C2661: 'Render::Render': 오버로드된 함수에서 3개의 인수를 사용하지 않습니다.
+      D:\backup\BF\Butterfly\Winmain\Winmain.cpp(118,24):
+      인수 목록 '(HWND, int, int)'을(를) 일치시키는 동안
+  
+D:\backup\BF\Butterfly\Winmain\Winmain.cpp(119,29): error C2665: 'ResourceManger::ResourceManger': 모든 인수 형식을 변환할 수 있는 오버로드된 함수가 없습니다.
+      D:\backup\BF\Butterfly\Winmain\ResourceManger.h(32,1):
+      'ResourceManger::ResourceManger(const ResourceManger &)'일 수 있습니다.
+          D:\backup\BF\Butterfly\Winmain\Winmain.cpp(119,29):
+          'ResourceManger::ResourceManger(const ResourceManger &)': 인수 1을(를) 'HINSTANCE'에서 'const ResourceManger &'(으)로 변환할 수 없습니다.
+              D:\backup\BF\Butterfly\Winmain\Winmain.cpp(119,30):
+              원인: 'HINSTANCE'에서 'const ResourceManger'(으)로 변환할 수 없습니다.
+      D:\backup\BF\Butterfly\Winmain\Winmain.cpp(119,29):
+      인수 목록 '(HINSTANCE)'을(를) 일치시키는 동안
+  
+  코드를 생성하고 있습니다...

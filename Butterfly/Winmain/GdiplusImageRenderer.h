@@ -1,5 +1,7 @@
 #pragma once
-#include "Global.h"
+#include <windows.h>
+#include <gdiplus.h>
+#pragma comment(lib, "gdiplus.lib")
 #include "IImageRenderer.h" 
 
 class GdiPlusImageRenderer : public IImageRenderer {

@@ -5,13 +5,11 @@ Render::Render(HDC drawDC, HWND hwnd,  int width, int height)
     : hWnd(hwnd), clientSize{ width, height }
 {
     swap = new Swap(hwnd, width, height);
-	ResMgr = new ResourceManger(hwnd); // 리소스 매니저 객체 생성
+	ResMgr = new ResourceManger(drawDC, width,height); // 리소스 매니저 객체 생성
 	//anim = new Animation(hwnd, width, height); // Animation 객체 생성 
-
 
     Gdiplus::GdiplusStartupInput gsi;
     Gdiplus::GdiplusStartup(&GdiPlusToken, &gsi, nullptr);
-    graphics = new Gdiplus::Graphics(drawDC);
 
 }
 
@@ -35,10 +33,12 @@ void Render::RenderScene(HINSTANCE hInst)
     // 화면 초기화 (배경을 흰색으로 채우기)
     PatBlt(memDC, 0, 0, clientSize.x, clientSize.y, WHITENESS);
     ResMgr->Initialize(); 
+
     // 리소스 로딩 - 이미지를 로드하기 위해 LoadImages 호출
     try {
+        graphics = new Gdiplus::Graphics(memDC);
 		ResMgr->LoadImages(hInst); // 리소스 매니저를 통해 이미지 로드 
-		ResMgr->RenderImage(Gdiplus::Graphics, 0, 0); // 이미지를 그리기 
+		ResMgr->RenderImage(*graphics, 0, 0); // 이미지를 그리기 
     }
     catch (const std::exception& e) {
         std::cerr << "Error loading images: " << e.what() << std::endl;
