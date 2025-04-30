@@ -1,2 +1,13 @@
-﻿  Render.cpp
-  Winmain.vcxproj -> D:\backup\BF\Butterfly\x64\Debug\Winmain.exe
+﻿  Global.cpp
+D:\backup\BF\Butterfly\Winmain\Event\InputConstants.h(7,40): warning C4309: '초기화 중': 상수 값이 잘립니다.
+  (소스 파일 'Global.cpp'을(를) 컴파일하는 중)
+  
+  Render.cpp
+  Winmain.cpp
+D:\backup\BF\Butterfly\Winmain\Event\InputConstants.h(7,40): warning C4309: '초기화 중': 상수 값이 잘립니다.
+  (소스 파일 'Winmain.cpp'을(를) 컴파일하는 중)
+  
+  코드를 생성하고 있습니다...
+Render.obj : error LNK2005: "class std::unordered_map<enum Animstate,struct ResourceInfo,struct std::hash<enum Animstate>,struct std::equal_to<enum Animstate>,class std::allocator<struct std::pair<enum Animstate const ,struct ResourceInfo> > > AnimStateFrameMap" (?AnimStateFrameMap@@3V?$unordered_map@W4Animstate@@UResourceInfo@@U?$hash@W4Animstate@@@std@@U?$equal_to@W4Animstate@@@4@V?$allocator@U?$pair@$$CBW4Animstate@@UResourceInfo@@@std@@@4@@std@@A)이(가) Global.obj에 이미 정의되어 있습니다.
+Winmain.obj : error LNK2005: "class std::unordered_map<enum Animstate,struct ResourceInfo,struct std::hash<enum Animstate>,struct std::equal_to<enum Animstate>,class std::allocator<struct std::pair<enum Animstate const ,struct ResourceInfo> > > AnimStateFrameMap" (?AnimStateFrameMap@@3V?$unordered_map@W4Animstate@@UResourceInfo@@U?$hash@W4Animstate@@@std@@U?$equal_to@W4Animstate@@@4@V?$allocator@U?$pair@$$CBW4Animstate@@UResourceInfo@@@std@@@4@@std@@A)이(가) Global.obj에 이미 정의되어 있습니다.
+D:\backup\BF\Butterfly\x64\Debug\Winmain.exe : fatal error LNK1169: 여러 번 정의된 기호가 있습니다.
