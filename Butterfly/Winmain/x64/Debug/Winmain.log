@@ -1,14 +1,5 @@
 ﻿  Animation.cpp
-  AnimationMap.cpp
-D:\backup\BF\Butterfly\Winmain\Animation.cpp(9,15): warning C4101: 'token' :참조되지 않은 지역 변수입니다.
-  Global.cpp
-D:\backup\BF\Butterfly\Winmain\Event\InputConstants.h(7,40): warning C4309: '초기화 중': 상수 값이 잘립니다.
-  (소스 파일 'Global.cpp'을(를) 컴파일하는 중)
-  
+D:\BF\Butterfly\Winmain\Animation.cpp(9,15): warning C4101: 'token' :참조되지 않은 지역 변수입니다.
   Render.cpp
-  Winmain.cpp
-D:\backup\BF\Butterfly\Winmain\Event\InputConstants.h(7,40): warning C4309: '초기화 중': 상수 값이 잘립니다.
-  (소스 파일 'Winmain.cpp'을(를) 컴파일하는 중)
-  
   코드를 생성하고 있습니다...
-  Winmain.vcxproj -> D:\backup\BF\Butterfly\x64\Debug\Winmain.exe
+  Winmain.vcxproj -> D:\BF\Butterfly\x64\Debug\Winmain.exe

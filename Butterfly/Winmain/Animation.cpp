@@ -1,16 +1,16 @@
 #include "Animation.h"
 
-Animstate Animation::currAnim = PLAYER_DEFAULT;
-Animstate Animation::prevAnim = PLAYER_DEFAULT;
+Animstate Animation::currAnim;
+Animstate Animation::prevAnim;
 
 Animation::Animation(HWND hwnd, int width, int height)
 {
     clientDC = GetDC(hwnd);
-    ULONG_PTR token;
+   
     Gdiplus::GdiplusStartupInput gsi;
     Gdiplus::GdiplusStartup(&GdiplusToken, &gsi, nullptr);
     backDCgraphics = new Gdiplus::Graphics(memDC);
-
+    Image = nullptr;
     timer.Elapsed();
 }
 
@@ -44,12 +44,10 @@ void Animation::createAnimation(HINSTANCE hInst, float frameTime)
     this->frameTime = frameTime;
 
     // 리소스 매니저를 통해 이미지 로드
-     for (frameCount = 0; frameCount < 6; ++frameCount)
+    
+    for (int i = 0; i < 6; ++i)
     {
-        for (int i = 0; i < 6; ++i)
-        {
-          RESOURCE_ID[frameCount] = GetAnimationFrameID(currAnim, frameCount);
-        }  
+      RESOURCE_ID[frameCount] = GetAnimationFrameID(currAnim, i);     
     }
 
     ResMgr->LoadImages(hInst); // 리소스 매니저를 통해 이미지 로드 

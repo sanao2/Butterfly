@@ -33,11 +33,11 @@ private:
     Time::Timer<> timer;
     ResourceManger* ResMgr = nullptr; 
 
-    Gdiplus::GdiplusStartupInput gsi;
-    ULONG_PTR GdiplusToken = NULL;
+    ULONG_PTR GdiplusToken;
+    Gdiplus::GdiplusStartupInput gsi;   
     Gdiplus::Graphics* backDCgraphics = nullptr;
     HBITMAP hBitmap = nullptr;
-    Gdiplus::Image* Image;
+    Gdiplus::Image* Image = nullptr;
 
 public:
     Animation(HWND hwnd, int width, int height);
