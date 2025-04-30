@@ -17,7 +17,7 @@ using std::vector;
 extern Animstate current_state; 
 extern int RESOURCE_ID; 
 extern const wchar_t RESOURCE_TYPE[];
-
+extern vector<Gdiplus::Image*> AnimationFrames;
 extern int current_frame; 
 
 class ResourceManger
@@ -39,7 +39,6 @@ public :
 	~ResourceManger();
 
 	void LoadImages(HINSTANCE hInst); 
-	void LoadAnimationFrame();
 	void RenderImage(Gdiplus::Graphics& graphics, int x, int y);
 
 	Gdiplus::Image* GetIamge() { return image;}

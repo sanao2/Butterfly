@@ -1,9 +1,9 @@
 #include "ResourceManger.h"
 
 int current_frame = 0;
-int RESOURCE_ID = { 0, };
+vector<int> RESOURCE_ID = { 0, };
 constexpr wchar_t RESOURCE_TYPE[] = L"PNG";
-
+vector<Gdiplus::Image*> AnimationFrames = { 0, };
 
 ResourceManger::ResourceManger(HDC drawDC, HINSTANCE hInstance,int width, int height) : hInst(hInstance)
 {											
@@ -30,11 +30,17 @@ ResourceManger::~ResourceManger()
 void ResourceManger::LoadImages(HINSTANCE hInst)
 {
 	try {		
-		
-		imageResource->LoadFromResource(hInst, RESOURCE_ID, RESOURCE_TYPE); // Load image from resource 
+		// Load image from resource
+		const auto& frameID = AnimStateFrameMap[current_state].ImageID; 
+		for (int id : frameID)
+		{
+			RESOURCE_ID.push_back(id); 
+			imageResource->LoadFromResource(hInst, RESOURCE_ID[id], RESOURCE_TYPE); // Load image from resource 
+		}	
 		
 		image = imageResource->GetBitmap();
-		
+		AnimationFrames.push_back(image); 
+
 		if (image == nullptr)
 		{
 			cerr << "Failed to load image resource." << endl;

@@ -1,3 +1,4 @@
+#include "Global.h"
 #include <windows.h> 
 #include "ResourceManger.h" 
 #include "AnimationMap.h" 

@@ -7,10 +7,6 @@
 
 using namespace Input;
 
-extern Animstate current_state; // current Animation State 
-extern Animstate prev_state;    // Previous Animation State 
-
-
 Animstate GetcurrentAnimationState() { return current_state; }
 void SetAnimationState(Animstate state) { current_state = state; }
 Animstate GetPrevAnimationState() { return prev_state; }
