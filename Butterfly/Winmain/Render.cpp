@@ -4,7 +4,7 @@ Render::Render(HWND hwnd, int width, int height)
     : hWnd(hwnd), clientSize{ width, height }
 {
     swap = new Swap(hwnd, width, height);
- 
+
 	anim = new Animation(hwnd, width, height); // Animation °´Ã¼ »ý¼º 
 }
 

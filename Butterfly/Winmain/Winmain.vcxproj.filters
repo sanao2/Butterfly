@@ -43,6 +43,12 @@
     <Filter Include="리소스 파일\player\UsePikax">
       <UniqueIdentifier>{1f64edfc-4fad-4e03-9d36-c12c819a3e62}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\UI\ResourceManager">
+      <UniqueIdentifier>{06c4d264-a56a-4bf0-907c-ab24c3fa68d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\UI\ResourceManager">
+      <UniqueIdentifier>{d8b5b7e1-a9db-4fdd-a5c5-1b1fb4902d23}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -99,6 +105,9 @@
     <ClInclude Include="Animation.h">
       <Filter>헤더 파일\UI</Filter>
     </ClInclude>
+    <ClInclude Include="ResourceManger.h">
+      <Filter>헤더 파일\UI\ResourceManager</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Winmain.cpp">
@@ -127,6 +136,9 @@
     </ClCompile>
     <ClCompile Include="Animation.cpp">
       <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="ResourceManger.cpp">
+      <Filter>소스 파일\UI\ResourceManager</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
