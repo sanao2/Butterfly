@@ -132,6 +132,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Animation.h" />
+    <ClInclude Include="AnimationMap.h" />
     <ClInclude Include="Event\InputConstants.h" />
     <ClInclude Include="Event\InputManager.h" />
     <ClInclude Include="Event\KeyboardInputManager.h" />
