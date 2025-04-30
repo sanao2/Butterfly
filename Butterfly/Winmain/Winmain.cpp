@@ -25,6 +25,13 @@ int boxDraw()
     return S_OK;
 }
 
+void ProgressInput()
+{
+    auto& key = InputManager<KeyboardDevice>::GetInstance();    
+    std::unique_ptr<Move::MoveManager> move = std::make_unique<Move::MoveManager>(key, rect);
+    move->MoveUpdate();
+}
+
 void InitConsole()
 {
     AllocConsole();
@@ -113,9 +120,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
     drawDC = GetDC(g_hWnd);
 
     render = new Render(drawDC, g_hWnd, g_width, g_height);  // Global Render 객체 생성
-    //auto& key = InputManager<KeyboardDevice>::GetInstance();    
-    //std::unique_ptr<Move::MoveManager> move = std::make_unique<Move::MoveManager>(key, rect);
-
+    
     Time::InitTime(); // Timer start  Initialization 
 
     MSG msg;
@@ -134,7 +139,6 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
         float TotalTime = Time::GetTotalTime(); 
         std::cout << "[" << TotalTime << "]" << std::endl;
               
-        //move->MoveUpdate();
 		render->RenderScene(hInstance); // 렌더링 호출
         //boxDraw();
 		
