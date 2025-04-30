@@ -1,7 +1,7 @@
 #include "ResourceManger.h"
 
 
-int RESOURCE_ID = IDB_PLAYER_DOWNWALK_IDLE;
+vector<int> RESOURCE_ID = { 0, };
 constexpr wchar_t RESOURCE_TYPE[] = L"PNG";
 
 ResourceManger::ResourceManger(HDC drawDC, int width, int height) 

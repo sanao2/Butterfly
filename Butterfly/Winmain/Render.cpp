@@ -6,8 +6,7 @@ Render::Render(HDC drawDC, HWND hwnd,  int width, int height)
 {
     swap = new Swap(hwnd, width, height);
 	ResMgr = new ResourceManger(drawDC, width,height); // 府家胶 概聪历 按眉 积己
-	
-   
+	  
 }
 
 Render::~Render()

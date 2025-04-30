@@ -1,3 +1,4 @@
+#include "Animation.h"
 //#include "Animation.h"
 //
 //Animstate Animation::currAnim;
@@ -103,3 +104,16 @@
 //    ResMgr->RenderImage(*backDCgraphics, 0, 0); // 이미지를 그리기 
 // 
 //}
+
+Animation::Animation(HDC drawDC, HINSTANCE hInst, int width, int height)
+{
+	Gdiplus::GdiplusStartupInput gsi;
+	Gdiplus::GdiplusStartup(&GdiPlusToken, &gsi, nullptr);
+	graphics = new Gdiplus::Graphics(drawDC);
+	image = nullptr;
+	timer.Elapsed();
+
+	current_state = PLAYER_DEFAULT; 
+	prev_state = PLAYER_DEFAULT;
+
+}

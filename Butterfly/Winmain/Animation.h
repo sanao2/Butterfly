@@ -1,20 +1,35 @@
-//#pragma once
-//#include <windows.h>
-//#include <vector>
-//#include <iostream>
-//#include <gdiplus.h>
-//#include <memory>
-//#include "UI/Timer.h"
-//#include "resource.h"
-//#include "AnimationMap.h"
-//#include "ResourceManger.h" 
-//#pragma comment(lib, "gdiplus.lib")
-//using std::vector;
-//using std::wstring;
-//
-//extern int g_width;
-//extern int g_height;
-//
+#include <windows.h> 
+#include "ResourceManger.h" 
+#include "AnimationMap.h" 
+#include <vector> 
+#include <iostream> 
+#include "AnimationMap.h"
+#include "UI/Timer.h"
+#pragma comment(lib, "gdiplus.lib")
+using std::vector; 
+using namespace std; 
+
+class Animation
+{
+private : 
+	HINSTANCE hInst; 
+
+	ULONG_PTR GdiPlusToken;
+	HBITMAP hBitmap = nullptr;
+	Gdiplus::Graphics* graphics = nullptr;
+	Gdiplus::Image* image = nullptr;
+
+	Animstate current_state; // current Animation State 
+	Animstate prev_state;    // Previous Animation State 
+
+	Time::Timer<> timer;
+
+public : 
+	Animation(HDC drawDC, HINSTANCE hInst, int width, int height);
+	~Animation(); 
+
+};
+
 //class Animation
 //{
 //private:
