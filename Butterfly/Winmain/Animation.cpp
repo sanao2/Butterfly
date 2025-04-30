@@ -112,7 +112,7 @@ Animation::Animation(HDC drawDC, HINSTANCE hInst)
 	graphics = new Gdiplus::Graphics(drawDC);
 	image = nullptr;
 	timer.Elapsed();
-
+ 
 
 }
 
@@ -134,7 +134,7 @@ Animation::~Animation()
 
 void Animation::loadAnimationImage()
 {// 리소스 매니저를 통해 이미지 로드
-	ResMgr->LoadImages(hInst); // 리소스 매니저를 통해 이미지 로드 
+
 	//Image = ResMgr->GetIamge();	
 	//ResMgr->SetImage(Image); // Set Image 
 	if (image == nullptr)

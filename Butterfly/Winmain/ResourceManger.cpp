@@ -1,10 +1,10 @@
 #include "ResourceManger.h"
 
 
-vector<int> RESOURCE_ID = { 0, };
+int RESOURCE_ID = IDB_PLAYER_DOWNWALK_IDLE;
 constexpr wchar_t RESOURCE_TYPE[] = L"PNG";
 
-ResourceManger::ResourceManger(HDC drawDC, HINSTANCE hInstance,int width, int height) : hInst(hInstance)
+ResourceManger::ResourceManger(HDC drawDC,int width, int height) 
 {											
 	imageResource = new ImageResource();
 	imageRenderer = new GdiPlusImageRenderer(); // Correctly references the class
@@ -14,7 +14,7 @@ ResourceManger::ResourceManger(HDC drawDC, HINSTANCE hInstance,int width, int he
 	Gdiplus::GdiplusStartup(&GdiPlusToken, &gsi, nullptr);
 	graphics = new Gdiplus::Graphics(drawDC); // GDI+ 弊贰侨胶 按眉 积己
 	
-	animation = new Animation(drawDC, hInstance); // 局聪皋捞记 按眉 积己);
+	//animation = new Animation(drawDC, hInstance); // 局聪皋捞记 按眉 积己);
 }
 
 ResourceManger::~ResourceManger()
@@ -30,12 +30,12 @@ void ResourceManger::LoadImages(HINSTANCE hInst)
 {
 	try {		
 
-		for (int i = 0; i < RESOURCE_ID.size(); ++i)
-		{
-			RESOURCE_ID[i] = GetAnimationFrameID(animation->GetcurrentAnimationState(), i);
+		//for (int i = 0; i < RESOURCE_ID.size(); ++i)
+		//{
+			//RESOURCE_ID[i] = GetAnimationFrameID(current_state, i);
 
-			auto Res = imageResource->LoadFromResource(hInst, RESOURCE_ID[i], RESOURCE_TYPE);
-		} 		
+			auto Res = imageResource->LoadFromResource(hInst, RESOURCE_ID, RESOURCE_TYPE);
+		/*} */		
 		image = imageResource->GetBitmap();
 		
 		if (image == nullptr)
