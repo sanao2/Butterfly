@@ -2,6 +2,7 @@
 
 vector<int> RESOURCE_ID = { 0, };
 constexpr wchar_t RESOURCE_TYPE[] = L"PNG";
+vector<Gdiplus::Image*> images; // Resource vector 
 
 ResourceManger::ResourceManger(HDC drawDC, HINSTANCE hInstance,int width, int height) : hInst(hInstance)
 {											
