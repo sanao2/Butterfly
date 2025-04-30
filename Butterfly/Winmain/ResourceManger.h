@@ -19,9 +19,12 @@ private :
 	ImageResource* imageResource = nullptr;
 	IImageRenderer* imageRenderer = nullptr; 
  
-	Gdiplus::Bitmap* bitmap = nullptr; 
+	Gdiplus::Image* image = nullptr; 
 	POINT ResPos = { 0, 0 }; 
 
+	ULONG_PTR GdiPlusToken;
+	HBITMAP hBitmap = nullptr;
+	Gdiplus::Graphics* graphics = nullptr;
 public : 
 	ResourceManger(HDC drawDC,int width, int height);
 	~ResourceManger();

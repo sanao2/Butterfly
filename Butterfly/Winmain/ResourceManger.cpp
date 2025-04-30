@@ -9,7 +9,7 @@ ResourceManger::ResourceManger(HDC drawDC, int width, int height)
 
 ResourceManger::~ResourceManger()
 {	
-	DeleteObject(bitmap); 
+	DeleteObject(image);
 	
 	delete imageResource;
 	delete imageRenderer; 
@@ -24,21 +24,21 @@ void ResourceManger::LoadImages(HINSTANCE hInst)
 {
 	bool Res = imageResource->LoadFromResource(hInst, RESOURCE_ID, RESOURCE_TYPE); 
 	
-	if (bitmap == nullptr)
+	if (image == nullptr)
 	{
 		cerr << "Failed to load image resource." << endl;
 		return;
 	}
 
-	bitmap = imageResource->GetBitmap();
+	image = imageResource->GetBitmap();
 }
 
 void ResourceManger::RenderImage(Gdiplus::Graphics& graphics, int x, int y)
 {
-	if (bitmap == nullptr)
+	if (image == nullptr)
 	{
 		cerr << "Bitmap is null." << endl;
 		return;
 	} 
-	imageRenderer->Render(graphics, bitmap, x, y); 
+	imageRenderer->Render(graphics, image, x, y);
 }

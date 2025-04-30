@@ -13,10 +13,7 @@ private:
     ResourceManger* ResMgr;
     //Animation* anim; 
     HDC memDC = nullptr;
-
-    ULONG_PTR GdiPlusToken;
-    HBITMAP hBitmap = nullptr;
-    Gdiplus::Graphics* graphics = nullptr; 
+    
 
 public:
     Render(HDC drawDC, HWND hwnd, int width, int height);
