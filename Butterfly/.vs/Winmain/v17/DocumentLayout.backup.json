@@ -106,8 +106,7 @@
               "RelativeToolTip": "Winmain\\Event\\InputConstants.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-30T05:23:15.543Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-30T05:23:15.543Z"
             },
             {
               "$type": "Document",
@@ -119,8 +118,7 @@
               "RelativeToolTip": "Winmain\\Render.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-30T02:57:01.576Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-30T02:57:01.576Z"
             },
             {
               "$type": "Document",
@@ -132,8 +130,7 @@
               "RelativeToolTip": "Winmain\\Animation.cpp",
               "ViewState": "AgIAAHAAAAAAAAAAAAAYwHIAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-30T02:47:52.928Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-30T02:47:52.928Z"
             },
             {
               "$type": "Document",
@@ -155,7 +152,7 @@
               "RelativeDocumentMoniker": "Winmain\\ResourceManger.cpp",
               "ToolTip": "D:\\BF\\Butterfly\\Winmain\\ResourceManger.cpp",
               "RelativeToolTip": "Winmain\\ResourceManger.cpp",
-              "ViewState": "AgIAADAAAAAAAAAAAAAAABcAAAAXAAAAAAAAAA==",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAABcAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-04-30T02:24:17.509Z",
               "EditorCaption": ""
@@ -170,8 +167,7 @@
               "RelativeToolTip": "Winmain\\ImageResource.cpp",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAABMAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-30T02:17:15.889Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-30T02:17:15.889Z"
             },
             {
               "$type": "Document",
@@ -183,8 +179,7 @@
               "RelativeToolTip": "Winmain\\Winmain.cpp",
               "ViewState": "AgIAAAEAAAAAAAAAAAAswA8AAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-30T02:45:24.795Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-30T02:45:24.795Z"
             },
             {
               "$type": "Document",
@@ -196,8 +191,7 @@
               "RelativeToolTip": "Winmain\\AnimationMap.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-30T07:13:16.617Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-30T07:13:16.617Z"
             },
             {
               "$type": "Document",
@@ -209,8 +203,7 @@
               "RelativeToolTip": "Winmain\\AnimationMap.h",
               "ViewState": "AgIAABIAAAAAAAAAAAAAwC0AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-30T07:10:04.448Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-30T07:10:04.448Z"
             }
           ]
         },
@@ -229,8 +222,7 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-04-30T02:56:50.736Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -243,8 +235,7 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-04-30T02:26:24.165Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -256,8 +247,7 @@
               "RelativeToolTip": "Winmain\\Winmain.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAABDAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-30T02:45:17.937Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-30T02:45:17.937Z"
             },
             {
               "$type": "Document",
@@ -269,8 +259,7 @@
               "RelativeToolTip": "Winmain\\GdiplusImageRenderer.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-30T02:17:19.414Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-30T02:17:19.414Z"
             },
             {
               "$type": "Document",
@@ -282,8 +271,7 @@
               "RelativeToolTip": "Winmain\\ImageResource.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-30T02:17:20.431Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-30T02:17:20.431Z"
             },
             {
               "$type": "Document",
@@ -295,8 +283,7 @@
               "RelativeToolTip": "Winmain\\Animation.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-30T02:47:58.182Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-30T02:47:58.182Z"
             },
             {
               "$type": "Document",
@@ -321,8 +308,7 @@
               "RelativeToolTip": "Winmain\\IImageRenderer.h",
               "ViewState": "AgIAAAAAAAAAAAAAAADwvwEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-30T02:17:19.905Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-30T02:17:19.905Z"
             }
           ]
         }

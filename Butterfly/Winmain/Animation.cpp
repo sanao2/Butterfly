@@ -132,7 +132,8 @@ Animation::~Animation()
 }
 
 void Animation::loadAnimationImage()
-{// 리소스 매니저를 통해 이미지 로드
+{ 
+	// 리소스 매니저를 통해 이미지 로드
 
 	if (image == nullptr)
 	{
