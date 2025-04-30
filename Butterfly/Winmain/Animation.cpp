@@ -85,19 +85,6 @@ void Animation::Render(HDC drawDC)
     {
        frameID = GetAnimationFrameID(currAnim, currFrame);
     }   
-   
-    if (frameID == -1) return;
-
-    HBITMAP hBmp = LoadBitmap(hInst, MAKEINTRESOURCE(frameID));
-    if (!hBmp) return;
-
-    HDC tempDC = CreateCompatibleDC(drawDC);
-    HBITMAP oldBmp = (HBITMAP)SelectObject(tempDC, hBmp);
-
-    BitBlt(drawDC, 0, 0, g_width, g_height, tempDC, 0, 0, SRCCOPY);
-
-    SelectObject(tempDC, oldBmp);
-    DeleteObject(hBmp);
-    DeleteDC(tempDC);
+  
    
 }

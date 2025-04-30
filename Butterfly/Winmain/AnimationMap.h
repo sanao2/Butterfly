@@ -33,8 +33,9 @@ extern  unordered_map<Animstate, ResourceInfo> AnimStateFrameMap;
 inline const int GetAnimationFrameID(Animstate animstate, size_t frameIndex)
 {
     auto it = AnimStateFrameMap.find(animstate);
-    if (it == AnimStateFrameMap.end())
+    auto& vec = it->second.ImageID; 
+    if (it == AnimStateFrameMap.end() && frameIndex >= vec.size())
         return -1;
 
-    return it->second.ImageID[frameIndex];
+    return vec[frameIndex];
 }

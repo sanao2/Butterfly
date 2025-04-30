@@ -22,10 +22,6 @@ ResourceManger::~ResourceManger()
 	delete imageRenderer; 
 }
 
-void ResourceManger::Initialize()
-{
-
-}
 
 void ResourceManger::LoadImages(HINSTANCE hInst)
 {

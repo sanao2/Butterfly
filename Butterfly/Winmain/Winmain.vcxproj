@@ -157,6 +157,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Animation.cpp" />
+    <ClCompile Include="AnimationMap.cpp" />
     <ClCompile Include="Event\KeyboardInputManager.cpp" />
     <ClCompile Include="Global.cpp" />
     <ClCompile Include="ImageResource.cpp" />

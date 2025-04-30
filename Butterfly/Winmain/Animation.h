@@ -6,6 +6,7 @@
 #include "UI/Timer.h"
 #include "resource.h"
 #include "AnimationMap.h"
+#include "ResourceManger.h" 
 #pragma comment(lib, "gdiplus.lib")
 
 using std::vector;
@@ -30,6 +31,7 @@ private:
     int currFrame = 0;
 
     Time::Timer<> timer;
+    ResourceManger* ResMgr = nullptr; 
 
     Gdiplus::GdiplusStartupInput gsi;
     ULONG_PTR GdiplusToken = NULL;

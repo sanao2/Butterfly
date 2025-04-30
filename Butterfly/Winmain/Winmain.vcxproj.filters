@@ -158,6 +158,9 @@
     <ClCompile Include="Move\MoveManagers.cpp">
       <Filter>소스 파일\Move</Filter>
     </ClCompile>
+    <ClCompile Include="AnimationMap.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Winmain.rc">
