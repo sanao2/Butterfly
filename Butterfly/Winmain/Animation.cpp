@@ -108,6 +108,9 @@ vector<Gdiplus::Image*> AnimationFrames; // Resource vector
 
 Animation::Animation(HDC drawDC, HINSTANCE hInst)
 {
+	imageResource = new ImageResource();
+	imageRenderer = new GdiPlusImageRenderer(); // Correctly references the class
+
 	Gdiplus::GdiplusStartupInput gsi;
 	Gdiplus::GdiplusStartup(&GdiPlusToken, &gsi, nullptr);
 	graphics = new Gdiplus::Graphics(drawDC);
@@ -133,7 +136,8 @@ Animation::~Animation()
 }
 void Animation::Update()
 {
-	
+	float deltaTime = Time::GetDeltaTime(); // Get delta time 
+	float totalTime = Time::GetTotalTime(); // Get total time 
 
 }
 void Animation::LoadAnimationFrame()

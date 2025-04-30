@@ -16,6 +16,8 @@ class Animation
 {
 private : 
 	HINSTANCE hInst; 
+	ImageResource* imageResource = nullptr;
+	IImageRenderer* imageRenderer = nullptr;
 
 	ULONG_PTR GdiPlusToken;
 	HBITMAP hBitmap = nullptr;
@@ -23,6 +25,9 @@ private :
 	Gdiplus::Image* image = nullptr;
 
 	Time::Timer<> timer;
+	float deltaTime = 0.0f; 
+	float totalTime = 0.0f; 
+	float frameTime = 0.0f;
 
 public : 
 	Animation(HDC drawDC, HINSTANCE hInst);
