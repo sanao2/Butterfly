@@ -5,6 +5,9 @@
 #include <iostream> 
 #include "AnimationMap.h"
 #include "UI/Timer.h"
+#include "ImageResource.h"
+#include "IImageRenderer.h"
+#include "GdiplusImageRenderer.h"
 #pragma comment(lib, "gdiplus.lib")
 using std::vector; 
 using namespace std; 
@@ -24,9 +27,8 @@ private :
 public : 
 	Animation(HDC drawDC, HINSTANCE hInst);
 	~Animation(); 
-	void Update();
-	void loadAnimationImage(); 
-
+	void Update();	
+	void LoadAnimationFrame();
 	 
 };
 

@@ -2,7 +2,7 @@
 
 vector<int> RESOURCE_ID = { 0, };
 constexpr wchar_t RESOURCE_TYPE[] = L"PNG";
-vector<Gdiplus::Image*> images; // Resource vector 
+vector<Gdiplus::Image*> AnimationFrames; // Resource vector 
 
 ResourceManger::ResourceManger(HDC drawDC, HINSTANCE hInstance,int width, int height) : hInst(hInstance)
 {											
@@ -36,7 +36,7 @@ void ResourceManger::LoadImages(HINSTANCE hInst)
 		for (current_frame = 0; current_frame <= RESOURCE_ID.size(); ++current_frame)
 		{
 			RESOURCE_ID.push_back(GetAnimationFrameID(current_state, current_frame));
-			imageResource->LoadFromResource(hInst, RESOURCE_ID[current_frame], RESOURCE_TYPE);
+			
 		}
 
 		image = imageResource->GetBitmap();
@@ -57,6 +57,8 @@ void ResourceManger::LoadImages(HINSTANCE hInst)
 	}
 	
 }
+
+
 
 void ResourceManger::RenderImage(Gdiplus::Graphics& graphics, int x, int y)
 {

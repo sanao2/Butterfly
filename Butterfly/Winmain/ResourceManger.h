@@ -39,6 +39,7 @@ public :
 	~ResourceManger();
 
 	void LoadImages(HINSTANCE hInst); 
+	void LoadAnimationFrame();
 	void RenderImage(Gdiplus::Graphics& graphics, int x, int y);
 
 	Gdiplus::Image* GetIamge() { return image;}

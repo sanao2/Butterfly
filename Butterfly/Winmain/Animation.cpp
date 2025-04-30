@@ -104,6 +104,7 @@
 //    ResMgr->RenderImage(*backDCgraphics, 0, 0); // 이미지를 그리기 
 // 
 //}
+vector<Gdiplus::Image*> AnimationFrames; // Resource vector 
 
 Animation::Animation(HDC drawDC, HINSTANCE hInst)
 {
@@ -130,14 +131,23 @@ Animation::~Animation()
 	
 	Gdiplus::GdiplusShutdown(GdiPlusToken);
 }
+void Animation::Update()
+{
+	
 
-void Animation::loadAnimationImage()
-{ 
-	// 리소스 매니저를 통해 이미지 로드
+}
+void Animation::LoadAnimationFrame()
+{
+	AnimationFrames.clear(); // Clear previous frames
 
-	if (image == nullptr)
+	auto& frame = AnimStateFrameMap[current_state].ImageID;
+	for (int id : frame)
 	{
-		std::cerr << "Failed to get image." << std::endl;
-		return;
+		imageResource->LoadFromResource(hInst, id, RESOURCE_TYPE);
+		image = imageResource->GetBitmap();
+		if (image == nullptr)
+		{
+			AnimationFrames.push_back(image);
+		}
 	}
 }
