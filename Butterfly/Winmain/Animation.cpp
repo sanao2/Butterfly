@@ -42,12 +42,9 @@ void Animation::createAnimation(HINSTANCE hInst, float frameTime)
 
 void Animation::Initialize()
 {
+    ULONG_PTR token;
+    Gdiplus::GdiplusStartupInput gsi;
     Gdiplus::GdiplusStartup(&GdiplusToken, &gsi, nullptr);
-
-    memDC = CreateCompatibleDC(nullptr);
-    hBitmap = CreateCompatibleBitmap(GetDC(nullptr), g_width, g_height);
-    SelectObject(memDC, hBitmap);
-
     backDCgraphics = new Gdiplus::Graphics(memDC);
 
     timer.Elapsed();
