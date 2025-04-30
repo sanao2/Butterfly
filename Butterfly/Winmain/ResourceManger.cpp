@@ -27,7 +27,12 @@ ResourceManger::~ResourceManger()
 void ResourceManger::LoadImages(HINSTANCE hInst)
 {
 	try {
-		auto Res = imageResource->LoadFromResource(hInst, RESOURCE_ID, RESOURCE_TYPE);
+		for (int i = 0; i < RESOURCE_ID.size(); ++i)
+		{
+			RESOURCE_ID[i] = GetAnimationFrameID(GetAnimationState(), i);
+
+			auto Res = imageResource->LoadFromResource(hInst, RESOURCE_ID[i], RESOURCE_TYPE);
+		} 		
 		
 		image = imageResource->GetBitmap();
 		if (image == nullptr)

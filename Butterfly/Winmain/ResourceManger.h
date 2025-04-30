@@ -10,6 +10,7 @@
 #include "resource.h"
 #include <iostream>
 #include <vector>
+#include "Animation.h"
 using namespace std; 
 using std::vector;
 
@@ -21,7 +22,7 @@ class ResourceManger
 private : 
 	ImageResource* imageResource = nullptr;
 	IImageRenderer* imageRenderer = nullptr; 
- 
+	Animation* animation = nullptr; 
 
 	POINT ResPos = { 0, 0 }; 
 

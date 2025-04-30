@@ -25,9 +25,15 @@ private :
 	Time::Timer<> timer;
 
 public : 
-	Animation(HDC drawDC, HINSTANCE hInst, int width, int height);
+	Animation(HDC drawDC, HINSTANCE hInst);
 	~Animation(); 
+	void Update();
+	void loadAnimationImage(); 
 
+	Animstate GetAnimationState() { return current_state; }
+	void SetAnimationState(Animstate state) { current_state = state; } 
+	Animstate GetPrevAnimationState() { return prev_state; } 
+	void SetPrevAnimationState(Animstate state) { prev_state = state; } 
 };
 
 //class Animation

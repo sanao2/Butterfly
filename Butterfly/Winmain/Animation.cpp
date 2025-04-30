@@ -105,7 +105,7 @@
 // 
 //}
 
-Animation::Animation(HDC drawDC, HINSTANCE hInst, int width, int height)
+Animation::Animation(HDC drawDC, HINSTANCE hInst)
 {
 	Gdiplus::GdiplusStartupInput gsi;
 	Gdiplus::GdiplusStartup(&GdiPlusToken, &gsi, nullptr);
@@ -116,4 +116,24 @@ Animation::Animation(HDC drawDC, HINSTANCE hInst, int width, int height)
 	current_state = PLAYER_DEFAULT; 
 	prev_state = PLAYER_DEFAULT;
 
+}
+
+Animation::~Animation()
+{
+	if (image)
+	{
+		delete image;
+		image = nullptr;
+	}
+	if (graphics)
+	{
+		delete graphics;
+		graphics = nullptr;
+	}
+	
+	Gdiplus::GdiplusShutdown(GdiPlusToken);
+}
+
+void Animation::loadAnimationImage()
+{
 }
