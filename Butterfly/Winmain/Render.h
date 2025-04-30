@@ -2,6 +2,7 @@
 #include <windows.h>
 #include "Swap.h"
 #include "Animation.h"
+#include "ResourceManger.h" 
 
 class Render
 {
@@ -9,6 +10,7 @@ private:
     HWND hWnd;
     POINT clientSize;
     Swap* swap;
+    ResourceManger* ResMgr;
     //Animation* anim; 
     HDC memDC = nullptr;
 

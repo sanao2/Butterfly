@@ -5,7 +5,7 @@
 #define IDC_MYICON                      2
 #define IDD_WINMAIN_DIALOG              102
 #define IDS_APP_TITLE                   103
-#define IDD_ABOUTBOX                    103
+#define IDD_ABOUTBOX                    106
 #define IDM_ABOUT                       104
 #define IDM_EXIT                        105
 #define IDI_WINMAIN                     107
@@ -14,15 +14,12 @@
 #define IDR_MAINFRAME                   128
 #define IDR_TEST1                       129
 #define IDB_PNG1                        130
-#define IDB_PNG2                        131
-#define ID8_Shop                        131
 #define IDB_SHOP                        131
 #define IDB_BITMAP1                     132
 #define IDB_PLAYER_IDLE                 133
 #define IDB_PLAYER_DOWNWALK_IDLE        133
 #define IDB_TREE                        134
 #define IDB_POND                        135
-#define IDB_FLOOR_TILE_1                139
 #define IDB_FLOOR_TILE_ONE              139
 #define IDB_PLAYER_RIGHT_THREE          140
 #define IDB_PLAYER_RIGHT_ONE            141
