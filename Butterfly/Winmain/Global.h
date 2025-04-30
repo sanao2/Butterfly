@@ -1,6 +1,7 @@
 #pragma once
 #include <windows.h>
 #include "Render.h"
+#include "AnimationMap.h" 
 #include "Move/MoveManagers.h"
 #include "Event/KeyboardInputManager.h"
 

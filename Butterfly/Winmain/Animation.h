@@ -1,10 +1,9 @@
 #include "Global.h"
 #include <windows.h> 
-#include "AnimationMap.h" 
 #include <vector> 
 #include <iostream> 
 #include "UI/Timer.h"
-
+#include "GdiplusImageRenderer.h"
 #pragma comment(lib, "gdiplus.lib")
 using std::vector; 
 using namespace std; 
@@ -19,8 +18,7 @@ private :
 	Gdiplus::Graphics* graphics = nullptr;
 	Gdiplus::Image* image = nullptr;
 
-	Time::Timer<> timer;
-	
+	Time::Timer<> timer;	
 	float frameTime = 0.0f;
 
 public : 
@@ -28,7 +26,6 @@ public :
 	~Animation(); 
 	void Update();	
 	void LoadAnimationFrame();
-	 
 };
 
 //

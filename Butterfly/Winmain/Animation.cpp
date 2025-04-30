@@ -1,4 +1,4 @@
-//#include "Animation.h"
+#include "Animation.h"
 ////#include "Animation.h"
 ////
 ////Animstate Animation::currAnim;
@@ -104,8 +104,8 @@
 ////    ResMgr->RenderImage(*backDCgraphics, 0, 0); // 이미지를 그리기 
 //// 
 ////}
-#include "ResourceManger.h"
-vector<Gdiplus::Image*> AnimationFrames; // Resource vector 
+
+vector<Gdiplus::Image*> AnimationFrames = { }; // Resource vector 
 
 Animation::Animation(HDC drawDC, HINSTANCE hInst)
 {
@@ -134,23 +134,30 @@ Animation::~Animation()
 }
 void Animation::Update()
 {
-	float deltaTime = Time::GetDeltaTime(); // Get delta time 
-	float totalTime = Time::GetTotalTime(); // Get total time 
+	Time::Duration frameInterval = Time::Duration(0.5f); // 0.5초 간격으로 애니메이션 업데이트 
+	Time::TimePoint lastTime = Time::Clock::now();
+	
+	float totaltime = Time::GetTotalTime(); 
+	int frameTime = 0; 
 
-	for(;totalTime >= frameTime;)
+	for(; totaltime >= frameTime;)
 	{
-		current_frame++;
-		totalTime = 0.0f;
-		auto it = AnimStateFrameMap.find(current_state);
-		if (it == AnimStateFrameMap.end()) {
-			return; // 키가 없으면 건너뛰거나 기본값 처리
-		}
-		size_t frameSize = it->second.ImageID.size();
-		if (current_frame >= frameSize)
-		{
-			current_frame = 0;
-		}
+		Time::TimePoint currentTime = Time::Clock::now(); 
+		float deltaTime = Time::GetDeltaTime();
+
+		lastTime = currentTime; // 마지막 시간 업데이트 
+
+		totaltime += deltaTime; 
+
+		if (totaltime >= frameInterval.count()) {
+			timer.Reset(); 
+			frameTime = (frameTime + 1) % AnimationFrames.size(); // 프레임 업데이트 
+		}	
 
 	} 
 
+}
+
+void Animation::LoadAnimationFrame()
+{
 }
