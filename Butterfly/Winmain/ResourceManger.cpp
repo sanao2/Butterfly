@@ -5,6 +5,11 @@ ResourceManger::ResourceManger(HDC drawDC, int width, int height)
 {											
 	imageResource = new ImageResource();
 	imageRenderer = new GdiPlusImageRenderer(); // Correctly references the class
+
+	// Gdiplus √ ±‚»≠ 
+	Gdiplus::GdiplusStartupInput gsi;
+	Gdiplus::GdiplusStartup(&GdiPlusToken, &gsi, nullptr);
+
 }
 
 ResourceManger::~ResourceManger()

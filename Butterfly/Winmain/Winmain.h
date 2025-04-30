@@ -1,16 +1,11 @@
 #pragma once
+#include "Global.h"
 #include <windows.h>
 #include <stdio.h>
-#include "Move/MoveManagers.h"
-#include "Event/KeyboardInputManager.h"
-#include "Render.h"
 #include "UI/timer.h"
 #include "resource.h"
 
 
 using namespace Input;
 
-extern Move::MoveManager* move;
-extern Render* render;
-extern HWND g_hWnd;
-extern ResourceManger* ResMgr;
+

@@ -1,3 +1,4 @@
 #include "Global.h"
 
-//Render* render = nullptr;
+Move::MoveManager* move = nullptr;
+Render* render = nullptr; // ·»´õ¸µ °´Ã¼
