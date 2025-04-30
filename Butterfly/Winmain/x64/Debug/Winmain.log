@@ -1,5 +1,9 @@
-﻿  Winmain.cpp
-D:\backup\BF\Butterfly\Winmain\Event\InputConstants.h(7,40): warning C4309: '초기화 중': 상수 값이 잘립니다.
-  (소스 파일 'Winmain.cpp'을(를) 컴파일하는 중)
+﻿  ImageResource.cpp
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusPath.h(145,40): error C2039: 'uint8_t': 'std'의 멤버가 아닙니다.
+  (소스 파일 'ImageResource.cpp'을(를) 컴파일하는 중)
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\ucrt\stddef.h(23,15):
+      'std' 선언을 참조하십시오.
   
-  Winmain.vcxproj -> D:\backup\BF\Butterfly\x64\Debug\Winmain.exe
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusPath.h(145,40): error C2061: 구문 오류: 식별자 'uint8_t'
+  (소스 파일 'ImageResource.cpp'을(를) 컴파일하는 중)
+  

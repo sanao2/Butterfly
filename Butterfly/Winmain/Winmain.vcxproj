@@ -137,6 +137,9 @@
     <ClInclude Include="Event\KeyboardInputManager.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="Global.h" />
+    <ClInclude Include="GdiplusImageRenderer.h" />
+    <ClInclude Include="IImageRenderer.h" />
+    <ClInclude Include="ImageResource.h" />
     <ClInclude Include="Move\AIMoveController.h" />
     <ClInclude Include="Move\IMoveController.h" />
     <ClInclude Include="Move\MoveDirection.h" />
@@ -155,6 +158,7 @@
     <ClCompile Include="Animation.cpp" />
     <ClCompile Include="Event\KeyboardInputManager.cpp" />
     <ClCompile Include="Global.cpp" />
+    <ClCompile Include="ImageResource.cpp" />
     <ClCompile Include="Move\MoveManagers.cpp" />
     <ClCompile Include="Render.cpp" />
     <ClCompile Include="ResourceManger.cpp" />
