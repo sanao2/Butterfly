@@ -7,8 +7,8 @@
 LPCTSTR g_title = TEXT("");
 LPCTSTR g_szClassName = TEXT("윈도우 클래스 이름");
 
-int g_width = 1024;
-int g_height = 768;
+int g_width =  600;
+int g_height = 800;
 
 HWND g_hWnd;
 
@@ -113,9 +113,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
     drawDC = GetDC(g_hWnd);
 
     render = new Render(drawDC, g_hWnd, g_width, g_height);  // Global Render 객체 생성
-    auto& key = InputManager<KeyboardDevice>::GetInstance();    
-    std::unique_ptr<Move::MoveManager> move = std::make_unique<Move::MoveManager>(key, rect);
-
+    //auto& key = InputManager<KeyboardDevice>::GetInstance();    
+    //std::unique_ptr<Move::MoveManager> move = std::make_unique<Move::MoveManager>(key, rect);
 
     Time::InitTime(); // Timer start  Initialization 
 
@@ -134,11 +133,10 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
         Time::UpdateTime();
         float TotalTime = Time::GetTotalTime(); 
         std::cout << "[" << TotalTime << "]" << std::endl;
-        
-        boxDraw();
-        move->MoveUpdate();
+              
+        //move->MoveUpdate();
 		render->RenderScene(hInstance); // 렌더링 호출
-		
+        //boxDraw();
 		
     }
 

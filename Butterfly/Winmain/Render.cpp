@@ -31,20 +31,13 @@ void Render::RenderScene(HINSTANCE hInst)
 
     // 화면 초기화 (배경을 흰색으로 채우기)
     PatBlt(memDC, 0, 0, clientSize.x, clientSize.y, WHITENESS);
-    try {
         ResMgr->Initialize();
 
     // 리소스 로딩 - 이미지를 로드하기 위해 LoadImages 호출
-
-       
+              
 		ResMgr->LoadImages(hInst); // 리소스 매니저를 통해 이미지 로드 
-		ResMgr->RenderImage(*graphics, clientSize.x / 2, clientSize.y / 2); // 이미지를 그리기 
+		ResMgr->RenderImage(*graphics, 0, 0); // 이미지를 그리기 
     
-
-    }
-    catch (const std::exception& e) {
-        std::cerr << "Error loading images: " << e.what() << std::endl;
-    }
     // 스왑 메모리 DC에 복사 (swap 내부 메모리 DC를 가져오는 메소드 필요)
     swap->SwapBuffers();
 

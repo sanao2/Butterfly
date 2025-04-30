@@ -5,7 +5,6 @@
 #include "UI/timer.h"
 #include "resource.h"
 
-
 using namespace Input;
 
 
