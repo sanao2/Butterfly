@@ -58,7 +58,7 @@ void Animation::Update()
 
     if (TotalTime >= frameTime)
     {
-        currFrame++;
+        frameCount++;
         TotalTime = 0.0f;
       
         auto it = AnimStateFrameMap.find(currAnim);
@@ -68,8 +68,8 @@ void Animation::Update()
         }
         size_t frameCount = it->second.ImageID.size();
        
-        if (currFrame >= frameCount)
-            currFrame = 0;
+        if (frameCount >= frameCount)
+            frameCount = 0;
     }
 
     timer.Reset();
@@ -77,11 +77,11 @@ void Animation::Update()
 
 void Animation::Render(HDC drawDC)
 {
-    int frameID;
-    for (currFrame = 0; currFrame < PLAYER_ANIMCOUNT; ++currFrame)
+
+    for (frameCount = 0; frameCount < PLAYER_ANIMCOUNT; ++frameCount)
     {
-       frameID = GetAnimationFrameID(currAnim, currFrame);
-    }   
-  
+        RESOURCE_ID = GetAnimationFrameID(currAnim, frameCount);
+    }     
    
+    if ()
 }

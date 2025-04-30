@@ -8,9 +8,11 @@
 #include "GdiplusImageRenderer.h" // Ensure this header is included
 #include "resource.h"
 #include <iostream>
+#include <vector>
 using namespace std; 
+using std::vector;
 
-extern const int RESOURCE_ID; 
+extern vector<int> RESOURCE_ID; 
 extern const wchar_t RESOURCE_TYPE[];
 
 class ResourceManger

@@ -1,6 +1,6 @@
 #include "ResourceManger.h"
 
-constexpr int RESOURCE_ID = IDB_PLAYER_DOWNWALK_IDLE;
+vector<int> RESOURCE_ID = { 0, };
 constexpr wchar_t RESOURCE_TYPE[] = L"PNG";
 
 ResourceManger::ResourceManger(HDC drawDC, int width, int height) 
@@ -25,8 +25,19 @@ ResourceManger::~ResourceManger()
 
 void ResourceManger::LoadImages(HINSTANCE hInst)
 {
-	bool Res = imageResource->LoadFromResource(hInst, RESOURCE_ID, RESOURCE_TYPE); 
-	try {
+try {
+
+	for (int i = 0; i < RESOURCE_ID.size(); ++i)
+	{
+		if (RESOURCE_ID[i] == 0)
+		{
+			cerr << "Resource ID is 0." << endl;
+			return;
+		}
+		bool Res = imageResource->LoadFromResource(hInst, RESOURCE_ID[i], RESOURCE_TYPE);
+	}
+	
+
 		image = imageResource->GetBitmap();
 	
 		if (image == nullptr)

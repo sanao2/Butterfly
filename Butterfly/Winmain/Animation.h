@@ -28,7 +28,7 @@ private:
     float DeltaTime = 0.0f;
     float frameTime = 0.0f;
     float TotalTime = 0.0f;
-    int currFrame = 0;
+    int frameCount = 0;
 
     Time::Timer<> timer;
     ResourceManger* ResMgr = nullptr; 
@@ -37,7 +37,7 @@ private:
     ULONG_PTR GdiplusToken = NULL;
     Gdiplus::Graphics* backDCgraphics = nullptr;
     HBITMAP hBitmap = nullptr;
-    Gdiplus::Bitmap* bitmap = nullptr;
+    Gdiplus::Image Image = NULL;
 
 public:
     Animation(HWND hwnd, int width, int height);
