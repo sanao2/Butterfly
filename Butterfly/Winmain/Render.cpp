@@ -4,7 +4,7 @@ Render::Render(HWND hwnd, int width, int height)
     : hWnd(hwnd), clientSize{ width, height }
 {
     swap = new Swap(hwnd, width, height);
-    RcManager = new ResourceManager(hwnd, width, height); // ResourceManager 객체 생성 
+ 
 	anim = new Animation(hwnd, width, height); // Animation 객체 생성 
 }
 
@@ -30,7 +30,7 @@ void Render::RenderScene(HINSTANCE hInst)
 
     // 리소스 로딩 - 이미지를 로드하기 위해 LoadImages 호출
     try {
-        RcManager->LoadImages(hInst);  // 이미지를 로드하는 함수 호출
+  
     }
     catch (const std::exception& e) {
         std::cerr << "Error loading images: " << e.what() << std::endl;

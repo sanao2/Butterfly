@@ -96,20 +96,8 @@
     <ClInclude Include="UI\Map\Map.h">
       <Filter>소스 파일\UI</Filter>
     </ClInclude>
-    <ClInclude Include="UI\ResourceManager.h">
-      <Filter>헤더 파일\UI</Filter>
-    </ClInclude>
     <ClInclude Include="Animation.h">
       <Filter>헤더 파일\UI</Filter>
-    </ClInclude>
-    <ClInclude Include="IImageRenderer.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="GdiPlusImageRenderer.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="ImageResource.h">
-      <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -137,13 +125,7 @@
     <ClCompile Include="UI\Map\Map.cpp">
       <Filter>소스 파일\UI</Filter>
     </ClCompile>
-    <ClCompile Include="UI\ResourceManager.cpp">
-      <Filter>소스 파일\UI</Filter>
-    </ClCompile>
     <ClCompile Include="Animation.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="ImageResource.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
