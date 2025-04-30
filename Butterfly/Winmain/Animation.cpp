@@ -44,11 +44,6 @@ void Animation::createAnimation(HINSTANCE hInst, float frameTime)
     this->frameTime = frameTime;
 
     // 리소스 매니저를 통해 이미지 로드
-    
-    for (int i = 0; i < 6; ++i)
-    {
-      RESOURCE_ID[frameCount] = GetAnimationFrameID(currAnim, i);     
-    }
 
     ResMgr->LoadImages(hInst); // 리소스 매니저를 통해 이미지 로드 
 
@@ -71,11 +66,26 @@ void Animation::Update()
             // 키가 없으면 건너뛰거나 기본값 처리
             return; 
         }
-        size_t frameCount = it->second.ImageID.size();
-       
-        if (frameCount >= frameCount)
-            frameCount = 0;
-    }
+        size_t frameSize = it->second.ImageID.size();
+		if (frameCount >= frameSize)
+		{
+			frameCount = 0;
+		}
+      
+	}
+    for (int i = 0; i < frameCount; ++i)
+    {
+        RESOURCE_ID[i] = GetAnimationFrameID(currAnim, frameCount);
+    }	
+  
+	Image = ResMgr->GetIamge();	
+    ResMgr->SetImage(Image); // Set Image 
+
+	if (Image == nullptr)
+	{
+		std::cerr << "Failed to get image." << std::endl;
+		return;
+	}
 
     timer.Reset();
     }
