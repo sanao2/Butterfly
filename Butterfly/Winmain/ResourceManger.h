@@ -2,6 +2,7 @@
 #include <windows.h>
 #include <cstdint> 
 #include <gdiplus.h>
+#include "AnimationMap.h"
 #pragma comment(lib, "gdiplus.lib")
 #include "ImageResource.h"
 #include "IImageRenderer.h"
@@ -12,7 +13,7 @@
 using namespace std; 
 using std::vector;
 
-extern vector<int> RESOURCE_ID; 
+extern int RESOURCE_ID; 
 extern const wchar_t RESOURCE_TYPE[];
 
 class ResourceManger

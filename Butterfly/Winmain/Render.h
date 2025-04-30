@@ -11,7 +11,7 @@ private:
     POINT clientSize;
     Swap* swap;
     ResourceManger* ResMgr;
-    Animation* anim; 
+
     HDC memDC = nullptr;
 	Gdiplus::Graphics* graphics = nullptr; // GDI+ 그래픽스 객체
 
