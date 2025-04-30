@@ -112,7 +112,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
     UpdateWindow(hwnd);
 
     render = new Render(g_hWnd, g_width, g_height);  // Global Render 객체 생성
-  
+	ResMgr = new ResourceManger(hInstance); // 리소스 매니저 객체 생성
     auto& key = InputManager<KeyboardDevice>::GetInstance();    
 
     std::unique_ptr<Move::MoveManager> move = std::make_unique<Move::MoveManager>(key, rect);
@@ -134,10 +134,11 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
         Time::UpdateTime();
         float TotalTime = Time::GetTotalTime(); 
         std::cout << "[" << TotalTime << "]" << std::endl;
-
+        
         boxDraw();
         move->MoveUpdate();
 		render->RenderScene(hInstance); // 렌더링 호출
+		
 		
     }
 

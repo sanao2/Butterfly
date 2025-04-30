@@ -14,6 +14,8 @@ private:
     //Animation* anim; 
     HDC memDC = nullptr;
 
+    Gdiplus::Graphics* graphics = nullptr; 
+
 public:
     Render(HWND hwnd, int width, int height);
     ~Render();

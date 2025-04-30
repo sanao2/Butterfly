@@ -1,7 +1,13 @@
 #include "ResourceManger.h"
 
-ResourceManger::ResourceManger(HINSTANCE hInstance) : hInst(hInstance)
+ResourceManger::ResourceManger(HWND hWnd, HINSTANCE hInstance, int width, int height) 
+																	: hInst(hInstance)
 {
+	clientDC = GetDC(hWnd); 
+	memDC = CreateCompatibleDC(clientDC); 
+	hBitmap = CreateCompatibleBitmap(clientDC, width, height);
+	SelectObject(memDC, bitmap); 
+
 }
 
 ResourceManger::~ResourceManger()
@@ -19,8 +25,6 @@ void ResourceManger::LoadImages(HINSTANCE hInst)
 {
 	imageResource->LoadFromResource(hInst, RESOURCE_ID, RESOURCE_TYPE); 
 	bitmap = imageResource->GetBitmap(); 
-	width = bitmap->GetWidth(); 
-	height = bitmap->GetHeight(); 
 
 	if (bitmap == nullptr)
 	{
