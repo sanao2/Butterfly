@@ -1,11 +1,137 @@
-﻿  Global.cpp
+﻿  Animation.cpp
+  Global.cpp
+D:\backup\BF\Butterfly\Winmain\Animation.h(40,28): error C2668: 'Gdiplus::Image::Image': 오버로드된 함수에 대한 호출이 모호합니다.
+  (소스 파일 'Animation.cpp'을(를) 컴파일하는 중)
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusBitmap.h(49,8):
+      'Gdiplus::Image::Image(IStream *,BOOL)'일 수 있습니다.
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusBitmap.h(26,8):
+      또는       'Gdiplus::Image::Image(const WCHAR *,BOOL)'
+      D:\backup\BF\Butterfly\Winmain\Animation.h(40,28):
+      인수 목록 '(int)'을(를) 일치시키는 동안
+  
+D:\backup\BF\Butterfly\Winmain\Animation.cpp(13,9): error C2065: 'bitmap': 선언되지 않은 식별자입니다.
+D:\backup\BF\Butterfly\Winmain\Animation.cpp(15,16): error C2065: 'bitmap': 선언되지 않은 식별자입니다.
+D:\backup\BF\Butterfly\Winmain\Animation.cpp(15,9): error C2541: 'delete': 포인터가 아닌 개체를 삭제할 수 없습니다.
+D:\backup\BF\Butterfly\Winmain\Animation.cpp(16,9): error C2065: 'bitmap': 선언되지 않은 식별자입니다.
+D:\backup\BF\Butterfly\Winmain\Animation.cpp(83,9): error C2679: 이항 '=': 오른쪽 피연산자로 'int' 형식을 사용하는 연산자가 없거나 허용되는 변환이 없습니다.
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\vector(1529,26):
+      'std::vector<int,std::allocator<int>> &std::vector<int,std::allocator<int>>::operator =(std::initializer_list<_Ty>)'일 수 있습니다.
+          with
+          [
+              _Ty=int
+          ]
+          D:\backup\BF\Butterfly\Winmain\Animation.cpp(83,9):
+          'std::vector<int,std::allocator<int>> &std::vector<int,std::allocator<int>>::operator =(std::initializer_list<_Ty>)': 인수 2을(를) 'int'에서 'std::initializer_list<_Ty>'(으)로 변환할 수 없습니다.
+          with
+          [
+              _Ty=int
+          ]
+              D:\backup\BF\Butterfly\Winmain\Animation.cpp(83,42):
+              'std::initializer_list<_Ty>::initializer_list': 모든 인수 형식을 변환할 수 있는 오버로드된 함수가 없습니다.
+          with
+          [
+              _Ty=int
+          ]
+                  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\initializer_list(51,1):
+                  'std::initializer_list<_Ty>::initializer_list(std::initializer_list<_Ty> &&)'일 수 있습니다.
+          with
+          [
+              _Ty=int
+          ]
+                      D:\backup\BF\Butterfly\Winmain\Animation.cpp(83,42):
+                      'std::initializer_list<_Ty>::initializer_list(std::initializer_list<_Ty> &&)': 인수 1을(를) 'int'에서 'std::initializer_list<_Ty> &&'(으)로 변환할 수 없습니다.
+          with
+          [
+              _Ty=int
+          ]
+                          D:\backup\BF\Butterfly\Winmain\Animation.cpp(83,42):
+                          원인: 'int'에서 'std::initializer_list<_Ty>'(으)로 변환할 수 없습니다.
+          with
+          [
+              _Ty=int
+          ]
+                          D:\backup\BF\Butterfly\Winmain\Animation.cpp(83,42):
+                          변환하려면 둘째 사용자 정의 변환 연산자 또는 생성자가 있어야 합니다.
+                  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\initializer_list(51,1):
+                  또는       'std::initializer_list<_Ty>::initializer_list(const std::initializer_list<_Ty> &)'
+          with
+          [
+              _Ty=int
+          ]
+                      D:\backup\BF\Butterfly\Winmain\Animation.cpp(83,42):
+                      'std::initializer_list<_Ty>::initializer_list(const std::initializer_list<_Ty> &)': 인수 1을(를) 'int'에서 'const std::initializer_list<_Ty> &'(으)로 변환할 수 없습니다.
+          with
+          [
+              _Ty=int
+          ]
+                          D:\backup\BF\Butterfly\Winmain\Animation.cpp(83,42):
+                          원인: 'int'에서 'const std::initializer_list<_Ty>'(으)로 변환할 수 없습니다.
+          with
+          [
+              _Ty=int
+          ]
+                          D:\backup\BF\Butterfly\Winmain\Animation.cpp(83,42):
+                          변환하려면 둘째 사용자 정의 변환 연산자 또는 생성자가 있어야 합니다.
+                  D:\backup\BF\Butterfly\Winmain\Animation.cpp(83,42):
+                  인수 목록 '(int)'을(를) 일치시키는 동안
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\vector(1508,26):
+      또는       'std::vector<int,std::allocator<int>> &std::vector<int,std::allocator<int>>::operator =(const std::vector<int,std::allocator<int>> &)'
+          D:\backup\BF\Butterfly\Winmain\Animation.cpp(83,9):
+          'std::vector<int,std::allocator<int>> &std::vector<int,std::allocator<int>>::operator =(const std::vector<int,std::allocator<int>> &)': 인수 2을(를) 'int'에서 'const std::vector<int,std::allocator<int>> &'(으)로 변환할 수 없습니다.
+              D:\backup\BF\Butterfly\Winmain\Animation.cpp(83,42):
+              원인: 'int'에서 'const std::vector<int,std::allocator<int>>'(으)로 변환할 수 없습니다.
+              D:\backup\BF\Butterfly\Winmain\Animation.cpp(83,42):
+              class 'std::vector<int,std::allocator<int>>'의 생성자가 'explicit'으로 선언되었습니다.
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\vector(783,26):
+      또는       'std::vector<int,std::allocator<int>> &std::vector<int,std::allocator<int>>::operator =(std::vector<int,std::allocator<int>> &&) noexcept(<expr>)'
+          D:\backup\BF\Butterfly\Winmain\Animation.cpp(83,9):
+          'std::vector<int,std::allocator<int>> &std::vector<int,std::allocator<int>>::operator =(std::vector<int,std::allocator<int>> &&) noexcept(<expr>)': 인수 2을(를) 'int'에서 'std::vector<int,std::allocator<int>> &&'(으)로 변환할 수 없습니다.
+              D:\backup\BF\Butterfly\Winmain\Animation.cpp(83,42):
+              원인: 'int'에서 'std::vector<int,std::allocator<int>>'(으)로 변환할 수 없습니다.
+              D:\backup\BF\Butterfly\Winmain\Animation.cpp(83,42):
+              class 'std::vector<int,std::allocator<int>>'의 생성자가 'explicit'으로 선언되었습니다.
+      D:\backup\BF\Butterfly\Winmain\Animation.cpp(83,9):
+      인수 목록 '(std::vector<int,std::allocator<int>>, int)'을(를) 일치시키는 동안
+  
+D:\backup\BF\Butterfly\Winmain\Animation.cpp(86,9): error C2059: 구문 오류: ')'
+D:\backup\BF\Butterfly\Winmain\Animation.h(40,28): error C2668: 'Gdiplus::Image::Image': 오버로드된 함수에 대한 호출이 모호합니다.
+  (소스 파일 'Global.cpp'을(를) 컴파일하는 중)
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusBitmap.h(49,8):
+      'Gdiplus::Image::Image(IStream *,BOOL)'일 수 있습니다.
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusBitmap.h(26,8):
+      또는       'Gdiplus::Image::Image(const WCHAR *,BOOL)'
+      D:\backup\BF\Butterfly\Winmain\Animation.h(40,28):
+      인수 목록 '(int)'을(를) 일치시키는 동안
+  
 D:\backup\BF\Butterfly\Winmain\Event\InputConstants.h(7,40): warning C4309: '초기화 중': 상수 값이 잘립니다.
   (소스 파일 'Global.cpp'을(를) 컴파일하는 중)
   
+  Render.cpp
+D:\backup\BF\Butterfly\Winmain\Animation.h(40,28): error C2668: 'Gdiplus::Image::Image': 오버로드된 함수에 대한 호출이 모호합니다.
+  (소스 파일 'Render.cpp'을(를) 컴파일하는 중)
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusBitmap.h(49,8):
+      'Gdiplus::Image::Image(IStream *,BOOL)'일 수 있습니다.
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusBitmap.h(26,8):
+      또는       'Gdiplus::Image::Image(const WCHAR *,BOOL)'
+      D:\backup\BF\Butterfly\Winmain\Animation.h(40,28):
+      인수 목록 '(int)'을(를) 일치시키는 동안
+  
+D:\backup\BF\Butterfly\Winmain\Render.cpp(32,13): error C2039: 'Initialize': 'ResourceManger'의 멤버가 아닙니다.
+      D:\backup\BF\Butterfly\Winmain\ResourceManger.h(18,7):
+      'ResourceManger' 선언을 참조하십시오.
+  
+  ResourceManger.cpp
   Winmain.cpp
+D:\backup\BF\Butterfly\Winmain\Animation.h(40,28): error C2668: 'Gdiplus::Image::Image': 오버로드된 함수에 대한 호출이 모호합니다.
+  (소스 파일 'Winmain.cpp'을(를) 컴파일하는 중)
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusBitmap.h(49,8):
+      'Gdiplus::Image::Image(IStream *,BOOL)'일 수 있습니다.
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\GdiplusBitmap.h(26,8):
+      또는       'Gdiplus::Image::Image(const WCHAR *,BOOL)'
+      D:\backup\BF\Butterfly\Winmain\Animation.h(40,28):
+      인수 목록 '(int)'을(를) 일치시키는 동안
+  
 D:\backup\BF\Butterfly\Winmain\Event\InputConstants.h(7,40): warning C4309: '초기화 중': 상수 값이 잘립니다.
   (소스 파일 'Winmain.cpp'을(를) 컴파일하는 중)
   
   코드를 생성하고 있습니다...
-Render.obj : error LNK2019: "public: void __cdecl ResourceManger::Initialize(void)" (?Initialize@ResourceManger@@QEAAXXZ)"public: void __cdecl Render::RenderScene(struct HINSTANCE__ *)" (?RenderScene@Render@@QEAAXPEAUHINSTANCE__@@@Z) 함수에서 참조되는 확인할 수 없는 외부 기호
-D:\backup\BF\Butterfly\x64\Debug\Winmain.exe : fatal error LNK1120: 1개의 확인할 수 없는 외부 참조입니다.

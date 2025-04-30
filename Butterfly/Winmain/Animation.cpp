@@ -6,14 +6,19 @@ Animstate Animation::prevAnim = PLAYER_DEFAULT;
 Animation::Animation(HWND hwnd, int width, int height)
 {
     clientDC = GetDC(hwnd);
+    ULONG_PTR token;
+    Gdiplus::GdiplusStartupInput gsi;
+    Gdiplus::GdiplusStartup(&GdiplusToken, &gsi, nullptr);
+    backDCgraphics = new Gdiplus::Graphics(memDC);
+
+    timer.Elapsed();
 }
 
 Animation::~Animation()
 {
-    if (bitmap)
+    if (Image)
     {
-        delete bitmap;
-        bitmap = nullptr;
+        Image = nullptr;
     }
     if (backDCgraphics)
     {
@@ -37,18 +42,9 @@ void Animation::createAnimation(HINSTANCE hInst, float frameTime)
 {
     this->hInst = hInst;
     this->frameTime = frameTime;
-    
-}
+    // 리소스 매니저를 통해 이미지 로드 
+    ResMgr->LoadImages(hInst); // 리소스 매니저를 통해 이미지 로드 
 
-void Animation::Initialize()
-{
-    ULONG_PTR token;
-    Gdiplus::GdiplusStartupInput gsi;
-    Gdiplus::GdiplusStartup(&GdiplusToken, &gsi, nullptr);
-    backDCgraphics = new Gdiplus::Graphics(memDC);
-
-    timer.Elapsed();
-  
 }
 
 void Animation::Update()
@@ -77,11 +73,11 @@ void Animation::Update()
 
 void Animation::Render(HDC drawDC)
 {
-
     for (frameCount = 0; frameCount < PLAYER_ANIMCOUNT; ++frameCount)
     {
-        RESOURCE_ID = GetAnimationFrameID(currAnim, frameCount);
+        RESOURCE_ID[frameCount] = GetAnimationFrameID(currAnim, frameCount);
     }     
-   
-    if ()
+
+    ResMgr->RenderImage(*backDCgraphics, 0, 0); // 이미지를 그리기 
+ 
 }

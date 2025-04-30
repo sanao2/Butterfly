@@ -3,12 +3,12 @@
 #include <vector>
 #include <iostream>
 #include <gdiplus.h>
+#include <memory>
 #include "UI/Timer.h"
 #include "resource.h"
 #include "AnimationMap.h"
 #include "ResourceManger.h" 
 #pragma comment(lib, "gdiplus.lib")
-
 using std::vector;
 using std::wstring;
 
@@ -37,14 +37,13 @@ private:
     ULONG_PTR GdiplusToken = NULL;
     Gdiplus::Graphics* backDCgraphics = nullptr;
     HBITMAP hBitmap = nullptr;
-    Gdiplus::Image Image = NULL;
+    Gdiplus::Image* Image;
 
 public:
     Animation(HWND hwnd, int width, int height);
     ~Animation();
 
     void createAnimation(HINSTANCE hInst, float frameTime);
-    void Initialize();
     void Update();
     void Render(HDC drawDC);
 
