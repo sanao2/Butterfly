@@ -26,6 +26,7 @@ ResourceManger::~ResourceManger()
 void ResourceManger::LoadImages(HINSTANCE hInst)
 {
 	try {
+		image = imageResource->GetBitmap();
 
 		for (int i = 0; i < RESOURCE_ID.size(); ++i)
 		{
@@ -36,7 +37,6 @@ void ResourceManger::LoadImages(HINSTANCE hInst)
 			}
 			bool Res = imageResource->LoadFromResource(hInst, RESOURCE_ID[i], RESOURCE_TYPE);
 		}
-		image = imageResource->GetBitmap();
 
 		if (image == nullptr)
 		{
@@ -59,7 +59,7 @@ void ResourceManger::LoadImages(HINSTANCE hInst)
 	}
 }
 
-void ResourceManger::RenderImage(Gdiplus::Graphics& graphics,Gdiplus::Image* image, int x, int y)
+void ResourceManger::RenderImage(Gdiplus::Graphics& graphics, int x, int y)
 {
 	if (image == nullptr)
 	{

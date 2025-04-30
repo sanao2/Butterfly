@@ -90,6 +90,6 @@ void Animation::Update()
 void Animation::Render(HDC drawDC)
 {	
 
-    ResMgr->RenderImage(*backDCgraphics,Image, 0, 0); // 이미지를 그리기 
+    ResMgr->RenderImage(*backDCgraphics, 0, 0); // 이미지를 그리기 
  
 }
