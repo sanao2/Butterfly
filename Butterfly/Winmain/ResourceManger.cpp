@@ -28,15 +28,13 @@ ResourceManger::~ResourceManger()
 void ResourceManger::LoadImages(HINSTANCE hInst)
 {
 	try {		
-
-		for (int i = 0; i < RESOURCE_ID.size(); ++i)
+		for (current_frame = 0; current_frame <= RESOURCE_ID.size(); ++current_frame)
 		{
-			for (current_frame = 0; current_frame < RESOURCE_ID.size(); ++current_frame)
-			{
-				RESOURCE_ID[current_frame] = GetAnimationFrameID(current_state, i);
-			} 
-			auto Res = imageResource->LoadFromResource(hInst, RESOURCE_ID[i], RESOURCE_TYPE);
-		} 		
+			RESOURCE_ID.push_back(GetAnimationFrameID(current_state, current_frame));
+		} 
+		
+		auto Res = imageResource->LoadFromResource(hInst, RESOURCE_ID[current_frame], RESOURCE_TYPE);
+		 		
 		image = imageResource->GetBitmap();
 		
 		if (image == nullptr)
