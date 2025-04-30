@@ -1,5 +1,6 @@
 #include "ResourceManger.h"
 
+int current_frame = 0;
 int RESOURCE_ID = { 0, };
 constexpr wchar_t RESOURCE_TYPE[] = L"PNG";
 
@@ -8,13 +9,11 @@ ResourceManger::ResourceManger(HDC drawDC, HINSTANCE hInstance,int width, int he
 {											
 	imageResource = new ImageResource();
 	imageRenderer = new GdiPlusImageRenderer(); // Correctly references the class
-	animation = new Animation(drawDC, hInstance); // 애니메이션 객체 생성);
 
 	// Gdiplus 초기화 
 	Gdiplus::GdiplusStartupInput gsi;
 	Gdiplus::GdiplusStartup(&GdiPlusToken, &gsi, nullptr);
 	graphics = new Gdiplus::Graphics(drawDC); // GDI+ 그래픽스 객체 생성
-	
 	
 }
 

@@ -18,14 +18,14 @@ extern Animstate current_state;
 extern int RESOURCE_ID; 
 extern const wchar_t RESOURCE_TYPE[];
 
-int current_frame = 0; 
+extern int current_frame; 
 
 class ResourceManger
 {
 private : 
 	ImageResource* imageResource = nullptr;
 	IImageRenderer* imageRenderer = nullptr; 
-	Animation* animation = nullptr; 
+	
 
 	HINSTANCE hInst = nullptr; 
 

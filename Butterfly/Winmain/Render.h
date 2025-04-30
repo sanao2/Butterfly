@@ -7,10 +7,11 @@
 class Render
 {
 private:
-    HWND hWnd;
-    POINT clientSize;
-    Swap* swap;
-    ResourceManger* ResMgr;
+    HWND hWnd = nullptr;
+    POINT clientSize = {0,0};
+    Swap* swap = nullptr;
+    //ResourceManger* ResMgr;
+   // Animation* animation = nullptr; 
 
     HDC memDC = nullptr;
 	Gdiplus::Graphics* graphics = nullptr; // GDI+ 그래픽스 객체
