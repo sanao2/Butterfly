@@ -9,5 +9,4 @@ extern Animstate prev_state;    // Previous Animation State
 
 extern Move::MoveManager* move;
 extern Render* render;
-extern ResourceManger* ResMgr;
 extern HWND g_hWnd;

@@ -2,7 +2,6 @@
 
 Move::MoveManager* move = nullptr;
 Render* render = nullptr; // ·»´õ¸µ °´Ã¼
-ResourceManger* ResMgr = nullptr;
 HWND g_hWnd;
 
 Animstate current_state = PLAYER_DEFAULT;

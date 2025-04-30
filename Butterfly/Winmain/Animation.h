@@ -1,38 +1,36 @@
 #include "Global.h"
 #include <windows.h> 
-#include "ResourceManger.h" 
 #include "AnimationMap.h" 
 #include <vector> 
 #include <iostream> 
 #include "UI/Timer.h"
-#include "GdiplusImageRenderer.h"
+
 #pragma comment(lib, "gdiplus.lib")
 using std::vector; 
 using namespace std; 
-//
-//class Animation
-//{
-//private : 
-//	HINSTANCE hInst; 
-//	ImageResource* imageResource = nullptr;
-//	IImageRenderer* imageRenderer = nullptr;
-//
-//	ULONG_PTR GdiPlusToken;
-//	HBITMAP hBitmap = nullptr;
-//	Gdiplus::Graphics* graphics = nullptr;
-//	Gdiplus::Image* image = nullptr;
-//
-//	Time::Timer<> timer;
-//	
-//	float frameTime = 0.0f;
-//
-//public : 
-//	Animation(HDC drawDC, HINSTANCE hInst);
-//	~Animation(); 
-//	void Update();	
-//	void LoadAnimationFrame();
-//	 
-//};
+
+class Animation
+{
+private : 
+	HINSTANCE hInst; 
+
+	ULONG_PTR GdiPlusToken;
+	HBITMAP hBitmap = nullptr;
+	Gdiplus::Graphics* graphics = nullptr;
+	Gdiplus::Image* image = nullptr;
+
+	Time::Timer<> timer;
+	
+	float frameTime = 0.0f;
+
+public : 
+	Animation(HDC drawDC, HINSTANCE hInst);
+	~Animation(); 
+	void Update();	
+	void LoadAnimationFrame();
+	 
+};
+
 //
 //class Animation
 //{
