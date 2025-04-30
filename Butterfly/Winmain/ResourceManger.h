@@ -17,7 +17,9 @@ using std::vector;
 extern Animstate current_state; 
 extern int RESOURCE_ID; 
 extern const wchar_t RESOURCE_TYPE[];
+
 int current_frame = 0; 
+
 class ResourceManger
 {
 private : 

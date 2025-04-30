@@ -19,6 +19,10 @@ ResourceManger::ResourceManger(HDC drawDC, HINSTANCE hInstance,int width, int he
 ResourceManger::~ResourceManger()
 {
 	DeleteObject(image);
+	for (auto frames : RESOURCE_ID)
+	{
+		RESOURCE_ID.clear(); 
+	}
 	if (graphics) delete graphics;				// GDI+ Graphics Delete
 	if (imageResource) delete imageResource;    // imageResource Delete 
 	if (imageRenderer) delete imageRenderer;    // imageRenderer Delete
@@ -31,10 +35,9 @@ void ResourceManger::LoadImages(HINSTANCE hInst)
 		for (current_frame = 0; current_frame <= RESOURCE_ID.size(); ++current_frame)
 		{
 			RESOURCE_ID.push_back(GetAnimationFrameID(current_state, current_frame));
-		} 
-		
-		auto Res = imageResource->LoadFromResource(hInst, RESOURCE_ID[current_frame], RESOURCE_TYPE);
-		 		
+			imageResource->LoadFromResource(hInst, RESOURCE_ID[current_frame], RESOURCE_TYPE);
+		}
+
 		image = imageResource->GetBitmap();
 		
 		if (image == nullptr)
