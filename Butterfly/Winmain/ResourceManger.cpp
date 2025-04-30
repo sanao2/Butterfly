@@ -28,15 +28,16 @@ ResourceManger::~ResourceManger()
 
 void ResourceManger::LoadImages(HINSTANCE hInst)
 {
-	try {
+	try {		
+
 		for (int i = 0; i < RESOURCE_ID.size(); ++i)
 		{
-			RESOURCE_ID[i] = GetAnimationFrameID(animation->GetAnimationState(), i);
+			RESOURCE_ID[i] = GetAnimationFrameID(animation->GetcurrentAnimationState(), i);
 
 			auto Res = imageResource->LoadFromResource(hInst, RESOURCE_ID[i], RESOURCE_TYPE);
 		} 		
-		
 		image = imageResource->GetBitmap();
+		
 		if (image == nullptr)
 		{
 			cerr << "Failed to load image resource." << endl;

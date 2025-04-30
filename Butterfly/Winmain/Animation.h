@@ -19,9 +19,6 @@ private :
 	Gdiplus::Graphics* graphics = nullptr;
 	Gdiplus::Image* image = nullptr;
 
-	Animstate current_state; // current Animation State 
-	Animstate prev_state;    // Previous Animation State 
-
 	Time::Timer<> timer;
 
 public : 
@@ -30,10 +27,7 @@ public :
 	void Update();
 	void loadAnimationImage(); 
 
-	Animstate GetAnimationState() { return current_state; }
-	void SetAnimationState(Animstate state) { current_state = state; } 
-	Animstate GetPrevAnimationState() { return prev_state; } 
-	void SetPrevAnimationState(Animstate state) { prev_state = state; } 
+	 
 };
 
 //class Animation

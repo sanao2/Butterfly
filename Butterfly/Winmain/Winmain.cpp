@@ -15,6 +15,9 @@ HWND g_hWnd;
 HDC drawDC;
 RECT rect = { 5, 5, 20, 20 };
 
+Animstate current_state = PLAYER_DEFAULT;
+Animstate prev_state = PLAYER_DEFAULT;
+
 int boxDraw()
 {  
 
