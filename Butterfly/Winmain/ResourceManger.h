@@ -25,12 +25,13 @@ private :
 	ULONG_PTR GdiPlusToken;
 	HBITMAP hBitmap = nullptr;
 	Gdiplus::Graphics* graphics = nullptr;
+
 public : 
 	ResourceManger(HDC drawDC,int width, int height);
 	~ResourceManger();
 
 	void Initialize(); 
 	void LoadImages(HINSTANCE hInst); 
-	void RenderImage(Gdiplus::Graphics& graphics, int x, int y); 
+	void RenderImage(Gdiplus::Graphics& graphics, int x, int y);
 };
 
