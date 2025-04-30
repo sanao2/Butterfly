@@ -1,7 +1,5 @@
 #pragma once
-#include <windows.h>
-#include <gdiplus.h> 
-#pragma comment(lib, "gdiplus.lib") 
+#include "Global.h"
 
 class ImageResource {
 private : 

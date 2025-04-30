@@ -1,11 +1,12 @@
 #include "Render.h"
+#include <iostream>
 
 Render::Render(HWND hwnd, int width, int height)
     : hWnd(hwnd), clientSize{ width, height }
 {
     swap = new Swap(hwnd, width, height);
 
-	anim = new Animation(hwnd, width, height); // Animation 객체 생성 
+	//anim = new Animation(hwnd, width, height); // Animation 객체 생성 
 }
 
 Render::~Render()
@@ -16,7 +17,7 @@ Render::~Render()
 void Render::Update()
 {
     swap->SwapBuffers();    // 백버퍼 -> 프론트버퍼 복사
-    anim->Update(); // Animation Update 
+    //anim->Update(); // Animation Update 
 }
 
 void Render::RenderScene(HINSTANCE hInst)
@@ -37,8 +38,8 @@ void Render::RenderScene(HINSTANCE hInst)
     }
 
     // 애니메이션 업데이트 및 렌더링
-    anim->Update(); // 애니메이션 업데이트
-    anim->Render(memDC); // 애니메이션 렌더링
+    //anim->Update(); // 애니메이션 업데이트
+    // anim->Render(memDC); // 애니메이션 렌더링
 
     // 스왑 메모리 DC에 복사 (swap 내부 메모리 DC를 가져오는 메소드 필요)
     swap->SwapBuffers();

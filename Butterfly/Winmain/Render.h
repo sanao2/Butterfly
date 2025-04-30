@@ -9,7 +9,7 @@ private:
     HWND hWnd;
     POINT clientSize;
     Swap* swap;
-    Animation* anim; 
+    //Animation* anim; 
     HDC memDC = nullptr;
 
 public:

@@ -43,11 +43,14 @@
     <Filter Include="리소스 파일\player\UsePikax">
       <UniqueIdentifier>{1f64edfc-4fad-4e03-9d36-c12c819a3e62}</UniqueIdentifier>
     </Filter>
-    <Filter Include="소스 파일\UI\ResourceManager">
-      <UniqueIdentifier>{06c4d264-a56a-4bf0-907c-ab24c3fa68d3}</UniqueIdentifier>
+    <Filter Include="헤더 파일\Move">
+      <UniqueIdentifier>{d9bc80c9-966a-4009-901e-77203e561517}</UniqueIdentifier>
     </Filter>
-    <Filter Include="헤더 파일\UI\ResourceManager">
+    <Filter Include="헤더 파일\ResourceManager">
       <UniqueIdentifier>{d8b5b7e1-a9db-4fdd-a5c5-1b1fb4902d23}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\ResourceManager">
+      <UniqueIdentifier>{06c4d264-a56a-4bf0-907c-ab24c3fa68d3}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -71,9 +74,6 @@
     </ClInclude>
     <ClInclude Include="Event\KeyboardInputManager.h">
       <Filter>헤더 파일\Event</Filter>
-    </ClInclude>
-    <ClInclude Include="Move\MoveManagers.h">
-      <Filter>소스 파일</Filter>
     </ClInclude>
     <ClInclude Include="Swap.h">
       <Filter>헤더 파일\DoubleBuffering</Filter>
@@ -106,16 +106,19 @@
       <Filter>헤더 파일\UI</Filter>
     </ClInclude>
     <ClInclude Include="ResourceManger.h">
-      <Filter>헤더 파일\UI\ResourceManager</Filter>
+      <Filter>헤더 파일\ResourceManager</Filter>
     </ClInclude>
     <ClInclude Include="ImageResource.h">
-      <Filter>헤더 파일\UI\ResourceManager</Filter>
+      <Filter>헤더 파일\ResourceManager</Filter>
     </ClInclude>
     <ClInclude Include="GdiplusImageRenderer.h">
-      <Filter>헤더 파일\UI\ResourceManager</Filter>
+      <Filter>헤더 파일\ResourceManager</Filter>
     </ClInclude>
     <ClInclude Include="IImageRenderer.h">
-      <Filter>헤더 파일\UI\ResourceManager</Filter>
+      <Filter>헤더 파일\ResourceManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Move\MoveManagers.h">
+      <Filter>헤더 파일\Move</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -124,9 +127,6 @@
     </ClCompile>
     <ClCompile Include="Event\KeyboardInputManager.cpp">
       <Filter>소스 파일\Event</Filter>
-    </ClCompile>
-    <ClCompile Include="Move\MoveManagers.cpp">
-      <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Render.cpp">
       <Filter>소스 파일\DoubleBuffering</Filter>
@@ -147,10 +147,13 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="ResourceManger.cpp">
-      <Filter>소스 파일\UI\ResourceManager</Filter>
+      <Filter>소스 파일\ResourceManager</Filter>
     </ClCompile>
     <ClCompile Include="ImageResource.cpp">
-      <Filter>소스 파일\UI\ResourceManager</Filter>
+      <Filter>소스 파일\ResourceManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Move\MoveManagers.cpp">
+      <Filter>소스 파일\Move</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

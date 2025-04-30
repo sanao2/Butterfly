@@ -2,7 +2,10 @@
 #include "Global.h"
 #include "ImageResource.h"
 #include "IImageRenderer.h"
-#include <windows.h>
+
+
+#include "resource.h"
+
 
 class ResourceManger
 {

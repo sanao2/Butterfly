@@ -1,6 +1,6 @@
 ﻿#include "Global.h"  // 이제 Global.h 하나만 include하면 됨
 #include "Winmain.h" // (필요하면)
-
+#include <iostream>
 #pragma comment(lib, "Msimg32.lib")	
 
 // 타이틀, 클래스명, 사이즈
