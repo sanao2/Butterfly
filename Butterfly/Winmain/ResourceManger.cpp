@@ -59,7 +59,7 @@ void ResourceManger::LoadImages(HINSTANCE hInst)
 	}
 }
 
-void ResourceManger::RenderImage(Gdiplus::Graphics& graphics, int x, int y)
+void ResourceManger::RenderImage(Gdiplus::Graphics& graphics,Gdiplus::Image* image, int x, int y)
 {
 	if (image == nullptr)
 	{

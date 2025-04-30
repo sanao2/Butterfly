@@ -33,6 +33,7 @@ void Render::RenderScene(HINSTANCE hInst)
     // 리소스 로딩 - 이미지를 로드하기 위해 LoadImages 호출              
 	//ResMgr->LoadImages(hInst); // 리소스 매니저를 통해 이미지 로드 
 	//ResMgr->RenderImage(*graphics, 0, 0); // 이미지를 그리기 
+	anim->createAnimation(hInst, 0.5f); // 애니메이션 생성 
     anim->Render(memDC); 
     // 스왑 메모리 DC에 복사 (swap 내부 메모리 DC를 가져오는 메소드 필요)
     swap->SwapBuffers();

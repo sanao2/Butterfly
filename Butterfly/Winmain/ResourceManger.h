@@ -34,7 +34,7 @@ public :
 	~ResourceManger();
 
 	void LoadImages(HINSTANCE hInst); 
-	void RenderImage(Gdiplus::Graphics& graphics, int x, int y);
+	void RenderImage(Gdiplus::Graphics& graphics, Gdiplus::Image* image, int x, int y);
 
 	Gdiplus::Image* GetIamge() { return image;}
 	void SetImage(Gdiplus::Image* image) { this->image = image; } // Set Image 

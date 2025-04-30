@@ -44,11 +44,15 @@ void Animation::createAnimation(HINSTANCE hInst, float frameTime)
     this->frameTime = frameTime;
 
     // 리소스 매니저를 통해 이미지 로드
-     for (frameCount = 0; frameCount < PLAYER_ANIMCOUNT; ++frameCount)
+     for (frameCount = 0; frameCount < 6; ++frameCount)
     {
-        RESOURCE_ID[frameCount] = GetAnimationFrameID(currAnim, frameCount);
+        for (int i = 0; i < 6; ++i)
+        {
+          RESOURCE_ID[frameCount] = GetAnimationFrameID(currAnim, frameCount);
+        }    
 
     }
+
     ResMgr->LoadImages(hInst); // 리소스 매니저를 통해 이미지 로드 
 
 }
@@ -80,6 +84,6 @@ void Animation::Update()
 void Animation::Render(HDC drawDC)
 {	
 
-    ResMgr->RenderImage(*backDCgraphics, 0, 0); // 이미지를 그리기 
+    ResMgr->RenderImage(*backDCgraphics,Image, 0, 0); // 이미지를 그리기 
  
 }
