@@ -104,7 +104,7 @@
 //    ResMgr->RenderImage(*backDCgraphics, 0, 0); // 이미지를 그리기 
 // 
 //}
-vector<Gdiplus::Image*> AnimationFrames; // Resource vector 
+vector<vector<Gdiplus::Image*>, float> AnimationFrames; // Resource vector 
 
 Animation::Animation(HDC drawDC, HINSTANCE hInst)
 {
@@ -139,6 +139,22 @@ void Animation::Update()
 	float deltaTime = Time::GetDeltaTime(); // Get delta time 
 	float totalTime = Time::GetTotalTime(); // Get total time 
 
+	if (totalTime >= frameTime)
+	{
+		current_frame++;
+		totalTime = 0.0f;
+		auto it = AnimStateFrameMap.find(current_state);
+		if (it == AnimStateFrameMap.end()) {
+			return; // 키가 없으면 건너뛰거나 기본값 처리
+		}
+		size_t frameSize = it->second.ImageID.size();
+		if (current_frame >= frameSize)
+		{
+			current_frame = 0;
+		}
+
+	} 
+
 }
 void Animation::LoadAnimationFrame()
 {
@@ -149,9 +165,11 @@ void Animation::LoadAnimationFrame()
 	{
 		imageResource->LoadFromResource(hInst, id, RESOURCE_TYPE);
 		image = imageResource->GetBitmap();
+
 		if (image == nullptr)
 		{
-			AnimationFrames.push_back(image);
+			AnimationFrames[id].push_back(image);
+			AnimationFrames[id])
 		}
 	}
 }

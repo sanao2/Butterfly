@@ -1,6 +1,6 @@
 #include "ResourceManger.h"
 
-vector<int> RESOURCE_ID = { 0, };
+int RESOURCE_ID = { 0, };
 constexpr wchar_t RESOURCE_TYPE[] = L"PNG";
 
 
@@ -21,10 +21,7 @@ ResourceManger::ResourceManger(HDC drawDC, HINSTANCE hInstance,int width, int he
 ResourceManger::~ResourceManger()
 {
 	DeleteObject(image);
-	for (auto frames : RESOURCE_ID)
-	{
-		RESOURCE_ID.clear(); 
-	}
+	
 	if (graphics) delete graphics;				// GDI+ Graphics Delete
 	if (imageResource) delete imageResource;    // imageResource Delete 
 	if (imageRenderer) delete imageRenderer;    // imageRenderer Delete
@@ -34,12 +31,9 @@ ResourceManger::~ResourceManger()
 void ResourceManger::LoadImages(HINSTANCE hInst)
 {
 	try {		
-		for (current_frame = 0; current_frame <= RESOURCE_ID.size(); ++current_frame)
-		{
-			RESOURCE_ID.push_back(GetAnimationFrameID(current_state, current_frame));
-			
-		}
-
+		
+		imageResource->LoadFromResource(hInst, RESOURCE_ID, RESOURCE_TYPE); // Load image from resource 
+		
 		image = imageResource->GetBitmap();
 		
 		if (image == nullptr)
@@ -58,8 +52,6 @@ void ResourceManger::LoadImages(HINSTANCE hInst)
 	}
 	
 }
-
-
 
 void ResourceManger::RenderImage(Gdiplus::Graphics& graphics, int x, int y)
 {
