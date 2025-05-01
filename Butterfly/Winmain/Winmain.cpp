@@ -120,7 +120,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 
     drawDC = GetDC(g_hWnd);
 
-    render = new Render(drawDC, g_hWnd, g_width, g_height);  // Global Render 객체 생성
+   // render = new Render(drawDC, g_hWnd, g_width, g_height);  // Global Render 객체 생성
     
     Time::InitTime(); // Timer start  Initialization 
 
@@ -140,7 +140,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
         float TotalTime = Time::GetTotalTime(); 
         std::cout << "[" << TotalTime << "]" << std::endl;
               
-		render->RenderScene(hInstance); // 렌더링 호출
+		//render->RenderScene(hInstance); // 렌더링 호출
         //boxDraw();
 		
     }

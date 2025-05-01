@@ -2,6 +2,7 @@
 
 int RESOURCE_ID = IDB_PLAYER_DOWNWALK_IDLE; 
 constexpr wchar_t RESOURCE_TYPE[] = L"PNG";
+vector<Gdiplus::Image*> AnimationFrames = { 0, }; 
 
 ResourceManger::ResourceManger(HDC drawDC,HINSTANCE hInstance) : hInst(hInstance)
 {											

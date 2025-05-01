@@ -112,18 +112,12 @@ Animation::Animation(HDC drawDC, HINSTANCE hInstance) : hInst(hInstance), curren
 	Gdiplus::GdiplusStartupInput gsi;
 	Gdiplus::GdiplusStartup(&GdiPlusToken, &gsi, nullptr);
 	graphics = new Gdiplus::Graphics(drawDC);
-	ResMgr = new ResourceManger(drawDC,hInst); 
-	image = nullptr;
+	ResMgr = new ResourceManger(drawDC,hInst);
 	timer.Elapsed(); 
 }
 
 Animation::~Animation()
 {
-	if (image)
-	{
-		delete image;
-		image = nullptr;
-	}
 	if (graphics)
 	{
 		delete graphics;

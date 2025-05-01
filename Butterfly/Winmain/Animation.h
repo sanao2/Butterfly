@@ -8,7 +8,6 @@
 using std::vector; 
 using namespace std; 
 
-
 class Animation 
 {
 private : 
@@ -16,7 +15,6 @@ private :
 
 	ULONG_PTR GdiPlusToken;
 	Gdiplus::Graphics* graphics = nullptr;
-	Gdiplus::Image* image = nullptr;
 
 	Time::Timer<> timer;
 	ResourceManger* ResMgr = nullptr; 

@@ -14,6 +14,7 @@
 using namespace std; 
 using std::vector;
 
+extern vector<Gdiplus::Image*> AnimationFrames;
 extern Animstate current_state; 
 extern const wchar_t RESOURCE_TYPE[];
 
@@ -24,7 +25,7 @@ private :
 	IImageRenderer* imageRenderer = nullptr; 
 	
 	HINSTANCE hInst = nullptr; 
-	vector<Gdiplus::Image*> AnimationFrames;
+	
 
 	//ULONG_PTR GdiPlusToken;
 	//HBITMAP hBitmap = nullptr;
