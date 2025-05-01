@@ -113,7 +113,6 @@ Animation::Animation(HDC drawDC, HINSTANCE hInstance) : hInst(hInstance)
 	Gdiplus::GdiplusStartupInput gsi;
 	Gdiplus::GdiplusStartup(&GdiPlusToken, &gsi, nullptr);
 	graphics = new Gdiplus::Graphics(drawDC);
-	imageResource = new ImageResource();
 	ResMgr = new ResourceManger(hInst); 
 	image = nullptr;
 	timer.Elapsed(); 
@@ -134,6 +133,7 @@ Animation::~Animation()
 	
 	Gdiplus::GdiplusShutdown(GdiPlusToken);
 }
+
 void Animation::Update()
 {
 	Time::Duration frameInterval = Time::Duration(0.5f); // 0.5초 간격으로 애니메이션 업데이트 
@@ -155,37 +155,4 @@ void Animation::Update()
 			frameTime = (frameTime + 1) % AnimationFrames.size(); // 프레임 업데이트 
 		}
 	} 
-}
-
-void Animation::LoadAnimationFrame(HINSTANCE hInst)
-{
-	const auto& frameCount = AnimStateFrameMap[current_state].ImageID.size();
-
-	for (int i = 0; i < frameCount; ++i)
-	{
-		int id = GetAnimationFrameID(current_state, i); 
-		if (imageResource->LoadFromResource(hInst, id, RESOURCE_TYPE))
-		{
-			image = imageResource->GetBitmap(); 
-			AnimationFrames.push_back(image);
-		}
-		else
-		{
-			cerr << "리소스 로드 실패 ID : " << id << endl; 
-		}
-	}
-}
-void Animation::RenderFrame(Gdiplus::Graphics* graphics, int x, int y, int frameIndex)
-{
-	for (frameIndex = 0; frameIndex < AnimationFrames.size(); ++frameIndex)
-	{
-		if (frameIndex < AnimationFrames.size() && AnimationFrames[frameIndex])
-		{
-			imageRenderer->Render(*graphics, AnimationFrames[frameIndex], x, y);
-		}
-		else {
-			std::cerr << "잘못된 프레임 인덱스: " << frameIndex << std::endl;
-		}
-	}
-
 }

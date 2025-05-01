@@ -27,15 +27,18 @@ private :
 
 	//ULONG_PTR GdiPlusToken;
 	//HBITMAP hBitmap = nullptr;
-	//Gdiplus::Graphics* graphics = nullptr;
+	Gdiplus::Graphics* graphics = nullptr;
 	Gdiplus::Image* image = nullptr;
 
 public : 
-	ResourceManger(HINSTANCE hInstance);
+	ResourceManger(HDC drawDC, HINSTANCE hInstance);
 	~ResourceManger();
 
-	void LoadImages(HINSTANCE hInst); 
-	void Render(Gdiplus::Graphics& graphics, int x, int y);
+	//void LoadImages(HINSTANCE hInst); 
+	void LoadeFrames(HINSTANCE hInst);
+	//void Render(Gdiplus::Graphics& graphics, int x, int y);
+	void RenderFrame(Gdiplus::Graphics* graphics, int x, int y, int frameIndex);
+	
 
 	//Gdiplus::Image* GetIamge() { return image;}
 	//void SetImage(Gdiplus::Image* image) { this->image = image; } // Set Image 

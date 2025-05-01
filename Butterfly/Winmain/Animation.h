@@ -3,9 +3,6 @@
 #include <vector> 
 #include <iostream> 
 #include "UI/Timer.h"
-#include "ImageResource.h"
-#include "IImageRenderer.h"
-#include "GdiplusImageRenderer.h"
 #include "ResourceManger.h"
 #pragma comment(lib, "gdiplus.lib")
 using std::vector; 
@@ -23,8 +20,6 @@ private :
 	Gdiplus::Image* image = nullptr;
 
 	Time::Timer<> timer;
-	ImageResource* imageResource = nullptr;
-	IImageRenderer* imageRenderer = nullptr;
 	ResourceManger* ResMgr = nullptr; 
 	int current_frame = 0;
 
@@ -32,8 +27,6 @@ public :
 	Animation(HDC drawDC, HINSTANCE hInstance);
 	~Animation(); 
 	void Update();	
-	void LoadAnimationFrame(HINSTANCE hInst);
-	void RenderFrame(Gdiplus::Graphics* graphics, int x, int y, int frameIndex);
 
 };
 
