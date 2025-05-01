@@ -14,6 +14,7 @@
 using namespace std; 
 using std::vector;
 
+int RESOURCE_ID; 
 extern Animstate current_state; 
 
 class ResourceManger
@@ -22,20 +23,19 @@ private :
 	ImageResource* imageResource = nullptr;
 	IImageRenderer* imageRenderer = nullptr; 
 	
-
 	HINSTANCE hInst = nullptr; 
 
 	//ULONG_PTR GdiPlusToken;
 	//HBITMAP hBitmap = nullptr;
 	//Gdiplus::Graphics* graphics = nullptr;
-	//Gdiplus::Image* image = nullptr;
+	Gdiplus::Image* image = nullptr;
 
 public : 
 	ResourceManger(HDC drawDC, HINSTANCE hInstance, int width, int height);
 	~ResourceManger();
 
-	void LoadImages(HINSTANCE hInst); 
-	void Render(Gdiplus::Graphics& graphics, int x, int y, int frameIndex);
+	//void LoadImages(HINSTANCE hInst); 
+	void Render(Gdiplus::Graphics& graphics, int x, int y);
 
 	//Gdiplus::Image* GetIamge() { return image;}
 	//void SetImage(Gdiplus::Image* image) { this->image = image; } // Set Image 

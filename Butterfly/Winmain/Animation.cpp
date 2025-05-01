@@ -149,21 +149,18 @@ void Animation::Update()
 		float deltaTime = Time::GetDeltaTime();
 
 		lastTime = currentTime; // 마지막 시간 업데이트 
-
 		totaltime += deltaTime; 
 
 		if (totaltime >= frameInterval.count()) {
 			timer.Reset(); 
 			frameTime = (frameTime + 1) % AnimationFrames.size(); // 프레임 업데이트 
-		}	
-
+		}
 	} 
-
 }
 
 void Animation::RednerFrame(Gdiplus::Graphics graphics, int x, int y, int frameIndex)
 {
-
+	auto& ResourceID = AnimStateFrameMap[current_state].ImageID;
 }
 
 void Animation::LoadAnimationFrame(HINSTANCE hInst)

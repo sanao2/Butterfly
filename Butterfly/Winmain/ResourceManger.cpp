@@ -1,6 +1,6 @@
 #include "ResourceManger.h"
 
-
+int RESOURCE_ID = IDB_PLAYER_DOWNWALK_IDLE; 
 
 ResourceManger::ResourceManger(HDC drawDC, HINSTANCE hInstance,int width, int height) : hInst(hInstance)
 {											
@@ -51,13 +51,8 @@ ResourceManger::~ResourceManger()
 //	
 //}
 
-void ResourceManger::Render(Gdiplus::Graphics& graphics, int x, int y, int frameIndex)
+void ResourceManger::Render(Gdiplus::Graphics& graphics, int x, int y)
 {
-	if (frameIndex < AnimationFrames.size() && AnimationFrames[frameIndex])
-	{
-		imageRenderer->Render(graphics, AnimationFrames[frameIndex], x, y);
-	}
-	else {
-		std::cerr << "잘못된 프레임 인덱스: " << frameIndex << std::endl;
-	}
+	imageRenderer->Render(graphics, image, x, y);
+	
 }
