@@ -160,7 +160,7 @@ void Animation::Update()
 
 void Animation::RednerFrame(Gdiplus::Graphics graphics, int x, int y, int frameIndex)
 {
-	auto& ResourceID = AnimStateFrameMap[current_state].ImageID;
+
 }
 
 void Animation::LoadAnimationFrame(HINSTANCE hInst)
