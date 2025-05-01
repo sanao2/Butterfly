@@ -39,7 +39,7 @@ public :
 	~ResourceManger();
 
 	void LoadImages(HINSTANCE hInst); 
-	void RenderImage(Gdiplus::Graphics& graphics, int x, int y, int frameIndex);
+	void RenderFrame(Gdiplus::Graphics& graphics, int x, int y, int frameIndex);
 
 	Gdiplus::Image* GetIamge() { return image;}
 	void SetImage(Gdiplus::Image* image) { this->image = image; } // Set Image 

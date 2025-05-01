@@ -113,6 +113,7 @@ Animation::Animation(HDC drawDC, HINSTANCE hInst)
 	Gdiplus::GdiplusStartupInput gsi;
 	Gdiplus::GdiplusStartup(&GdiPlusToken, &gsi, nullptr);
 	graphics = new Gdiplus::Graphics(drawDC);
+	imageResource = new ImageResource();
 	image = nullptr;
 	timer.Elapsed();
  
@@ -159,6 +160,21 @@ void Animation::Update()
 
 }
 
-void Animation::LoadAnimationFrame()
+void Animation::LoadAnimationFrame(HINSTANCE hInst)
 {
+	const auto& frameCount = AnimStateFrameMap[current_state].ImageID.size();
+
+	for (int i = 0; i < frameCount; ++i)
+	{
+		int id = GetAnimationFrameID(current_state, i); 
+		if (imageResource->LoadFromResource(hInst, id, RESOURCE_TYPE))
+		{
+			image = imageResource->GetBitmap(); 
+			AnimationFrames.push_back(image);
+		}
+		else
+		{
+			cerr << "리소스 로드 실패 ID : " << id << endl; 
+		}
+	}
 }

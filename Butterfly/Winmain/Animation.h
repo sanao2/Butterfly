@@ -3,14 +3,15 @@
 #include <vector> 
 #include <iostream> 
 #include "UI/Timer.h"
+#include "ImageResource.h"
 #include "GdiplusImageRenderer.h"
 #pragma comment(lib, "gdiplus.lib")
 using std::vector; 
 using namespace std; 
 
-extern vector<Gdiplus::Image*> AnimationFrames;
+extern const wchar_t RESOURCE_TYPE[]; 
 
-class Animation
+class Animation 
 {
 private : 
 	HINSTANCE hInst; 
@@ -20,14 +21,15 @@ private :
 	Gdiplus::Graphics* graphics = nullptr;
 	Gdiplus::Image* image = nullptr;
 
-	Time::Timer<> timer;	
+	Time::Timer<> timer;
+	ImageResource* imageResource = nullptr;
 	float frameTime = 0.0f;
 
 public : 
 	Animation(HDC drawDC, HINSTANCE hInst);
 	~Animation(); 
 	void Update();	
-	void LoadAnimationFrame();
+	void LoadAnimationFrame(HINSTANCE hInst);
 };
 
 //
