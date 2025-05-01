@@ -1,7 +1,6 @@
 #pragma once
 #include <windows.h>
 #include "Swap.h"
-#include "Animation.h"
 #include "ResourceManger.h" 
 
 class Render

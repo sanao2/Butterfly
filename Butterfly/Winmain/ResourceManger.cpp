@@ -1,9 +1,9 @@
 #include "ResourceManger.h"
 
 int current_frame = 0;
-int RESOURCE_ID = { 0, };
+int RESOURCE_ID = IDB_PLAYER_DOWNWALK_IDLE;
 constexpr wchar_t RESOURCE_TYPE[] = L"PNG";
-vector<Gdiplus::Image*> AnimationFrames = { 0, };
+vector<Gdiplus::Image*> AnimationFrames;
 
 ResourceManger::ResourceManger(HDC drawDC, HINSTANCE hInstance,int width, int height) : hInst(hInstance)
 {											
@@ -29,19 +29,13 @@ ResourceManger::~ResourceManger()
 
 void ResourceManger::LoadImages(HINSTANCE hInst)
 {
-	try {		
-		// Load image from resource
-		const auto& frameID = AnimStateFrameMap[current_state].ImageID; 
- 
-		for (int id : frameID)
-		{
-			if (imageResource->LoadFromResource(hInst, id, RESOURCE_TYPE))
-			{
-				image = imageResource->GetBitmap();
-				AnimationFrames.push_back(image);
-			}
-			 
-		}	
+	try {			
+
+		imageResource->LoadFromResource(hInst, RESOURCE_ID, RESOURCE_TYPE); // Load image from resource 
+	
+		
+		image = imageResource->GetBitmap();
+		AnimationFrames.push_back(image); 
 
 		if (image == nullptr)
 		{
@@ -60,16 +54,13 @@ void ResourceManger::LoadImages(HINSTANCE hInst)
 	
 }
 
-void ResourceManger::RenderImage(Gdiplus::Graphics& graphics, int x, int y)
+void ResourceManger::RenderFrame(Gdiplus::Graphics& graphics, int x, int y, int frameIndex)
 {
 	if (image == nullptr)
 	{
 		cerr << "Bitmap is null." << endl;
 		return;
-	}
-	for (int frameIndex = 0; frameIndex >= AnimationFrames.size(); ++frameIndex)
-	{
-		imageRenderer->Render(graphics, AnimationFrames[frameIndex], x, y); 
-	}
+	} 
 
+	imageRenderer->Render(graphics, image, x, y);
 }

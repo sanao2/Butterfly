@@ -105,7 +105,8 @@
 //// 
 ////}
 
-//vector<Gdiplus::Image*> AnimationFrames; // Resource vector 
+
+
 
 Animation::Animation(HDC drawDC, HINSTANCE hInst)
 {
