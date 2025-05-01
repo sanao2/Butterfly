@@ -26,7 +26,6 @@ private :
 	
 	HINSTANCE hInst = nullptr; 
 	
-
 	//ULONG_PTR GdiPlusToken;
 	//HBITMAP hBitmap = nullptr;
 	Gdiplus::Graphics* graphics = nullptr;

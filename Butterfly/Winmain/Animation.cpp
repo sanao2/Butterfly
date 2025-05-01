@@ -106,7 +106,6 @@
 ////}
 
 
-
 Animation::Animation(HDC drawDC, HINSTANCE hInstance) : hInst(hInstance), current_frame(0)
 {
 	Gdiplus::GdiplusStartupInput gsi;
@@ -148,4 +147,6 @@ void Animation::Update()
 			frameTime = (frameTime + 1) % AnimationFrames.size(); // 프레임 업데이트 
 		}
 	} 
+
+	ResMgr->LoadeFrames(hInst);
 }
