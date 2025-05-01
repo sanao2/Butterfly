@@ -23,9 +23,9 @@ enum Animstate
 
 struct ResourceInfo {
     vector<int> ImageID;
+    ResourceInfo() = default; 
     ResourceInfo(std::initializer_list<int> list)
-        : ImageID(list) {
-    }
+        : ImageID(list) {}
 };
 
 extern  unordered_map<Animstate, ResourceInfo> AnimStateFrameMap;

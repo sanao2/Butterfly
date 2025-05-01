@@ -115,6 +115,7 @@ Animation::Animation(HDC drawDC, HINSTANCE hInst)
 	Gdiplus::GdiplusStartup(&GdiPlusToken, &gsi, nullptr);
 	graphics = new Gdiplus::Graphics(drawDC);
 	imageResource = new ImageResource();
+	ResMgr = new ResourceManger(hInst);
 	image = nullptr;
 	timer.Elapsed();
  
@@ -160,7 +161,7 @@ void Animation::Update()
 
 void Animation::RednerFrame(Gdiplus::Graphics graphics, int x, int y, int frameIndex)
 {
-
+	
 }
 
 void Animation::LoadAnimationFrame(HINSTANCE hInst)

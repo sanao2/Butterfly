@@ -2,7 +2,7 @@
 
 int RESOURCE_ID = IDB_PLAYER_DOWNWALK_IDLE; 
 
-ResourceManger::ResourceManger(HDC drawDC, HINSTANCE hInstance,int width, int height) : hInst(hInstance)
+ResourceManger::ResourceManger( HINSTANCE hInstance) : hInst(hInstance)
 {											
 	imageResource = new ImageResource();
 	imageRenderer = new GdiPlusImageRenderer(); // Correctly references the class

@@ -5,6 +5,7 @@
 #include "UI/Timer.h"
 #include "ImageResource.h"
 #include "GdiplusImageRenderer.h"
+#include "ResourceManger.h"
 #pragma comment(lib, "gdiplus.lib")
 using std::vector; 
 using namespace std; 
@@ -24,6 +25,7 @@ private :
 
 	Time::Timer<> timer;
 	ImageResource* imageResource = nullptr;
+	ResourceManger* ResMgr = nullptr; 
 	
 public : 
 	Animation(HDC drawDC, HINSTANCE hInst);
