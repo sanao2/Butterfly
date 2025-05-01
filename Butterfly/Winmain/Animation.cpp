@@ -159,15 +159,19 @@ void Animation::Update()
 	} 
 }
 
-void Animation::RednerFrame(Gdiplus::Graphics graphics, int x, int y, int frameIndex)
+void Animation::RenderFrame(Gdiplus::Graphics* graphics, int x, int y, int frameIndex)
 {
-	if (frameIndex < AnimationFrames.size() && AnimationFrames[frameIndex])
+	for (frameIndex = 0; frameIndex < AnimationFrames.size(); ++frameIndex)
 	{
-		imageRenderer->Render(graphics, AnimationFrames[frameIndex], x, y);
+		if (frameIndex < AnimationFrames.size() && AnimationFrames[frameIndex])
+		{
+			imageRenderer->Render(*graphics, AnimationFrames[frameIndex], x, y);
+		}
+		else {
+			std::cerr << "잘못된 프레임 인덱스: " << frameIndex << std::endl;
+		}
 	}
-	else {
-		std::cerr << "잘못된 프레임 인덱스: " << frameIndex << std::endl;
-	}
+	
 }
 
 void Animation::LoadAnimationFrame(HINSTANCE hInst)

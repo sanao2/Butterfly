@@ -2,4 +2,79 @@
 D:\BF\Butterfly\Winmain\Event\InputConstants.h(7,40): warning C4309: '초기화 중': 상수 값이 잘립니다.
   (소스 파일 'Animation.cpp'을(를) 컴파일하는 중)
   
-  Winmain.vcxproj -> D:\BF\Butterfly\x64\Debug\Winmain.exe
+D:\BF\Butterfly\Winmain\Animation.h(18,7): error C2011: 'Animation': 'class' 형식 재정의
+  (소스 파일 'Animation.cpp'을(를) 컴파일하는 중)
+      D:\BF\Butterfly\Winmain\Animation.h(18,7):
+      'Animation' 선언을 참조하십시오.
+  
+D:\BF\Butterfly\Winmain\Animation.cpp(112,12): error C2027: 정의되지 않은 형식 'Animation'을(를) 사용했습니다.
+      D:\BF\Butterfly\Winmain\Animation.h(18,7):
+      'Animation' 선언을 참조하십시오.
+  
+D:\BF\Butterfly\Winmain\Animation.cpp(112,12): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
+D:\BF\Butterfly\Winmain\Animation.cpp(115,27): error C2065: 'GdiPlusToken': 선언되지 않은 식별자입니다.
+D:\BF\Butterfly\Winmain\Animation.cpp(116,2): error C2065: 'graphics': 선언되지 않은 식별자입니다.
+D:\BF\Butterfly\Winmain\Animation.cpp(117,2): error C2065: 'imageResource': 선언되지 않은 식별자입니다.
+D:\BF\Butterfly\Winmain\Animation.cpp(118,2): error C2065: 'ResMgr': 선언되지 않은 식별자입니다.
+D:\BF\Butterfly\Winmain\Animation.cpp(119,2): error C2065: 'image': 선언되지 않은 식별자입니다.
+D:\BF\Butterfly\Winmain\Animation.cpp(120,2): error C2065: 'timer': 선언되지 않은 식별자입니다.
+D:\BF\Butterfly\Winmain\Animation.cpp(122,1): warning C4508: '{ctor}': 함수는 값을 반환해야 하므로 'void' 반환 형식으로 간주됩니다.
+D:\BF\Butterfly\Winmain\Animation.cpp(124,13): error C2027: 정의되지 않은 형식 'Animation'을(를) 사용했습니다.
+      D:\BF\Butterfly\Winmain\Animation.h(18,7):
+      'Animation' 선언을 참조하십시오.
+  
+D:\BF\Butterfly\Winmain\Animation.cpp(124,13): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
+D:\BF\Butterfly\Winmain\Animation.cpp(126,6): error C2065: 'image': 선언되지 않은 식별자입니다.
+D:\BF\Butterfly\Winmain\Animation.cpp(128,10): error C2065: 'image': 선언되지 않은 식별자입니다.
+D:\BF\Butterfly\Winmain\Animation.cpp(128,3): error C2541: 'delete': 포인터가 아닌 개체를 삭제할 수 없습니다.
+D:\BF\Butterfly\Winmain\Animation.cpp(129,3): error C2065: 'image': 선언되지 않은 식별자입니다.
+D:\BF\Butterfly\Winmain\Animation.cpp(131,6): error C2065: 'graphics': 선언되지 않은 식별자입니다.
+D:\BF\Butterfly\Winmain\Animation.cpp(133,10): error C2065: 'graphics': 선언되지 않은 식별자입니다.
+D:\BF\Butterfly\Winmain\Animation.cpp(133,3): error C2541: 'delete': 포인터가 아닌 개체를 삭제할 수 없습니다.
+D:\BF\Butterfly\Winmain\Animation.cpp(134,3): error C2065: 'graphics': 선언되지 않은 식별자입니다.
+D:\BF\Butterfly\Winmain\Animation.cpp(137,27): error C2065: 'GdiPlusToken': 선언되지 않은 식별자입니다.
+D:\BF\Butterfly\Winmain\Animation.cpp(138,1): warning C4508: '{dtor}': 함수는 값을 반환해야 하므로 'void' 반환 형식으로 간주됩니다.
+D:\BF\Butterfly\Winmain\Animation.cpp(139,17): error C2027: 정의되지 않은 형식 'Animation'을(를) 사용했습니다.
+      D:\BF\Butterfly\Winmain\Animation.h(18,7):
+      'Animation' 선언을 참조하십시오.
+  
+D:\BF\Butterfly\Winmain\Animation.cpp(156,4): error C2065: 'timer': 선언되지 않은 식별자입니다.
+D:\BF\Butterfly\Winmain\Animation.cpp(162,17): error C2027: 정의되지 않은 형식 'Animation'을(를) 사용했습니다.
+      D:\BF\Butterfly\Winmain\Animation.h(18,7):
+      'Animation' 선언을 참조하십시오.
+  
+D:\BF\Butterfly\Winmain\Animation.cpp(168,4): error C2065: 'imageRenderer': 선언되지 않은 식별자입니다.
+D:\BF\Butterfly\Winmain\Animation.cpp(177,17): error C2027: 정의되지 않은 형식 'Animation'을(를) 사용했습니다.
+      D:\BF\Butterfly\Winmain\Animation.h(18,7):
+      'Animation' 선언을 참조하십시오.
+  
+D:\BF\Butterfly\Winmain\Animation.cpp(184,7): error C2065: 'imageResource': 선언되지 않은 식별자입니다.
+D:\BF\Butterfly\Winmain\Animation.cpp(186,4): error C2065: 'image': 선언되지 않은 식별자입니다.
+D:\BF\Butterfly\Winmain\Animation.cpp(186,12): error C2065: 'imageResource': 선언되지 않은 식별자입니다.
+D:\BF\Butterfly\Winmain\Animation.cpp(187,30): error C2065: 'image': 선언되지 않은 식별자입니다.
+  Global.cpp
+D:\BF\Butterfly\Winmain\Event\InputConstants.h(7,40): warning C4309: '초기화 중': 상수 값이 잘립니다.
+  (소스 파일 'Global.cpp'을(를) 컴파일하는 중)
+  
+  Render.cpp
+D:\BF\Butterfly\Winmain\Event\InputConstants.h(7,40): warning C4309: '초기화 중': 상수 값이 잘립니다.
+  (소스 파일 'Render.cpp'을(를) 컴파일하는 중)
+  
+D:\BF\Butterfly\Winmain\Global.h(12,14): error C2143: 구문 오류: ';'이(가) '*' 앞에 없습니다.
+  (소스 파일 'Render.cpp'을(를) 컴파일하는 중)
+  
+D:\BF\Butterfly\Winmain\Global.h(12,8): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
+  (소스 파일 'Render.cpp'을(를) 컴파일하는 중)
+  
+D:\BF\Butterfly\Winmain\Global.h(12,16): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
+  (소스 파일 'Render.cpp'을(를) 컴파일하는 중)
+  
+  Winmain.cpp
+D:\BF\Butterfly\Winmain\Event\InputConstants.h(7,40): warning C4309: '초기화 중': 상수 값이 잘립니다.
+  (소스 파일 'Winmain.cpp'을(를) 컴파일하는 중)
+  
+D:\BF\Butterfly\Winmain\Winmain.cpp(123,24): error C2661: 'Render::Render': 오버로드된 함수에서 4개의 인수를 사용하지 않습니다.
+      D:\BF\Butterfly\Winmain\Winmain.cpp(123,24):
+      인수 목록 '(HDC, HWND, int, int)'을(를) 일치시키는 동안
+  
+  코드를 생성하고 있습니다...
