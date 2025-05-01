@@ -19,9 +19,9 @@ ResourceManger::~ResourceManger()
 	//delete image; 
 	
 	//if (graphics) delete graphics;				// GDI+ Graphics Delete
-	if (imageResource) delete imageResource;    // imageResource Delete 
-	if (imageRenderer) delete imageRenderer;    // imageRenderer Delete
-	//Gdiplus::GdiplusShutdown(GdiPlusToken);     // GDI+ ShoutDown
+	if (imageResource) delete imageResource;		// imageResource Delete 
+	if (imageRenderer) delete imageRenderer;		// imageRenderer Delete
+	//Gdiplus::GdiplusShutdown(GdiPlusToken);       // GDI+ ShoutDown
 }
 
 //void ResourceManger::LoadImages(HINSTANCE hInst)

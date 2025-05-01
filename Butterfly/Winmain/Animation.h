@@ -13,7 +13,6 @@ using namespace std;
 
 extern const wchar_t RESOURCE_TYPE[]; 
 extern vector<Gdiplus::Image*> AnimationFrames;
-extern int current_frame;
 
 class Animation 
 {
@@ -28,9 +27,10 @@ private :
 	ImageResource* imageResource = nullptr;
 	IImageRenderer* imageRenderer = nullptr;
 	ResourceManger* ResMgr = nullptr; 
-	
+	int current_frame = 0;
+
 public : 
-	Animation(HDC drawDC, HINSTANCE hInst);
+	Animation(HDC drawDC, HINSTANCE hInstance);
 	~Animation(); 
 	void Update();	
 	void RenderFrame(Gdiplus::Graphics* graphics, int x, int y, int frameIndex);

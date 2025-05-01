@@ -105,11 +105,11 @@
 //// 
 ////}
 
-int current_frame = 0;
+
 constexpr wchar_t RESOURCE_TYPE[] = L"PNG";
 vector<Gdiplus::Image*> AnimationFrames;
 
-Animation::Animation(HDC drawDC, HINSTANCE hInst)
+Animation::Animation(HDC drawDC, HINSTANCE hInstance) : hInst(hInstance)
 {
 	Gdiplus::GdiplusStartupInput gsi;
 	Gdiplus::GdiplusStartup(&GdiPlusToken, &gsi, nullptr);
@@ -117,8 +117,7 @@ Animation::Animation(HDC drawDC, HINSTANCE hInst)
 	imageResource = new ImageResource();
 	ResMgr = new ResourceManger(hInst); 
 	image = nullptr;
-	timer.Elapsed();
- 
+	timer.Elapsed(); 
 }
 
 Animation::~Animation()
