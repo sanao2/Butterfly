@@ -1,7 +1,7 @@
 #include "ResourceManger.h"
 
 int current_frame = 0;
-vector<int> RESOURCE_ID = { 0, };
+int RESOURCE_ID = { 0, };
 constexpr wchar_t RESOURCE_TYPE[] = L"PNG";
 vector<Gdiplus::Image*> AnimationFrames = { 0, };
 
@@ -32,14 +32,16 @@ void ResourceManger::LoadImages(HINSTANCE hInst)
 	try {		
 		// Load image from resource
 		const auto& frameID = AnimStateFrameMap[current_state].ImageID; 
+ 
 		for (int id : frameID)
 		{
-			RESOURCE_ID.push_back(id); 
-			imageResource->LoadFromResource(hInst, RESOURCE_ID[id], RESOURCE_TYPE); // Load image from resource 
+			if (imageResource->LoadFromResource(hInst, id, RESOURCE_TYPE))
+			{
+				image = imageResource->GetBitmap();
+				AnimationFrames.push_back(image);
+			}
+			 
 		}	
-		
-		image = imageResource->GetBitmap();
-		AnimationFrames.push_back(image); 
 
 		if (image == nullptr)
 		{
@@ -64,6 +66,10 @@ void ResourceManger::RenderImage(Gdiplus::Graphics& graphics, int x, int y)
 	{
 		cerr << "Bitmap is null." << endl;
 		return;
-	} 
-	imageRenderer->Render(graphics, image, x, y);
+	}
+	for (int frameIndex = 0; frameIndex >= AnimationFrames.size(); ++frameIndex)
+	{
+		imageRenderer->Render(graphics, AnimationFrames[frameIndex], x, y); 
+	}
+
 }
