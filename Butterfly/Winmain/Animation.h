@@ -9,7 +9,10 @@
 using std::vector; 
 using namespace std; 
 
+extern int RESOURCE_ID;
 extern const wchar_t RESOURCE_TYPE[]; 
+extern vector<Gdiplus::Image*> AnimationFrames;
+extern int current_frame;
 
 class Animation 
 {

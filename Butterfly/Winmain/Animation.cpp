@@ -105,8 +105,10 @@
 //// 
 ////}
 
-
-
+int current_frame = 0;
+int RESOURCE_ID = IDB_PLAYER_DOWNWALK_IDLE;
+constexpr wchar_t RESOURCE_TYPE[] = L"PNG";
+vector<Gdiplus::Image*> AnimationFrames;
 
 Animation::Animation(HDC drawDC, HINSTANCE hInst)
 {

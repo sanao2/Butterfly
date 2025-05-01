@@ -15,8 +15,8 @@ using namespace std;
 using std::vector;
 
 extern Animstate current_state; 
-extern int RESOURCE_ID; 
-extern const wchar_t RESOURCE_TYPE[];
+
+
 extern vector<Gdiplus::Image*> AnimationFrames;
 extern int current_frame; 
 
@@ -29,19 +29,19 @@ private :
 
 	HINSTANCE hInst = nullptr; 
 
-	ULONG_PTR GdiPlusToken;
-	HBITMAP hBitmap = nullptr;
-	Gdiplus::Graphics* graphics = nullptr;
-	Gdiplus::Image* image = nullptr;
+	//ULONG_PTR GdiPlusToken;
+	//HBITMAP hBitmap = nullptr;
+	//Gdiplus::Graphics* graphics = nullptr;
+	//Gdiplus::Image* image = nullptr;
 
 public : 
 	ResourceManger(HDC drawDC, HINSTANCE hInstance, int width, int height);
 	~ResourceManger();
 
 	void LoadImages(HINSTANCE hInst); 
-	void RenderFrame(Gdiplus::Graphics& graphics, int x, int y, int frameIndex);
+	void Render(Gdiplus::Graphics& graphics, int x, int y, int frameIndex);
 
-	Gdiplus::Image* GetIamge() { return image;}
-	void SetImage(Gdiplus::Image* image) { this->image = image; } // Set Image 
+	//Gdiplus::Image* GetIamge() { return image;}
+	//void SetImage(Gdiplus::Image* image) { this->image = image; } // Set Image 
 };
 
