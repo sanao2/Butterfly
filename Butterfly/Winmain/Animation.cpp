@@ -115,7 +115,7 @@ Animation::Animation(HDC drawDC, HINSTANCE hInst)
 	Gdiplus::GdiplusStartup(&GdiPlusToken, &gsi, nullptr);
 	graphics = new Gdiplus::Graphics(drawDC);
 	imageResource = new ImageResource();
-	ResMgr = new ResourceManger(hInst);
+	ResMgr = new ResourceManger(hInst); 
 	image = nullptr;
 	timer.Elapsed();
  
@@ -161,7 +161,13 @@ void Animation::Update()
 
 void Animation::RednerFrame(Gdiplus::Graphics graphics, int x, int y, int frameIndex)
 {
-	
+	if (frameIndex < AnimationFrames.size() && AnimationFrames[frameIndex])
+	{
+		imageRenderer->Render(graphics, AnimationFrames[frameIndex], x, y);
+	}
+	else {
+		std::cerr << "잘못된 프레임 인덱스: " << frameIndex << std::endl;
+	}
 }
 
 void Animation::LoadAnimationFrame(HINSTANCE hInst)

@@ -4,6 +4,7 @@
 #include <iostream> 
 #include "UI/Timer.h"
 #include "ImageResource.h"
+#include "IImageRenderer.h"
 #include "GdiplusImageRenderer.h"
 #include "ResourceManger.h"
 #pragma comment(lib, "gdiplus.lib")
@@ -25,6 +26,7 @@ private :
 
 	Time::Timer<> timer;
 	ImageResource* imageResource = nullptr;
+	IImageRenderer* imageRenderer = nullptr;
 	ResourceManger* ResMgr = nullptr; 
 	
 public : 
