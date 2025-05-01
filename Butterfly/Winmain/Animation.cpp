@@ -106,7 +106,6 @@
 ////}
 
 int current_frame = 0;
-int RESOURCE_ID = IDB_PLAYER_DOWNWALK_IDLE;
 constexpr wchar_t RESOURCE_TYPE[] = L"PNG";
 vector<Gdiplus::Image*> AnimationFrames;
 
@@ -159,6 +158,11 @@ void Animation::Update()
 		}	
 
 	} 
+
+}
+
+void Animation::RednerFrame(Gdiplus::Graphics graphics, int x, int y, int frameIndex)
+{
 
 }
 

@@ -9,7 +9,6 @@
 using std::vector; 
 using namespace std; 
 
-extern int RESOURCE_ID;
 extern const wchar_t RESOURCE_TYPE[]; 
 extern vector<Gdiplus::Image*> AnimationFrames;
 extern int current_frame;
@@ -26,12 +25,12 @@ private :
 
 	Time::Timer<> timer;
 	ImageResource* imageResource = nullptr;
-	float frameTime = 0.0f;
-
+	
 public : 
 	Animation(HDC drawDC, HINSTANCE hInst);
 	~Animation(); 
 	void Update();	
+	void RednerFrame(Gdiplus::Graphics graphics, int x, int y, int frameIndex);
 	void LoadAnimationFrame(HINSTANCE hInst);
 };
 

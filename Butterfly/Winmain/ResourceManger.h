@@ -16,10 +16,6 @@ using std::vector;
 
 extern Animstate current_state; 
 
-
-extern vector<Gdiplus::Image*> AnimationFrames;
-extern int current_frame; 
-
 class ResourceManger
 {
 private : 
