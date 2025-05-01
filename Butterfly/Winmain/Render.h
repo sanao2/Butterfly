@@ -1,6 +1,7 @@
 #pragma once
 #include <windows.h>
 #include "Swap.h"
+#include "Animation.h"
 #include "ResourceManger.h" 
 
 class Render
@@ -10,13 +11,14 @@ private:
     POINT clientSize = {0,0};
     Swap* swap = nullptr;
     //ResourceManger* ResMgr;
-   // Animation* animation = nullptr; 
+    Animation* animation = nullptr; 
 
+    HINSTANCE hInst; 
     HDC memDC = nullptr;
 	Gdiplus::Graphics* graphics = nullptr; // GDI+ 그래픽스 객체
 
 public:
-    Render(HDC drawDC, HWND hwnd, int width, int height);
+    Render(HDC drawDC, HWND hwnd, HINSTANCE hInstance, int width, int height);
     ~Render();
     
     void Update();          // 렌더 업데이트 및 스왑 호출

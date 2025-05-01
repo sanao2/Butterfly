@@ -1,12 +1,12 @@
 #include "Render.h"
 #include <iostream>
 
-Render::Render(HDC drawDC, HWND hwnd,  int width, int height)
-    : hWnd(hwnd), clientSize{ width, height }
-{
+Render::Render(HDC drawDC, HWND hwnd, HINSTANCE hInstance, int width, int height)
+                : hWnd(hwnd), clientSize{ width, height }, hInst(hInstance)
+{ 
     swap = new Swap(hwnd, width, height);
 	//ResMgr = new ResourceManger(drawDC, width,height); // 府家胶 概聪历 按眉 积己
-    //animation = new Animation(drawDC, width, height); 
+    animation = new Animation(drawDC, hInstance);
 }
 
 Render::~Render()
