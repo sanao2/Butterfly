@@ -107,7 +107,6 @@
 
 
 constexpr wchar_t RESOURCE_TYPE[] = L"PNG";
-vector<Gdiplus::Image*> AnimationFrames;
 
 Animation::Animation(HDC drawDC, HINSTANCE hInstance) : hInst(hInstance)
 {
@@ -158,19 +157,12 @@ void Animation::Update()
 	} 
 }
 
-void Animation::RenderFrame(Gdiplus::Graphics* graphics, int x, int y, int frameIndex)
+void Animation::Render()
 {
-	for (frameIndex = 0; frameIndex < AnimationFrames.size(); ++frameIndex)
+	for (int frameCount = 0; frameCount < AnimationFrames.size(); ++frameCount)
 	{
-		if (frameIndex < AnimationFrames.size() && AnimationFrames[frameIndex])
-		{
-			imageRenderer->Render(*graphics, AnimationFrames[frameIndex], x, y);
-		}
-		else {
-			std::cerr << "잘못된 프레임 인덱스: " << frameIndex << std::endl;
-		}
+		ResMgr->RenderFrame(graphics, 0, 0, frameCount);
 	}
-	
 }
 
 void Animation::LoadAnimationFrame(HINSTANCE hInst)
@@ -190,4 +182,18 @@ void Animation::LoadAnimationFrame(HINSTANCE hInst)
 			cerr << "리소스 로드 실패 ID : " << id << endl; 
 		}
 	}
+}
+void Animation::RenderFrame(Gdiplus::Graphics* graphics, int x, int y, int frameIndex)
+{
+	for (frameIndex = 0; frameIndex < AnimationFrames.size(); ++frameIndex)
+	{
+		if (frameIndex < AnimationFrames.size() && AnimationFrames[frameIndex])
+		{
+			imageRenderer->Render(*graphics, AnimationFrames[frameIndex], x, y);
+		}
+		else {
+			std::cerr << "잘못된 프레임 인덱스: " << frameIndex << std::endl;
+		}
+	}
+
 }

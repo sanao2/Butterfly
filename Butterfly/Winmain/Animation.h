@@ -33,8 +33,10 @@ public :
 	Animation(HDC drawDC, HINSTANCE hInstance);
 	~Animation(); 
 	void Update();	
-	void RenderFrame(Gdiplus::Graphics* graphics, int x, int y, int frameIndex);
+	void Render();
 	void LoadAnimationFrame(HINSTANCE hInst);
+	void RenderFrame(Gdiplus::Graphics* graphics, int x, int y, int frameIndex);
+
 };
 
 //
