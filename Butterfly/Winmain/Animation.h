@@ -11,7 +11,6 @@
 using std::vector; 
 using namespace std; 
 
-extern const wchar_t RESOURCE_TYPE[]; 
 extern vector<Gdiplus::Image*> AnimationFrames;
 
 class Animation 
@@ -33,7 +32,6 @@ public :
 	Animation(HDC drawDC, HINSTANCE hInstance);
 	~Animation(); 
 	void Update();	
-	void Render();
 	void LoadAnimationFrame(HINSTANCE hInst);
 	void RenderFrame(Gdiplus::Graphics* graphics, int x, int y, int frameIndex);
 

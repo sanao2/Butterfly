@@ -9,4 +9,3 @@ extern Animstate current_state; // current Animation State
 extern Animstate prev_state;    // Previous Animation State 
 
 extern Move::MoveManager* move;
-extern Render* render;

@@ -2,13 +2,13 @@
 D:\BF\Butterfly\Winmain\Event\InputConstants.h(7,40): warning C4309: '초기화 중': 상수 값이 잘립니다.
   (소스 파일 'Animation.cpp'을(를) 컴파일하는 중)
   
-D:\BF\Butterfly\Winmain\Animation.h(17,7): error C2011: 'Animation': 'class' 형식 재정의
+D:\BF\Butterfly\Winmain\Animation.h(16,7): error C2011: 'Animation': 'class' 형식 재정의
   (소스 파일 'Animation.cpp'을(를) 컴파일하는 중)
-      D:\BF\Butterfly\Winmain\Animation.h(17,7):
+      D:\BF\Butterfly\Winmain\Animation.h(16,7):
       'Animation' 선언을 참조하십시오.
   
 D:\BF\Butterfly\Winmain\Animation.cpp(111,12): error C2027: 정의되지 않은 형식 'Animation'을(를) 사용했습니다.
-      D:\BF\Butterfly\Winmain\Animation.h(17,7):
+      D:\BF\Butterfly\Winmain\Animation.h(16,7):
       'Animation' 선언을 참조하십시오.
   
 D:\BF\Butterfly\Winmain\Animation.cpp(111,12): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
@@ -22,7 +22,7 @@ D:\BF\Butterfly\Winmain\Animation.cpp(118,2): error C2065: 'image': 선언되지
 D:\BF\Butterfly\Winmain\Animation.cpp(119,2): error C2065: 'timer': 선언되지 않은 식별자입니다.
 D:\BF\Butterfly\Winmain\Animation.cpp(120,1): warning C4508: '{ctor}': 함수는 값을 반환해야 하므로 'void' 반환 형식으로 간주됩니다.
 D:\BF\Butterfly\Winmain\Animation.cpp(122,13): error C2027: 정의되지 않은 형식 'Animation'을(를) 사용했습니다.
-      D:\BF\Butterfly\Winmain\Animation.h(17,7):
+      D:\BF\Butterfly\Winmain\Animation.h(16,7):
       'Animation' 선언을 참조하십시오.
   
 D:\BF\Butterfly\Winmain\Animation.cpp(122,13): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
@@ -37,24 +37,23 @@ D:\BF\Butterfly\Winmain\Animation.cpp(132,3): error C2065: 'graphics': 선언되
 D:\BF\Butterfly\Winmain\Animation.cpp(135,27): error C2065: 'GdiPlusToken': 선언되지 않은 식별자입니다.
 D:\BF\Butterfly\Winmain\Animation.cpp(136,1): warning C4508: '{dtor}': 함수는 값을 반환해야 하므로 'void' 반환 형식으로 간주됩니다.
 D:\BF\Butterfly\Winmain\Animation.cpp(137,17): error C2027: 정의되지 않은 형식 'Animation'을(를) 사용했습니다.
-      D:\BF\Butterfly\Winmain\Animation.h(17,7):
+      D:\BF\Butterfly\Winmain\Animation.h(16,7):
       'Animation' 선언을 참조하십시오.
   
 D:\BF\Butterfly\Winmain\Animation.cpp(154,4): error C2065: 'timer': 선언되지 않은 식별자입니다.
 D:\BF\Butterfly\Winmain\Animation.cpp(160,17): error C2027: 정의되지 않은 형식 'Animation'을(를) 사용했습니다.
-      D:\BF\Butterfly\Winmain\Animation.h(17,7):
+      D:\BF\Butterfly\Winmain\Animation.h(16,7):
       'Animation' 선언을 참조하십시오.
   
-D:\BF\Butterfly\Winmain\Animation.cpp(164,3): error C2065: 'ResMgr': 선언되지 않은 식별자입니다.
-D:\BF\Butterfly\Winmain\Animation.cpp(164,23): error C2065: 'graphics': 선언되지 않은 식별자입니다.
-D:\BF\Butterfly\Winmain\Animation.cpp(168,17): error C2027: 정의되지 않은 형식 'Animation'을(를) 사용했습니다.
-      D:\BF\Butterfly\Winmain\Animation.h(17,7):
+D:\BF\Butterfly\Winmain\Animation.cpp(167,7): error C2065: 'imageResource': 선언되지 않은 식별자입니다.
+D:\BF\Butterfly\Winmain\Animation.cpp(169,4): error C2065: 'image': 선언되지 않은 식별자입니다.
+D:\BF\Butterfly\Winmain\Animation.cpp(169,12): error C2065: 'imageResource': 선언되지 않은 식별자입니다.
+D:\BF\Butterfly\Winmain\Animation.cpp(170,30): error C2065: 'image': 선언되지 않은 식별자입니다.
+D:\BF\Butterfly\Winmain\Animation.cpp(178,17): error C2027: 정의되지 않은 형식 'Animation'을(를) 사용했습니다.
+      D:\BF\Butterfly\Winmain\Animation.h(16,7):
       'Animation' 선언을 참조하십시오.
   
-D:\BF\Butterfly\Winmain\Animation.cpp(175,7): error C2065: 'imageResource': 선언되지 않은 식별자입니다.
-D:\BF\Butterfly\Winmain\Animation.cpp(177,4): error C2065: 'image': 선언되지 않은 식별자입니다.
-D:\BF\Butterfly\Winmain\Animation.cpp(177,12): error C2065: 'imageResource': 선언되지 않은 식별자입니다.
-D:\BF\Butterfly\Winmain\Animation.cpp(178,30): error C2065: 'image': 선언되지 않은 식별자입니다.
+D:\BF\Butterfly\Winmain\Animation.cpp(184,4): error C2065: 'imageRenderer': 선언되지 않은 식별자입니다.
   Global.cpp
 D:\BF\Butterfly\Winmain\Event\InputConstants.h(7,40): warning C4309: '초기화 중': 상수 값이 잘립니다.
   (소스 파일 'Global.cpp'을(를) 컴파일하는 중)
@@ -71,10 +70,6 @@ D:\BF\Butterfly\Winmain\Global.h(12,8): error C4430: 형식 지정자가 없습�
   
 D:\BF\Butterfly\Winmain\Global.h(12,16): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
   (소스 파일 'Render.cpp'을(를) 컴파일하는 중)
-  
-D:\BF\Butterfly\Winmain\Render.cpp(38,16): error C2039: 'RenderFrame': 'Animation'의 멤버가 아닙니다.
-      D:\BF\Butterfly\Winmain\Animation.h(17,7):
-      'Animation' 선언을 참조하십시오.
   
   ResourceManger.cpp
   Winmain.cpp

@@ -2,6 +2,7 @@
 
 int RESOURCE_ID = IDB_PLAYER_DOWNWALK_IDLE; 
 vector<Gdiplus::Image*> AnimationFrames;
+constexpr wchar_t RESOURCE_TYPE[] = L"PNG";
 
 ResourceManger::ResourceManger( HINSTANCE hInstance) : hInst(hInstance)
 {											
@@ -25,49 +26,36 @@ ResourceManger::~ResourceManger()
 	//Gdiplus::GdiplusShutdown(GdiPlusToken);       // GDI+ ShoutDown
 }
 
-//void ResourceManger::LoadImages(HINSTANCE hInst)
-//{
-//	try {			
-//
-//		imageResource->LoadFromResource(hInst, RESOURCE_ID, RESOURCE_TYPE); // Load image from resource 
-//	
-//		
-//		//image = imageResource->GetBitmap();
-//		AnimationFrames.push_back(image); 
-//
-//		if (image == nullptr)
-//		{
-//			cerr << "Failed to load image resource." << endl;
-//			return;
-//		}
-//
-//	}
-//	catch (const std::exception& e) {
-//		std::cerr << "Error loading images: " << e.what() << std::endl;
-//	}
-//	if (image != nullptr)
-//	{
-//		cerr << "Failed to load images." << endl;
-//	}
-//	
-//}
-
-//void ResourceManger::Render(Gdiplus::Graphics& graphics, int x, int y)
-//{
-//	imageRenderer->Render(graphics, image, x, y);
-//	
-//}
-void ResourceManger::RenderFrame(Gdiplus::Graphics* graphics, int x, int y, int frameIndex)
+void ResourceManger::LoadImages(HINSTANCE hInst)
 {
-	for (frameIndex = 0; frameIndex < AnimationFrames.size(); ++frameIndex)
-	{
-		if (frameIndex < AnimationFrames.size() && AnimationFrames[frameIndex])
-		{
-			imageRenderer->Render(*graphics, AnimationFrames[frameIndex], x, y);
-		}
-		else {
-			std::cerr << "잘못된 프레임 인덱스: " << frameIndex << std::endl;
-		}
-	}
+	try {			
 
+		imageResource->LoadFromResource(hInst, RESOURCE_ID, RESOURCE_TYPE); // Load image from resource 
+	
+		
+		//image = imageResource->GetBitmap();
+		AnimationFrames.push_back(image); 
+
+		if (image == nullptr)
+		{
+			cerr << "Failed to load image resource." << endl;
+			return;
+		}
+
+	}
+	catch (const std::exception& e) {
+		std::cerr << "Error loading images: " << e.what() << std::endl;
+	}
+	if (image != nullptr)
+	{
+		cerr << "Failed to load images." << endl;
+	}
+	
 }
+
+void ResourceManger::Render(Gdiplus::Graphics& graphics, int x, int y)
+{
+	imageRenderer->Render(graphics, image, x, y);
+	
+}
+

@@ -105,8 +105,8 @@
 //// 
 ////}
 
+vector<Gdiplus::Image*> AnimationFrames;
 
-constexpr wchar_t RESOURCE_TYPE[] = L"PNG";
 
 Animation::Animation(HDC drawDC, HINSTANCE hInstance) : hInst(hInstance)
 {
@@ -155,14 +155,6 @@ void Animation::Update()
 			frameTime = (frameTime + 1) % AnimationFrames.size(); // 프레임 업데이트 
 		}
 	} 
-}
-
-void Animation::Render()
-{
-	for (int frameCount = 0; frameCount < AnimationFrames.size(); ++frameCount)
-	{
-		ResMgr->RenderFrame(graphics, 0, 0, frameCount);
-	}
 }
 
 void Animation::LoadAnimationFrame(HINSTANCE hInst)
