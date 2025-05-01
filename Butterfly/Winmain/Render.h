@@ -1,7 +1,6 @@
 #pragma once
 #include <windows.h>
 #include "Swap.h"
-#include "Animation.h"
 #include "ResourceManger.h" 
 
 class Render
@@ -10,8 +9,7 @@ private:
     HWND hWnd = nullptr;
     POINT clientSize = {0,0};
     Swap* swap = nullptr;
-    //ResourceManger* ResMgr;
-    Animation* animation = nullptr; 
+    ResourceManger* ResMgr;
 
     HINSTANCE hInst; 
     HDC memDC = nullptr;

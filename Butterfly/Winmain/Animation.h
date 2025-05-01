@@ -8,7 +8,6 @@
 using std::vector; 
 using namespace std; 
 
-extern vector<Gdiplus::Image*> AnimationFrames;
 
 class Animation 
 {

@@ -24,6 +24,7 @@ private :
 	IImageRenderer* imageRenderer = nullptr; 
 	
 	HINSTANCE hInst = nullptr; 
+	vector<Gdiplus::Image*> AnimationFrames;
 
 	//ULONG_PTR GdiPlusToken;
 	//HBITMAP hBitmap = nullptr;
@@ -39,8 +40,6 @@ public :
 	//void Render(Gdiplus::Graphics& graphics, int x, int y);
 	void RenderFrame(Gdiplus::Graphics* graphics, int x, int y, int frameIndex);
 	
-
-	//Gdiplus::Image* GetIamge() { return image;}
-	//void SetImage(Gdiplus::Image* image) { this->image = image; } // Set Image 
+	
 };
 
