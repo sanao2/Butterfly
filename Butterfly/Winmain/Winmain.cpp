@@ -139,8 +139,9 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
         Time::UpdateTime();
         float TotalTime = Time::GetTotalTime(); 
         std::cout << "[" << TotalTime << "]" << std::endl;
-              
-		//render->RenderScene(hInstance); // 렌더링 호출
+
+        SetAnimationState(PLAYER_DOWNWALK); 
+		render->RenderScene(hInstance); // 렌더링 호출
         //boxDraw();
 		
     }

@@ -12,7 +12,7 @@ ResourceManager::ResourceManager(HDC drawDC,HINSTANCE hInstance) : hInst(hInstan
 	Gdiplus::GdiplusStartup(&GdiPlusToken, &gsi, nullptr);
 	
 	graphics = new Gdiplus::Graphics(drawDC); // GDI+ 그래픽스 객체 생성
-	AnimationFrames = {0,0}; // Initialize the vector 
+	AnimationFrames.clear(); // Initialize the vector 
 }
 
 ResourceManager::~ResourceManager()
@@ -84,7 +84,7 @@ void ResourceManager::LoadeFrames(HINSTANCE hInst)
 			cerr << "리소스 로드 실패 ID : " << id << endl;
 		}
 	}
-	isLoaded = false; 
+	isLoaded = true; 
 }
 
 //void ResourceManger::Render(Gdiplus::Graphics& graphics, int x, int y)
@@ -95,15 +95,17 @@ void ResourceManager::LoadeFrames(HINSTANCE hInst)
 
 void ResourceManager::RenderFrame(Gdiplus::Graphics* graphics, int x, int y, int frameIndex)
 {
-	for (frameIndex = 0; frameIndex < AnimationFrames.size(); ++frameIndex)
+	
+	if (frameIndex > 0 && frameIndex >= AnimationFrames.size())
 	{
-		if (frameIndex > 0 && frameIndex >= AnimationFrames.size())
+		for (frameIndex = 0; frameIndex < AnimationFrames.size(); ++frameIndex)
 		{
 			imageRenderer->Render(*graphics, AnimationFrames[frameIndex], x, y);
 		}
-		else {
-			std::cerr << "잘못된 프레임 인덱스: " << frameIndex << std::endl;
-		}
 	}
+	else {
+		std::cerr << "잘못된 프레임 인덱스: " << frameIndex << std::endl;
+	}
+	
 
 }

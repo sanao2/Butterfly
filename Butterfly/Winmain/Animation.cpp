@@ -144,7 +144,7 @@ void Animation::Update()
 
 		if (totaltime >= frameInterval.count()) {
 			timer.Reset(); 
-			frameTime = (frameTime + 1) % AnimationFrames.size(); // 프레임 업데이트
+			frameTime = (frameTime + 1) % this->AnimationFrames.size(); // 프레임 업데이트
 		}
 	} 
 
@@ -152,5 +152,10 @@ void Animation::Update()
 
 void Animation::Render(Gdiplus::Graphics* graphics, int x, int y)
 {
-	RenderFrame(graphics, x, y, current_frame); // 현재 프레임을 그리기 
+	for (current_frame = 0; current_frame < this->AnimationFrames.size(); ++current_frame)
+	{
+		// 애니메이션 프레임을 그리기 
+		this->RenderFrame(graphics, x, y, current_frame); // 현재 프레임을 그리기 
+	} 
+	
 }
