@@ -1,8 +1,4 @@
-﻿  Animation.cpp
-D:\backup\BF\Butterfly\Winmain\Event\InputConstants.h(7,40): warning C4309: '초기화 중': 상수 값이 잘립니다.
-  (소스 파일 'Animation.cpp'을(를) 컴파일하는 중)
-  
-  Render.cpp
+﻿  Render.cpp
 D:\backup\BF\Butterfly\Winmain\Event\InputConstants.h(7,40): warning C4309: '초기화 중': 상수 값이 잘립니다.
   (소스 파일 'Render.cpp'을(를) 컴파일하는 중)
   

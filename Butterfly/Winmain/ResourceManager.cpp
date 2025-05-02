@@ -104,7 +104,6 @@ void ResourceManager::RenderFrame(Gdiplus::Graphics* graphics, int x, int y, int
 				<< " (0 ~ " << (AnimationFrames.size() - 1) << ")" << endl;
 			return;
 		}
-	
 		imageRenderer->Render(*graphics, AnimationFrames[frameIndex], x, y);
 	}
 }
