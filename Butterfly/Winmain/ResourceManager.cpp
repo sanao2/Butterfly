@@ -96,15 +96,12 @@ void ResourceManager::LoadeFrames(HINSTANCE hInst)
 
 void ResourceManager::RenderFrame(Gdiplus::Graphics* graphics, int x, int y, int frameIndex)
 {
-	
-	for (frameIndex = 0; frameIndex <= AnimationFrames.size(); ++frameIndex)
-	{	
-		if (frameIndex < 0 || frameIndex >= AnimationFrames.size())
-		{
-			std::cerr << "잘못된 프레임 인덱스: " << frameIndex
-				<< " (0 ~ " << (AnimationFrames.size() - 1) << ")" << endl;
-			return;
-		}
-		imageRenderer->Render(*graphics, AnimationFrames[frameIndex], x, y);
+	if (frameIndex < 0 || frameIndex >= AnimationFrames.size())
+	{
+		std::cerr << "잘못된 프레임 인덱스: " << frameIndex
+			<< " (0 ~ " << (AnimationFrames.size() - 1) << ")" << endl;
+		return;
 	}
+	imageRenderer->Render(*graphics, AnimationFrames[frameIndex], x, y);
+	
 }

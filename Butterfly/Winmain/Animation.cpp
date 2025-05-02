@@ -21,11 +21,12 @@ void Animation::Update()
 {
     if (timer.IsElapsed(frameInterval)) {
     	
-    	current_frame = (current_frame + 1) % this->AnimationFrames.size(); // 프레임 업데이트
-    	timer.Reset();
-		
-    }
-	
+		if (this->AnimationFrames.size() > 0)
+		{
+			current_frame = (current_frame + 1) % this->AnimationFrames.size(); // 프레임 업데이트
+		}  	
+		timer.Reset();
+    }	
 }
 
 void Animation::Render(HDC drawDC, Gdiplus::Graphics* graphics, int x, int y)
