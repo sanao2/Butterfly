@@ -27,7 +27,8 @@ void Animation::Update()
 }
 void Animation::UnloadFrames()
 {
-	if (isLoaded = false) return;
+	bool isLoad = this->IsLoaded(); // 애니메이션이 로드되었는지 확인 
+	if (isLoad == false) return;
 
 	for (int frameIndex = AnimationFrames.size(); frameIndex >= 0; --frameIndex)
 	{
