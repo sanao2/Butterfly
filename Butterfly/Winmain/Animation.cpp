@@ -3,11 +3,11 @@
 Animation::Animation(HDC drawDC, HINSTANCE hInstance) : hInst(hInstance), current_frame(0)
 {
 	//graphics = new Gdiplus::Graphics(drawDC);
-	//ResMgr = new ResourceManager(drawDC, hInstance); // 리소스 매니저 객체 생성 
-	
+	//ResMgr = new ResourceManager(drawDC, hInstance); // 리소스 매니저 객체 생성 	
 	this->Initialize(drawDC, hInstance); // 리소스 매니저 초기화
 	LoadeFrames(hInstance); // 애니메이션 프레임 로드 
-	timer.Reset(); 
+	
+	timer.Elapsed();
 }
 
 Animation::~Animation()
@@ -23,21 +23,13 @@ Animation::~Animation()
 
 void Animation::Update()
 {
-	Time::Duration frameInterval = Time::Duration(0.5f); // 0.5초 간격으로 애니메이션 업데이트 
-	Time::TimePoint lastTime = Time::Clock::now();
-	
 	float totaltime = Time::GetTotalTime(); 
-	int frameTime = 0; 
 
 	for(; totaltime >= frameTime;)
 	{
-		Time::TimePoint currentTime = Time::Clock::now(); 
-		float deltaTime = Time::GetDeltaTime();
+			
 
-		lastTime = currentTime; // 마지막 시간 업데이트 
-		totaltime += deltaTime; 
-
-		if (totaltime >= frameInterval.count()) {
+		if (timer.IsElapsed(5.0f)) {
 			
 			frameTime = (frameTime + 1) % this->AnimationFrames.size(); // 프레임 업데이트
 			timer.Reset();
