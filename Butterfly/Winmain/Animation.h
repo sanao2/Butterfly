@@ -8,16 +8,16 @@
 using std::vector; 
 using namespace std; 
 
-class Animation 
+class Animation : public ResourceManager
 {
 private : 
 	HINSTANCE hInst; 
 
-	ULONG_PTR GdiPlusToken;
-	Gdiplus::Graphics* graphics = nullptr;
+	//ULONG_PTR GdiPlusToken;
+	//Gdiplus::Graphics* graphics = nullptr;
 
 	Time::Timer<> timer;
-	ResourceManger* ResMgr = nullptr; 
+	ResourceManager* ResMgr = nullptr; 
 	int current_frame = 0;
 
 public : 

@@ -14,32 +14,31 @@
 using namespace std; 
 using std::vector;
 
-extern vector<Gdiplus::Image*> AnimationFrames;
 extern Animstate current_state; 
 extern const wchar_t RESOURCE_TYPE[];
 
-class ResourceManger
-{
-private : 
-	ImageResource* imageResource = nullptr;
-	IImageRenderer* imageRenderer = nullptr; 
-	
-	HINSTANCE hInst = nullptr; 
-	
-	//ULONG_PTR GdiPlusToken;
-	//HBITMAP hBitmap = nullptr;
-	Gdiplus::Graphics* graphics = nullptr;
-	Gdiplus::Image* image = nullptr;
+class ResourceManager  
+{  
+protected : 
+    vector<Gdiplus::Image*> AnimationFrames;
+private:  
+   ImageResource* imageResource = nullptr;  
+   IImageRenderer* imageRenderer = nullptr;  
 
-public : 
-	ResourceManger(HDC drawDC, HINSTANCE hInstance);
-	~ResourceManger();
+   HINSTANCE hInst = nullptr;  
 
-	//void LoadImages(HINSTANCE hInst); 
-	void LoadeFrames(HINSTANCE hInst);
-	//void Render(Gdiplus::Graphics& graphics, int x, int y);
-	void RenderFrame(Gdiplus::Graphics* graphics, int x, int y, int frameIndex);
-	
-	
+   ULONG_PTR GdiPlusToken;  
+   Gdiplus::Graphics* graphics = nullptr;  
+   Gdiplus::Image* image = nullptr;  
+   bool isLoaded = false;  
+
+public:  
+   ResourceManager() = default;  
+   ResourceManager(HDC drawDC, HINSTANCE hInstance);  
+   ~ResourceManager();  
+     
+   void Initialize(HDC drawDC, HINSTANCE hInstance);  
+   void LoadeFrames(HINSTANCE hInst);  
+   void RenderFrame(Gdiplus::Graphics* graphics, int x, int y, int frameIndex);  
 };
 

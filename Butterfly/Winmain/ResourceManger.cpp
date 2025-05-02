@@ -2,27 +2,39 @@
 
 int RESOURCE_ID = IDB_PLAYER_DOWNWALK_IDLE; 
 constexpr wchar_t RESOURCE_TYPE[] = L"PNG";
-vector<Gdiplus::Image*> AnimationFrames = { 0, }; 
 
-ResourceManger::ResourceManger(HDC drawDC,HINSTANCE hInstance) : hInst(hInstance)
+ResourceManager::ResourceManager(HDC drawDC,HINSTANCE hInstance) : hInst(hInstance)
 {											
 	imageResource = new ImageResource();
 	imageRenderer = new GdiPlusImageRenderer(); // Correctly references the class
-	// Gdiplus 초기화 
-	//Gdiplus::GdiplusStartupInput gsi;
-	//Gdiplus::GdiplusStartup(&GdiPlusToken, &gsi, nullptr);
-	graphics = new Gdiplus::Graphics(drawDC); // GDI+ 그래픽스 객체 생성
+
+	Gdiplus::GdiplusStartupInput gsi;
+	Gdiplus::GdiplusStartup(&GdiPlusToken, &gsi, nullptr);
 	
+	graphics = new Gdiplus::Graphics(drawDC); // GDI+ 그래픽스 객체 생성
+	AnimationFrames = {0,0}; // Initialize the vector 
 }
 
-ResourceManger::~ResourceManger()
+ResourceManager::~ResourceManager()
 {
 	//delete image; 
 
-	if (graphics) delete graphics;				// GDI+ Graphics Delete
+	if (graphics) delete graphics;					// GDI+ Graphics Delete
 	if (imageResource) delete imageResource;		// imageResource Delete 
 	if (imageRenderer) delete imageRenderer;		// imageRenderer Delete
 	//Gdiplus::GdiplusShutdown(GdiPlusToken);       // GDI+ ShoutDown
+}
+
+void ResourceManager::Initialize(HDC drawDC, HINSTANCE hInstance)
+{
+	imageResource = new ImageResource();
+	imageRenderer = new GdiPlusImageRenderer(); // Correctly references the class
+
+	Gdiplus::GdiplusStartupInput gsi;
+	Gdiplus::GdiplusStartup(&GdiPlusToken, &gsi, nullptr);
+
+	graphics = new Gdiplus::Graphics(drawDC); // GDI+ 그래픽스 객체 생성
+	AnimationFrames = { 0,0 }; // Initialize the vector 
 }
 
 //void ResourceManger::LoadImages(HINSTANCE hInst)
@@ -52,13 +64,16 @@ ResourceManger::~ResourceManger()
 //	
 //}
 
-void ResourceManger::LoadeFrames(HINSTANCE hInst)
+void ResourceManager::LoadeFrames(HINSTANCE hInst)
 {
+	if (isLoaded) return; // 이미 로드된 경우 리턴 
+
 	const auto& frameCount = AnimStateFrameMap[current_state].ImageID.size();
 
 	for (int i = 0; i < frameCount; ++i)
 	{
 		int id = GetAnimationFrameID(current_state, i);
+
 		if (imageResource->LoadFromResource(hInst, id, RESOURCE_TYPE))
 		{
 			image = imageResource->GetBitmap();
@@ -69,6 +84,7 @@ void ResourceManger::LoadeFrames(HINSTANCE hInst)
 			cerr << "리소스 로드 실패 ID : " << id << endl;
 		}
 	}
+	isLoaded = false; 
 }
 
 //void ResourceManger::Render(Gdiplus::Graphics& graphics, int x, int y)
@@ -77,11 +93,11 @@ void ResourceManger::LoadeFrames(HINSTANCE hInst)
 //	
 //}
 
-void ResourceManger::RenderFrame(Gdiplus::Graphics* graphics, int x, int y, int frameIndex)
+void ResourceManager::RenderFrame(Gdiplus::Graphics* graphics, int x, int y, int frameIndex)
 {
 	for (frameIndex = 0; frameIndex < AnimationFrames.size(); ++frameIndex)
 	{
-		if (frameIndex < AnimationFrames.size() && AnimationFrames[frameIndex])
+		if (frameIndex > 0 && frameIndex >= AnimationFrames.size())
 		{
 			imageRenderer->Render(*graphics, AnimationFrames[frameIndex], x, y);
 		}

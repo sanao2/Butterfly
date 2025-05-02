@@ -108,22 +108,20 @@
 
 Animation::Animation(HDC drawDC, HINSTANCE hInstance) : hInst(hInstance), current_frame(0)
 {
-	Gdiplus::GdiplusStartupInput gsi;
-	Gdiplus::GdiplusStartup(&GdiPlusToken, &gsi, nullptr);
-	graphics = new Gdiplus::Graphics(drawDC);
-	ResMgr = new ResourceManger(drawDC,hInst);
+	//graphics = new Gdiplus::Graphics(drawDC);
+	ResMgr = new ResourceManager(drawDC, hInstance); // 리소스 매니저 객체 생성 
 	timer.Elapsed(); 
 }
 
 Animation::~Animation()
 {
-	if (graphics)
+	/*if (graphics)
 	{
 		delete graphics;
 		graphics = nullptr;
-	}
+	}*/
 	
-	Gdiplus::GdiplusShutdown(GdiPlusToken);
+	//Gdiplus::GdiplusShutdown(GdiPlusToken);
 }
 
 void Animation::Update()
@@ -144,7 +142,7 @@ void Animation::Update()
 
 		if (totaltime >= frameInterval.count()) {
 			timer.Reset(); 
-			frameTime = (frameTime + 1) % AnimationFrames.size(); // 프레임 업데이트 
+			frameTime = (frameTime + 1) % ResMgr->AnimationFrames.size(); // 프레임 업데이트
 		}
 	} 
 
