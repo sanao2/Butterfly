@@ -9,7 +9,7 @@ private:
     HWND hWnd = nullptr;
     POINT clientSize = {0,0};
     Swap* swap = nullptr;
-    //ResourceManager* ResMgr = nullptr;
+    ResourceManager* ResMgr = nullptr;
     Animation* animation = nullptr; 
     HINSTANCE hInst; 
     HDC memDC = nullptr;

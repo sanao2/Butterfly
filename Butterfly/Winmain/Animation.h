@@ -8,7 +8,7 @@
 using std::vector; 
 using namespace std; 
 
-class Animation : public ResourceManager
+class Animation : private ResourceManager
 {
 private : 
 	HINSTANCE hInst; 
@@ -17,7 +17,6 @@ private :
 	//Gdiplus::Graphics* graphics = nullptr;
 
 	Time::Timer<> timer;
-	ResourceManager* ResMgr = nullptr; 
 	int current_frame = 0;
 
 public : 
