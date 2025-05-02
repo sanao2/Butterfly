@@ -19,10 +19,6 @@ Animation::~Animation()
 
 void Animation::Update()
 {
-	float totaltime = Time::GetTotalTime(); 
-
-    timer.Elapsed(); 
-    
     if (timer.IsElapsed(frameInterval)) {
     	
     	current_frame = (current_frame + 1) % this->AnimationFrames.size(); // 프레임 업데이트
@@ -30,10 +26,11 @@ void Animation::Update()
     }
 }
 
-void Animation::Render(Gdiplus::Graphics* graphics, int x, int y)
+void Animation::Render(HDC drawDC, Gdiplus::Graphics* graphics, int x, int y)
 {
-	PatBlt(graphics->GetHDC(), 0, 0, g_width, g_height, WHITENESS); // 화면 초기화 
+	graphics->Clear(Gdiplus::Color::White); // 배경을 흰색으로 초기화
 
+	//PatBlt(drawDC, 0, 0, g_width, g_height, WHITENESS); // 화면 초기화 (배경을 흰색으로 채우기) 
 		// 애니메이션 프레임을 그리기 
 	this->RenderFrame(graphics, x, y, current_frame); // 현재 프레임을 그리기 	
 
