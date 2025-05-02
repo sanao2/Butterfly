@@ -9,11 +9,11 @@ Animation::Animation(HDC drawDC, HINSTANCE hInstance) : hInst(hInstance), curren
 
 Animation::~Animation()
 {
-	if (graphics)
+	/*if (graphics)
 	{
 		delete graphics;
 		graphics = nullptr;
-	}
+	}*/
 	
 }
 
