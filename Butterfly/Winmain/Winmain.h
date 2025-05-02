@@ -11,7 +11,3 @@ extern Render* render;
 extern int g_width;
 extern int g_height; 
 
-Animstate GetcurrentAnimationState() { return current_state; }
-void SetAnimationState(Animstate state) { current_state = state; }
-Animstate GetPrevAnimationState() { return prev_state; }
-void SetPrevAnimationState(Animstate state) { prev_state = state; }

@@ -68,11 +68,12 @@ void ResourceManager::LoadeFrames(HINSTANCE hInst)
 {
 	if (isLoaded) return; // 이미 로드된 경우 리턴 
 
-	const auto& frameCount = AnimStateFrameMap[current_state].ImageID.size();
+	Animstate currentstate = GetcurrentAnimationState(); // 현재 애니메이션 상태 가져오기 
+	const auto& frameCount = AnimStateFrameMap[currentstate].ImageID;
 
-	for (int i = 0; i < frameCount; ++i)
-	{
-		int id = GetAnimationFrameID(current_state, i);
+	for (int i = 0; i < frameCount.size(); ++i)
+	{	
+		int id = GetAnimationFrameID(currentstate, i);
 
 		if (imageResource->LoadFromResource(hInst, id, RESOURCE_TYPE))
 		{
@@ -96,7 +97,7 @@ void ResourceManager::LoadeFrames(HINSTANCE hInst)
 void ResourceManager::RenderFrame(Gdiplus::Graphics* graphics, int x, int y, int frameIndex)
 {
 	
-	if (frameIndex < 0 && frameIndex <= AnimationFrames.size())
+	if (frameIndex < 0 || frameIndex <= AnimationFrames.size())
 	{
 		for (frameIndex = 0; frameIndex < AnimationFrames.size(); ++frameIndex)
 		{

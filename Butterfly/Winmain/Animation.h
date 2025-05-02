@@ -19,7 +19,7 @@ private :
 	HINSTANCE hInst; 
 	Time::Timer<> timer;
 	int current_frame = 0;
-
+	int frameTime = 0;
 	//ULONG_PTR GdiPlusToken;
 	Gdiplus::Graphics* graphics = nullptr;	
 

@@ -1,4 +1,5 @@
 #pragma once
+#include "Global.h" 
 #include <windows.h>
 #include <cstdint> 
 #include <gdiplus.h>
@@ -41,5 +42,8 @@ public:
    void Initialize(HDC drawDC, HINSTANCE hInstance);  
    void LoadeFrames(HINSTANCE hInst);  
    void RenderFrame(Gdiplus::Graphics* graphics, int x, int y, int frameIndex);  
+
+
+
 };
 
