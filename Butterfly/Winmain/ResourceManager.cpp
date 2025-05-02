@@ -17,12 +17,12 @@ ResourceManager::ResourceManager(HDC drawDC,HINSTANCE hInstance) : hInst(hInstan
 
 ResourceManager::~ResourceManager()
 {
-	//delete image; 
+	delete image; 
 
 	if (graphics) delete graphics;					// GDI+ Graphics Delete
 	if (imageResource) delete imageResource;		// imageResource Delete 
 	if (imageRenderer) delete imageRenderer;		// imageRenderer Delete
-	//Gdiplus::GdiplusShutdown(GdiPlusToken);       // GDI+ ShoutDown
+	Gdiplus::GdiplusShutdown(GdiPlusToken);       // GDI+ ShoutDown
 }
 
 void ResourceManager::Initialize(HDC drawDC, HINSTANCE hInstance)

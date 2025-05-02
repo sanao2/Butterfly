@@ -21,6 +21,7 @@ class ResourceManager
 {  
 protected : 
     vector<Gdiplus::Image*> AnimationFrames;
+
 private:  
    ImageResource* imageResource = nullptr;  
    IImageRenderer* imageRenderer = nullptr;  

@@ -3,7 +3,9 @@
 #include <stdio.h>
 #include "UI/timer.h"
 #include "resource.h"
+#include "Render.h"
 
+extern Render* render;
 using namespace Input;
 
 Animstate GetcurrentAnimationState() { return current_state; }

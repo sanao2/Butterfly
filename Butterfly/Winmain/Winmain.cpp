@@ -14,6 +14,7 @@ HWND g_hWnd;
 HDC drawDC;
 RECT rect = { 5, 5, 20, 20 };
 
+Render* render = nullptr;
 
 int boxDraw()
 {  
