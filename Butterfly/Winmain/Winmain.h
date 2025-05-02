@@ -1,6 +1,5 @@
 #pragma once
-#include "Global.h"
-#include <windows.h>
+#include "Global.h"  // 이제 Global.h 하나만 include하면 됨#include <windows.h>
 #include <stdio.h>
 #include "UI/timer.h"
 #include "resource.h"
