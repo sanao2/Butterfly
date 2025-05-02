@@ -88,19 +88,6 @@ void ResourceManager::LoadeFrames(HINSTANCE hInst)
 	isLoaded = true; 
 }
 
-void ResourceManager::UnloadFrames()
-{
-	if (isLoaded = false) return; 
-
-	for (int frameIndex = AnimationFrames.size(); frameIndex >= 0; --frameIndex)
-	{
-		if (AnimationFrames[frameIndex] != nullptr)
-		{
-			delete AnimationFrames[frameIndex];
-			AnimationFrames[frameIndex] = nullptr;
-		} 
-	}
-}
 
 //void ResourceManger::Render(Gdiplus::Graphics& graphics, int x, int y)
 //{
