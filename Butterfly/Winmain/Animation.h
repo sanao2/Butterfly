@@ -20,8 +20,7 @@ private :
 	Time::Timer<> timer;
 	int current_frame = 0;
 	constexpr static float frameInterval = 0.5f; 
-	//ULONG_PTR GdiPlusToken;
-	
+		
 public : 
 	Animation(HDC drawDC, HINSTANCE hInstance);
 	~Animation(); 
