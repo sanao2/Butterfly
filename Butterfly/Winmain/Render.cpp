@@ -6,7 +6,7 @@ Render::Render(HDC drawDC, HWND hwnd, HINSTANCE hInstance, int width, int height
 { 
     swap = new Swap(hwnd, width, height);
 	//ResMgr = new ResourceManager(drawDC, hInstance); // 리소스 매니저 객체 생성
-	animation = new Animation(drawDC, hInstance); // 애니메이션 객체 생성 
+	
 }
 
 Render::~Render()
@@ -17,7 +17,7 @@ Render::~Render()
 void Render::Update()
 {
     swap->SwapBuffers();    // 백버퍼 -> 프론트버퍼 복사
-    animation->Update(); 
+    //animation->Update(); 
 }
 
 void Render::RenderScene(HINSTANCE hInst)
@@ -36,7 +36,7 @@ void Render::RenderScene(HINSTANCE hInst)
 	//ResMgr->RenderFrame(graphics, 0, 0, 1.0f); // 애니메이션 프레임 그리기 
    
 	// 애니메이션 생성 및 렌더링
-    animation->Render(graphics, 0, 0); 
+    //animation->Render(graphics, 0, 0); 
 
     // 스왑 메모리 DC에 복사 (swap 내부 메모리 DC를 가져오는 메소드 필요)
     swap->SwapBuffers();

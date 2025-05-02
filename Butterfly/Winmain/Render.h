@@ -1,20 +1,23 @@
 #pragma once
 #include <windows.h>
 #include "Swap.h"
-#include "Animation.h"
-#include "ResourceManager.h"
+#include <gdiplus.h> 
+#pragma comment(lib, "gdiplus.lib")
+
+class Animation; 
+
 class Render
 {
 private:
     HWND hWnd = nullptr;
-    POINT clientSize = {0,0};
-    Swap* swap = nullptr;
-   // ResourceManager* ResMgr = nullptr;
-    Animation* animation = nullptr; 
+    POINT clientSize = {0,0}; 
     HINSTANCE hInst; 
     HDC memDC = nullptr;
 	Gdiplus::Graphics* graphics = nullptr; // GDI+ 그래픽스 객체
 
+    Swap* swap = nullptr;
+    // ResourceManager* ResMgr = nullptr;
+    Animation* animation = nullptr;
 public:
     Render(HDC drawDC, HWND hwnd, HINSTANCE hInstance, int width, int height);
     ~Render();
@@ -22,4 +25,6 @@ public:
     void Update();          // 렌더 업데이트 및 스왑 호출
     void RenderScene(HINSTANCE hInst);     // 실제 그리기 동작
     POINT GetBufferSize() const;
+
+    friend class Animation; 
 };

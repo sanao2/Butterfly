@@ -1,4 +1,4 @@
-#include "ResourceManger.h"
+#include "ResourceManager.h"
 
 int RESOURCE_ID = IDB_PLAYER_DOWNWALK_IDLE; 
 constexpr wchar_t RESOURCE_TYPE[] = L"PNG";
