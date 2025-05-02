@@ -120,7 +120,7 @@ void ResourceManager::UnloadFrames()
 	{
 		if (AnimationFrames[frameIndex] != nullptr)
 		{
-			delete AnimationFrames[frameIndex];
+			delete AnimationFrames[frameIndex--];
 			AnimationFrames[frameIndex] = nullptr;
 		}
 	}
