@@ -110,18 +110,19 @@ Animation::Animation(HDC drawDC, HINSTANCE hInstance) : hInst(hInstance), curren
 {
 	//graphics = new Gdiplus::Graphics(drawDC);
 	//ResMgr = new ResourceManager(drawDC, hInstance); // 리소스 매니저 객체 생성 
+	
+	this->Initialize(drawDC, hInstance); // 리소스 매니저 초기화
 	LoadeFrames(hInstance); // 애니메이션 프레임 로드 
-
 	timer.Reset(); 
 }
 
 Animation::~Animation()
 {
-	/*if (graphics)
+	if (graphics)
 	{
 		delete graphics;
 		graphics = nullptr;
-	}*/
+	}
 	
 	//Gdiplus::GdiplusShutdown(GdiPlusToken);
 }

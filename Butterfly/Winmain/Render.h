@@ -2,9 +2,6 @@
 #include <windows.h>
 #include "Swap.h"
 #include "Animation.h"
-#include <gdiplus.h> 
-#pragma comment(lib, "gdiplus.lib")
-
 
 class Render
 {
@@ -17,7 +14,7 @@ private:
 
     Swap* swap = nullptr;
     // ResourceManager* ResMgr = nullptr;
-
+	Animation* animation = nullptr; // 애니메이션 객체 
 public:
     Render(HDC drawDC, HWND hwnd, HINSTANCE hInstance, int width, int height);
     ~Render();

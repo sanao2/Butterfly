@@ -34,7 +34,7 @@ void ResourceManager::Initialize(HDC drawDC, HINSTANCE hInstance)
 	Gdiplus::GdiplusStartup(&GdiPlusToken, &gsi, nullptr);
 
 	graphics = new Gdiplus::Graphics(drawDC); // GDI+ 그래픽스 객체 생성
-	AnimationFrames = { 0,0 }; // Initialize the vector 
+	AnimationFrames.clear();  // Initialize the vector 
 }
 
 //void ResourceManger::LoadImages(HINSTANCE hInst)

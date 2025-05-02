@@ -17,7 +17,7 @@ private :
 	int current_frame = 0;
 
 	//ULONG_PTR GdiPlusToken;
-	//Gdiplus::Graphics* graphics = nullptr;	
+	Gdiplus::Graphics* graphics = nullptr;	
 
 public : 
 	Animation(HDC drawDC, HINSTANCE hInstance);
