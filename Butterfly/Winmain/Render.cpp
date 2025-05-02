@@ -34,6 +34,7 @@ void Render::RenderScene(HINSTANCE hInst)
     swap->SwapBuffers();
 
     // 리소스 해제
+	delete graphics; 
     DeleteObject(tempBitmap);
     DeleteDC(memDC);
 }

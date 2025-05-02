@@ -1,5 +1,6 @@
 ﻿#include "../Move/MoveManagers.h"
 #include <iostream>
+#include "../Global.h"
 
 namespace Move
 {
@@ -34,10 +35,10 @@ namespace Move
 
 		switch(dir)
 		{
-			case MoveDirection::Left:  movePos.x -= moveSpeed; Sleep(100);isMoving = true; break;
-			case MoveDirection::Right: movePos.x += moveSpeed; Sleep(100);isMoving = true; break;
-			case MoveDirection::Up:    movePos.y -= moveSpeed; Sleep(100);isMoving = true; break;
-			case MoveDirection::Down:  movePos.y += moveSpeed; Sleep(100);isMoving = true; break;
+			case MoveDirection::Left:  movePos.x -= moveSpeed; Sleep(100);isMoving = true; /*SetAnimationState(PLAYER_LEFTWALK);*/ break;
+			case MoveDirection::Right: movePos.x += moveSpeed; Sleep(100);isMoving = true; /*SetAnimationState(PLAYER_RIGHTWALK);*/ break;
+			case MoveDirection::Up:    movePos.y -= moveSpeed; Sleep(100);isMoving = true; /*SetAnimationState(PLAYER_UPWALK);*/ break;
+			case MoveDirection::Down:  movePos.y += moveSpeed; Sleep(100);isMoving = true; /*SetAnimationState(PLAYER_DOWNWALK);*/ break;
 			default: break;
 		}
 
