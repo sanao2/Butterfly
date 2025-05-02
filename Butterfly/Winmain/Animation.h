@@ -8,22 +8,21 @@
 using std::vector; 
 using namespace std; 
 
-class Animation : private ResourceManager
+class Animation : public ResourceManager
 {
 private : 
 	HINSTANCE hInst; 
-
-	//ULONG_PTR GdiPlusToken;
-	//Gdiplus::Graphics* graphics = nullptr;
-
 	Time::Timer<> timer;
 	int current_frame = 0;
+
+	//ULONG_PTR GdiPlusToken;
+	//Gdiplus::Graphics* graphics = nullptr;	
 
 public : 
 	Animation(HDC drawDC, HINSTANCE hInstance);
 	~Animation(); 
 	void Update();	
-	void Render(Gdiplus::Graphics* graphics);
+	void Render(Gdiplus::Graphics* graphics, int x, int y );
 
 };
 

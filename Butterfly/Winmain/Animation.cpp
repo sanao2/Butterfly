@@ -150,7 +150,7 @@ void Animation::Update()
 
 }
 
-void Animation::Render(Gdiplus::Graphics* graphics)
+void Animation::Render(Gdiplus::Graphics* graphics, int x, int y)
 {
-	RenderFrame(graphics, 0, 0, current_frame); // 현재 프레임을 그리기 
+	RenderFrame(graphics, x, y, current_frame); // 현재 프레임을 그리기 
 }
