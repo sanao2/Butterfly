@@ -21,17 +21,13 @@ void Animation::Update()
 {
 	float totaltime = Time::GetTotalTime(); 
 
-	for(; totaltime >= frameTime;)
-	{
-		timer.Elapsed(); 
-
-		if (timer.IsElapsed(5.0f)) {
-			
-			current_frame = (current_frame + 1) % this->AnimationFrames.size(); // 프레임 업데이트
-			timer.Reset();
-		}
-	} 
-
+    timer.Elapsed(); 
+    
+    if (timer.IsElapsed(frameInterval)) {
+    	
+    	current_frame = (current_frame + 1) % this->AnimationFrames.size(); // 프레임 업데이트
+    	timer.Reset();
+    }
 }
 
 void Animation::Render(Gdiplus::Graphics* graphics, int x, int y)

@@ -91,8 +91,7 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABDAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-04-30T02:26:11.993Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -118,8 +117,7 @@
               "RelativeToolTip": "Winmain\\Event\\InputConstants.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-05-02T02:27:46.823Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-02T02:27:46.823Z"
             },
             {
               "$type": "Document",
@@ -129,7 +127,7 @@
               "RelativeDocumentMoniker": "Winmain\\Render.cpp",
               "ToolTip": "D:\\backup\\BF\\Butterfly\\Winmain\\Render.cpp",
               "RelativeToolTip": "Winmain\\Render.cpp",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAABkAAAAcAAAAAAAAAA==",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAABsAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-04-30T02:57:01.576Z",
               "EditorCaption": ""
@@ -144,8 +142,7 @@
               "RelativeToolTip": "Winmain\\ImageResource.cpp",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAAB8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-30T02:17:15.889Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-30T02:17:15.889Z"
             },
             {
               "$type": "Document",
@@ -157,8 +154,7 @@
               "RelativeToolTip": "Winmain\\Winmain.cpp",
               "ViewState": "AgIAAEoAAAAAAAAAAAAAwFgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-30T02:45:24.795Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-30T02:45:24.795Z"
             },
             {
               "$type": "Document",
@@ -170,8 +166,7 @@
               "RelativeToolTip": "Winmain\\AnimationMap.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-30T07:13:16.617Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-30T07:13:16.617Z"
             },
             {
               "$type": "Document",
@@ -183,8 +178,7 @@
               "RelativeToolTip": "Winmain\\Animation.cpp",
               "ViewState": "AgIAAAwAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-05-02T02:53:39.966Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-02T02:53:39.966Z"
             },
             {
               "$type": "Document",
@@ -196,8 +190,7 @@
               "RelativeToolTip": "Winmain\\AnimationMap.h",
               "ViewState": "AgIAABMAAAAAAAAAAAAtwC0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-30T07:10:04.448Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-30T07:10:04.448Z"
             }
           ]
         },
@@ -216,8 +209,7 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-04-30T02:26:24.165Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -243,8 +235,7 @@
               "RelativeToolTip": "Winmain\\ResourceManager.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-30T02:24:12.566Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-30T02:24:12.566Z"
             },
             {
               "$type": "Document",
@@ -256,8 +247,7 @@
               "RelativeToolTip": "Winmain\\Render.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-30T02:56:50.736Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-30T02:56:50.736Z"
             },
             {
               "$type": "Document",
@@ -269,8 +259,7 @@
               "RelativeToolTip": "Winmain\\ImageResource.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAtwA8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-30T02:17:20.431Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-30T02:17:20.431Z"
             },
             {
               "$type": "Document",
@@ -294,8 +283,7 @@
               "RelativeToolTip": "Winmain\\GdiplusImageRenderer.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-30T02:17:19.414Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-30T02:17:19.414Z"
             },
             {
               "$type": "Document",
@@ -307,8 +295,7 @@
               "RelativeToolTip": "Winmain\\Winmain.h",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-30T02:45:17.937Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-30T02:45:17.937Z"
             }
           ]
         }
