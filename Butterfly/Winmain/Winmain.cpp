@@ -119,7 +119,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
     UpdateWindow(hwnd);
 
     drawDC = GetDC(g_hWnd); 
-    SetAnimationState(PLAYER_LEFTWALK);
+    SetAnimationState(PLAYER_DOWNWALK);
 
     render = new Render(drawDC, g_hWnd, hInstance, g_width, g_height);  // Global Render 객체 생성
   
@@ -141,9 +141,9 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
         float TotalTime = Time::GetTotalTime(); 
         std::cout << "[" << TotalTime << "]" << std::endl;
 
-		ProgressInput(); // 키보드 입력 처리 
+		//ProgressInput(); // 키보드 입력 처리 
 
-		render->Update(); // 렌더링 업데이트 호출 
+		//render->Update(); // 렌더링 업데이트 호출 
 		render->RenderScene(hInstance); // 렌더링 호출
         //boxDraw();
 		

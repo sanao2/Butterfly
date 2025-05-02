@@ -103,5 +103,5 @@ void ResourceManager::RenderFrame(Gdiplus::Graphics* graphics, int x, int y, int
 		return;
 	}
 	imageRenderer->Render(*graphics, AnimationFrames[frameIndex], x, y);
-	
+	isLoaded = false; 
 }

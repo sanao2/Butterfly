@@ -15,7 +15,7 @@ Render::~Render()
 void Render::Update()
 { 
 	// 스왑 메모리 DC에 복사 (swap 내부 메모리 DC를 가져오는 메소드 필요)
-    animation->Update(); // 애니메이션 업데이트 
+    
 }
 
 void Render::RenderScene(HINSTANCE hInst)
@@ -30,6 +30,7 @@ void Render::RenderScene(HINSTANCE hInst)
     // 화면 초기화 (배경을 흰색으로 채우기)
     PatBlt(memDC, 0, 0, clientSize.x, clientSize.y, WHITENESS);
 
+    animation->Update(); // 애니메이션 업데이트 
 	animation->Render(memDC, graphics, 0,0); 
 
     // 스왑 메모리 DC에 복사 (swap 내부 메모리 DC를 가져오는 메소드 필요)
