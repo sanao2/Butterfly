@@ -15,8 +15,9 @@ Render::~Render()
 void Render::Update()
 {
 	// 스왑 메모리 DC에 복사 (swap 내부 메모리 DC를 가져오는 메소드 필요)
+    animation->Update(); // 애니메이션 업데이트 
 	swap->SwapBuffers();
-	animation->Update(); // 애니메이션 업데이트 
+
 }
 
 void Render::RenderScene(HINSTANCE hInst)

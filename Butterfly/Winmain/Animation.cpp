@@ -4,7 +4,7 @@ Animation::Animation(HDC drawDC, HINSTANCE hInstance) : hInst(hInstance), curren
 {
 	this->Initialize(drawDC, hInstance); // 리소스 매니저 초기화
 	LoadeFrames(hInstance); // 애니메이션 프레임 로드 	
-	timer.Elapsed();
+	timer.Reset();
 }
 
 Animation::~Animation()
@@ -23,11 +23,11 @@ void Animation::Update()
 
 	for(; totaltime >= frameTime;)
 	{
-			
+		timer.Elapsed(); 
 
 		if (timer.IsElapsed(5.0f)) {
 			
-			frameTime = (frameTime + 1) % this->AnimationFrames.size(); // 프레임 업데이트
+			current_frame = (current_frame + 1) % this->AnimationFrames.size(); // 프레임 업데이트
 			timer.Reset();
 		}
 	} 
