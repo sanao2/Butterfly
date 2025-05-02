@@ -2,11 +2,8 @@
 
 Animation::Animation(HDC drawDC, HINSTANCE hInstance) : hInst(hInstance), current_frame(0)
 {
-	//graphics = new Gdiplus::Graphics(drawDC);
-	//ResMgr = new ResourceManager(drawDC, hInstance); // 리소스 매니저 객체 생성 	
 	this->Initialize(drawDC, hInstance); // 리소스 매니저 초기화
-	LoadeFrames(hInstance); // 애니메이션 프레임 로드 
-	
+	LoadeFrames(hInstance); // 애니메이션 프레임 로드 	
 	timer.Elapsed();
 }
 
@@ -18,7 +15,6 @@ Animation::~Animation()
 		graphics = nullptr;
 	}
 	
-	//Gdiplus::GdiplusShutdown(GdiPlusToken);
 }
 
 void Animation::Update()
