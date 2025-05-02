@@ -96,7 +96,7 @@ void ResourceManager::LoadeFrames(HINSTANCE hInst)
 void ResourceManager::RenderFrame(Gdiplus::Graphics* graphics, int x, int y, int frameIndex)
 {
 	
-	if (frameIndex > 0 && frameIndex >= AnimationFrames.size())
+	if (frameIndex < 0 && frameIndex <= AnimationFrames.size())
 	{
 		for (frameIndex = 0; frameIndex < AnimationFrames.size(); ++frameIndex)
 		{

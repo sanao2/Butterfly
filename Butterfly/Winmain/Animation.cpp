@@ -38,7 +38,7 @@ void Animation::Update()
 		totaltime += deltaTime; 
 
 		if (totaltime >= frameInterval.count()) {
-			timer.Reset(); 
+			
 			frameTime = (frameTime + 1) % this->AnimationFrames.size(); // 프레임 업데이트
 		}
 	} 

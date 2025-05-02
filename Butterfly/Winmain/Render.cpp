@@ -16,6 +16,7 @@ void Render::Update()
 {
 	// 스왑 메모리 DC에 복사 (swap 내부 메모리 DC를 가져오는 메소드 필요)
 	swap->SwapBuffers();
+	animation->Update(); // 애니메이션 업데이트 
 }
 
 void Render::RenderScene(HINSTANCE hInst)
@@ -31,7 +32,7 @@ void Render::RenderScene(HINSTANCE hInst)
     // 리소스 로딩 - 이미지를 로드하기 위해 LoadImages 호출              
 	//ResMgr->LoadImages(hInst); // 리소스 매니저를 통해 이미지 로드 
 	//ResMgr->RenderImage(*graphics, 0, 0); // 이미지를 그리기 
-       
+	animation->Render(graphics, 0,0); // 애니메이션 그리기 
     // 스왑 메모리 DC에 복사 (swap 내부 메모리 DC를 가져오는 메소드 필요)
     swap->SwapBuffers();
 
