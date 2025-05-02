@@ -9,8 +9,8 @@ private:
     HWND hWnd = nullptr;
     POINT clientSize = {0,0};
     Swap* swap = nullptr;
-    ResourceManager* ResMgr = nullptr;
-   // Animation* animation = nullptr; 
+    //ResourceManager* ResMgr = nullptr;
+    Animation* animation = nullptr; 
     HINSTANCE hInst; 
     HDC memDC = nullptr;
 	Gdiplus::Graphics* graphics = nullptr; // GDI+ 그래픽스 객체

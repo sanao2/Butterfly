@@ -110,6 +110,8 @@ Animation::Animation(HDC drawDC, HINSTANCE hInstance) : hInst(hInstance), curren
 {
 	//graphics = new Gdiplus::Graphics(drawDC);
 	ResMgr = new ResourceManager(drawDC, hInstance); // 리소스 매니저 객체 생성 
+	LoadeFrames(hInstance); // 애니메이션 프레임 로드 
+
 	timer.Elapsed(); 
 }
 
@@ -142,9 +144,13 @@ void Animation::Update()
 
 		if (totaltime >= frameInterval.count()) {
 			timer.Reset(); 
-			frameTime = (frameTime + 1) % ResMgr->AnimationFrames.size(); // 프레임 업데이트
+			frameTime = (frameTime + 1) % AnimationFrames.size(); // 프레임 업데이트
 		}
 	} 
 
-	ResMgr->LoadeFrames(hInst);
+}
+
+void Animation::Render(Gdiplus::Graphics* graphics)
+{
+	RenderFrame(graphics, 0, 0, current_frame); // 현재 프레임을 그리기 
 }
