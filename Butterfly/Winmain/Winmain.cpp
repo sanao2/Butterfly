@@ -122,7 +122,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 
     render = new Render(drawDC, g_hWnd, hInstance, g_width, g_height);  // Global Render 객체 생성
     Time::Timer<>(); // 타이머 초기화 
- 
+    Time::InitTime(); // Timer start  Initialization 
     SetAnimationState(PLAYER_DOWNWALK);
 
     MSG msg;
@@ -140,7 +140,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
         Time::UpdateTime();
         float TotalTime = Time::GetTotalTime(); 
         std::cout << "[" << TotalTime << "]" << std::endl;
-                 Time::InitTime(); // Timer start  Initialization 
+                 
 		render->Update(); // 렌더링 업데이트 호출 
 		render->RenderScene(hInstance); // 렌더링 호출
         //boxDraw();

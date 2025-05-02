@@ -86,7 +86,7 @@ void ResourceManager::LoadeFrames(HINSTANCE hInst)
 		}
 	}
 	isLoaded = true; 
-
+	std::cout << "Loaded " << AnimationFrames.size() << " frames\n";
 }
 
 //void ResourceManger::Render(Gdiplus::Graphics& graphics, int x, int y)
@@ -97,8 +97,8 @@ void ResourceManager::LoadeFrames(HINSTANCE hInst)
 
 void ResourceManager::RenderFrame(Gdiplus::Graphics* graphics, int x, int y, int frameIndex)
 {
-	
-	if (frameIndex < 0 || frameIndex  >=(int)AnimationFrames.size())
+
+	if (frameIndex < 0 || frameIndex  >= AnimationFrames.size())
 	{
 		std::cerr << "잘못된 프레임 인덱스: " << frameIndex
 			<< " (0 ~ " << (AnimationFrames.size() - 1) << ")" << endl;	
@@ -109,9 +109,6 @@ void ResourceManager::RenderFrame(Gdiplus::Graphics* graphics, int x, int y, int
 	{
 		imageRenderer->Render(*graphics, AnimationFrames[frame], x, y);
 	}
-	
-
-
 }
 
 void ResourceManager::UnloadFrames()

@@ -27,11 +27,10 @@ void Animation::Update()
 	
 }
 
-
 void Animation::Render(HDC drawDC, Gdiplus::Graphics* graphics, int x, int y)
 {
 	graphics->Clear(Gdiplus::Color::White); // 배경을 흰색으로 초기화
-	//PatBlt(drawDC, 0, 0, g_width, g_height, WHITENESS); // 화면 초기화 (배경을 흰색으로 채우기) 
+	
 		// 애니메이션 프레임을 그리기 
 	this->RenderFrame(graphics, x, y, current_frame); // 현재 프레임을 그리기 	
 
