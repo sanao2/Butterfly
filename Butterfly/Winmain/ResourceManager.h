@@ -41,7 +41,7 @@ public:
      
    void Initialize(HDC drawDC, HINSTANCE hInstance);  
    void LoadeFrames(HINSTANCE hInst);  
-  
+   void UnloadFrames();
    void RenderFrame(Gdiplus::Graphics* graphics, int x, int y, int frameIndex);  
    bool IsLoaded() const { return isLoaded; } 
    void SetIsLoaded(bool loaded) { isLoaded = loaded; } 

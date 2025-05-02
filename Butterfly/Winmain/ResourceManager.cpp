@@ -109,6 +109,21 @@ void ResourceManager::RenderFrame(Gdiplus::Graphics* graphics, int x, int y, int
 		std::cerr << "잘못된 프레임 인덱스: " << frameIndex
 			<< " (0 ~ " << (AnimationFrames.size() - 1) << ")" << endl;
 	}
-	
+	UnloadFrames();
 
+}
+
+void ResourceManager::UnloadFrames()
+{
+	
+	if (isLoaded == false && AnimationFrames.empty()) return;
+
+	for (int frameIndex = AnimationFrames.size(); frameIndex >= 0; --frameIndex)
+	{
+		if (AnimationFrames[frameIndex] != nullptr)
+		{
+			delete AnimationFrames[frameIndex];
+			AnimationFrames[frameIndex] = nullptr;
+		}
+	}
 }
