@@ -1,9 +1,10 @@
+#pragma once 
 #include "Global.h"
 #include <windows.h> 
 #include <vector> 
 #include <iostream> 
 #include "UI/Timer.h"
-#include "ResourceManger.h"
+#include "ResourceManager.h"
 #pragma comment(lib, "gdiplus.lib")
 using std::vector; 
 using namespace std; 

@@ -105,7 +105,7 @@
     <ClInclude Include="Animation.h">
       <Filter>헤더 파일\UI</Filter>
     </ClInclude>
-    <ClInclude Include="ResourceManger.h">
+    <ClInclude Include="ResourceManager.h">
       <Filter>헤더 파일\ResourceManager</Filter>
     </ClInclude>
     <ClInclude Include="ImageResource.h">
@@ -149,7 +149,7 @@
     <ClCompile Include="Animation.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="ResourceManger.cpp">
+    <ClCompile Include="ResourceManager.cpp">
       <Filter>소스 파일\ResourceManager</Filter>
     </ClCompile>
     <ClCompile Include="ImageResource.cpp">

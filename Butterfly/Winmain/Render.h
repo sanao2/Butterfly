@@ -2,6 +2,7 @@
 #include <windows.h>
 #include "Swap.h"
 #include "Animation.h"
+#include "ResourceManager.h"
 class Render
 {
 private:

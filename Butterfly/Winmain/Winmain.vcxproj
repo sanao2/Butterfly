@@ -104,6 +104,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -148,7 +149,7 @@
     <ClInclude Include="Move\PlayerMoveController.h" />
     <ClInclude Include="Render.h" />
     <ClInclude Include="Resource.h" />
-    <ClInclude Include="ResourceManger.h" />
+    <ClInclude Include="ResourceManager.h" />
     <ClInclude Include="Swap.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="UI\Map\Map.h" />
@@ -163,7 +164,7 @@
     <ClCompile Include="ImageResource.cpp" />
     <ClCompile Include="Move\MoveManagers.cpp" />
     <ClCompile Include="Render.cpp" />
-    <ClCompile Include="ResourceManger.cpp" />
+    <ClCompile Include="ResourceManager.cpp" />
     <ClCompile Include="Swap.cpp" />
     <ClCompile Include="UI\Map\Map.cpp" />
     <ClCompile Include="UI\Timer.cpp" />
