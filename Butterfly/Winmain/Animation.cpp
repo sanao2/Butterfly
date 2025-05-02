@@ -23,6 +23,7 @@ void Animation::Update()
     	
     	current_frame = (current_frame + 1) % this->AnimationFrames.size(); // 프레임 업데이트
     	timer.Reset();
+		
     }
 	
 }

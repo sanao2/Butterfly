@@ -136,7 +136,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
             TranslateMessage(&msg);
             DispatchMessage(&msg);
         }
-        Time::InitTime(); // Timer start  Initialization 
+       
         Time::UpdateTime();
         float TotalTime = Time::GetTotalTime(); 
         std::cout << "[" << TotalTime << "]" << std::endl;
