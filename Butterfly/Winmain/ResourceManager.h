@@ -2,9 +2,7 @@
 #include "Global.h" 
 #include <windows.h>
 #include <cstdint> 
-#include <gdiplus.h>
 #include "AnimationMap.h"
-#pragma comment(lib, "gdiplus.lib")
 #include "ImageResource.h"
 #include "IImageRenderer.h"
 #include "GdiplusImageRenderer.h" // Ensure this header is included
@@ -21,7 +19,7 @@ extern const wchar_t RESOURCE_TYPE[];
 class ResourceManager  
 {  
 protected : 
-    vector<Gdiplus::Image*> AnimationFrames;
+    vector<Gdiplus::Image*> AnimationFrames; 
 
 private:  
    ImageResource* imageResource = nullptr;  

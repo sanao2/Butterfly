@@ -26,7 +26,6 @@ public :
 	Animation(HDC drawDC, HINSTANCE hInstance);
 	~Animation(); 
 	void Update();	
-
 	void Render(HDC drawDC, Gdiplus::Graphics* graphics, int x, int y );
 
 };

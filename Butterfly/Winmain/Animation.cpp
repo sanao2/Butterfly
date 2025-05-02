@@ -24,21 +24,9 @@ void Animation::Update()
     	current_frame = (current_frame + 1) % this->AnimationFrames.size(); // 프레임 업데이트
     	timer.Reset();
     }
+	
 }
-void Animation::UnloadFrames()
-{
-	bool isLoad = this->IsLoaded(); // 애니메이션이 로드되었는지 확인 
-	if (isLoad == false) return;
 
-	for (int frameIndex = AnimationFrames.size(); frameIndex >= 0; --frameIndex)
-	{
-		if (AnimationFrames[frameIndex] != nullptr)
-		{
-			delete AnimationFrames[frameIndex];
-			AnimationFrames[frameIndex] = nullptr;
-		}
-	}
-}
 
 void Animation::Render(HDC drawDC, Gdiplus::Graphics* graphics, int x, int y)
 {

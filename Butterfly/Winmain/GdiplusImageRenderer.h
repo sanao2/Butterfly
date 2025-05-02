@@ -1,14 +1,14 @@
 #pragma once
 #include <windows.h>
 #include <gdiplus.h>
-#pragma comment(lib, "gdiplus.lib")
 #include "IImageRenderer.h" 
+#pragma comment(lib, "gdiplus.lib")
 
 class GdiPlusImageRenderer : public IImageRenderer {
 public:
     void Render(Gdiplus::Graphics& graphics, Gdiplus::Image* image, int x, int y) override {
         if (image) {
-            graphics.DrawImage(image, x, y);
+		     graphics.DrawImage(image, x, y);        
         }
     }
 };
