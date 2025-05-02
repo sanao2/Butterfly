@@ -1,11 +1,11 @@
 ﻿  Animation.cpp
-D:\backup\BF\Butterfly\Winmain\Render.h(20,11): error C2143: 구문 오류: ';'이(가) '*' 앞에 없습니다.
+D:\backup\BF\Butterfly\Winmain\Render.h(22,11): error C2143: 구문 오류: ';'이(가) '*' 앞에 없습니다.
   (소스 파일 'Animation.cpp'을(를) 컴파일하는 중)
   
-D:\backup\BF\Butterfly\Winmain\Render.h(20,2): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
+D:\backup\BF\Butterfly\Winmain\Render.h(22,2): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
   (소스 파일 'Animation.cpp'을(를) 컴파일하는 중)
   
-D:\backup\BF\Butterfly\Winmain\Render.h(20,32): error C2238: ';' 앞에 예기치 않은 토큰이 있습니다.
+D:\backup\BF\Butterfly\Winmain\Render.h(22,32): error C2238: ';' 앞에 예기치 않은 토큰이 있습니다.
   (소스 파일 'Animation.cpp'을(를) 컴파일하는 중)
   
 D:\backup\BF\Butterfly\Winmain\Event\InputConstants.h(7,40): warning C4309: '초기화 중': 상수 값이 잘립니다.
@@ -19,16 +19,15 @@ D:\backup\BF\Butterfly\Winmain\Event\InputConstants.h(7,40): warning C4309: '초
 D:\backup\BF\Butterfly\Winmain\Event\InputConstants.h(7,40): warning C4309: '초기화 중': 상수 값이 잘립니다.
   (소스 파일 'Render.cpp'을(를) 컴파일하는 중)
   
-D:\backup\BF\Butterfly\Winmain\Global.h(10,14): error C2143: 구문 오류: ';'이(가) '*' 앞에 없습니다.
+D:\backup\BF\Butterfly\Winmain\Global.h(8,14): error C2143: 구문 오류: ';'이(가) '*' 앞에 없습니다.
   (소스 파일 'Render.cpp'을(를) 컴파일하는 중)
   
-D:\backup\BF\Butterfly\Winmain\Global.h(10,8): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
+D:\backup\BF\Butterfly\Winmain\Global.h(8,8): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
   (소스 파일 'Render.cpp'을(를) 컴파일하는 중)
   
-D:\backup\BF\Butterfly\Winmain\Global.h(10,16): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
+D:\backup\BF\Butterfly\Winmain\Global.h(8,16): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
   (소스 파일 'Render.cpp'을(를) 컴파일하는 중)
   
-  ResourceManager.cpp
   Winmain.cpp
 D:\backup\BF\Butterfly\Winmain\Event\InputConstants.h(7,40): warning C4309: '초기화 중': 상수 값이 잘립니다.
   (소스 파일 'Winmain.cpp'을(를) 컴파일하는 중)

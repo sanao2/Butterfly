@@ -1,5 +1,4 @@
 #include "Render.h"
-#include <iostream>
 
 Render::Render(HDC drawDC, HWND hwnd, HINSTANCE hInstance, int width, int height)
     : hWnd(hwnd), clientSize{ width, height }, hInst(hInstance)

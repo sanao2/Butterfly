@@ -3,22 +3,6 @@
   "WorkspaceRootPath": "D:\\backup\\BF\\Butterfly\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|D:\\backup\\BF\\Butterfly\\Winmain\\Render.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|solutionrelative:Winmain\\Render.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|D:\\backup\\BF\\Butterfly\\Winmain\\Animation.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|solutionrelative:Winmain\\Animation.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|D:\\backup\\BF\\Butterfly\\Winmain\\ResourceManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|solutionrelative:Winmain\\ResourceManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|D:\\backup\\BF\\Butterfly\\Winmain\\Animation.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|solutionrelative:Winmain\\Animation.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|D:\\backup\\BF\\Butterfly\\Winmain\\Global.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|solutionrelative:Winmain\\Global.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -27,12 +11,28 @@
       "RelativeMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|solutionrelative:Winmain\\Render.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|D:\\backup\\BF\\Butterfly\\Winmain\\ImageResource.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|solutionrelative:Winmain\\ImageResource.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|D:\\backup\\BF\\Butterfly\\Winmain\\Animation.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|solutionrelative:Winmain\\Animation.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|D:\\backup\\BF\\Butterfly\\Winmain\\Global.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|solutionrelative:Winmain\\Global.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|D:\\backup\\BF\\Butterfly\\Winmain\\Render.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|solutionrelative:Winmain\\Render.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|D:\\backup\\BF\\Butterfly\\Winmain\\ResourceManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|solutionrelative:Winmain\\ResourceManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|D:\\backup\\BF\\Butterfly\\Winmain\\Animation.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|solutionrelative:Winmain\\Animation.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|D:\\backup\\BF\\Butterfly\\Winmain\\ImageResource.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|solutionrelative:Winmain\\ImageResource.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|D:\\backup\\BF\\Butterfly\\Winmain\\ResourceManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -79,51 +79,52 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Global.cpp",
+              "DocumentMoniker": "D:\\backup\\BF\\Butterfly\\Winmain\\Global.cpp",
+              "RelativeDocumentMoniker": "Winmain\\Global.cpp",
+              "ToolTip": "D:\\backup\\BF\\Butterfly\\Winmain\\Global.cpp",
+              "RelativeToolTip": "Winmain\\Global.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-04-30T02:26:11.993Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "Render.cpp",
               "DocumentMoniker": "D:\\backup\\BF\\Butterfly\\Winmain\\Render.cpp",
               "RelativeDocumentMoniker": "Winmain\\Render.cpp",
               "ToolTip": "D:\\backup\\BF\\Butterfly\\Winmain\\Render.cpp",
               "RelativeToolTip": "Winmain\\Render.cpp",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAACUAAAASAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-04-30T02:57:01.576Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Global.cpp",
-              "DocumentMoniker": "D:\\backup\\BF\\Butterfly\\Winmain\\Global.cpp",
-              "RelativeDocumentMoniker": "Winmain\\Global.cpp",
-              "ToolTip": "D:\\backup\\BF\\Butterfly\\Winmain\\Global.cpp",
-              "RelativeToolTip": "Winmain\\Global.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-30T02:26:11.993Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "Animation.cpp",
               "DocumentMoniker": "D:\\backup\\BF\\Butterfly\\Winmain\\Animation.cpp",
               "RelativeDocumentMoniker": "Winmain\\Animation.cpp",
               "ToolTip": "D:\\backup\\BF\\Butterfly\\Winmain\\Animation.cpp",
               "RelativeToolTip": "Winmain\\Animation.cpp",
-              "ViewState": "AgIAAIAAAAAAAAAAAAAAAHMAAAAQAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABMAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-04-30T02:47:52.928Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "ResourceManager.cpp",
               "DocumentMoniker": "D:\\backup\\BF\\Butterfly\\Winmain\\ResourceManager.cpp",
               "RelativeDocumentMoniker": "Winmain\\ResourceManager.cpp",
               "ToolTip": "D:\\backup\\BF\\Butterfly\\Winmain\\ResourceManager.cpp",
               "RelativeToolTip": "Winmain\\ResourceManager.cpp",
-              "ViewState": "AgIAABYAAAAAAAAAAAAAACQAAAAaAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-04-30T02:24:17.509Z",
               "EditorCaption": ""
@@ -138,8 +139,7 @@
               "RelativeToolTip": "Winmain\\ImageResource.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAgwBAAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-30T02:17:15.889Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-30T02:17:15.889Z"
             },
             {
               "$type": "Document",
@@ -151,8 +151,7 @@
               "RelativeToolTip": "Winmain\\Winmain.cpp",
               "ViewState": "AgIAAIYAAAAAAAAAAAAAAJIAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-30T02:45:24.795Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-30T02:45:24.795Z"
             },
             {
               "$type": "Document",
@@ -164,8 +163,7 @@
               "RelativeToolTip": "Winmain\\AnimationMap.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-30T07:13:16.617Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-30T07:13:16.617Z"
             },
             {
               "$type": "Document",
@@ -183,17 +181,17 @@
         },
         {
           "DockedWidth": 245,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 3,
               "Title": "Global.h",
               "DocumentMoniker": "D:\\backup\\BF\\Butterfly\\Winmain\\Global.h",
               "RelativeDocumentMoniker": "Winmain\\Global.h",
               "ToolTip": "D:\\backup\\BF\\Butterfly\\Winmain\\Global.h",
               "RelativeToolTip": "Winmain\\Global.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAATAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-04-30T02:26:24.165Z",
               "IsPinned": true,
@@ -201,13 +199,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "Animation.h",
               "DocumentMoniker": "D:\\backup\\BF\\Butterfly\\Winmain\\Animation.h",
               "RelativeDocumentMoniker": "Winmain\\Animation.h",
               "ToolTip": "D:\\backup\\BF\\Butterfly\\Winmain\\Animation.h",
               "RelativeToolTip": "Winmain\\Animation.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-04-30T02:47:58.182Z",
               "IsPinned": true,
@@ -215,13 +213,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
               "Title": "Render.h",
               "DocumentMoniker": "D:\\backup\\BF\\Butterfly\\Winmain\\Render.h",
               "RelativeDocumentMoniker": "Winmain\\Render.h",
               "ToolTip": "D:\\backup\\BF\\Butterfly\\Winmain\\Render.h",
               "RelativeToolTip": "Winmain\\Render.h",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABMAAAAVAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAYwBQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-04-30T02:56:50.736Z",
               "IsPinned": true,
@@ -229,7 +227,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "ImageResource.h",
               "DocumentMoniker": "D:\\backup\\BF\\Butterfly\\Winmain\\ImageResource.h",
               "RelativeDocumentMoniker": "Winmain\\ImageResource.h",
@@ -237,8 +235,7 @@
               "RelativeToolTip": "Winmain\\ImageResource.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-30T02:17:20.431Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-30T02:17:20.431Z"
             },
             {
               "$type": "Document",
@@ -250,8 +247,7 @@
               "RelativeToolTip": "Winmain\\ResourceManager.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-30T02:24:12.566Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-30T02:24:12.566Z"
             },
             {
               "$type": "Document",
@@ -263,8 +259,7 @@
               "RelativeToolTip": "Winmain\\IImageRenderer.h",
               "ViewState": "AgIAAAAAAAAAAAAAAADwvwEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-30T02:17:19.905Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-30T02:17:19.905Z"
             },
             {
               "$type": "Document",
@@ -276,8 +271,7 @@
               "RelativeToolTip": "Winmain\\GdiplusImageRenderer.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-30T02:17:19.414Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-30T02:17:19.414Z"
             },
             {
               "$type": "Document",
@@ -289,8 +283,7 @@
               "RelativeToolTip": "Winmain\\Winmain.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-30T02:45:17.937Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-30T02:45:17.937Z"
             }
           ]
         }
