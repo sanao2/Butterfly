@@ -10,6 +10,9 @@
 using std::vector; 
 using namespace std; 
 
+extern int g_width; 
+extern int g_height;
+
 class Animation : private ResourceManager
 {
 private : 

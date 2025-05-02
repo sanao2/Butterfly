@@ -16,7 +16,8 @@ private:
 	Gdiplus::Graphics* graphics = nullptr; // GDI+ 그래픽스 객체
 
     Swap* swap = nullptr;
-  
+	Animation* animation = nullptr; // 애니메이션 객체 
+
 public:
     Render(HDC drawDC, HWND hwnd, HINSTANCE hInstance, int width, int height);
     ~Render();

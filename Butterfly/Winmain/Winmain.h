@@ -4,9 +4,12 @@
 #include "UI/timer.h"
 #include "resource.h"
 #include "Render.h"
+using namespace Input;
 
 extern Render* render;
-using namespace Input;
+
+extern int g_width;
+extern int g_height; 
 
 Animstate GetcurrentAnimationState() { return current_state; }
 void SetAnimationState(Animstate state) { current_state = state; }

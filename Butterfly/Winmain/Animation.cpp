@@ -47,6 +47,9 @@ void Animation::Update()
 
 void Animation::Render(Gdiplus::Graphics* graphics, int x, int y)
 {
+	PatBlt(graphics->GetHDC(), 0, 0, g_width, g_height, WHITENESS); // 화면 초기화 
+
 		// 애니메이션 프레임을 그리기 
 	this->RenderFrame(graphics, x, y, current_frame); // 현재 프레임을 그리기 	
+
 }
