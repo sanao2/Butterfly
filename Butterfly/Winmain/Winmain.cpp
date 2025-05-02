@@ -118,12 +118,12 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
     ShowWindow(hwnd, nCmdShow);
     UpdateWindow(hwnd);
 
-    drawDC = GetDC(g_hWnd);
+    drawDC = GetDC(g_hWnd); 
+    SetAnimationState(PLAYER_LEFTWALK);
 
     render = new Render(drawDC, g_hWnd, hInstance, g_width, g_height);  // Global Render 객체 생성
     Time::Timer<>(); // 타이머 초기화 
-    Time::InitTime(); // Timer start  Initialization 
-    SetAnimationState(PLAYER_DOWNWALK);
+    Time::InitTime(); // Timer start  Initialization  
 
     MSG msg;
     while (true)
