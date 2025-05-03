@@ -22,6 +22,7 @@ Render::~Render()
 void Render::Update()
 { 
    // 이동을 위한 업데이트 
+	key.Update(); 
 	animation->Update(); // 애니메이션 업데이트 
 }
 
@@ -45,9 +46,17 @@ void Render::RenderScene(HINSTANCE hInst)
 void Render::Moves()
 {
    auto now = steady_clock::now(); 
+   lastInputTime = now; 
 
    Move::MoveDirection dir = playerController.GetDirection(); 
 
+   if (dir != Move::MoveDirection::None)
+   {
+	   if (key.IsKeyDown(VK_RIGHT)) { SetAnimationState(PLAYER_RIGHTWALK); };
+	   if (key.IsKeyDown(VK_LEFT)) { SetAnimationState(PLAYER_LEFTWALK); }
+	   if (key.IsKeyDown(VK_DOWN)) { SetAnimationState(PLAYER_DOWNWALK); }
+	   if (key.IsKeyDown(VK_UP)) { SetAnimationState(PLAYER_UPWALK); }
+   }
   
 
 }
