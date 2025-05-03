@@ -126,7 +126,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 		//ProgressInput(); // 키보드 입력 처리 
         render->Update(); 
 		//render->Update(); // 렌더링 업데이트 호출 
-		render->RenderScene(hInstance, playerPos); // 렌더링 호출
+		render->RenderScene(hInstance); // 렌더링 호출
         //boxDraw();
 		
     }

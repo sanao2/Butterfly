@@ -19,7 +19,7 @@ namespace Move
 		else if (key.IsKeyDown(VK_LEFT)) dir = MoveDirection::Left;
 		else if (key.IsKeyDown(VK_UP)) dir = MoveDirection::Up;
 		else if (key.IsKeyDown(VK_DOWN)) dir = MoveDirection::Down;
-
+				
 		ApplyMovement(dir);
 	}
 

@@ -11,6 +11,7 @@ ResourceManager::ResourceManager(HDC drawDC,HINSTANCE hInstance) : hInst(hInstan
 	
 	graphics = new Gdiplus::Graphics(drawDC); // GDI+ 그래픽스 객체 생성
 	AnimationFrames.clear(); // Initialize the vector 
+
 }
 
 ResourceManager::~ResourceManager()
@@ -23,7 +24,7 @@ ResourceManager::~ResourceManager()
 	Gdiplus::GdiplusShutdown(GdiPlusToken);       // GDI+ ShoutDown
 }
 
-void ResourceManager::Initialize(HDC drawDC, HINSTANCE hInstance)
+void ResourceManager::Initialize(HDC drawDC)
 {
 	imageResource = new ImageResource();
 	imageRenderer = new GdiPlusImageRenderer(); // Correctly references the class

@@ -14,9 +14,9 @@ Render::Render(HDC drawDC, HWND hwnd, HINSTANCE hInstance, int width, int height
    : hWnd(hwnd), clientSize{ width, height }, hInst(hInstance)
 {
    swap = new Swap(hwnd, width, height);
-   animation = new Animation(drawDC, hInstance); // 애니메이션 객체 생성 
-  
- 
+   animation->Initialize(drawDC);
+   auto& key = InputManager<KeyboardDevice>::GetInstance();
+   move = std::make_unique<Move::MoveManager>(key, playerPos);
 }   
 
 Render::~Render()
@@ -29,11 +29,11 @@ Render::~Render()
 void Render::Update()
 { 
    // 이동을 위한 업데이트 
-	Moves();
+	move->MoveUpdate();
 	animation->Update(); // 애니메이션 업데이트 
 }
 
-void Render::RenderScene(HINSTANCE hInst, RECT playerPos)
+void Render::RenderScene(HINSTANCE hInst)
 {
    Time::UpdateTime();
    
@@ -42,7 +42,7 @@ void Render::RenderScene(HINSTANCE hInst, RECT playerPos)
 
    // 화면 초기화 (배경을 흰색으로 채우기)
    PatBlt(memDC, 0, 0, clientSize.x, clientSize.y, WHITENESS);
-   
+  
    animation->Render(memDC, graphics, 0, 0, current_frame);
 
    // 스왑 메모리 DC에 복사 (swap 내부 메모리 DC를 가져오는 메소드 필요)
@@ -50,12 +50,6 @@ void Render::RenderScene(HINSTANCE hInst, RECT playerPos)
    
 }
 
-void Render::Moves()
-{
-	auto& key = InputManager<KeyboardDevice>::GetInstance();
-	std::unique_ptr<Move::MoveManager> move = std::make_unique<Move::MoveManager>(key, playerPos);
-	move->MoveUpdate();
-}
 
 POINT Render::GetBufferSize() const
 {

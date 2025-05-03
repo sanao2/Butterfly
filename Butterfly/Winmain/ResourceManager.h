@@ -6,6 +6,8 @@
 #include "ImageResource.h"
 #include "IImageRenderer.h"
 #include "GdiplusImageRenderer.h" // Ensure this header is included
+#include "Event/InputManager.h"
+#include "Event/KeyboardInputManager.h"
 #include "Swap.h"
 #include "resource.h"
 #include <iostream>
@@ -16,6 +18,12 @@ using std::vector;
 
 extern Animstate current_state; 
 extern const wchar_t RESOURCE_TYPE[];
+/*
+if (key.IsKeyDown(VK_RIGHT) && time == 100)
+		{
+			// 해당 애니메이션 이 움직입니다.
+		}
+*/
 
 
 class ResourceManager  
@@ -27,7 +35,7 @@ private:
    ImageResource* imageResource = nullptr;  
    IImageRenderer* imageRenderer = nullptr;  
    Swap* swap = nullptr; 
-
+  
    HINSTANCE hInst = nullptr;  
 
    ULONG_PTR GdiPlusToken;  
@@ -38,10 +46,10 @@ private:
 
 public:  
    ResourceManager() = default;  
-   ResourceManager( HDC drawDC, HINSTANCE hInstance);
+   ResourceManager(HDC drawDC, HINSTANCE hInstance);
    ~ResourceManager();  
      
-   void Initialize(HDC drawDC, HINSTANCE hInstance);  
+   void Initialize(HDC drawDC);  
    void LoadeFrames(HINSTANCE hInst);  
    void RenderFrame(Gdiplus::Graphics* graphics, int x, int y, int frameIndex);  
   

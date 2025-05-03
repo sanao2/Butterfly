@@ -21,13 +21,12 @@ private:
    
    Swap* swap = nullptr;  
    Animation* animation = nullptr; // 애니메이션 객체   
-  
+   std::unique_ptr<Move::MoveManager> move;
 public:  
    Render(HDC drawDC, HWND hwnd, HINSTANCE hInstance, int width, int height);  
    ~Render();  
    
    void Update();          // 렌더 업데이트 및 스왑 호출  
-   void RenderScene(HINSTANCE hInst, RECT playerPos);     // 실제 그리기 동작 
-   void Moves(); 
+   void RenderScene(HINSTANCE hInst);     // 실제 그리기 동작 
    POINT GetBufferSize() const;  
 };
