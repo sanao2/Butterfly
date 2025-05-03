@@ -1,8 +1,6 @@
 #pragma once  
 #include "Global.h"  
 #include <windows.h>  
-#include "Move/MoveManagers.h"  
-#include "Event/KeyboardInputManager.h"  
 #include "Swap.h"  
 #include "Animation.h"  
 #include <gdiplus.h>  
@@ -21,7 +19,6 @@ private:
    
    Swap* swap = nullptr;  
    Animation* animation = nullptr; // 애니메이션 객체   
-   std::unique_ptr<Move::MoveManager> move;
 public:  
    Render(HDC drawDC, HWND hwnd, HINSTANCE hInstance, int width, int height);  
    ~Render();  

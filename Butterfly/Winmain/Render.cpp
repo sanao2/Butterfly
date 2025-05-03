@@ -14,9 +14,8 @@ Render::Render(HDC drawDC, HWND hwnd, HINSTANCE hInstance, int width, int height
    : hWnd(hwnd), clientSize{ width, height }, hInst(hInstance)
 {
    swap = new Swap(hwnd, width, height);
-   animation->Initialize(drawDC);
-   auto& key = InputManager<KeyboardDevice>::GetInstance();
-   move = std::make_unique<Move::MoveManager>(key, playerPos);
+   animation = new Animation(drawDC, hInstance);
+ 
 }   
 
 Render::~Render()
@@ -29,7 +28,6 @@ Render::~Render()
 void Render::Update()
 { 
    // 이동을 위한 업데이트 
-	move->MoveUpdate();
 	animation->Update(); // 애니메이션 업데이트 
 }
 
