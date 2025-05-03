@@ -1,16 +1,21 @@
 #include "Render.h"
 
 using namespace Input;
+//int boxDraw()
+//{
+//    PatBlt(drawDC, 0, 0, g_width, g_height, WHITENESS);
+//    Rectangle(drawDC, rect.left, rect.top, rect.right, rect.bottom);
+//
+//    ReleaseDC(g_hWnd, drawDC); // Release 해줘야 리소스 누수 안 생김
+//    return S_OK;
+//}
 
 Render::Render(HDC drawDC, HWND hwnd, HINSTANCE hInstance, int width, int height)
    : hWnd(hwnd), clientSize{ width, height }, hInst(hInstance)
 {
    swap = new Swap(hwnd, width, height);
    animation = new Animation(drawDC, hInstance); // 애니메이션 객체 생성 
-    
-   RECT rect = { 0, 0, width, height }; // rect 정의 추가
-   auto& key = InputManager<KeyboardDevice>::GetInstance();
-   std::unique_ptr<Move::MoveManager> move = std::make_unique<Move::MoveManager>(key, rect); // rect 사용
+
 }   
 
 Render::~Render()
@@ -23,15 +28,17 @@ Render::~Render()
 void Render::Update()
 { 
    // 스왑 메모리 DC에 복사 (swap 내부 메모리 DC를 가져오는 메소드 필요)
+	auto& key = InputManager<KeyboardDevice>::GetInstance();
+	std::unique_ptr<Move::MoveManager> move = std::make_unique<Move::MoveManager>(key, rect);
+	move->MoveUpdate();
+
 }
 
-void Render::RenderScene(HINSTANCE hInst)
+void Render::RenderScene(HINSTANCE hInst, RECT rect)
 {
    Time::UpdateTime();
-
+   
    memDC = swap->GetMemDC();
-  // HBITMAP tempBitmap = CreateCompatibleBitmap(GetDC(hWnd), clientSize.x, clientSize.y);
-   //SelectObject(memDC, tempBitmap);
    graphics = new Gdiplus::Graphics(memDC);
 
    // 화면 초기화 (배경을 흰색으로 채우기)
