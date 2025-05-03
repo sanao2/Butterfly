@@ -2,7 +2,7 @@
 
 int current_frame = 0;
 
-Animation::Animation(HDC drawDC, HINSTANCE hInstance) : hInst(hInstance)
+Animation::Animation(HDC drawDC, HINSTANCE hInstance) : hInst(hInstance),
 {
 	Initialize(drawDC);
 	LoadeFrames(hInstance); // 애니메이션 프레임 로드 	

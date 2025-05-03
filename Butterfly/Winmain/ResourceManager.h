@@ -30,11 +30,10 @@ class ResourceManager
 {  
 protected : 
     vector<Gdiplus::Image*> AnimationFrames; 
-
+	Input::InputManager<Input::KeyboardDevice>& key;
 private:  
    ImageResource* imageResource = nullptr;  
    IImageRenderer* imageRenderer = nullptr;  
-   Input::InputManager<Input::KeyboardDevice>& key;
    Swap* swap = nullptr; 
   
    HINSTANCE hInst = nullptr;  
@@ -46,8 +45,8 @@ private:
    POINT playerPos = {0,0}; 
 
 public:  
-   ResourceManager() = default;  
-   ResourceManager(HDC drawDC, HINSTANCE hInstance);
+	ResourceManager() = default;
+   ResourceManager(HDC drawDC, HINSTANCE hInstance, Input::InputManager<Input::KeyboardDevice>& _key);
    ~ResourceManager();  
      
    void Initialize(HDC drawDC);  

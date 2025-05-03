@@ -2,17 +2,17 @@
 constexpr wchar_t RESOURCE_TYPE[] = L"PNG";
 
 
-//ResourceManager::ResourceManager(HDC drawDC, HINSTANCE hInstance) :  hInst(hInstance)												
-//{
-//   imageResource = new ImageResource();
-//   imageRenderer = new GdiPlusImageRenderer();
-//  
-//   Gdiplus::GdiplusStartupInput gsi;
-//   Gdiplus::GdiplusStartup(&GdiPlusToken, &gsi, nullptr);
-//
-//   graphics = new Gdiplus::Graphics(drawDC); // GDI+ Graphics object creation
-//   AnimationFrames.clear(); // Initialize the vector
-//}
+ResourceManager::ResourceManager(HDC drawDC, HINSTANCE hInstance, Input::InputManager<Input::KeyboardDevice>& _key) : hInst(hInstance), key(_key), GdiPlusToken(0)
+{
+	imageResource = new ImageResource();
+	imageRenderer = new GdiPlusImageRenderer();
+
+	Gdiplus::GdiplusStartupInput gsi;
+	Gdiplus::GdiplusStartup(&GdiPlusToken, &gsi, nullptr);
+
+	graphics = new Gdiplus::Graphics(drawDC); // GDI+ Graphics object creation
+	AnimationFrames.clear(); // Initialize the vector
+}
 
 ResourceManager::~ResourceManager()
 {
