@@ -101,7 +101,13 @@ void ResourceManager::RenderFrame(Gdiplus::Graphics* graphics, int x, int y, int
 		return;
 	}
 	
-		imageRenderer->Render(*graphics, AnimationFrames[frameIndex], x, y);
+	auto& img = AnimationFrames[frameIndex]; 
+
+	UINT ImgWidth = img->GetWidth();
+	UINT Imgheight = img->GetHeight(); 
+
+	RECT rc = { };
+	imageRenderer->Render(*graphics, AnimationFrames[frameIndex], x, y);
 	
 	
 	isLoaded = false; 

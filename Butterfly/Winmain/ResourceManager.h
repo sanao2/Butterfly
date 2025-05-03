@@ -34,7 +34,7 @@ private:
    Gdiplus::Graphics* graphics = nullptr;  
    Gdiplus::Image* image = nullptr;  
    bool isLoaded = false;  
-   
+   POINT playerPos = {0,0}; 
 
 public:  
    ResourceManager() = default;  
