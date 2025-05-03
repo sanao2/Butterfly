@@ -4,19 +4,13 @@ int current_frame = 0;
 
 Animation::Animation(HDC drawDC, HINSTANCE hInstance) : hInst(hInstance)
 {
-	Initialize(drawDC);
+	this->Initialize(drawDC);
 	LoadeFrames(hInstance); // 애니메이션 프레임 로드 	
 
 }
 
 Animation::~Animation()
 {
-	/*if (graphics)
-	{
-		delete graphics;
-		graphics = nullptr;
-	}*/
-	
 }
 
 void Animation::Update()
