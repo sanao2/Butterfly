@@ -22,7 +22,7 @@ Animation::~Animation()
 void Animation::Update()
 {
     if (timer.IsElapsed(frameInterval)) {
-	
+		timer.Reset(); 
 		current_frame = (current_frame + 1) % this->AnimationFrames.size(); // 프레임 업데이트
     }	
 }

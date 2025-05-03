@@ -19,7 +19,7 @@ class Animation : public ResourceManager
 private : 
 	HINSTANCE hInst; 
 	Time::Timer<> timer;	
-	constexpr static float frameInterval = 1.0f; 
+	constexpr static float frameInterval = 0.4f; 
 	
 public : 
 	Animation(HDC drawDC, HINSTANCE hInstance);
