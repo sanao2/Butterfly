@@ -7,7 +7,7 @@ Render::Render(HDC drawDC, HWND hwnd, HINSTANCE hInstance, int width, int height
 {
    swap = new Swap(hwnd, width, height);
    animation = new Animation(drawDC, hInstance); // 애니메이션 객체 생성 
-
+    
    RECT rect = { 0, 0, width, height }; // rect 정의 추가
    auto& key = InputManager<KeyboardDevice>::GetInstance();
    std::unique_ptr<Move::MoveManager> move = std::make_unique<Move::MoveManager>(key, rect); // rect 사용

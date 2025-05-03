@@ -16,7 +16,7 @@ private:
    HINSTANCE hInst;   
    HDC memDC = nullptr;  
    Gdiplus::Graphics* graphics = nullptr; // GDI+ 그래픽스 객체  
-   Move::MoveManager* move = nullptr;   
+   //Move::MoveManager* move = nullptr;   
    Swap* swap = nullptr;  
    Animation* animation = nullptr; // 애니메이션 객체   
 
