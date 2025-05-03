@@ -8,8 +8,8 @@
 #include <gdiplus.h>  
 #pragma comment(lib, "gdiplus.lib")  
 
+extern POINT playerPos;
 
-extern RECT playerRect;
 class Render  
 {  
 private:  
@@ -28,6 +28,6 @@ public:
    ~Render();  
    
    void Update();          // 렌더 업데이트 및 스왑 호출  
-   void RenderScene(HINSTANCE hInst, RECT rect);     // 실제 그리기 동작  
+   void RenderScene(HINSTANCE hInst, POINT playerPos);     // 실제 그리기 동작  
    POINT GetBufferSize() const;  
 };

@@ -28,6 +28,6 @@ namespace Move
         Input::InputManager<Input::KeyboardDevice>& key;
         bool isMoving = false;
         POINT movePos = {};
-        RECT& rect;
+        RECT& playerRect;
     };
 }

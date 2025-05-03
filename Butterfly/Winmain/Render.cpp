@@ -35,7 +35,7 @@ void Render::Update()
 	animation->Update(); // 애니메이션 업데이트 
 }
 
-void Render::RenderScene(HINSTANCE hInst, RECT rect)
+void Render::RenderScene(HINSTANCE hInst, POINT playerPos)
 {
    Time::UpdateTime();
    
@@ -44,8 +44,7 @@ void Render::RenderScene(HINSTANCE hInst, RECT rect)
 
    // 화면 초기화 (배경을 흰색으로 채우기)
    PatBlt(memDC, 0, 0, clientSize.x, clientSize.y, WHITENESS);
-
-  
+   
    animation->Render(memDC, graphics, 0, 0, current_frame);
 
    // 스왑 메모리 DC에 복사 (swap 내부 메모리 DC를 가져오는 메소드 필요)
