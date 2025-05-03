@@ -1,18 +1,22 @@
-﻿  MoveManagers.cpp
-D:\BF\Butterfly\Winmain\Event\InputConstants.h(7,40): warning C4309: '초기화 중': 상수 값이 잘립니다.
-  (소스 파일 'Move/MoveManagers.cpp'을(를) 컴파일하는 중)
-  
-D:\BF\Butterfly\Winmain\Move\MoveManagers.cpp(38,44): warning C4244: '-=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-D:\BF\Butterfly\Winmain\Move\MoveManagers.cpp(39,44): warning C4244: '+=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-D:\BF\Butterfly\Winmain\Move\MoveManagers.cpp(40,44): warning C4244: '-=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-D:\BF\Butterfly\Winmain\Move\MoveManagers.cpp(41,44): warning C4244: '+=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  Render.cpp
+﻿  Render.cpp
 D:\BF\Butterfly\Winmain\Event\InputConstants.h(7,40): warning C4309: '초기화 중': 상수 값이 잘립니다.
   (소스 파일 'Render.cpp'을(를) 컴파일하는 중)
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\memory(3594,35): error C2665: 'Move::MoveManager::MoveManager': 모든 인수 형식을 변환할 수 있는 오버로드된 함수가 없습니다.
+  (소스 파일 'Render.cpp'을(를) 컴파일하는 중)
+      D:\BF\Butterfly\Winmain\Move\MoveManagers.h(13,9):
+      'Move::MoveManager::MoveManager(Input::InputManager<Input::KeyboardDevice> &,RECT &)'일 수 있습니다.
+          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\memory(3594,35):
+          'Move::MoveManager::MoveManager(Input::InputManager<Input::KeyboardDevice> &,RECT &)': 인수 2을(를) 'POINT'에서 'RECT &'(으)로 변환할 수 없습니다.
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\memory(3594,35):
+      인수 목록 '(Input::InputManager<Input::KeyboardDevice>, POINT)'을(를) 일치시키는 동안
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\memory(3594,35):
+      템플릿 인스턴스화 컨텍스트(가장 오래된 인스턴스화 컨텍스트)가
+          D:\BF\Butterfly\Winmain\Render.cpp(57,49):
+          컴파일되는 함수 템플릿 인스턴스화 'std::unique_ptr<Move::MoveManager,std::default_delete<Move::MoveManager>> std::make_unique<Move::MoveManager,Input::InputManager<Input::KeyboardDevice>&,POINT&,0>(Input::InputManager<Input::KeyboardDevice> &,POINT &)'에 대한 참조를 확인하세요.
   
   Winmain.cpp
 D:\BF\Butterfly\Winmain\Event\InputConstants.h(7,40): warning C4309: '초기화 중': 상수 값이 잘립니다.
   (소스 파일 'Winmain.cpp'을(를) 컴파일하는 중)
   
   코드를 생성하고 있습니다...
-  Winmain.vcxproj -> D:\BF\Butterfly\x64\Debug\Winmain.exe

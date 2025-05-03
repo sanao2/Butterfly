@@ -18,16 +18,16 @@ private:
    HINSTANCE hInst;   
    HDC memDC = nullptr;  
    Gdiplus::Graphics* graphics = nullptr; // GDI+ 그래픽스 객체  
-   std::unique_ptr<Move::MoveManager> move;
+   
    Swap* swap = nullptr;  
    Animation* animation = nullptr; // 애니메이션 객체   
   
-
 public:  
    Render(HDC drawDC, HWND hwnd, HINSTANCE hInstance, int width, int height);  
    ~Render();  
    
    void Update();          // 렌더 업데이트 및 스왑 호출  
-   void RenderScene(HINSTANCE hInst, POINT playerPos);     // 실제 그리기 동작  
+   void RenderScene(HINSTANCE hInst, POINT playerPos);     // 실제 그리기 동작 
+   void Moves(); 
    POINT GetBufferSize() const;  
 };

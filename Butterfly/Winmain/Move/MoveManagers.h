@@ -10,7 +10,7 @@ namespace Move
     class MoveManager
     {
     public:
-        explicit MoveManager(Input::InputManager<Input::KeyboardDevice>& keyRef, RECT& rc);
+        explicit MoveManager(Input::InputManager<Input::KeyboardDevice>& keyRef, RECT& rect, POINT& playerPos);
         ~MoveManager();
 
         void MoveUpdate();
