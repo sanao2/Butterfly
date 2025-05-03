@@ -45,7 +45,7 @@ private:
    POINT playerPos = {0,0}; 
 
 public:  
-	ResourceManager() = default;
+	ResourceManager() = delete;
    ResourceManager(HDC drawDC, HINSTANCE hInstance, Input::InputManager<Input::KeyboardDevice>& _key);
    ~ResourceManager();  
      

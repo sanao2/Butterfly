@@ -1,4 +1,5 @@
 ﻿  Animation.cpp
+  Render.cpp
 D:\BF\Butterfly\Winmain\Event\InputConstants.h(7,40): warning C4309: '초기화 중': 상수 값이 잘립니다.
   (소스 파일 'Animation.cpp'을(를) 컴파일하는 중)
   
@@ -6,17 +7,10 @@ D:\BF\Butterfly\Winmain\Animation.cpp(6,1): error C2280: 'ResourceManager::Resou
       D:\BF\Butterfly\Winmain\ResourceManager.h(48,2):
       'ResourceManager::ResourceManager' 선언을 참조하십시오.
       D:\BF\Butterfly\Winmain\ResourceManager.h(48,2):
-      'ResourceManager::ResourceManager(void)': 'ResourceManager'에 참조 형식의 초기화되지 않은 데이터 멤버 'ResourceManager::key'이(가) 있으므로 함수가 암시적으로 삭제되었습니다.
-      D:\BF\Butterfly\Winmain\ResourceManager.h(33,46):
-      'ResourceManager::key' 선언을 참조하십시오.
+      'ResourceManager::ResourceManager(void)': 함수가 명시적으로 삭제되었습니다.
   
-  Render.cpp
 D:\BF\Butterfly\Winmain\Event\InputConstants.h(7,40): warning C4309: '초기화 중': 상수 값이 잘립니다.
   (소스 파일 'Render.cpp'을(를) 컴파일하는 중)
-  
-  ResourceManager.cpp
-D:\BF\Butterfly\Winmain\Event\InputConstants.h(7,40): warning C4309: '초기화 중': 상수 값이 잘립니다.
-  (소스 파일 'ResourceManager.cpp'을(를) 컴파일하는 중)
   
   Winmain.cpp
 D:\BF\Butterfly\Winmain\Event\InputConstants.h(7,40): warning C4309: '초기화 중': 상수 값이 잘립니다.

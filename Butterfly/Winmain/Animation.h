@@ -7,6 +7,7 @@
 #include <vector> 
 #include <gdiplus.h>
 #pragma comment(lib, "gdiplus.lib")
+
 using std::vector; 
 using namespace std; 
 
@@ -18,6 +19,7 @@ class Animation : public ResourceManager
 {
 private : 
 	HINSTANCE hInst; 
+	ResourceManager* resManager;
 	Time::Timer<> timer;	
 	constexpr static float frameInterval = 0.25f; 
 	
