@@ -8,8 +8,8 @@
 #include <gdiplus.h>  
 #pragma comment(lib, "gdiplus.lib")  
 
-RECT rect = { 5, 5, 20, 20 };
 
+extern RECT playerRect;
 class Render  
 {  
 private:  
@@ -21,7 +21,7 @@ private:
    std::unique_ptr<Move::MoveManager> move;
    Swap* swap = nullptr;  
    Animation* animation = nullptr; // 애니메이션 객체   
-
+  
 
 public:  
    Render(HDC drawDC, HWND hwnd, HINSTANCE hInstance, int width, int height);  

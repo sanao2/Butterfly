@@ -14,14 +14,6 @@ HDC drawDC;
 
 Render* render = nullptr;
 
-
-void ProgressInput()
-{
-    auto& key = InputManager<KeyboardDevice>::GetInstance();    
-    std::unique_ptr<Move::MoveManager> move = std::make_unique<Move::MoveManager>(key, rect);
-    move->MoveUpdate();
-}
-
 void InitConsole()
 {
     AllocConsole();
@@ -131,9 +123,9 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
         std::cout << "[" << TotalTime << "]" << std::endl;
      
 		//ProgressInput(); // 키보드 입력 처리 
-     
+        render->Update(); 
 		//render->Update(); // 렌더링 업데이트 호출 
-		render->RenderScene(hInstance); // 렌더링 호출
+		render->RenderScene(hInstance,playerRect); // 렌더링 호출
         //boxDraw();
 		
     }

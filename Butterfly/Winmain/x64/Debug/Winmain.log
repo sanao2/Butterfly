@@ -1,12 +1,10 @@
-﻿  Animation.cpp
-  Render.cpp
+﻿  Render.cpp
 D:\BF\Butterfly\Winmain\Event\InputConstants.h(7,40): warning C4309: '초기화 중': 상수 값이 잘립니다.
   (소스 파일 'Render.cpp'을(를) 컴파일하는 중)
   
-  ResourceManager.cpp
   Winmain.cpp
 D:\BF\Butterfly\Winmain\Event\InputConstants.h(7,40): warning C4309: '초기화 중': 상수 값이 잘립니다.
   (소스 파일 'Winmain.cpp'을(를) 컴파일하는 중)
   
+D:\BF\Butterfly\Winmain\Winmain.cpp(128,33): error C2065: 'rect': 선언되지 않은 식별자입니다.
   코드를 생성하고 있습니다...
-  Winmain.vcxproj -> D:\BF\Butterfly\x64\Debug\Winmain.exe

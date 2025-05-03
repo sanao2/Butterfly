@@ -9,6 +9,7 @@ using namespace Input;
 //    ReleaseDC(g_hWnd, drawDC); // Release 해줘야 리소스 누수 안 생김
 //    return S_OK;
 //}
+RECT playerRect = { 5, 5, 20, 20 };
 
 Render::Render(HDC drawDC, HWND hwnd, HINSTANCE hInstance, int width, int height)
    : hWnd(hwnd), clientSize{ width, height }, hInst(hInstance)
@@ -16,7 +17,8 @@ Render::Render(HDC drawDC, HWND hwnd, HINSTANCE hInstance, int width, int height
    swap = new Swap(hwnd, width, height);
    animation = new Animation(drawDC, hInstance); // 애니메이션 객체 생성 
    auto& key = InputManager<KeyboardDevice>::GetInstance();
-   move = std::make_unique<Move::MoveManager>(key, rect);
+   move = std::make_unique<Move::MoveManager>(key, playerRect);
+ 
 }   
 
 Render::~Render()
@@ -30,7 +32,7 @@ void Render::Update()
 { 
    // 이동을 위한 업데이트 
 	move->MoveUpdate();
-
+	animation->Update(); // 애니메이션 업데이트 
 }
 
 void Render::RenderScene(HINSTANCE hInst, RECT rect)
@@ -43,7 +45,7 @@ void Render::RenderScene(HINSTANCE hInst, RECT rect)
    // 화면 초기화 (배경을 흰색으로 채우기)
    PatBlt(memDC, 0, 0, clientSize.x, clientSize.y, WHITENESS);
 
-   animation->Update(); // 애니메이션 업데이트 
+  
    animation->Render(memDC, graphics, 0, 0, current_frame);
 
    // 스왑 메모리 DC에 복사 (swap 내부 메모리 DC를 가져오는 메소드 필요)
