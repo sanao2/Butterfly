@@ -1,5 +1,5 @@
 #include "Render.h"
-
+#include <atltypes.h>
 using namespace Input;
 //int boxDraw()
 //{
@@ -17,6 +17,7 @@ Render::Render(HDC drawDC, HWND hwnd, HINSTANCE hInstance, int width, int height
    animation = new Animation(drawDC, hInstance);
  
 }   
+
 
 Render::~Render()
 {

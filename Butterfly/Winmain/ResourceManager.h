@@ -6,13 +6,12 @@
 #include "ImageResource.h"
 #include "IImageRenderer.h"
 #include "GdiplusImageRenderer.h" // Ensure this header is included
+#include "Move/MoveManagers.h"
 #include "Swap.h"
 #include "resource.h"
 #include <iostream>
 #include <vector>
-#include "Event/InputManager.h"
-#include "Event/KeyboardInputManager.h"
-using namespace std; 
+using namespace std;
 using std::vector;
 
 extern Animstate current_state; 
@@ -25,15 +24,13 @@ if (key.IsKeyDown(VK_RIGHT) && time == 100)
 		}
 */
 
-
 class ResourceManager  
 {  
-protected : 
-    vector<Gdiplus::Image*> AnimationFrames; 
-	Input::InputManager<Input::KeyboardDevice>& key;
+public : 
+    vector<Gdiplus::Image*> AnimationFrames;
 private:  
    ImageResource* imageResource = nullptr;  
-   IImageRenderer* imageRenderer = nullptr;  
+   IImageRenderer* imageRenderer = nullptr; 
    Swap* swap = nullptr; 
   
    HINSTANCE hInst = nullptr;  
@@ -46,7 +43,7 @@ private:
 
 public:  
 	ResourceManager() = delete;
-   ResourceManager(HDC drawDC, HINSTANCE hInstance, Input::InputManager<Input::KeyboardDevice>& _key);
+   ResourceManager(HDC drawDC, HINSTANCE hInstance);
    ~ResourceManager();  
      
    void Initialize(HDC drawDC);  

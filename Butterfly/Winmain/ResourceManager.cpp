@@ -2,10 +2,10 @@
 constexpr wchar_t RESOURCE_TYPE[] = L"PNG";
 
 
-ResourceManager::ResourceManager(HDC drawDC, HINSTANCE hInstance, Input::InputManager<Input::KeyboardDevice>& _key) : hInst(hInstance), key(_key), GdiPlusToken(0)
+ResourceManager::ResourceManager(HDC drawDC, HINSTANCE hInstance) : hInst(hInstance), GdiPlusToken(0)
 {
 	imageResource = new ImageResource();
-	imageRenderer = new GdiPlusImageRenderer();
+	imageRenderer = new GdiPlusImageRenderer();	
 
 	Gdiplus::GdiplusStartupInput gsi;
 	Gdiplus::GdiplusStartup(&GdiPlusToken, &gsi, nullptr);
