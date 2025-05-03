@@ -15,7 +15,8 @@ Render::Render(HDC drawDC, HWND hwnd, HINSTANCE hInstance, int width, int height
 {
    swap = new Swap(hwnd, width, height);
    animation = new Animation(drawDC, hInstance); // 애니메이션 객체 생성 
-
+   auto& key = InputManager<KeyboardDevice>::GetInstance();
+   move = std::make_unique<Move::MoveManager>(key, rect);
 }   
 
 Render::~Render()
@@ -27,9 +28,7 @@ Render::~Render()
 
 void Render::Update()
 { 
-   // 스왑 메모리 DC에 복사 (swap 내부 메모리 DC를 가져오는 메소드 필요)
-	auto& key = InputManager<KeyboardDevice>::GetInstance();
-	std::unique_ptr<Move::MoveManager> move = std::make_unique<Move::MoveManager>(key, rect);
+   // 이동을 위한 업데이트 
 	move->MoveUpdate();
 
 }
