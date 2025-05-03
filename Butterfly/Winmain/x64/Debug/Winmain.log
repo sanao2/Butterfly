@@ -1,2 +1,52 @@
-﻿  ResourceManager.cpp
-  Winmain.vcxproj -> D:\BF\Butterfly\x64\Debug\Winmain.exe
+﻿  Winmain.cpp
+D:\BF\Butterfly\Winmain\Event\InputConstants.h(7,40): warning C4309: '초기화 중': 상수 값이 잘립니다.
+  (소스 파일 'Winmain.cpp'을(를) 컴파일하는 중)
+  
+  
+Winmain.rc(150): error RC2135: file not found: Resource\One'sResource\player\Player_RightWalk_Four.png
+  
+  
+Winmain.rc(152): error RC2135: file not found: Resource\One'sResource\player\Player_RightWalk_one.png
+  
+  
+Winmain.rc(154): error RC2135: file not found: Resource\One'sResource\player\Player_RightWalk_Second.png
+  
+  
+Winmain.rc(156): error RC2135: file not found: Resource\One'sResource\player\Player_RightWalk_Three.png
+  
+  
+Winmain.rc(158): error RC2135: file not found: Resource\One'sResource\player\Player_RightWalk_IDLE.png
+  
+  
+Winmain.rc(160): error RC2135: file not found: Resource\One'sResource\player\Player_LeftWalk_One.png
+  
+  
+Winmain.rc(162): error RC2135: file not found: Resource\One'sResource\player\Player_LeftWalk_IDLE.png
+  
+  
+Winmain.rc(164): error RC2135: file not found: Resource\One'sResource\player\Player_LeftWalk_One.png
+  
+  
+Winmain.rc(166): error RC2135: file not found: Resource\One'sResource\player\Player_LeftWalk_Second.png
+  
+  
+Winmain.rc(168): error RC2135: file not found: Resource\One'sResource\player\Player_downWalk_One.png
+  
+  
+Winmain.rc(170): error RC2135: file not found: Resource\One'sResource\player\Player_downWalk_Second.png
+  
+  
+Winmain.rc(172): error RC2135: file not found: Resource\One'sResource\player\Player_downWalk_One.png
+  
+  
+Winmain.rc(174): error RC2135: file not found: Resource\One'sResource\player\Player_Upwalk_IDLE.png
+  
+  
+Winmain.rc(176): error RC2135: file not found: Resource\One'sResource\player\Player_Upwalk_One.png
+  
+  
+Winmain.rc(180): error RC2135: file not found: Resource\One'sResource\player\Player_UpWalk_One.png
+  
+  
+Winmain.rc(200): error RC2135: file not found: Resource\One'sResource\player\Player_IDLE.png
+  
