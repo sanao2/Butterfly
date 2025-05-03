@@ -62,8 +62,8 @@ namespace Move
 		return isMoving;
 	}
 
-	MoveManager::MoveManager(Input::InputManager<Input::KeyboardDevice>& keyRef, RECT& rect, POINT& playerPos)
-		: key(keyRef), playerRect(rect), movePos{ playerPos.x, playerPos.y }, isMoving(false)
+	MoveManager::MoveManager(Input::InputManager<Input::KeyboardDevice>& keyRef, RECT& rect)
+		: key(keyRef), playerRect(rect), movePos{0,0 }, isMoving(false)
 	{
 	}
 

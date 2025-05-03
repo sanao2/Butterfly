@@ -9,7 +9,6 @@ using namespace Input;
 //    ReleaseDC(g_hWnd, drawDC); // Release 해줘야 리소스 누수 안 생김
 //    return S_OK;
 //}
-POINT playerPos = { 0,0 };
 
 Render::Render(HDC drawDC, HWND hwnd, HINSTANCE hInstance, int width, int height)
    : hWnd(hwnd), clientSize{ width, height }, hInst(hInstance)
@@ -34,7 +33,7 @@ void Render::Update()
 	animation->Update(); // 애니메이션 업데이트 
 }
 
-void Render::RenderScene(HINSTANCE hInst, POINT playerPos)
+void Render::RenderScene(HINSTANCE hInst, RECT playerPos)
 {
    Time::UpdateTime();
    
@@ -44,7 +43,7 @@ void Render::RenderScene(HINSTANCE hInst, POINT playerPos)
    // 화면 초기화 (배경을 흰색으로 채우기)
    PatBlt(memDC, 0, 0, clientSize.x, clientSize.y, WHITENESS);
    
-   animation->Render(memDC, graphics, playerPos.x, playerPos.y, current_frame);
+   animation->Render(memDC, graphics, 0, 0, current_frame);
 
    // 스왑 메모리 DC에 복사 (swap 내부 메모리 DC를 가져오는 메소드 필요)
    swap->SwapBuffers();

@@ -13,6 +13,7 @@ HWND g_hWnd;
 HDC drawDC;
 
 Render* render = nullptr;
+RECT playerPos = { 5,5,10,20 };
 
 void InitConsole()
 {
