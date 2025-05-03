@@ -1,20 +1,18 @@
 #include "ResourceManager.h"
 constexpr wchar_t RESOURCE_TYPE[] = L"PNG";
 
-ResourceManager::ResourceManager(HDC drawDC, HINSTANCE hInstance)
-													  :  hInst(hInstance), graphics(nullptr), 
-														 image(nullptr), imageResource(nullptr), 
-														 imageRenderer(nullptr), isLoaded(false) // Initialize all members
-{
-   imageResource = new ImageResource();
-   imageRenderer = new GdiPlusImageRenderer();
-  
-   Gdiplus::GdiplusStartupInput gsi;
-   Gdiplus::GdiplusStartup(&GdiPlusToken, &gsi, nullptr);
 
-   graphics = new Gdiplus::Graphics(drawDC); // GDI+ Graphics object creation
-   AnimationFrames.clear(); // Initialize the vector
-}
+//ResourceManager::ResourceManager(HDC drawDC, HINSTANCE hInstance) :  hInst(hInstance)												
+//{
+//   imageResource = new ImageResource();
+//   imageRenderer = new GdiPlusImageRenderer();
+//  
+//   Gdiplus::GdiplusStartupInput gsi;
+//   Gdiplus::GdiplusStartup(&GdiPlusToken, &gsi, nullptr);
+//
+//   graphics = new Gdiplus::Graphics(drawDC); // GDI+ Graphics object creation
+//   AnimationFrames.clear(); // Initialize the vector
+//}
 
 ResourceManager::~ResourceManager()
 {
