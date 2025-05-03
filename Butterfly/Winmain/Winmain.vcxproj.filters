@@ -273,6 +273,21 @@
     <Image Include="Resource\One%27sResource\player\Player_IDLE.png">
       <Filter>리소스 파일</Filter>
     </Image>
+    <Image Include="Resource\One%27sResource\player\Player_downWalk_Sec.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\One%27sResource\player\Player_Rightwalk_Sec.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\One%27sResource\player\Player_Leftwalk_IDLE.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\One%27sResource\player\Player_Leftwalk_Sec.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\One%27sResource\player\Player_Upwalk_Sec.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <Text Include="메모.txt">
