@@ -10,4 +10,4 @@ extern Render* render;
 
 extern int g_width;
 extern int g_height; 
-extern int current_frame;
+

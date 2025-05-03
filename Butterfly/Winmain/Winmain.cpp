@@ -8,7 +8,6 @@ LPCTSTR g_szClassName = TEXT("윈도우 클래스 이름");
 
 int g_width =  600;
 int g_height = 800;
-int current_frame = 0; 
 
 HWND g_hWnd;
 
@@ -19,7 +18,6 @@ Render* render = nullptr;
 
 int boxDraw()
 {  
-
     PatBlt(drawDC, 0, 0, g_width, g_height, WHITENESS);
     Rectangle(drawDC, rect.left, rect.top, rect.right, rect.bottom);
 
