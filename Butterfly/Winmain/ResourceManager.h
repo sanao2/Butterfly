@@ -7,6 +7,7 @@
 #include "IImageRenderer.h"
 #include "GdiplusImageRenderer.h" // Ensure this header is included
 #include "Move/MoveManagers.h"
+#include "Move/PlayerMoveController.h"
 #include "Swap.h"
 #include "resource.h"
 #include <iostream>
@@ -28,9 +29,11 @@ class ResourceManager
 {  
 public : 
     vector<Gdiplus::Image*> AnimationFrames;
+	
 private:  
-   ImageResource* imageResource = nullptr;  
-   IImageRenderer* imageRenderer = nullptr; 
+   ImageResource*				imageResource = nullptr;  
+   IImageRenderer*				imageRenderer = nullptr; 
+
    Swap* swap = nullptr; 
   
    HINSTANCE hInst = nullptr;  

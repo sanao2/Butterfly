@@ -2,7 +2,8 @@
 constexpr wchar_t RESOURCE_TYPE[] = L"PNG";
 
 
-ResourceManager::ResourceManager(HDC drawDC, HINSTANCE hInstance) : hInst(hInstance), GdiPlusToken(0)
+ResourceManager::ResourceManager(HDC drawDC, HINSTANCE hInstance) 
+		: hInst(hInstance), GdiPlusToken(0)
 {
 	imageResource = new ImageResource();
 	imageRenderer = new GdiPlusImageRenderer();	

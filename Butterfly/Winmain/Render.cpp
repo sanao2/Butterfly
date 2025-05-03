@@ -1,21 +1,14 @@
 #include "Render.h"
-#include <atltypes.h>
 using namespace Input;
-//int boxDraw()
-//{
-//    PatBlt(drawDC, 0, 0, g_width, g_height, WHITENESS);
-//    Rectangle(drawDC, rect.left, rect.top, rect.right, rect.bottom);
-//
-//    ReleaseDC(g_hWnd, drawDC); // Release 해줘야 리소스 누수 안 생김
-//    return S_OK;
-//}
+
 
 Render::Render(HDC drawDC, HWND hwnd, HINSTANCE hInstance, int width, int height)
-   : hWnd(hwnd), clientSize{ width, height }, hInst(hInstance)
+   : hWnd(hwnd), clientSize{ width, height }, 
+	hInst(hInstance), playerController(key)
 {
    swap = new Swap(hwnd, width, height);
    animation = new Animation(drawDC, hInstance);
- 
+   lastInputTime = steady_clock::now();
 }   
 
 
@@ -49,8 +42,26 @@ void Render::RenderScene(HINSTANCE hInst)
    
 }
 
+void Render::Moves()
+{
+   auto now = steady_clock::now(); 
+
+   Move::MoveDirection dir = playerController.GetDirection(); 
+
+  
+
+}
+
 
 POINT Render::GetBufferSize() const
 {
    return clientSize;
 }
+//int boxDraw()
+//{
+//    PatBlt(drawDC, 0, 0, g_width, g_height, WHITENESS);
+//    Rectangle(drawDC, rect.left, rect.top, rect.right, rect.bottom);
+//
+//    ReleaseDC(g_hWnd, drawDC); // Release 해줘야 리소스 누수 안 생김
+//    return S_OK;
+//}

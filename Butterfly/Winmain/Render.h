@@ -4,6 +4,7 @@
 #include "Swap.h"  
 #include "Animation.h"  
 #include <gdiplus.h>  
+#include <atltypes.h>
 #pragma comment(lib, "gdiplus.lib")  
 
 extern RECT playerPos; 
@@ -18,12 +19,19 @@ private:
    Gdiplus::Graphics* graphics = nullptr; // GDI+ 그래픽스 객체  
    
    Swap* swap = nullptr;  
-   Animation* animation = nullptr; // 애니메이션 객체   
+   Animation* animation = nullptr; // 애니메이션 객체    
+   std::chrono::steady_clock::time_point lastInputTime;
+
+   Move::MoveManager* moveMgr;
+   Move::PlayerMoveController  playerController;
+   Input::InputManager<Input::KeyboardDevice>& key = Input::InputManager<Input::KeyboardDevice>::GetInstance();
 public:  
    Render(HDC drawDC, HWND hwnd, HINSTANCE hInstance, int width, int height);  
    ~Render();  
    
    void Update();          // 렌더 업데이트 및 스왑 호출  
    void RenderScene(HINSTANCE hInst);     // 실제 그리기 동작 
+   void Moves(); 
+
    POINT GetBufferSize() const;  
 };

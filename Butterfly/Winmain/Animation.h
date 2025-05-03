@@ -6,8 +6,9 @@
 #include <iostream> 
 #include <vector> 
 #include <gdiplus.h>
+#include <chrono>
 #pragma comment(lib, "gdiplus.lib")
-
+using namespace std::chrono;
 using std::vector; 
 using namespace std; 
 
@@ -20,6 +21,7 @@ class Animation
 private :
 	ResourceManager* resManager;
 	Time::Timer<> timer;	
+	 
 	constexpr static float frameInterval = 0.25f; 
 	
 public : 
