@@ -1,11 +1,4 @@
-﻿  Winmain.cpp
-D:\BF\Butterfly\Winmain\Event\InputConstants.h(7,40): warning C4309: '초기화 중': 상수 값이 잘립니다.
-  (소스 파일 'Winmain.cpp'을(를) 컴파일하는 중)
-  
-  
-Winmain.rc(150): error RC2135: file not found: Resource\One'sResource\player\Player_RightWalk_Four.png
-  
-  
+﻿  
 Winmain.rc(152): error RC2135: file not found: Resource\One'sResource\player\Player_RightWalk_one.png
   
   
@@ -45,8 +38,5 @@ Winmain.rc(174): error RC2135: file not found: Resource\One'sResource\player\Pla
 Winmain.rc(176): error RC2135: file not found: Resource\One'sResource\player\Player_Upwalk_One.png
   
   
-Winmain.rc(180): error RC2135: file not found: Resource\One'sResource\player\Player_UpWalk_One.png
-  
-  
-Winmain.rc(200): error RC2135: file not found: Resource\One'sResource\player\Player_IDLE.png
+Winmain.rc(180): error RC2135: file not found: Resource\One'sResource\player\Player_Upwalk_One.png
   
