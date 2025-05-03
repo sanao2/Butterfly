@@ -44,15 +44,9 @@
               "RelativeDocumentMoniker": "Winmain\\Winmain.rc",
               "ToolTip": "D:\\BF\\Butterfly\\Winmain\\Winmain.rc",
               "RelativeToolTip": "Winmain\\Winmain.rc",
-<<<<<<< HEAD
-              "ViewState": "AgIAAIwAAAAAAAAAAADwv5cAAABrAAAAAAAAAA==",
+              "ViewState": "AgIAAIwAAAAAAAAAAADwv5IAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
               "WhenOpened": "2025-05-03T11:23:43.836Z",
-=======
-              "ViewState": "AgIAALEAAAAAAAAAAAAEwMAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
-              "WhenOpened": "2025-05-03T11:18:07.378Z",
->>>>>>> 102714b7c70b3f900fbfb9c3ed7a5db35f91b976
               "EditorCaption": ""
             },
             {
@@ -65,8 +59,7 @@
               "RelativeToolTip": "Winmain\\Winmain.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAADwvwcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-05-03T11:15:51.282Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-03T11:15:51.282Z"
             }
           ]
         }
