@@ -31,11 +31,10 @@ void Animation::Render(HDC drawDC, Gdiplus::Graphics* graphics, int x, int y, in
 {
 	graphics->Clear(Gdiplus::Color::White); // 배경을 흰색으로 초기화
 	
-	// 애니메이션 프레임을 그리기 
-	for (curFrameIndex; curFrameIndex < AnimationFrames.size(); ++curFrameIndex)
-	{
-		this->RenderFrame(graphics, x, y, curFrameIndex); // 현재 프레임을 그리기 	
 
-	}
+	this->RenderFrame(graphics, x, y, curFrameIndex); // 현재 프레임을 그리기 	
+
+
+
 
 }

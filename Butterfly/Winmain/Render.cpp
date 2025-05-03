@@ -15,7 +15,9 @@ Render::Render(HDC drawDC, HWND hwnd, HINSTANCE hInstance, int width, int height
 
 Render::~Render()
 {
-   delete swap;
+	DeleteDC(memDC);
+	delete graphics;
+    delete swap;
 }
 
 void Render::Update()
@@ -28,8 +30,8 @@ void Render::RenderScene(HINSTANCE hInst)
    Time::UpdateTime();
 
    memDC = swap->GetMemDC();
-   HBITMAP tempBitmap = CreateCompatibleBitmap(GetDC(hWnd), clientSize.x, clientSize.y);
-   SelectObject(memDC, tempBitmap);
+  // HBITMAP tempBitmap = CreateCompatibleBitmap(GetDC(hWnd), clientSize.x, clientSize.y);
+   //SelectObject(memDC, tempBitmap);
    graphics = new Gdiplus::Graphics(memDC);
 
    // 화면 초기화 (배경을 흰색으로 채우기)
@@ -42,9 +44,9 @@ void Render::RenderScene(HINSTANCE hInst)
    swap->SwapBuffers();
 
    // 리소스 해제
-   delete graphics; 
-   DeleteObject(tempBitmap);
-   DeleteDC(memDC);
+
+   //DeleteObject(tempBitmap);
+   
 }
 
 POINT Render::GetBufferSize() const
