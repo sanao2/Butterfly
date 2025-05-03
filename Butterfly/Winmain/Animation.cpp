@@ -1,5 +1,7 @@
 #include "Animation.h"
 
+int current_frame = 0;
+
 Animation::Animation(HDC drawDC, HINSTANCE hInstance) : hInst(hInstance)
 {
 	this->Initialize(drawDC, hInstance); // 리소스 매니저 초기화

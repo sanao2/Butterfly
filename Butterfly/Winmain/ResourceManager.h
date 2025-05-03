@@ -17,6 +17,7 @@ using std::vector;
 extern Animstate current_state; 
 extern const wchar_t RESOURCE_TYPE[];
 
+
 class ResourceManager  
 {  
 protected : 
@@ -33,6 +34,7 @@ private:
    Gdiplus::Graphics* graphics = nullptr;  
    Gdiplus::Image* image = nullptr;  
    bool isLoaded = false;  
+   
 
 public:  
    ResourceManager() = default;  
