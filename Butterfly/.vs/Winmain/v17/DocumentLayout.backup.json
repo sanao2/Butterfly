@@ -44,7 +44,11 @@
               "RelativeDocumentMoniker": "Winmain\\Winmain.rc",
               "ToolTip": "D:\\BF\\Butterfly\\Winmain\\Winmain.rc",
               "RelativeToolTip": "Winmain\\Winmain.rc",
+<<<<<<< HEAD
               "ViewState": "AgIAALcAAAAAAAAAAAAEwMAAAAAAAAAAAAAAAA==",
+=======
+              "ViewState": "AgIAALQAAAAAAAAAAAAEwMcAAABkAAAAAAAAAA==",
+>>>>>>> 102714b7c70b3f900fbfb9c3ed7a5db35f91b976
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
               "WhenOpened": "2025-05-03T11:18:07.378Z",
               "EditorCaption": ""
