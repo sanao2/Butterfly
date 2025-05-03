@@ -6,6 +6,7 @@
 #include "ImageResource.h"
 #include "IImageRenderer.h"
 #include "GdiplusImageRenderer.h" // Ensure this header is included
+#include "Swap.h"
 #include "resource.h"
 #include <iostream>
 #include <vector>
@@ -24,6 +25,7 @@ protected :
 private:  
    ImageResource* imageResource = nullptr;  
    IImageRenderer* imageRenderer = nullptr;  
+   Swap* swap = nullptr; 
 
    HINSTANCE hInst = nullptr;  
 
@@ -34,7 +36,7 @@ private:
 
 public:  
    ResourceManager() = default;  
-   ResourceManager(HDC drawDC, HINSTANCE hInstance);  
+   ResourceManager( HDC drawDC, HINSTANCE hInstance);
    ~ResourceManager();  
      
    void Initialize(HDC drawDC, HINSTANCE hInstance);  

@@ -8,6 +8,7 @@
 #include <gdiplus.h>  
 #pragma comment(lib, "gdiplus.lib")  
 
+extern int current_frame;
 
 class Render  
 {  

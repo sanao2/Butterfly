@@ -8,6 +8,7 @@ LPCTSTR g_szClassName = TEXT("윈도우 클래스 이름");
 
 int g_width =  600;
 int g_height = 800;
+int current_frame = 0; 
 
 HWND g_hWnd;
 

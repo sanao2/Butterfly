@@ -17,21 +17,19 @@ Animation::~Animation()
 	
 }
 
-void Animation::Update()
+void Animation::Update(int framecurrentIndex)
 {
     if (timer.IsElapsed(frameInterval)) {
     	
-		current_frame = (current_frame + 1) % this->AnimationFrames.size(); // 프레임 업데이트
-		
-		timer.Reset();
+		framecurrentIndex = (framecurrentIndex + 1) % this->AnimationFrames.size(); // 프레임 업데이트
     }	
 }
 
-void Animation::Render(HDC drawDC, Gdiplus::Graphics* graphics, int x, int y)
+void Animation::Render(HDC drawDC, Gdiplus::Graphics* graphics, int x, int y, int curFrameIndex)
 {
 	graphics->Clear(Gdiplus::Color::White); // 배경을 흰색으로 초기화
 	
-		// 애니메이션 프레임을 그리기 
-	this->RenderFrame(graphics, x, y, current_frame); // 현재 프레임을 그리기 	
+			// 애니메이션 프레임을 그리기 
+	this->RenderFrame(graphics, x, y, curFrameIndex); // 현재 프레임을 그리기 	
 
 }
