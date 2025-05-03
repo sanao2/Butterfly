@@ -29,12 +29,5 @@ void Animation::Update()
 
 void Animation::Render(HDC drawDC, Gdiplus::Graphics* graphics, int x, int y, int curFrameIndex)
 {
-	graphics->Clear(Gdiplus::Color::White); // 배경을 흰색으로 초기화
-	
-
 	this->RenderFrame(graphics, x, y, curFrameIndex); // 현재 프레임을 그리기 	
-
-
-
-
 }
