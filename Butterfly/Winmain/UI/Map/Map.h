@@ -78,11 +78,10 @@ namespace Map
 		Object(HDC drawDC, int width, int height);
 		~Object(); 
 
-		RECT& CreateRect(int left, int top, int right, int bottom);
-		void LoadImages(HINSTANCE hInstance); 
-		void drawMap(); 
+		void drawMap();
+		Gdiplus::Image* LoadImages(HINSTANCE hInstance, int SpriteID);		 
 		void Update(); 
-		void Render(HDC drawDC, Gdiplus::Graphics* graphics, RECT& rect, Gdiplus::Image* image, int width, int height, int x, int y);
+		void Render(HDC drawDC, Gdiplus::Graphics* graphics, Gdiplus::Image* image, int width, int height, int x, int y);
 	};
 }
 

@@ -21,27 +21,28 @@ Map::Object::~Object()
 	Gdiplus::GdiplusShutdown(GdiPlusToken);
 }
 
-void Map::Object::LoadImages(HINSTANCE hInstance)
+Gdiplus::Image* Map::Object::LoadImages(HINSTANCE hInstance, int SpriteID)
 {
-	imageResource->LoadFromResource(hInstance, ResourceID, SPRITE_TYPE);
+	imageResource->LoadFromResource(hInstance, SpriteID, SPRITE_TYPE);
 
 	image = imageResource->GetBitmap(); 
 
 	if (image == nullptr)
 	{
 		cerr << "Failed to load image resource." << endl;
-		return;
+		return nullptr;
 	}
+	return image; 
 }
 
 
 
-void Map::Object::Render(HDC drawDC,Gdiplus::Graphics* graphics, RECT& rect, Gdiplus::Image* image, int width, int height, int x, int y)
+void Map::Object::Render(HDC drawDC,Gdiplus::Graphics* graphics, Gdiplus::Image* image, int width, int height, int x, int y)
 {
 	int Objwidth = image->GetWidth(); 
 	int Objheight = image->GetHeight(); 
 
 	Gdiplus::Rect destRect = { x,y,Objwidth,Objheight };
-	imageRenderer->Render(*graphics, rect, image, width, height, x, y);
+	imageRenderer->Render(*graphics, image, width, height, x, y);
 }
 
