@@ -33,9 +33,9 @@ private:
     Gdiplus::Graphics*                             graphics = nullptr;
     Animation*                                     animation = nullptr;
   
-    std::chrono::steady_clock::time_point          lastInputTime;
+    std::chrono::steady_clock::time_point          lastMoveTime;
     Move::MoveManager*                             moveMgr = nullptr;
-    Move::PlayerMoveController                     playerController;
+   
     Input::InputManager<Input::KeyboardDevice>& key = Input::InputManager<Input::KeyboardDevice>::GetInstance();
-           
+    Move::PlayerMoveController                     playerController;
 };
