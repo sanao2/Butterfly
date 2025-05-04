@@ -1,6 +1,5 @@
 // Render.h
 #pragma once
-
 #include "Global.h"
 #include <windows.h>
 #include "Swap.h"
@@ -8,12 +7,8 @@
 #include <gdiplus.h>
 #include <atltypes.h>
 #include <chrono>
-
 #include "AnimationMap.h"
-
 #pragma comment(lib, "gdiplus.lib")
-
-extern RECT playerRect;
 
 class Render
 {

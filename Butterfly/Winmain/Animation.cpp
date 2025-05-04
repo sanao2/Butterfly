@@ -16,8 +16,6 @@ Animation::~Animation()
 
 void Animation::Update()
 {
-    auto now = steady_clock::now(); 
-
    if (timer.IsElapsed(frameInterval)) {
        timer.Reset();
        current_frame = (current_frame + 1) % resManager->AnimationFrames.size(); // 프레임 업데이트

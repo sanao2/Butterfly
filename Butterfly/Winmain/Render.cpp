@@ -1,7 +1,6 @@
 #include "Render.h"
 using namespace Input;
 
-RECT playerRect = { 5, 5, 10,10 };
 
 Render::Render(HDC drawDC, HWND hwnd, HINSTANCE hInstance, int width, int height)
 	: hWnd(hwnd), clientSize{ width, height },

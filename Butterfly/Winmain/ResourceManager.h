@@ -42,14 +42,13 @@ private:
    Gdiplus::Graphics* graphics = nullptr;  
    Gdiplus::Image* image = nullptr;  
    bool isLoaded = false;  
-   POINT playerPos = {0,0}; 
+
 
 public:  
 	ResourceManager() = delete;
    ResourceManager(HDC drawDC, HINSTANCE hInstance);
    ~ResourceManager();  
-     
-   void Initialize(HDC drawDC);  
+    
    void LoadeFrames(HINSTANCE hInst);  
    void RenderFrame(Gdiplus::Graphics* graphics, int x, int y, int frameIndex);  
   

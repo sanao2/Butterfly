@@ -20,8 +20,7 @@ class Animation
 {
 private :
 	ResourceManager* resManager;
-	Time::Timer<> timer;	
-	 
+	Time::Timer<> timer;	 
 	constexpr static float frameInterval = 0.25f; 
 	
 public : 

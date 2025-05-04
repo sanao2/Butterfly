@@ -22,20 +22,9 @@ ResourceManager::~ResourceManager()
 	if (graphics) delete graphics;					// GDI+ Graphics Delete
 	if (imageResource) delete imageResource;		// imageResource Delete 
 	if (imageRenderer) delete imageRenderer;		// imageRenderer Delete
-	Gdiplus::GdiplusShutdown(GdiPlusToken);       // GDI+ ShoutDown
+	Gdiplus::GdiplusShutdown(GdiPlusToken);         // GDI+ ShoutDown
 }
 
-void ResourceManager::Initialize(HDC drawDC)
-{
-	imageResource = new ImageResource();
-	imageRenderer = new GdiPlusImageRenderer(); // Correctly references the class
-
-	Gdiplus::GdiplusStartupInput gsi;
-	Gdiplus::GdiplusStartup(&GdiPlusToken, &gsi, nullptr);
-
-	graphics = new Gdiplus::Graphics(drawDC); // GDI+ 그래픽스 객체 생성
-	AnimationFrames.clear();  // Initialize the vector 
-}
 
 //void ResourceManger::LoadImages(HINSTANCE hInst)
 //{

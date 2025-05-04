@@ -1,5 +1,18 @@
-﻿  Render.cpp
+﻿  Animation.cpp
+D:\BF\Butterfly\Winmain\Event\InputConstants.h(7,40): warning C4309: '초기화 중': 상수 값이 잘립니다.
+  (소스 파일 'Animation.cpp'을(를) 컴파일하는 중)
+  
+  Render.cpp
 D:\BF\Butterfly\Winmain\Event\InputConstants.h(7,40): warning C4309: '초기화 중': 상수 값이 잘립니다.
   (소스 파일 'Render.cpp'을(를) 컴파일하는 중)
   
+  ResourceManager.cpp
+D:\BF\Butterfly\Winmain\Event\InputConstants.h(7,40): warning C4309: '초기화 중': 상수 값이 잘립니다.
+  (소스 파일 'ResourceManager.cpp'을(를) 컴파일하는 중)
+  
+  Winmain.cpp
+D:\BF\Butterfly\Winmain\Event\InputConstants.h(7,40): warning C4309: '초기화 중': 상수 값이 잘립니다.
+  (소스 파일 'Winmain.cpp'을(를) 컴파일하는 중)
+  
+  코드를 생성하고 있습니다...
   Winmain.vcxproj -> D:\BF\Butterfly\x64\Debug\Winmain.exe
