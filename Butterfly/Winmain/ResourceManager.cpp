@@ -94,8 +94,8 @@ void ResourceManager::RenderFrame(Gdiplus::Graphics* graphics, RECT& rect, int x
 	
 	auto& img = AnimationFrames[frameIndex]; 
 
-	UINT ImgWidth = img->GetWidth() / 2;
-	UINT Imgheight = img->GetHeight() / 2; 
+	UINT ImgWidth = img->GetWidth() / (rect.right - rect.left);
+	UINT Imgheight = img->GetHeight() / (rect.bottom - rect.top);
 
 	imageRenderer->Render(*graphics, rect, AnimationFrames[frameIndex],ImgWidth,Imgheight, x, y);
 	
