@@ -31,7 +31,7 @@ void Render::Update()
 	if (ismoving) {
 		lastMoveTime = now;   // 타이머 리셋
 
-		if(key.IsKeyDown(VK_DOWN))
+		if(key.IsKeyDown(VK_DOWN) )
 		{
 			SetAnimationState(PLAYER_DOWNWALK);
 		}

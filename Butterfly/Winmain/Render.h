@@ -34,8 +34,7 @@ private:
     Animation*                                     animation = nullptr;
   
     std::chrono::steady_clock::time_point          lastMoveTime;
-    Move::MoveManager*                             moveMgr = nullptr;
-   
     Input::InputManager<Input::KeyboardDevice>& key = Input::InputManager<Input::KeyboardDevice>::GetInstance();
     Move::PlayerMoveController                     playerController;
+    Move::MoveManager* moveMgr = nullptr;
 };
