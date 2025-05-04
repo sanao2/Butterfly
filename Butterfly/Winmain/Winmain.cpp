@@ -102,7 +102,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
     UpdateWindow(hwnd);
 
     drawDC = GetDC(g_hWnd); 
-    SetAnimationState(PLAYER_DOWNWALK);
+
    
     render = new Render(drawDC, g_hWnd, hInstance, g_width, g_height);  // Global Render 객체 생성
 

@@ -8,7 +8,6 @@ Render::Render(HDC drawDC, HWND hwnd, HINSTANCE hInstance, int width, int height
 {
 	swap = new Swap(hwnd, width, height);
 	animation = new Animation(drawDC, hInstance);
-
 }
 
 Render::~Render()
@@ -28,22 +27,24 @@ void Render::Update()
 	bool ismoving = moveMgr->IsMoving(); 
 	auto now = steady_clock::now(); 
 
+	auto elapsed = duration_cast<seconds> (now - lastMoveTime).count(); 
+
 	if (ismoving) {
 		lastMoveTime = now;   // 타이머 리셋
 
-		if(key.IsKeyDown(VK_DOWN) )
+		if(key.IsKeyDown(VK_DOWN) && elapsed < 1)
 		{
 			SetAnimationState(PLAYER_DOWNWALK);
 		}
-		if (key.IsKeyDown(VK_RIGHT))
+		if (key.IsKeyDown(VK_RIGHT) && elapsed < 1)
 		{
 			SetAnimationState(PLAYER_RIGHTWALK);
 		}
-		if (key.IsKeyDown(VK_LEFT))
+		if (key.IsKeyDown(VK_LEFT) && elapsed < 1)
 		{
 			SetAnimationState(PLAYER_LEFTWALK);
 		}
-		if (key.IsKeyDown(VK_UP))
+		if (key.IsKeyDown(VK_UP) && elapsed < 1)
 		{
 			SetAnimationState(PLAYER_UPWALK);
 		}
