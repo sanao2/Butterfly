@@ -1,25 +1,15 @@
 #include "Render.h"
 using namespace Input;
 
-<<<<<<< HEAD
-namespace renderer
-{
-	Render::Render(HDC drawDC, HWND hwnd, HINSTANCE hInstance, int width, int height)
-		: hWnd(hwnd), clientSize{ width, height },hInst(hInstance)		
-	{ 
-		swap = new Swap(hwnd, width, height);
-		animation = new Animation(drawDC, hInstance);
-	}
-=======
 
 Render::Render(HDC drawDC, HWND hwnd, HINSTANCE hInstance, int width, int height)
-	: hWnd(hwnd), clientSize{ width, height }, lastMoveTime(steady_clock::now()),
-	hInst(hInstance), moveMgr(Move::MoveManager(key, playerRc))
+	: hWnd(hwnd), clientSize{ width, height }, hInst(hInstance),
+	moveMgr(Move::MoveManager(key, playerRc)), lastMoveTime(steady_clock::now()) 
 {
 	swap = new Swap(hwnd, width, height);
 	animation = new Animation(drawDC, hInstance);
 }
->>>>>>> backup-2025-05-04
+
 
 Render::~Render()
 {
@@ -29,30 +19,19 @@ Render::~Render()
 	delete swap;
 }
 
-<<<<<<< HEAD
-	void Render::Update()
-	{
-		
 
-
-	}
-	
-	void Render::RenderScene(HINSTANCE hInst)
-	{
-		Time::UpdateTime();
-=======
 void Render::Update()
 {
 	// 이동을 위한 업데이트 
 	moveMgr.MoveUpdate();
-	
-	bool ismoving = moveMgr.IsMoving(); 
-	auto now = steady_clock::now(); 
 
-	auto elapsed = duration_cast<seconds> (now - lastMoveTime).count(); 
-	
-		ProgressAnimationKey();	
+	bool ismoving = moveMgr.IsMoving();
+	auto now = steady_clock::now();
+
+	auto elapsed = duration_cast<seconds> (now - lastMoveTime).count();
 }
+
+
 
 void Render::RenderScene(HINSTANCE hInst)
 {
@@ -63,48 +42,25 @@ void Render::RenderScene(HINSTANCE hInst)
 
 	// 화면 초기화 (배경을 흰색으로 채우기)
 	PatBlt(memDC, 0, 0, clientSize.x, clientSize.y, WHITENESS);
->>>>>>> backup-2025-05-04
 
 	animation->Render(memDC, playerRc, graphics, 0, 0, current_frame);
 
-<<<<<<< HEAD
-		// 화면 초기화 (배경을 흰색으로 채우기)
-		PatBlt(memDC, 0, 0, clientSize.x, clientSize.y, WHITENESS);
+	// 화면 초기화 (배경을 흰색으로 채우기)
+	PatBlt(memDC, 0, 0, clientSize.x, clientSize.y, WHITENESS);
 
-		animation->Render(memDC, playerRc, graphics, 0, 0, current_frame);
+	animation->Render(memDC, playerRc, graphics, 0, 0, current_frame);
 
-		// 스왑 메모리 DC에 복사 (swap 내부 메모리 DC를 가져오는 메소드 필요)
-		swap->SwapBuffers();
-
-	}
-
-
-	POINT Render::GetBufferSize() const
-	{
-		return clientSize;
-	}
-	
-=======
 	// 스왑 메모리 DC에 복사 (swap 내부 메모리 DC를 가져오는 메소드 필요)
 	swap->SwapBuffers();
->>>>>>> backup-2025-05-04
 
 }
 
-void Render::Moves()
-{
-	if (current_state == PLAYER_DEFAULT) return;
-	
-	auto now = steady_clock::now();
-	auto elapsed = std::chrono::duration_cast<std::chrono::seconds>(now - lastMoveTime);
-	
 
-}
 POINT Render::GetBufferSize() const
 {
 	return clientSize;
 }
-void  Render::ProgressAnimationKey()
+void  Render::PlayerAnimationkeyInput()
 {
 	//  키 입력으로 다음 상태 결정
 	Animstate newState = current_state;
@@ -119,16 +75,15 @@ void  Render::ProgressAnimationKey()
 	{
 		ResourceManager* resManager = animation->GetResourceManager();
 		for (auto img : resManager->AnimationFrames) {
+			POINT     playerRcPos = { img->GetWidth(), img->GetHeight() };
 			delete img;
-		}	            
+		}
 		resManager->AnimationFrames.clear();
-		        
-		resManager->SetIsLoaded(false);                
-		resManager->LoadeFrames(hInst);                
+
+		resManager->SetIsLoaded(false);
+		resManager->LoadeFrames(hInst);
 
 		current_frame = 0;
 		current_state = newState;
 	};
 }
-
-

@@ -1,31 +1,12 @@
-﻿  Animation.cpp
-D:\BF\Butterfly\Winmain\Event\InputConstants.h(7,40): warning C4309: '초기화 중': 상수 값이 잘립니다.
-  (소스 파일 'Animation.cpp'을(를) 컴파일하는 중)
-  
-D:\BF\Butterfly\Winmain\Animation.cpp(70,43): warning C4838: 'UINT'에서 'LONG'(으)로의 변환에는 축소 변환이 필요합니다.
-D:\BF\Butterfly\Winmain\Animation.cpp(70,61): warning C4838: 'UINT'에서 'LONG'(으)로의 변환에는 축소 변환이 필요합니다.
-  MoveManagers.cpp
-D:\BF\Butterfly\Winmain\Event\InputConstants.h(7,40): warning C4309: '초기화 중': 상수 값이 잘립니다.
-  (소스 파일 'Move/MoveManagers.cpp'을(를) 컴파일하는 중)
-  
-D:\BF\Butterfly\Winmain\Animation.h(17,17): error C2871: 'Move': 같은 이름을 가진 네임스페이스가 없습니다.
-  (소스 파일 'Move/MoveManagers.cpp'을(를) 컴파일하는 중)
-  
-D:\BF\Butterfly\Winmain\Animation.h(17,17): error C2065: 'Move': 선언되지 않은 식별자입니다.
-  (소스 파일 'Move/MoveManagers.cpp'을(를) 컴파일하는 중)
-  
-D:\BF\Butterfly\Winmain\Animation.h(34,14): error C3646: 'moveMgr': 알 수 없는 재정의 지정자입니다.
-  (소스 파일 'Move/MoveManagers.cpp'을(를) 컴파일하는 중)
-  
-D:\BF\Butterfly\Winmain\Animation.h(34,2): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
-  (소스 파일 'Move/MoveManagers.cpp'을(를) 컴파일하는 중)
-  
-D:\BF\Butterfly\Winmain\Move\MoveManagers.cpp(38,44): warning C4244: '-=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-D:\BF\Butterfly\Winmain\Move\MoveManagers.cpp(39,44): warning C4244: '+=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-D:\BF\Butterfly\Winmain\Move\MoveManagers.cpp(40,44): warning C4244: '-=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-D:\BF\Butterfly\Winmain\Move\MoveManagers.cpp(41,44): warning C4244: '+=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  Render.cpp
+﻿  Render.cpp
 D:\BF\Butterfly\Winmain\Event\InputConstants.h(7,40): warning C4309: '초기화 중': 상수 값이 잘립니다.
   (소스 파일 'Render.cpp'을(를) 컴파일하는 중)
   
+D:\BF\Butterfly\Winmain\Render.cpp(78,43): warning C4838: 'UINT'에서 'LONG'(으)로의 변환에는 축소 변환이 필요합니다.
+D:\BF\Butterfly\Winmain\Render.cpp(78,61): warning C4838: 'UINT'에서 'LONG'(으)로의 변환에는 축소 변환이 필요합니다.
+  Winmain.cpp
+D:\BF\Butterfly\Winmain\Event\InputConstants.h(7,40): warning C4309: '초기화 중': 상수 값이 잘립니다.
+  (소스 파일 'Winmain.cpp'을(를) 컴파일하는 중)
+  
   코드를 생성하고 있습니다...
+  Winmain.vcxproj -> D:\BF\Butterfly\x64\Debug\Winmain.exe

@@ -6,7 +6,7 @@
 #include "Render.h"
 using namespace Input;
 
-extern renderer::Render* render;
+extern Render* render;
 extern RECT playerRc;
 extern int g_width;
 extern int g_height; 

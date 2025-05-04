@@ -12,7 +12,7 @@ int g_height = 800;
 HWND g_hWnd;
 HDC drawDC;
 
-renderer::Render* render = nullptr;
+Render* render = nullptr;
 RECT playerRc = { 5,5,20,20 };
 
 
@@ -103,7 +103,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 
     drawDC = GetDC(g_hWnd); 
        
-    render = new renderer::Render(drawDC, g_hWnd, hInstance, g_width, g_height);  // Global Render 객체 생성
+    render = new Render(drawDC, g_hWnd, hInstance, g_width, g_height);  // Global Render 객체 생성
 
     Time::InitTime(); // Timer start  Initialization  
 
