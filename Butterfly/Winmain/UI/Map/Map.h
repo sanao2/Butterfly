@@ -5,26 +5,56 @@
 #include "IImageRenderer.h"
 #include "GdiplusImageRenderer.h"
 #pragma comment(lib, "gdiplus.lib")
+#include <vector>
+#include <map>
+#include <unordered_map> // Add this line to include the unordered_map header
+#include <stdexcept>
+using std::unordered_map;
+using std::vector; 
+constexpr wchar_t SPRITE_TYPE[] = L"PNG";
+
 
 enum Spritestate
 {
 	FLOORTILE, 
-	THREE,
+	TREE,
 	BRANCH,
 	POND,
 	RESOURCE_COUNT
 };
 
-inline int GetAnimPath(Spritestate Sprstate)
+
+
+struct ResourceInfo {
+	vector<int> ImageID;
+	ResourceInfo() = default;
+	ResourceInfo(std::initializer_list<int> list)
+		: ImageID(list) {
+	}
+};
+
+unordered_map<Spritestate, ResourceInfo> SpriteStateFrameMap = {
+   {FLOORTILE, { IDB_FLOOR_TILE_ONE,IDB_FLOOR_TILE_SECOND,IDB_FLOOR_TILE_THREE }},
+   {TREE,{ IDB_TREE}},
+   {BRANCH, {IDB_BRANCH}},
+   {POND, { IDB_POND}},
+   
+
+};
+inline const int GetSpriteID(Spritestate Sprstate, size_t frameIndex)
 {
-	// static 으로 일정한 값을 구현 
-	static int SpriteIDs[] = {
-	IDB_POND, IDB_SHOP,IDB_TREE, IDB_BRANCH	};
+	auto it = SpriteStateFrameMap.find(Sprstate);
+	if (it == SpriteStateFrameMap.end()) {
+		throw std::runtime_error("Animstate가 AnimStateFrameMap에 존재하지 않습니다.");
+	}
+	auto& vec = it->second.ImageID;
+	if (frameIndex >= vec.size()) {
+		throw std::out_of_range("frameIndex가 ImageID 벡터의 범위를 초과했습니다.");
+	}
 
-	//if (Sprstate < 0 || state >= ANIMCOUNT) return nullptr;
-
-	//return RESOURCE_DIR + paths[state];
+	return vec[frameIndex];
 }
+
 
 
 namespace Map
@@ -37,22 +67,51 @@ namespace Map
 		Gdiplus::GdiplusStartupInput gsi;
 		Gdiplus::Graphics* graphics = nullptr;
 		Gdiplus::Image* image = nullptr;
-
+			
 		POINT clientSize = {};
 		POINT ObjectPos = {};
 		POINT ObjectScale = {};
+		int  ResourceID = 0; 
 
 		ImageResource* imageResource = nullptr; 
-		IImageRenderer* imageRenderer = nullptr; 
-		
+		IImageRenderer* imageRenderer = nullptr; 		
 
 	public:
 		Object(HDC drawDC, int width, int height);
 		~Object(); 
 
-		void CreateObject(Gdiplus::Image* image, int x, int y); 
+		RECT& CreateRect(int left, int top, int right, int bottom);
+		void LoadImages(HINSTANCE hInstance); 
 		void drawMap(); 
 		void Update(); 
-		void Render(Gdiplus::Graphics* graphics, RECT& rect, Gdiplus::Image* image, int width, int height, int x, int y);
+		void Render(HDC drawDC, Gdiplus::Graphics* graphics, RECT& rect, Gdiplus::Image* image, int width, int height, int x, int y);
 	};
 }
+
+
+//void ResourceManger::LoadImages(HINSTANCE hInst)
+//{
+//	try {			
+//
+//		imageResource->LoadFromResource(hInst, RESOURCE_ID, RESOURCE_TYPE); // Load image from resource 
+//	
+//		
+//		//image = imageResource->GetBitmap();
+//		AnimationFrames.push_back(image); 
+//
+//		if (image == nullptr)
+//		{
+//			cerr << "Failed to load image resource." << endl;
+//			return;
+//		}
+//
+//	}
+//	catch (const std::exception& e) {
+//		std::cerr << "Error loading images: " << e.what() << std::endl;
+//	}
+//	if (image != nullptr)
+//	{
+//		cerr << "Failed to load images." << endl;
+//	}
+//	
+//}

@@ -7,7 +7,7 @@
 #include "UI/Map/IImageRenderer.h"
 #include "UI/Map/GdiplusImageRenderer.h" // Ensure this header is included
 #include "Swap.h"
-#include "UI/Map/resource.h"
+#include "resource.h"
 #include <iostream>
 #include <vector>
 using namespace std;

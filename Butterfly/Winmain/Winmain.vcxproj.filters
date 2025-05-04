@@ -120,11 +120,8 @@
     <ClInclude Include="UI\Map\ImageResource.h">
       <Filter>소스 파일\UI</Filter>
     </ClInclude>
-    <ClInclude Include="UI\Map\resource.h">
-      <Filter>소스 파일\UI</Filter>
-    </ClInclude>
     <ClInclude Include="resource.h">
-      <Filter>헤더 파일</Filter>
+      <Filter>소스 파일\UI</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -292,6 +289,12 @@
       <Filter>리소스 파일</Filter>
     </Image>
     <Image Include="Resource\One%27sResource\Item\Branch.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\One%27sResource\floorTile\floorTile_2.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\One%27sResource\floorTile\floorTile_3.png">
       <Filter>리소스 파일</Filter>
     </Image>
   </ItemGroup>

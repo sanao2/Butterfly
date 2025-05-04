@@ -153,7 +153,6 @@
     <ClInclude Include="UI\Map\IImageRenderer.h" />
     <ClInclude Include="UI\Map\ImageResource.h" />
     <ClInclude Include="UI\Map\Map.h" />
-    <ClInclude Include="UI\Map\resource.h" />
     <ClInclude Include="UI\Timer.h" />
     <ClInclude Include="Winmain.h" />
   </ItemGroup>
@@ -176,6 +175,8 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="bitmap1.bmp" />
+    <Image Include="Resource\One%27sResource\floorTile\floorTile_2.png" />
+    <Image Include="Resource\One%27sResource\floorTile\floorTile_3.png" />
     <Image Include="Resource\One%27sResource\floorTile\floorTile_4.png" />
     <Image Include="Resource\One%27sResource\Item\Branch.png" />
     <Image Include="Resource\One%27sResource\player\Player_downwalk_IDLE.png" />

@@ -1,7 +1,7 @@
 #pragma once
 #include <vector> 
 #include <unordered_map>
-#include "UI/Map/resource.h"
+#include "resource.h"
 #include <stdexcept>
 using std::unordered_map;
 using std::vector; 

@@ -47,6 +47,9 @@
 #define IDB_PLAYER_LEFTWALK_SECOND      188
 #define IDB_PNG4                        189
 #define IDB_BRANCH                      189
+#define IDB_FLOOR_TILE_SECOND           190
+#define IDB_PNG7                        191
+#define IDB_FLOOR_TILE_THREE            191
 #define ID_32771                        32771
 #define ID_Menu                         32772
 #define IDC_STATIC                      -1
@@ -55,7 +58,7 @@
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
-#define _APS_NEXT_RESOURCE_VALUE        190
+#define _APS_NEXT_RESOURCE_VALUE        192
 #define _APS_NEXT_COMMAND_VALUE         32773
 #define _APS_NEXT_CONTROL_VALUE         1000
 #define _APS_NEXT_SYMED_VALUE           110
