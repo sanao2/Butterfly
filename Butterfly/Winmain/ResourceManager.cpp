@@ -74,7 +74,7 @@ void ResourceManager::LoadeFrames(HINSTANCE hInst)
 			cerr << "리소스 로드 실패 ID : " << id << endl;
 		}
 	}
-	isLoaded = true; 
+	isLoaded = false; 
 }
 
 //void ResourceManger::Render(Gdiplus::Graphics& graphics, int x, int y)

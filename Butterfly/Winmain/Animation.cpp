@@ -47,24 +47,24 @@ void Animation::PlayerAnimationkeyInput()
 	if (key.IsKeyDown(VK_RIGHT))
 	{
 		newState = PLAYER_RIGHTWALK;
-		Sleep(10);
 	}
 	else if (key.IsKeyDown(VK_LEFT))
 	{
-		newState = PLAYER_LEFTWALK; Sleep(10);
+		newState = PLAYER_LEFTWALK; 
 	}
 	else if (key.IsKeyDown(VK_DOWN))
 	{
-		newState = PLAYER_DOWNWALK; Sleep(10);
+		newState = PLAYER_DOWNWALK; 
 	}
 	else if (key.IsKeyDown(VK_UP))
 	{
-		newState = PLAYER_UPWALK; Sleep(10);
+		newState = PLAYER_UPWALK; 
 	}
 	else if (elapsed >= 1.0f) {
-		newState = PLAYER_DEFAULT; Sleep(10);
+		newState = PLAYER_DEFAULT; 
 	}
 	else  return;
+
 
 	// 상태가 변경되었을 때만 교환
 	if (newState != current_state)
