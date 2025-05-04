@@ -20,6 +20,10 @@ namespace Move
         bool GetIsMoving() const { return isMoving; }
         void SetIsMoving(bool state) { isMoving = state; }
 
+        //test code 
+        POINT GetmovePos() const { return movePos; }
+        void SetmovePos(POINT movepos) { movePos = movepos; }
+
     private:
         void MoveKeyInput();
         void MoveKeyRelease();

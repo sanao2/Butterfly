@@ -29,9 +29,9 @@ void Render::Update()
 	auto now = steady_clock::now();
 
 	auto elapsed = duration_cast<seconds> (now - lastMoveTime).count();
+	
+	PlayerAnimationkeyInput();
 }
-
-
 
 void Render::RenderScene(HINSTANCE hInst)
 {
@@ -60,10 +60,11 @@ POINT Render::GetBufferSize() const
 {
 	return clientSize;
 }
-void  Render::PlayerAnimationkeyInput()
+void Render::PlayerAnimationkeyInput()
 {
 	//  키 입력으로 다음 상태 결정
 	Animstate newState = current_state;
+
 	if (key.IsKeyDown(VK_RIGHT))	  newState = PLAYER_RIGHTWALK;
 	else if (key.IsKeyDown(VK_LEFT))  newState = PLAYER_LEFTWALK;
 	else if (key.IsKeyDown(VK_DOWN))  newState = PLAYER_DOWNWALK;
