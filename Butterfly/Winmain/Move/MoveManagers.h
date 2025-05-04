@@ -10,7 +10,6 @@ namespace Move
     class MoveManager
     {
     public:
-        //real code
         explicit MoveManager(Input::InputManager<Input::KeyboardDevice>& keyRef, RECT& rect);
         ~MoveManager();
 
@@ -26,6 +25,7 @@ namespace Move
         void ApplyMovement(MoveDirection dir); 
 
     private:
+        //real code 
         Input::InputManager<Input::KeyboardDevice>& key;
         bool isMoving = false;
         POINT movePos = {};

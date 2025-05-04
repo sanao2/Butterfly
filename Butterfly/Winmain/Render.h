@@ -35,6 +35,5 @@ private:
   
     std::chrono::steady_clock::time_point          lastMoveTime;
     Input::InputManager<Input::KeyboardDevice>& key = Input::InputManager<Input::KeyboardDevice>::GetInstance();
-    Move::PlayerMoveController                     playerController;
-    Move::MoveManager* moveMgr = nullptr;
+    Move::MoveManager moveMgr;
 };
