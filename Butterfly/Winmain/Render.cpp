@@ -4,7 +4,7 @@ using namespace Input;
 
 Render::Render(HDC drawDC, HWND hwnd, HINSTANCE hInstance, int width, int height)
 	: hWnd(hwnd), clientSize{ width, height },
-	hInst(hInstance)
+	hInst(hInstance), playerController(key)
 {
 	swap = new Swap(hwnd, width, height);
 	animation = new Animation(drawDC, hInstance);

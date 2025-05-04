@@ -13,34 +13,8 @@ HWND g_hWnd;
 HDC drawDC;
 
 Render* render = nullptr;
-RECT playerPos = { 5,5,20,20 };
+RECT playerRect = { 5,5,20,20 };
 
-// key Input test
-//void MoveDirState()
-//{
-//    if (current_state == PLAYER_DEFAULT) return;
-//
-//    auto now = steady_clock::now();
-//    auto elapsed = std::chrono::duration_cast<std::chrono::seconds>(now - lastInputTime);
-//
-//    if (key.IsKeyDown(VK_RIGHT))
-//    {
-//        SetAnimationState(PLAYER_RIGHTWALK);
-//    }
-//    else if (key.IsKeyDown(VK_LEFT))
-//    {
-//        SetAnimationState(PLAYER_LEFTWALK);
-//    }
-//    else if (key.IsKeyDown(VK_DOWN))
-//    {
-//        SetAnimationState(PLAYER_DOWNWALK);
-//    }
-//    else if (key.IsKeyDown(VK_UP))
-//    {
-//        SetAnimationState(PLAYER_UPWALK);
-//    }
-//
-//};
 
 void InitConsole()
 {

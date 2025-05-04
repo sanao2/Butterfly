@@ -11,6 +11,7 @@
 #pragma comment(lib, "gdiplus.lib")
 
 extern RECT playerPos;
+
 class Render
 {
 public:
@@ -32,7 +33,9 @@ private:
     Gdiplus::Graphics*                             graphics = nullptr;
     Animation*                                     animation = nullptr;
   
-
-
-    
+    std::chrono::steady_clock::time_point          lastInputTime;
+    Move::MoveManager* moveMgr = nullptr;
+    Move::PlayerMoveController                     playerController;
+    Input::InputManager<Input::KeyboardDevice>& key = Input::InputManager<Input::KeyboardDevice>::GetInstance();
+           
 };
