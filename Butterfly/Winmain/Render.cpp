@@ -28,12 +28,7 @@ void Render::Update()
 
 	auto elapsed = duration_cast<seconds> (now - lastMoveTime).count(); 
 	
-		ProgressAnimationKey();
-	
-	
-	
-
-	
+		ProgressAnimationKey();	
 }
 
 void Render::RenderScene(HINSTANCE hInst)
@@ -62,30 +57,35 @@ void Render::Moves()
 	
 
 }
-void  Render::ProgressAnimationKey()
-{
-	if (key.IsKeyDown(VK_RIGHT))
-	{
-
-		SetAnimationState(PLAYER_RIGHTWALK);
-	}
-	else if (key.IsKeyDown(VK_LEFT))
-	{
-		SetAnimationState(PLAYER_LEFTWALK);
-	}
-	else if (key.IsKeyDown(VK_DOWN))
-	{
-		SetAnimationState(PLAYER_DOWNWALK);
-	}
-	else if (key.IsKeyDown(VK_UP))
-	{
-		SetAnimationState(PLAYER_UPWALK);
-	}
-}
-
 POINT Render::GetBufferSize() const
 {
 	return clientSize;
+}
+void  Render::ProgressAnimationKey()
+{
+	//  키 입력으로 다음 상태 결정
+	Animstate newState = current_state;
+	if (key.IsKeyDown(VK_RIGHT))	  newState = PLAYER_RIGHTWALK;
+	else if (key.IsKeyDown(VK_LEFT))  newState = PLAYER_LEFTWALK;
+	else if (key.IsKeyDown(VK_DOWN))  newState = PLAYER_DOWNWALK;
+	else if (key.IsKeyDown(VK_UP))    newState = PLAYER_UPWALK;
+	else                              newState = PLAYER_DEFAULT;
+
+	// 상태가 변경되었을 때만 교환
+	if (newState != current_state)
+	{
+		ResourceManager* resManager = animation->GetResourceManager();
+		for (auto img : resManager->AnimationFrames) {
+			delete img;
+		}	            
+		resManager->AnimationFrames.clear();
+		        
+		resManager->SetIsLoaded(false);                
+		resManager->LoadeFrames(hInst);                
+
+		current_frame = 0;
+		current_state = newState;
+	};
 }
 
 

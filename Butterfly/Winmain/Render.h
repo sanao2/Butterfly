@@ -21,8 +21,9 @@ public:
     void Update();          // 렌더 업데이트 및 스왑 호출  
     void RenderScene(HINSTANCE hInst);     // 실제 그리기 동작 
     void Moves(); 
-    POINT GetBufferSize() const;
     void ProgressAnimationKey();
+    POINT GetBufferSize() const;
+
 
 private:
     HWND                                           hWnd = nullptr;

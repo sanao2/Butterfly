@@ -27,10 +27,10 @@ private :
 public : 
 	Animation(HDC drawDC, HINSTANCE hInstance);
 	~Animation(); 
-	
-	
+		
 	void Update();	
 	void Render(HDC drawDC, RECT& rect, Gdiplus::Graphics* graphics, int x, int y, int curFrameIndex);
 	void Changestate(Animstate newState, HINSTANCE hInstance);
+	ResourceManager* GetResourceManager() { return resManager; }
 };
 
