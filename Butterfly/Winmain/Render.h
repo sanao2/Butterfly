@@ -9,9 +9,11 @@
 #include <chrono>
 #include "AnimationMap.h"
 #include "Move/MoveManagers.h"
+#include "UI/Map/Map.h"
 #pragma comment(lib, "gdiplus.lib")
 using namespace std::chrono;
 using namespace Move;
+using namespace Map; 
 
 class Render
 {
@@ -28,10 +30,11 @@ public:
         HWND                                           hWnd = nullptr;
         POINT                                          clientSize = { 0, 0 };
         HINSTANCE                                      hInst = nullptr;
+        HDC                                            memDC = nullptr;
 
         Swap* swap = nullptr;
         Time::Timer<> timer;
-        HDC                                            memDC = nullptr;
+        Map::Object*                                   object = nullptr; 
         Gdiplus::Graphics* graphics = nullptr;
         Animation* animation = nullptr;
         Input::InputManager<Input::KeyboardDevice>& key = Input::InputManager<Input::KeyboardDevice>::GetInstance();

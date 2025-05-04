@@ -25,22 +25,22 @@ enum Spritestate
 	RESOURCE_COUNT
 };
 
-struct ResourceInfo {
+struct SpriteInfo {
 	vector<int> ImageID;
-	ResourceInfo() = default;
-	ResourceInfo(std::initializer_list<int> list)
+	SpriteInfo() = default;
+	SpriteInfo(std::initializer_list<int> list)
 		: ImageID(list) {
 	}
 };
 
-unordered_map<Spritestate, ResourceInfo> SpriteStateFrameMap = {
+unordered_map<Spritestate, SpriteInfo> SpriteStateFrameMap = {
    {FLOORTILE, { IDB_FLOOR_TILE_ONE,IDB_FLOOR_TILE_SECOND,IDB_FLOOR_TILE_THREE }},
    {TREE,{ IDB_TREE}},
    {BRANCH, {IDB_BRANCH}},
-   {POND, { IDB_POND}},
-   
+   {POND, { IDB_POND}}  
 
 };
+
 inline const int GetSpriteID(Spritestate Sprstate, size_t frameIndex)
 {
 	auto it = SpriteStateFrameMap.find(Sprstate);
@@ -60,28 +60,28 @@ namespace Map
 	class Object
 	{
 	private:
-		HDC memDC;
-		ULONG_PTR GdiPlusToken;
-		Gdiplus::GdiplusStartupInput gsi;
-		Gdiplus::Graphics* graphics = nullptr;
+		ImageResource* imageResource = nullptr;
+		IImageRenderer* imageRenderer = nullptr;
 		Gdiplus::Image* image = nullptr;
-			
-		POINT clientSize = {};
 		POINT ObjectPos = {};
-		POINT ObjectScale = {};
-		int  ResourceID = 0; 
+		Spritestate Sprstate;
 
-		ImageResource* imageResource = nullptr; 
-		IImageRenderer* imageRenderer = nullptr; 		
+		POINT ObjectScale = {};
+		int  ResourceID = 0; 			
+
+		vector<Gdiplus::Image*> SpriteFrames;
 
 	public:
 		Object(HDC drawDC, int width, int height);
 		~Object(); 
 
 		void drawMap();
-		Gdiplus::Image* LoadImages(HINSTANCE hInstance, int SpriteID);		 
+		Gdiplus::Image* LoadImages(HINSTANCE hInstance);		 
 		void Update(); 
-		void Render(HDC drawDC, Gdiplus::Graphics* graphics, Gdiplus::Image* image, int width, int height, int x, int y);
+		void Render(Gdiplus::Graphics* graphics,int x, int y);
+
+		Spritestate GetSpritestate() { return Sprstate;  }
+		void SetSpritestate(Spritestate state) { Sprstate = state; }
 	};
 }
 

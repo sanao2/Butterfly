@@ -1,48 +1,71 @@
 #include "Map.h"
 
-Map::Object::Object(HDC drawDC, int width, int height) 
-	: memDC(drawDC), clientSize{width,height}, 
-	  ObjectPos{0,0}, ObjectScale{0,0}
+namespace Map
 {
-	imageResource = new ImageResource(); 
-	imageRenderer = new GdiPlusImageRenderer();
-
-	Gdiplus::GdiplusStartup(&GdiPlusToken, &gsi, nullptr);
-	Gdiplus::Graphics* g_pBackBufferGraphics = Gdiplus::Graphics::FromHDC(memDC);
-}
-
-Map::Object::~Object()
-{
-	delete image; 
-	delete graphics; 
-	delete imageRenderer; 
-	delete imageResource; 
-	DeleteDC(memDC);
-	Gdiplus::GdiplusShutdown(GdiPlusToken);
-}
-
-Gdiplus::Image* Map::Object::LoadImages(HINSTANCE hInstance, int SpriteID)
-{
-	imageResource->LoadFromResource(hInstance, SpriteID, SPRITE_TYPE);
-
-	image = imageResource->GetBitmap(); 
-
-	if (image == nullptr)
+	Map::Object::Object(HDC drawDC, int width, int height)
+		:  SpriteFrames{ 0, }, Sprstate(RESOURCE_COUNT),
+		ObjectPos{ 0,0 }, ObjectScale{ 0,0 }
 	{
-		cerr << "Failed to load image resource." << endl;
-		return nullptr;
+		imageResource = new ImageResource();
+		imageRenderer = new GdiPlusImageRenderer();
+
 	}
-	return image; 
+
+	Map::Object::~Object()
+	{	
+		delete imageRenderer;
+		if (imageResource) {
+			delete image; 
+			delete imageResource;
+		}
+
+	}
+
+	Gdiplus::Image* Map::Object::LoadImages(HINSTANCE hInstance)
+	{
+		auto& sprState = SpriteStateFrameMap[Sprstate].ImageID;
+
+		for (int i = 0; i < sprState.size(); ++i)
+		{
+			int ID = GetSpriteID(Sprstate, i);
+
+			if (imageResource->LoadFromResource(hInstance, ID, SPRITE_TYPE))
+			{
+				image = imageResource->GetBitmap();
+				SpriteFrames.push_back(image);
+			}
+			else
+			{
+				cerr << "리소스 로드 실패 ID : " << ID << endl;
+			}
+		}
+
+		return image;
+	}
+
+	void Map::Object::Update()
+	{
+		switch (Sprstate)
+		{
+		case FLOORTILE:
+
+			break;
+		case TREE:
+			break;
+		case BRANCH:
+			break;
+		case POND:
+			break;
+		}
+	}
+
+	void Map::Object::Render( Gdiplus::Graphics* graphics, int x, int y)
+	{
+		int Objwidth = image->GetWidth();
+		int Objheight = image->GetHeight();
+
+		RECT destRect = { x,y,Objwidth,Objheight };
+		imageRenderer->Render(*graphics, destRect, image, Objwidth, Objheight, x, y);
+	}
+
 }
-
-
-
-void Map::Object::Render(HDC drawDC,Gdiplus::Graphics* graphics, Gdiplus::Image* image, int width, int height, int x, int y)
-{
-	int Objwidth = image->GetWidth(); 
-	int Objheight = image->GetHeight(); 
-
-	Gdiplus::Rect destRect = { x,y,Objwidth,Objheight };
-	imageRenderer->Render(*graphics, image, width, height, x, y);
-}
-
