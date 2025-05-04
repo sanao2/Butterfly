@@ -1,9 +1,31 @@
 #include <windows.h>
 #include <gdiplus.h>
+#include "resource.h"
 #include "ImageResource.h"
 #include "IImageRenderer.h"
 #include "GdiplusImageRenderer.h"
 #pragma comment(lib, "gdiplus.lib")
+
+enum Spritestate
+{
+	FLOORTILE, 
+	THREE,
+	BRANCH,
+	POND
+};
+
+inline int GetAnimPath(Spritestate Sprstate)
+{
+	// static 으로 일정한 값을 구현 
+	static int SpriteIDs[] = {
+	IDB_POND, 
+	};
+
+	if (state < 0 || state >= ANIMCOUNT) return nullptr;
+
+	return RESOURCE_DIR + paths[state];
+}
+
 
 namespace Map
 {
