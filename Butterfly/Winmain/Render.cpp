@@ -4,98 +4,70 @@ using namespace Input;
 RECT playerRect = { 5, 5, 10,10 };
 
 Render::Render(HDC drawDC, HWND hwnd, HINSTANCE hInstance, int width, int height)
-   : hWnd(hwnd), clientSize{ width, height }, 
-	hInst(hInstance), playerController(key)
+	: hWnd(hwnd), clientSize{ width, height },
+	hInst(hInstance)
 {
-   swap = new Swap(hwnd, width, height);
-   animation = new Animation(drawDC, hInstance);
-   lastInputTime = steady_clock::now();
-   moveMgr = new Move::MoveManager(key, playerRect);
-}   
+	swap = new Swap(hwnd, width, height);
+	animation = new Animation(drawDC, hInstance);
+}
 
 Render::~Render()
-{	 
+{
 	DeleteDC(memDC);
 	delete graphics;
 	delete animation;
-	delete moveMgr; 
-    delete swap;
+	delete swap;
 }
 
 void Render::Update()
-{ 
-   // 이동을 위한 업데이트 
-	moveMgr->MoveUpdate();
+{
+	// 이동을 위한 업데이트 
 	animation->Update(); // 애니메이션 업데이트 
 }
 
 void Render::RenderScene(HINSTANCE hInst)
 {
-   Time::UpdateTime();
-   
-   memDC = swap->GetMemDC();
-   graphics = new Gdiplus::Graphics(memDC);
+	Time::UpdateTime();
 
-   // 화면 초기화 (배경을 흰색으로 채우기)
-   PatBlt(memDC, 0, 0, clientSize.x, clientSize.y, WHITENESS);
-  
-   animation->Render(memDC, graphics, 0, 0, current_frame);
+	memDC = swap->GetMemDC();
+	graphics = new Gdiplus::Graphics(memDC);
 
-   // 스왑 메모리 DC에 복사 (swap 내부 메모리 DC를 가져오는 메소드 필요)
-   swap->SwapBuffers();
-   
+	// 화면 초기화 (배경을 흰색으로 채우기)
+	PatBlt(memDC, 0, 0, clientSize.x, clientSize.y, WHITENESS);
+
+	animation->Render(memDC, graphics, 0, 0, current_frame);
+
+	// 스왑 메모리 DC에 복사 (swap 내부 메모리 DC를 가져오는 메소드 필요)
+	swap->SwapBuffers();
+
 }
 
-void  Render::MoveDirection()
-{
-   auto now = steady_clock::now();   
-
-   Move::MoveDirection dir = playerController.GetDirection(); 
-   
-   lastInputTime = now; 
-  
-   Animstate curstate = MoveDirstate();
-   auto elapsed = duration_cast<seconds>(now - lastInputTime);
-
-   if (dir != Move::MoveDirection::None)
-   {
-	   lastInputTime = now; 	  
-	   SetAnimationState(curstate);
-   }
-   else if (elapsed.count() >= 1.0f && dir == Move::MoveDirection::None)
-   {	 
-	  SetAnimationState(PLAYER_DEFAULT);	
-   }
-}
-
-Animstate Render::MoveDirstate()
-{
-	if (current_state == NULL) return current_state; 
-
-	if (key.IsKeyDown(VK_RIGHT))
-	{
-		SetAnimationState(PLAYER_RIGHTWALK);
-	}
-	if (key.IsKeyDown(VK_LEFT))
-	{
-		SetAnimationState(PLAYER_LEFTWALK);
-	}
-	if (key.IsKeyDown(VK_DOWN))
-	{
-		SetAnimationState(PLAYER_DOWNWALK);
-	}
-	if (key.IsKeyDown(VK_UP))
-	{
-		SetAnimationState(PLAYER_UPWALK);
-	}
-	
-	return current_state; 
-}
-
+//void  Render::MoveDirection()
+//{
+//	auto now = steady_clock::now();
+//
+//	Move::MoveDirection dir = playerController.GetDirection();
+//
+//	lastInputTime = now;
+//
+//	Animstate curstate = MoveDirstate();
+//	auto elapsed = duration_cast<seconds>(now - lastInputTime);
+//
+//	if (dir != Move::MoveDirection::None)
+//	{
+//		lastInputTime = now;
+//		SetAnimationState(curstate);
+//	}
+//	else if (elapsed.count() >= 1.0f && dir == Move::MoveDirection::None)
+//	{
+//		SetAnimationState(PLAYER_DEFAULT);
+//
+//	}
+//}
 
 POINT Render::GetBufferSize() const
 {
-   return clientSize;
+	return clientSize;
 }
 //int boxDraw()
 //{
@@ -105,3 +77,4 @@ POINT Render::GetBufferSize() const
 //    ReleaseDC(g_hWnd, drawDC); // Release 해줘야 리소스 누수 안 생김
 //    return S_OK;
 //}
+

@@ -15,6 +15,32 @@ HDC drawDC;
 Render* render = nullptr;
 RECT playerPos = { 5,5,20,20 };
 
+// key Input test
+//void MoveDirState()
+//{
+//    if (current_state == PLAYER_DEFAULT) return;
+//
+//    auto now = steady_clock::now();
+//    auto elapsed = std::chrono::duration_cast<std::chrono::seconds>(now - lastInputTime);
+//
+//    if (key.IsKeyDown(VK_RIGHT))
+//    {
+//        SetAnimationState(PLAYER_RIGHTWALK);
+//    }
+//    else if (key.IsKeyDown(VK_LEFT))
+//    {
+//        SetAnimationState(PLAYER_LEFTWALK);
+//    }
+//    else if (key.IsKeyDown(VK_DOWN))
+//    {
+//        SetAnimationState(PLAYER_DOWNWALK);
+//    }
+//    else if (key.IsKeyDown(VK_UP))
+//    {
+//        SetAnimationState(PLAYER_UPWALK);
+//    }
+//
+//}
 void InitConsole()
 {
     AllocConsole();
@@ -123,11 +149,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
         float TotalTime = Time::GetTotalTime(); 
         std::cout << "[" << TotalTime << "]" << std::endl;
      
-		//ProgressInput(); // 키보드 입력 처리 
         render->Update(); 
-		//render->Update(); // 렌더링 업데이트 호출 
-		render->RenderScene(hInstance); // 렌더링 호출
-        //boxDraw();
+		render->RenderScene(hInstance); // 렌더링 호
 		
     }
 
