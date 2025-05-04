@@ -11,7 +11,7 @@ namespace Move
     class MoveManager
     {
     public:
-        explicit MoveManager(Input::InputManager<Input::KeyboardDevice>& keyRef, RECT& rect);
+        explicit MoveManager(Input::InputManager<Input::KeyboardDevice>& keyRef, RECT& rect, HDC drawDC, HINSTANCE hInstance);
         ~MoveManager();
 
         void MoveUpdate();
@@ -28,9 +28,10 @@ namespace Move
         void MoveKeyInput();
         void MoveKeyRelease();
         void ApplyMovement(MoveDirection dir); 
-        void PlayerAnimationkeyInput();
+        
     private :
         Input::InputManager<Input::KeyboardDevice>& key;
+        Animation* animation = nullptr; 
         bool isMoving = false;
         POINT movePos = {};
         RECT& playerRect;
