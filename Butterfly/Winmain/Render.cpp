@@ -21,7 +21,7 @@ Render::~Render()
 
 void Render::Update()
 {
-	
+	animation->Update();
 }
 
 void Render::RenderScene(HINSTANCE hInst)

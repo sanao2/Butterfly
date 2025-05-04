@@ -18,7 +18,11 @@ using namespace Move;
 extern int g_width; 
 extern int g_height;
 extern int current_frame;
+
+class Animation; 
+
 extern RECT playerRc;
+extern Animation* g_pPlayeranimation; 
 
 class Animation 
 {
@@ -31,7 +35,7 @@ private :
 	constexpr static float frameInterval = 0.25f; 
 
 	Input::InputManager<Input::KeyboardDevice>& key = Input::InputManager<Input::KeyboardDevice>::GetInstance();
-	Move::MoveManager* moveMgr;
+	Move::MoveManager* moveMgr = nullptr;
 	steady_clock::time_point lastMoveTime;
 public : 
 	Animation(HDC drawDC, HINSTANCE hInstance);
@@ -40,7 +44,7 @@ public :
 	void Update();	
 	void Render(HDC drawDC, RECT& rect, Gdiplus::Graphics* graphics, int x, int y, int curFrameIndex);
 	void PlayerAnimationkeyInput();           // 플레이어 이동 키 입력 
-	void Changestate(Animstate newState, HINSTANCE hInstance);
+	//void Changestate(Animstate newState, HINSTANCE hInstance);
 	ResourceManager* GetResourceManager() { return resManager; }
 };
 

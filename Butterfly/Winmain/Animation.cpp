@@ -1,9 +1,12 @@
 #include "Animation.h"
 int current_frame = 0;
 
+Animation* g_pPlayeranimation = nullptr; 
+
 Animation::Animation(HDC drawDC, HINSTANCE hInstance) 	: hInstance(hInstance),  
 		lastMoveTime(steady_clock::now()), moveMgr(new Move::MoveManager(key, playerRc))
 {
+	g_pPlayeranimation = this; 
     resManager = new ResourceManager(drawDC, hInstance);
     resManager->LoadeFrames(hInstance);
 	
@@ -51,10 +54,8 @@ void Animation::PlayerAnimationkeyInput()
 
 	// 상태가 변경되었을 때만 교환
 	if (newState != current_state)
-	{
-		ResourceManager* resManager = GetResourceManager();
+	{	
 		for (auto img : resManager->AnimationFrames) {
-			POINT     playerRcPos = { img->GetWidth(), img->GetHeight() };
 			delete img;
 		}
 		resManager->AnimationFrames.clear();
@@ -67,22 +68,22 @@ void Animation::PlayerAnimationkeyInput()
 	};
 }
 
-void Animation::Changestate(Animstate newState, HINSTANCE hInstance)
-{
-    SetPrevAnimationState(GetcurrentAnimationState()); 
-
-    SetAnimationState(newState); // currentAnimstate Setting 
-
-    for (auto image : resManager->AnimationFrames) {
-        delete image; 
-    }
-
-    resManager->AnimationFrames.clear(); 
-    resManager->SetIsLoaded(false); 
-
-    resManager->LoadeFrames(hInstance); 
-    lastReload = steady_clock::now(); 
-    timer.Reset(); 
-
-   
-}
+//void Changestate(Animstate newState, HINSTANCE hInstance)
+//{
+//    SetPrevAnimationState(GetcurrentAnimationState()); 
+//
+//    SetAnimationState(newState); // currentAnimstate Setting 
+//	ResourceManager* 
+//    for (auto image : resManager->AnimationFrames) {
+//        delete image; 
+//    }
+//
+//    resManager->AnimationFrames.clear(); 
+//    resManager->SetIsLoaded(false); 
+//
+//    resManager->LoadeFrames(hInstance); 
+//    lastReload = steady_clock::now(); 
+//    timer.Reset(); 
+//
+//   
+//}
