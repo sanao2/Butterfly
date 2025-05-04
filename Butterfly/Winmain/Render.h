@@ -32,9 +32,7 @@ private:
 
    Swap* swap = nullptr;  
    Animation* animation = nullptr; // 애니메이션 객체    
-  
-  
-  
+    
 public:  
    Render(HDC drawDC, HWND hwnd, HINSTANCE hInstance, int width, int height);  
    ~Render();  
@@ -42,6 +40,7 @@ public:
    void Update();          // 렌더 업데이트 및 스왑 호출  
    void RenderScene(HINSTANCE hInst);     // 실제 그리기 동작 
    void MoveDirection();
+   Animstate MoveDirstate(); 
 
    POINT GetBufferSize() const;  
 };

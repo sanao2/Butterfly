@@ -52,24 +52,40 @@ void  Render::MoveDirection()
 
    Move::MoveDirection dir = playerController.GetDirection(); 
    
-   if (key.IsKeyDown(VK_RIGHT))
-   {
-	   SetAnimationState(PLAYER_RIGHTWALK);
-   }
-   if (key.IsKeyDown(VK_LEFT))
-   {
-	   SetAnimationState(PLAYER_LEFTWALK);
+   lastInputTime = now; 
+  
+   MoveDirstate();
 
-   }
-   if (key.IsKeyDown(VK_DOWN))
+   if (dir != Move::MoveDirection::None)
    {
-	   SetAnimationState(PLAYER_DOWNWALK);
+	   lastInputTime = now; 
+	   Animstate curstate = GetcurrentAnimationState();
+	   SetAnimationState(curstate);
    }
-   if (key.IsKeyDown(VK_UP))
-   {
-	   SetAnimationState(PLAYER_UPWALK);
-   }
+}
 
+Animstate Render::MoveDirstate()
+{
+	if (current_state == NULL) return current_state; 
+
+	if (key.IsKeyDown(VK_RIGHT))
+	{
+		SetAnimationState(PLAYER_RIGHTWALK);
+	}
+	if (key.IsKeyDown(VK_LEFT))
+	{
+		SetAnimationState(PLAYER_LEFTWALK);
+	}
+	if (key.IsKeyDown(VK_DOWN))
+	{
+		SetAnimationState(PLAYER_DOWNWALK);
+	}
+	if (key.IsKeyDown(VK_UP))
+	{
+		SetAnimationState(PLAYER_UPWALK);
+	}
+	
+	return current_state; 
 }
 
 
