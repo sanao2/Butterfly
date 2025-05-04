@@ -2,13 +2,13 @@
 #include "Global.h"
 #include <windows.h> 
 #include "ResourceManager.h"
-#include "Move/MoveManagers.h"
-#include "Move/PlayerMoveController.h"
 #include "UI/Timer.h"
 #include <iostream> 
 #include <vector> 
 #include <gdiplus.h>
 #include <chrono>
+#include "Move/MoveManagers.h"
+#include "Move/PlayerMoveController.h"
 #pragma comment(lib, "gdiplus.lib")
 using namespace std::chrono;
 using std::vector; 
@@ -30,7 +30,7 @@ private :
 	constexpr static float frameInterval = 0.25f; 
 		
 	Input::InputManager<Input::KeyboardDevice>& key = Input::InputManager<Input::KeyboardDevice>::GetInstance();
-	Move::MoveManager* moveMgr = nullptr;
+	 Move::MoveManager* moveMgr = nullptr;
 
 public : 
 	Animation(HDC drawDC, HINSTANCE hInstance);

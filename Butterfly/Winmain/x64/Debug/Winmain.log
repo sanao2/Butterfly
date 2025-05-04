@@ -8,18 +8,18 @@ D:\BF\Butterfly\Winmain\Animation.cpp(70,61): warning C4838: 'UINT'에서 'LONG'
 D:\BF\Butterfly\Winmain\Event\InputConstants.h(7,40): warning C4309: '초기화 중': 상수 값이 잘립니다.
   (소스 파일 'Move/MoveManagers.cpp'을(를) 컴파일하는 중)
   
-D:\BF\Butterfly\Winmain\Animation.h(33,8): error C2039: 'MoveManager': 'Move'의 멤버가 아닙니다.
+D:\BF\Butterfly\Winmain\Animation.h(33,9): error C2039: 'MoveManager': 'Move'의 멤버가 아닙니다.
   (소스 파일 'Move/MoveManagers.cpp'을(를) 컴파일하는 중)
       D:\BF\Butterfly\Winmain\Move\PlayerMoveController.h(5,11):
       'Move' 선언을 참조하십시오.
   
-D:\BF\Butterfly\Winmain\Animation.h(33,19): error C2143: 구문 오류: ';'이(가) '*' 앞에 없습니다.
+D:\BF\Butterfly\Winmain\Animation.h(33,20): error C2143: 구문 오류: ';'이(가) '*' 앞에 없습니다.
   (소스 파일 'Move/MoveManagers.cpp'을(를) 컴파일하는 중)
   
-D:\BF\Butterfly\Winmain\Animation.h(33,8): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
+D:\BF\Butterfly\Winmain\Animation.h(33,9): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
   (소스 파일 'Move/MoveManagers.cpp'을(를) 컴파일하는 중)
   
-D:\BF\Butterfly\Winmain\Animation.h(33,38): error C2238: ';' 앞에 예기치 않은 토큰이 있습니다.
+D:\BF\Butterfly\Winmain\Animation.h(33,39): error C2238: ';' 앞에 예기치 않은 토큰이 있습니다.
   (소스 파일 'Move/MoveManagers.cpp'을(를) 컴파일하는 중)
   
 D:\BF\Butterfly\Winmain\Move\MoveManagers.cpp(38,44): warning C4244: '-=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
@@ -30,7 +30,6 @@ D:\BF\Butterfly\Winmain\Move\MoveManagers.cpp(41,44): warning C4244: '+=': 'floa
 D:\BF\Butterfly\Winmain\Event\InputConstants.h(7,40): warning C4309: '초기화 중': 상수 값이 잘립니다.
   (소스 파일 'Render.cpp'을(를) 컴파일하는 중)
   
-  ResourceManager.cpp
   Winmain.cpp
 D:\BF\Butterfly\Winmain\Event\InputConstants.h(7,40): warning C4309: '초기화 중': 상수 값이 잘립니다.
   (소스 파일 'Winmain.cpp'을(를) 컴파일하는 중)
