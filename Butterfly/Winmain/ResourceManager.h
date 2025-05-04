@@ -3,9 +3,9 @@
 #include <windows.h>
 #include <cstdint> 
 #include "AnimationMap.h"
-#include "ImageResource.h"
-#include "IImageRenderer.h"
-#include "GdiplusImageRenderer.h" // Ensure this header is included
+#include "UI/Map/ImageResource.h"
+#include "UI/Map/IImageRenderer.h"
+#include "UI/Map/GdiplusImageRenderer.h" // Ensure this header is included
 #include "Swap.h"
 #include "resource.h"
 #include <iostream>

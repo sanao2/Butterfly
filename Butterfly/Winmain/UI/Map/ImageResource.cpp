@@ -1,7 +1,6 @@
 #include "ImageResource.h"
 
 
-
 ImageResource::~ImageResource()
 {
 	if (bitmap) delete bitmap; 

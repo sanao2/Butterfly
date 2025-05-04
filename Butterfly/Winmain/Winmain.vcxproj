@@ -139,9 +139,6 @@
     <ClInclude Include="Event\KeyboardInputManager.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="Global.h" />
-    <ClInclude Include="GdiplusImageRenderer.h" />
-    <ClInclude Include="IImageRenderer.h" />
-    <ClInclude Include="ImageResource.h" />
     <ClInclude Include="Move\AIMoveController.h" />
     <ClInclude Include="Move\IMoveController.h" />
     <ClInclude Include="Move\MoveDirection.h" />
@@ -152,6 +149,9 @@
     <ClInclude Include="ResourceManager.h" />
     <ClInclude Include="Swap.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="UI\Map\GdiplusImageRenderer.h" />
+    <ClInclude Include="UI\Map\IImageRenderer.h" />
+    <ClInclude Include="UI\Map\ImageResource.h" />
     <ClInclude Include="UI\Map\Map.h" />
     <ClInclude Include="UI\Timer.h" />
     <ClInclude Include="Winmain.h" />
@@ -166,6 +166,7 @@
     <ClCompile Include="Render.cpp" />
     <ClCompile Include="ResourceManager.cpp" />
     <ClCompile Include="Swap.cpp" />
+    <ClCompile Include="UI\Map\ImageResource.cpp" />
     <ClCompile Include="UI\Map\Map.cpp" />
     <ClCompile Include="UI\Timer.cpp" />
     <ClCompile Include="Winmain.cpp" />
