@@ -2,7 +2,7 @@
 using namespace Move;
 int current_frame = 0;
 
-Animation::Animation(HDC drawDC, HINSTANCE hInstance) 	: moveMgr(new Move::MoveManager(key, playerRc)), lastMoveTime(steady_clock::now())
+Animation::Animation(HDC drawDC, HINSTANCE hInstance) 	: moveMgr( Move::MoveManager(key, playerRc)), lastMoveTime(steady_clock::now())
 {
     resManager = new ResourceManager(drawDC, hInstance);
     resManager->LoadeFrames(hInstance);
@@ -17,13 +17,13 @@ Animation::~Animation()
 void Animation::Update()
 {
     // 이동을 위한 업데이트 
-    moveMgr->MoveUpdate();
+    moveMgr.MoveUpdate();
     
    if (timer.IsElapsed(frameInterval)) {
        timer.Reset();
        current_frame = (current_frame + 1) % resManager->AnimationFrames.size(); // 프레임 업데이트
    }
-   bool ismoving = moveMgr->IsMoving();
+   bool ismoving = moveMgr.IsMoving();
    auto now = steady_clock::now();
 
    auto elapsed = duration_cast<seconds> (now - lastMoveTime).count();

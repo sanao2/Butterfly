@@ -8,12 +8,13 @@
 #include <gdiplus.h>
 #include <chrono>
 #include "Move/MoveManagers.h"
-#include "Move/PlayerMoveController.h"
 #pragma comment(lib, "gdiplus.lib")
 using namespace std::chrono;
 using std::vector; 
 using namespace std; 
 
+using namespace Input;
+using namespace Move;
 extern int g_width; 
 extern int g_height;
 extern int current_frame;
@@ -29,9 +30,8 @@ private :
 	Time::Timer<> timer;	 
 	constexpr static float frameInterval = 0.25f; 
 		
-	Input::InputManager<Input::KeyboardDevice>& key = Input::InputManager<Input::KeyboardDevice>::GetInstance();
-	 Move::MoveManager* moveMgr = nullptr;
-
+	InputManager<Input::KeyboardDevice>& key = Input::InputManager<Input::KeyboardDevice>::GetInstance();
+	MoveManager moveMgr;
 public : 
 	Animation(HDC drawDC, HINSTANCE hInstance);
 	~Animation(); 
