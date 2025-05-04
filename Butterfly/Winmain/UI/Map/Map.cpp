@@ -45,18 +45,8 @@ namespace Map
 
 	void Map::Object::Update()
 	{
-		switch (Sprstate)
-		{
-		case FLOORTILE:
-
-			break;
-		case TREE:
-			break;
-		case BRANCH:
-			break;
-		case POND:
-			break;
-		}
+		
+		
 	}
 
 	void Map::Object::Render( Gdiplus::Graphics* graphics, int x, int y)

@@ -75,7 +75,6 @@ namespace Map
 		Object(HDC drawDC, int width, int height);
 		~Object(); 
 
-		void drawMap();
 		Gdiplus::Image* LoadImages(HINSTANCE hInstance);		 
 		void Update(); 
 		void Render(Gdiplus::Graphics* graphics,int x, int y);
