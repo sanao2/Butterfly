@@ -21,7 +21,6 @@ Render::~Render()
 
 void Render::Update()
 {
-	bool IsMoving = moveMgr->GetIsMoving();
 	
 	// 이동을 위한 업데이트 
 	moveMgr->MoveUpdate();

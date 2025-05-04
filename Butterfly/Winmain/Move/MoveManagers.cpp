@@ -8,8 +8,10 @@ namespace Move
 	void MoveManager::MoveUpdate()
 	{
 		key.Update();
+		g_pPlayeranimation->Update();
 		MoveKeyInput();
 		MoveKeyRelease();
+		
 	}
 
 	void MoveManager::MoveKeyInput()
@@ -17,7 +19,7 @@ namespace Move
 		MoveDirection dir = MoveDirection::None;
 
 		if (key.IsKeyDown(VK_RIGHT)) {
-			dir = MoveDirection::Right; 
+			dir = MoveDirection::Right;
 			SetAnimationState(PLAYER_RIGHTWALK);
 		}
 		else if (key.IsKeyDown(VK_LEFT)) {
@@ -32,10 +34,7 @@ namespace Move
 			dir = MoveDirection::Down;
 			SetAnimationState(PLAYER_DOWNWALK);
 		}
-		if (isMoving == false)
-		{
-			SetAnimationState(PLAYER_DEFAULT);
-		}
+		else if (dir == MoveDirection::None) return; 
 		ApplyMovement(dir);
 	}
 
@@ -51,10 +50,10 @@ namespace Move
 
 		switch(dir)
 		{
-			case MoveDirection::Left:  movePos.x -= moveSpeed;  isMoving = true; g_pPlayeranimation->PlayerAnimationkeyInput(); break;
-			case MoveDirection::Right: movePos.x += moveSpeed;  isMoving = true; g_pPlayeranimation->PlayerAnimationkeyInput(); break;
-			case MoveDirection::Up:    movePos.y -= moveSpeed;  isMoving = true; g_pPlayeranimation->PlayerAnimationkeyInput(); break;
-			case MoveDirection::Down:  movePos.y += moveSpeed;  isMoving = true; g_pPlayeranimation->PlayerAnimationkeyInput(); break;
+			case MoveDirection::Left:   isMoving = true; g_pPlayeranimation->PlayerAnimationkeyInput(); movePos.x -= moveSpeed;  break;
+			case MoveDirection::Right:  isMoving = true; g_pPlayeranimation->PlayerAnimationkeyInput(); movePos.x += moveSpeed;  break;
+			case MoveDirection::Up:     isMoving = true; g_pPlayeranimation->PlayerAnimationkeyInput(); movePos.y -= moveSpeed;  break;
+			case MoveDirection::Down:   isMoving = true; g_pPlayeranimation->PlayerAnimationkeyInput(); movePos.y += moveSpeed;  break;
 			default: break;
 		}
 
