@@ -50,12 +50,13 @@ namespace Move
 
 		switch(dir)
 		{
-			case MoveDirection::Left:   isMoving = true; g_pPlayeranimation->PlayerAnimationkeyInput(); movePos.x -= moveSpeed;  break;
-			case MoveDirection::Right:  isMoving = true; g_pPlayeranimation->PlayerAnimationkeyInput(); movePos.x += moveSpeed;  break;
-			case MoveDirection::Up:     isMoving = true; g_pPlayeranimation->PlayerAnimationkeyInput(); movePos.y -= moveSpeed;  break;
-			case MoveDirection::Down:   isMoving = true; g_pPlayeranimation->PlayerAnimationkeyInput(); movePos.y += moveSpeed;  break;
+			case MoveDirection::Left:   isMoving = true; movePos.x -= moveSpeed;  break;
+			case MoveDirection::Right:  isMoving = true; movePos.x += moveSpeed;  break;
+			case MoveDirection::Up:     isMoving = true; movePos.y -= moveSpeed;  break;
+			case MoveDirection::Down:   isMoving = true; movePos.y += moveSpeed;  break;
 			default: break;
 		}
+
 
 		playerRect.left = movePos.x - rcWidth / 2;
 		playerRect.top = movePos.y - rcHeight / 2;
