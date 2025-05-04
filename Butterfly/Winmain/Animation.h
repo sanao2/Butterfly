@@ -20,6 +20,7 @@ class Animation
 {
 private :
 	ResourceManager* resManager;
+	steady_clock::time_point lastReload; 
 	Time::Timer<> timer;	 
 	constexpr static float frameInterval = 0.25f; 
 	
@@ -27,7 +28,9 @@ public :
 	Animation(HDC drawDC, HINSTANCE hInstance);
 	~Animation(); 
 	
+	
 	void Update();	
 	void Render(HDC drawDC, RECT& rect, Gdiplus::Graphics* graphics, int x, int y, int curFrameIndex);
+	void Changestate(Animstate newState, HINSTANCE hInstance);
 };
 

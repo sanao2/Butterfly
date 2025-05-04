@@ -10,7 +10,7 @@
 #include "AnimationMap.h"
 #pragma comment(lib, "gdiplus.lib")
 
-extern RECT playerRect;
+extern RECT playerRc;
 
 class Render
 {
@@ -22,6 +22,7 @@ public:
     void RenderScene(HINSTANCE hInst);     // 실제 그리기 동작 
     void Moves(); 
     POINT GetBufferSize() const;
+    void ProgressAnimationKey();
 
 private:
     HWND                                           hWnd = nullptr;

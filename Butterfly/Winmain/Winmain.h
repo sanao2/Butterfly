@@ -8,7 +8,7 @@
 using namespace Input;
 
 extern Render* render;
-extern RECT playerRect;
+extern RECT playerRc;
 extern int g_width;
 extern int g_height; 
 
