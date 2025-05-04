@@ -60,9 +60,6 @@
     <ClInclude Include="targetver.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Resource.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="Winmain.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
@@ -121,6 +118,9 @@
       <Filter>소스 파일\UI</Filter>
     </ClInclude>
     <ClInclude Include="UI\Map\ImageResource.h">
+      <Filter>소스 파일\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="UI\Map\resource.h">
       <Filter>소스 파일\UI</Filter>
     </ClInclude>
   </ItemGroup>

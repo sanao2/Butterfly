@@ -145,7 +145,6 @@
     <ClInclude Include="Move\MoveManagers.h" />
     <ClInclude Include="Move\PlayerMoveController.h" />
     <ClInclude Include="Render.h" />
-    <ClInclude Include="Resource.h" />
     <ClInclude Include="ResourceManager.h" />
     <ClInclude Include="Swap.h" />
     <ClInclude Include="targetver.h" />
@@ -153,6 +152,7 @@
     <ClInclude Include="UI\Map\IImageRenderer.h" />
     <ClInclude Include="UI\Map\ImageResource.h" />
     <ClInclude Include="UI\Map\Map.h" />
+    <ClInclude Include="UI\Map\resource.h" />
     <ClInclude Include="UI\Timer.h" />
     <ClInclude Include="Winmain.h" />
   </ItemGroup>

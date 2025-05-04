@@ -21,9 +21,9 @@ inline int GetAnimPath(Spritestate Sprstate)
 	IDB_POND, 
 	};
 
-	if (state < 0 || state >= ANIMCOUNT) return nullptr;
+	//if (Sprstate < 0 || state >= ANIMCOUNT) return nullptr;
 
-	return RESOURCE_DIR + paths[state];
+	//return RESOURCE_DIR + paths[state];
 }
 
 
