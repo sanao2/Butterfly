@@ -54,13 +54,17 @@ void  Render::MoveDirection()
    
    lastInputTime = now; 
   
-   MoveDirstate();
+   Animstate curstate = MoveDirstate();
+   auto elapsed = duration_cast<seconds>(now - lastInputTime);
 
    if (dir != Move::MoveDirection::None)
    {
-	   lastInputTime = now; 
-	   Animstate curstate = GetcurrentAnimationState();
+	   lastInputTime = now; 	  
 	   SetAnimationState(curstate);
+   }
+   else if (elapsed.count() >= 1.0f && dir == Move::MoveDirection::None)
+   {	 
+	  SetAnimationState(PLAYER_DEFAULT);	
    }
 }
 
