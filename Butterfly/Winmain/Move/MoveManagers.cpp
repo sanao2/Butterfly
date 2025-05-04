@@ -2,6 +2,7 @@
 #include <iostream>
 #include "../Global.h"
 
+
 namespace Move
 {
 	void MoveManager::MoveUpdate()
@@ -62,10 +63,12 @@ namespace Move
 		return isMoving;
 	}
 
-	MoveManager::MoveManager(Input::InputManager<Input::KeyboardDevice>& keyRef, RECT& rect, HDC drawDC, HINSTANCE hInstance)
-		: key(keyRef), playerRect(rect), movePos{0,0 }, isMoving(false), animation(new Animation(drawDC,hInstance))
+	MoveManager::MoveManager(Input::InputManager<Input::KeyboardDevice>& keyRef, RECT& rect)
+		: key(keyRef), playerRect(rect), movePos{ 0,0 }, isMoving(false)
 	{
 	}
+
+
 
 	MoveManager::~MoveManager() = default;
 }

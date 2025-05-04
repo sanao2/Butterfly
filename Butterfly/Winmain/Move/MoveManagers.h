@@ -2,16 +2,16 @@
 #include <cmath>
 #include <Windows.h>
 #include "../Event/KeyboardInputManager.h"
-#include "../Animation.h"
+
 
 namespace Move
 {
     enum class MoveDirection { None, Left, Right, Up, Down };
 
-    class MoveManager
+    class MoveManager 
     {
     public:
-        explicit MoveManager(Input::InputManager<Input::KeyboardDevice>& keyRef, RECT& rect, HDC drawDC, HINSTANCE hInstance);
+        explicit MoveManager(Input::InputManager<Input::KeyboardDevice>& keyRef, RECT& rect);
         ~MoveManager();
 
         void MoveUpdate();
@@ -31,7 +31,6 @@ namespace Move
         
     private :
         Input::InputManager<Input::KeyboardDevice>& key;
-        Animation* animation = nullptr; 
         bool isMoving = false;
         POINT movePos = {};
         RECT& playerRect;
