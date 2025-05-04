@@ -39,7 +39,7 @@ void Render::RenderScene(HINSTANCE hInst)
 	// 화면 초기화 (배경을 흰색으로 채우기)
 	PatBlt(memDC, 0, 0, clientSize.x, clientSize.y, WHITENESS);
 
-	animation->Render(memDC, playerRc, graphics, 0, 0, current_frame);
+	animation->Render(memDC, playerRc, graphics, (playerRc.right - playerRc.left) / 2, (playerRc.bottom - playerRc.top) / 2, current_frame);
 
 	// 스왑 메모리 DC에 복사 (swap 내부 메모리 DC를 가져오는 메소드 필요)
 	swap->SwapBuffers();
