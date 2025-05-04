@@ -21,6 +21,7 @@ Render::~Render()
 void Render::Update()
 {
 	// 이동을 위한 업데이트 
+	moveMgr->MoveUpdate();
 	animation->Update(); // 애니메이션 업데이트 
 }
 
@@ -33,12 +34,37 @@ void Render::RenderScene(HINSTANCE hInst)
 
 	// 화면 초기화 (배경을 흰색으로 채우기)
 	PatBlt(memDC, 0, 0, clientSize.x, clientSize.y, WHITENESS);
-	
-	animation->Render(memDC, playerPos, graphics, 0, 0, current_frame);
+
+	animation->Render(memDC, playerRect, graphics, 0, 0, current_frame);
 
 	// 스왑 메모리 DC에 복사 (swap 내부 메모리 DC를 가져오는 메소드 필요)
 	swap->SwapBuffers();
 
+}
+
+void Render::Moves()
+{
+	if (current_state == PLAYER_DEFAULT) return;
+	
+	auto now = steady_clock::now();
+	auto elapsed = std::chrono::duration_cast<std::chrono::seconds>(now - lastInputTime);
+	
+	if (key.IsKeyDown(VK_RIGHT))
+	{
+	    SetAnimationState(PLAYER_RIGHTWALK);
+	}
+	else if (key.IsKeyDown(VK_LEFT))
+	{
+	    SetAnimationState(PLAYER_LEFTWALK);
+	}
+	else if (key.IsKeyDown(VK_DOWN))
+	{
+	    SetAnimationState(PLAYER_DOWNWALK);
+	}
+	else if (key.IsKeyDown(VK_UP))
+	{
+	    SetAnimationState(PLAYER_UPWALK);
+	}
 }
 
 //void  Render::MoveDirection()
@@ -68,12 +94,5 @@ POINT Render::GetBufferSize() const
 {
 	return clientSize;
 }
-//int boxDraw()
-//{
-//    PatBlt(drawDC, 0, 0, g_width, g_height, WHITENESS);
-//    Rectangle(drawDC, rect.left, rect.top, rect.right, rect.bottom);
-//
-//    ReleaseDC(g_hWnd, drawDC); // Release 해줘야 리소스 누수 안 생김
-//    return S_OK;
-//}
+
 

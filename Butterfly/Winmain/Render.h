@@ -10,7 +10,7 @@
 #include "AnimationMap.h"
 #pragma comment(lib, "gdiplus.lib")
 
-extern RECT playerPos;
+extern RECT playerRect;
 
 class Render
 {
@@ -20,7 +20,7 @@ public:
 
     void Update();          // 렌더 업데이트 및 스왑 호출  
     void RenderScene(HINSTANCE hInst);     // 실제 그리기 동작 
-   
+    void Moves(); 
     POINT GetBufferSize() const;
 
 private:
@@ -34,7 +34,7 @@ private:
     Animation*                                     animation = nullptr;
   
     std::chrono::steady_clock::time_point          lastInputTime;
-    Move::MoveManager* moveMgr = nullptr;
+    Move::MoveManager*                             moveMgr = nullptr;
     Move::PlayerMoveController                     playerController;
     Input::InputManager<Input::KeyboardDevice>& key = Input::InputManager<Input::KeyboardDevice>::GetInstance();
            
