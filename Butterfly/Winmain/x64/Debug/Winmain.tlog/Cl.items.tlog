@@ -2,11 +2,11 @@ D:\BF\Butterfly\Winmain\Animation.cpp;D:\BF\Butterfly\Winmain\x64\Debug\Animatio
 D:\BF\Butterfly\Winmain\AnimationMap.cpp;D:\BF\Butterfly\Winmain\x64\Debug\AnimationMap.obj
 D:\BF\Butterfly\Winmain\Event\KeyboardInputManager.cpp;D:\BF\Butterfly\Winmain\x64\Debug\KeyboardInputManager.obj
 D:\BF\Butterfly\Winmain\Global.cpp;D:\BF\Butterfly\Winmain\x64\Debug\Global.obj
-D:\BF\Butterfly\Winmain\ImageResource.cpp;D:\BF\Butterfly\Winmain\x64\Debug\ImageResource.obj
 D:\BF\Butterfly\Winmain\Move\MoveManagers.cpp;D:\BF\Butterfly\Winmain\x64\Debug\MoveManagers.obj
 D:\BF\Butterfly\Winmain\Render.cpp;D:\BF\Butterfly\Winmain\x64\Debug\Render.obj
 D:\BF\Butterfly\Winmain\ResourceManager.cpp;D:\BF\Butterfly\Winmain\x64\Debug\ResourceManager.obj
 D:\BF\Butterfly\Winmain\Swap.cpp;D:\BF\Butterfly\Winmain\x64\Debug\Swap.obj
+D:\BF\Butterfly\Winmain\UI\Map\ImageResource.cpp;D:\BF\Butterfly\Winmain\x64\Debug\ImageResource.obj
 D:\BF\Butterfly\Winmain\UI\Map\Map.cpp;D:\BF\Butterfly\Winmain\x64\Debug\Map.obj
 D:\BF\Butterfly\Winmain\UI\Timer.cpp;D:\BF\Butterfly\Winmain\x64\Debug\Timer.obj
 D:\BF\Butterfly\Winmain\Winmain.cpp;D:\BF\Butterfly\Winmain\x64\Debug\Winmain.obj

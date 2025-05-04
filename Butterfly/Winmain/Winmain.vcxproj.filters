@@ -123,6 +123,9 @@
     <ClInclude Include="UI\Map\resource.h">
       <Filter>소스 파일\UI</Filter>
     </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Winmain.cpp">
@@ -286,6 +289,9 @@
       <Filter>리소스 파일</Filter>
     </Image>
     <Image Include="Resource\One%27sResource\player\Player_Upwalk_Sec.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\One%27sResource\Item\Branch.png">
       <Filter>리소스 파일</Filter>
     </Image>
   </ItemGroup>
