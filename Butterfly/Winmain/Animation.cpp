@@ -19,14 +19,13 @@ Animation::~Animation()
 
 void Animation::Update()
 {
-	// 이동을 위한 업데이트 
-	moveMgr->MoveUpdate();
+	
 	
    if (timer.IsElapsed(frameInterval)) {
        timer.Reset();
        current_frame = (current_frame + 1) % resManager->AnimationFrames.size(); // 프레임 업데이트
    }
-   
+ 
    PlayerAnimationkeyInput();
 }
 

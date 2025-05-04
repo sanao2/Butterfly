@@ -44,3 +44,4 @@ inline const int GetAnimationFrameID(Animstate animstate, size_t frameIndex)
 
     return vec[frameIndex];
 }
+

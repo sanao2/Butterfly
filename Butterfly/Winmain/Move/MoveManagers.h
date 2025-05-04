@@ -4,6 +4,7 @@
 #include "../Event/KeyboardInputManager.h"
 
 
+
 namespace Move
 {
     enum class MoveDirection { None, Left, Right, Up, Down };
@@ -21,8 +22,7 @@ namespace Move
         void SetIsMoving(bool state) { isMoving = state; }
 
         //test code 
-        POINT GetmovePos() const { return movePos; }
-        void SetmovePos(POINT movepos) { movePos = movepos; }
+        MoveDirection GetLastDirection() { return lastDir; }
 
     private:
         void MoveKeyInput();
@@ -31,8 +31,10 @@ namespace Move
         
     private :
         Input::InputManager<Input::KeyboardDevice>& key;
+        MoveDirection lastDir = MoveDirection::None; 
         bool isMoving = false;
         POINT movePos = {};
         RECT& playerRect;
     };
 }
+

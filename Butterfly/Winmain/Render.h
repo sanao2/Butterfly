@@ -31,7 +31,8 @@ public:
         HDC                                            memDC = nullptr;
         Gdiplus::Graphics* graphics = nullptr;
         Animation* animation = nullptr;
-
+        Input::InputManager<Input::KeyboardDevice>& key = Input::InputManager<Input::KeyboardDevice>::GetInstance();
+        Move::MoveManager* moveMgr = nullptr;
        
 };
-   
+

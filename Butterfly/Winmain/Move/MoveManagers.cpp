@@ -16,17 +16,32 @@ namespace Move
 	{
 		MoveDirection dir = MoveDirection::None;
 
-		if (key.IsKeyDown(VK_RIGHT)) dir = MoveDirection::Right;
-		else if (key.IsKeyDown(VK_LEFT)) dir = MoveDirection::Left;
-		else if (key.IsKeyDown(VK_UP)) dir = MoveDirection::Up;
-		else if (key.IsKeyDown(VK_DOWN)) dir = MoveDirection::Down;
-				
+		if (key.IsKeyDown(VK_RIGHT)) {
+			dir = MoveDirection::Right; 
+			SetAnimationState(PLAYER_RIGHTWALK);
+		}
+		else if (key.IsKeyDown(VK_LEFT)) {
+			dir = MoveDirection::Left;
+			SetAnimationState(PLAYER_LEFTWALK);
+		}
+		else if (key.IsKeyDown(VK_UP)) {
+			dir = MoveDirection::Up;
+			SetAnimationState(PLAYER_UPWALK);
+		}
+		else if (key.IsKeyDown(VK_DOWN)) {
+			dir = MoveDirection::Down;
+			SetAnimationState(PLAYER_DOWNWALK);
+		}
+		if (isMoving == false)
+		{
+			SetAnimationState(PLAYER_DEFAULT);
+		}
 		ApplyMovement(dir);
 	}
 
 	void MoveManager::ApplyMovement(MoveDirection dir)
 	{
-		const float moveSpeed = 10.0f;
+		const float moveSpeed = 1.0f;
 		const int rcWidth = playerRect.right - playerRect.left;
 		const int rcHeight = playerRect.bottom - playerRect.top;
 		
@@ -36,10 +51,10 @@ namespace Move
 
 		switch(dir)
 		{
-			case MoveDirection::Left:  movePos.x -= moveSpeed;  g_pPlayeranimation->PlayerAnimationkeyInput(); isMoving = true; break;
-			case MoveDirection::Right: movePos.x += moveSpeed;  g_pPlayeranimation->PlayerAnimationkeyInput(); isMoving = true; break;
-			case MoveDirection::Up:    movePos.y -= moveSpeed;  g_pPlayeranimation->PlayerAnimationkeyInput(); isMoving = true; break;
-			case MoveDirection::Down:  movePos.y += moveSpeed;  g_pPlayeranimation->PlayerAnimationkeyInput(); isMoving = true; break;
+			case MoveDirection::Left:  movePos.x -= moveSpeed;  isMoving = true; g_pPlayeranimation->PlayerAnimationkeyInput(); break;
+			case MoveDirection::Right: movePos.x += moveSpeed;  isMoving = true; g_pPlayeranimation->PlayerAnimationkeyInput(); break;
+			case MoveDirection::Up:    movePos.y -= moveSpeed;  isMoving = true; g_pPlayeranimation->PlayerAnimationkeyInput(); break;
+			case MoveDirection::Down:  movePos.y += moveSpeed;  isMoving = true; g_pPlayeranimation->PlayerAnimationkeyInput(); break;
 			default: break;
 		}
 
@@ -51,6 +66,7 @@ namespace Move
 
 	void MoveManager::MoveKeyRelease()
 	{
+	
 		if (key.IsKeyReleased(VK_LEFT) || key.IsKeyReleased(VK_RIGHT) ||
 			key.IsKeyReleased(VK_UP) || key.IsKeyReleased(VK_DOWN))
 		{

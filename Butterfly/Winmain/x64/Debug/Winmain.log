@@ -1,5 +1,9 @@
-﻿  Render.cpp
+﻿  MoveManagers.cpp
 D:\BF\Butterfly\Winmain\Event\InputConstants.h(7,40): warning C4309: '초기화 중': 상수 값이 잘립니다.
-  (소스 파일 'Render.cpp'을(를) 컴파일하는 중)
+  (소스 파일 'Move/MoveManagers.cpp'을(를) 컴파일하는 중)
   
+D:\BF\Butterfly\Winmain\Move\MoveManagers.cpp(54,44): warning C4244: '-=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\BF\Butterfly\Winmain\Move\MoveManagers.cpp(55,44): warning C4244: '+=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\BF\Butterfly\Winmain\Move\MoveManagers.cpp(56,44): warning C4244: '-=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\BF\Butterfly\Winmain\Move\MoveManagers.cpp(57,44): warning C4244: '+=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   Winmain.vcxproj -> D:\BF\Butterfly\x64\Debug\Winmain.exe

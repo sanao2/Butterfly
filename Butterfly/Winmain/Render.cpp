@@ -3,7 +3,7 @@ using namespace Input;
 
 
 Render::Render(HDC drawDC, HWND hwnd, HINSTANCE hInstance, int width, int height)
-	: hWnd(hwnd), clientSize{ width, height }, hInst(hInstance)
+	: hWnd(hwnd), clientSize{ width, height }, hInst(hInstance), moveMgr(new Move::MoveManager(key, playerRc))
 {
 	swap = new Swap(hwnd, width, height);
 	animation = new Animation(drawDC, hInstance);
@@ -21,7 +21,12 @@ Render::~Render()
 
 void Render::Update()
 {
+	bool IsMoving = moveMgr->GetIsMoving();
+	
+	// 이동을 위한 업데이트 
+	moveMgr->MoveUpdate();
 	animation->Update();
+	
 }
 
 void Render::RenderScene(HINSTANCE hInst)
