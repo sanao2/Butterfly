@@ -6,9 +6,11 @@
 #include "GdiplusImageRenderer.h"
 #pragma comment(lib, "gdiplus.lib")
 #include <vector>
+#include <iostream>
 #include <map>
 #include <unordered_map> // Add this line to include the unordered_map header
 #include <stdexcept>
+using namespace std; 
 using std::unordered_map;
 using std::vector; 
 constexpr wchar_t SPRITE_TYPE[] = L"PNG";
@@ -22,8 +24,6 @@ enum Spritestate
 	POND,
 	RESOURCE_COUNT
 };
-
-
 
 struct ResourceInfo {
 	vector<int> ImageID;
@@ -54,8 +54,6 @@ inline const int GetSpriteID(Spritestate Sprstate, size_t frameIndex)
 
 	return vec[frameIndex];
 }
-
-
 
 namespace Map
 {
