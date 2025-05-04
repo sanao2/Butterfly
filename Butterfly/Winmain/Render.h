@@ -30,7 +30,7 @@ private:
     HDC                                            memDC = nullptr;
     Gdiplus::Graphics*                             graphics = nullptr;
     Animation*                                     animation = nullptr;
-    int                                            current_frame = 0;
+  
 
 
     

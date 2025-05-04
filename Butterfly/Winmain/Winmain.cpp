@@ -149,7 +149,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
         float TotalTime = Time::GetTotalTime(); 
         std::cout << "[" << TotalTime << "]" << std::endl;
      
-        render->Update(); 
+      //  render->Update(); 
 		render->RenderScene(hInstance); // 렌더링 호
 		
     }
