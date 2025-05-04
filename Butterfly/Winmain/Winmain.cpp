@@ -40,7 +40,8 @@ RECT playerPos = { 5,5,20,20 };
 //        SetAnimationState(PLAYER_UPWALK);
 //    }
 //
-//}
+//};
+
 void InitConsole()
 {
     AllocConsole();
@@ -128,7 +129,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 
     drawDC = GetDC(g_hWnd); 
     SetAnimationState(PLAYER_DOWNWALK);
-
+   
     render = new Render(drawDC, g_hWnd, hInstance, g_width, g_height);  // Global Render 객체 생성
 
     Time::InitTime(); // Timer start  Initialization  
@@ -148,8 +149,9 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
         Time::UpdateTime();
         float TotalTime = Time::GetTotalTime(); 
         std::cout << "[" << TotalTime << "]" << std::endl;
-     
-      //  render->Update(); 
+       // moveMgr->MoveUpdate();
+
+        render->Update(); 
 		render->RenderScene(hInstance); // 렌더링 호
 		
     }

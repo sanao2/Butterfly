@@ -7,6 +7,13 @@
 class GdiPlusImageRenderer : public IImageRenderer {
 public:
    //testCode 
+
+    void Render(Gdiplus::Graphics& graphics,RECT& rect, Gdiplus::Image* image, int width, int height, int x, int y) override
+    {
+        if (image) {
+            graphics.DrawImage(image, x, y, width, height);
+        }
+    }
    void Render(Gdiplus::Graphics& graphics,Gdiplus::Image* image, int width, int height, int x, int y) override {
        if (image) {          
            graphics.DrawImage(image, x, y, width, height);

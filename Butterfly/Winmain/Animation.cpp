@@ -22,7 +22,7 @@ void Animation::Update()
    }
 }
 
-void Animation::Render(HDC drawDC, Gdiplus::Graphics* graphics, int x, int y, int curFrameIndex)
+void Animation::Render(HDC drawDC, RECT& rect, Gdiplus::Graphics* graphics, int x, int y, int curFrameIndex)
 {
-    resManager->RenderFrame(graphics, x, y, curFrameIndex); // 현재 프레임을 그리기
+    resManager->RenderFrame(graphics, rect, x, y, curFrameIndex); // 현재 프레임을 그리기
 }

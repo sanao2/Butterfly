@@ -83,7 +83,7 @@ void ResourceManager::LoadeFrames(HINSTANCE hInst)
 //	
 //}
 
-void ResourceManager::RenderFrame(Gdiplus::Graphics* graphics, int x, int y, int frameIndex)
+void ResourceManager::RenderFrame(Gdiplus::Graphics* graphics, RECT& rect, int x, int y, int frameIndex)
 {
 	if (frameIndex < 0 || frameIndex >= AnimationFrames.size())
 	{
@@ -97,7 +97,7 @@ void ResourceManager::RenderFrame(Gdiplus::Graphics* graphics, int x, int y, int
 	UINT ImgWidth = img->GetWidth() / 2;
 	UINT Imgheight = img->GetHeight() / 2; 
 
-	imageRenderer->Render(*graphics, AnimationFrames[frameIndex],ImgWidth,Imgheight, x, y);	
+	imageRenderer->Render(*graphics, rect, AnimationFrames[frameIndex],ImgWidth,Imgheight, x, y);
 	
 	isLoaded = false; 
 }

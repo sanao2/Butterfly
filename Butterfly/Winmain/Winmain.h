@@ -17,5 +17,5 @@ extern int g_height;
 //Move::MoveManager* moveMgr = nullptr;
 //Move::PlayerMoveController                     playerController;
 //Input::InputManager<Input::KeyboardDevice>& key = Input::InputManager<Input::KeyboardDevice>::GetInstance();
-
-void MoveDirState();
+//
+//void MoveDirState();

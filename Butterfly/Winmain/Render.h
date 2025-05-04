@@ -10,6 +10,7 @@
 #include "AnimationMap.h"
 #pragma comment(lib, "gdiplus.lib")
 
+extern RECT playerPos;
 class Render
 {
 public:

@@ -28,6 +28,6 @@ public :
 	~Animation(); 
 	
 	void Update();	
-	void Render(HDC drawDC, Gdiplus::Graphics* graphics, int x, int y, int curFrameIndex);
+	void Render(HDC drawDC, RECT& rect, Gdiplus::Graphics* graphics, int x, int y, int curFrameIndex);
 };
 
