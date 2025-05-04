@@ -4,10 +4,9 @@
 #include "UI/timer.h"
 #include "resource.h"
 #include "Render.h"
-
 using namespace Input;
 
-extern Render* render;
+extern renderer::Render* render;
 extern RECT playerRc;
 extern int g_width;
 extern int g_height; 

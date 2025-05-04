@@ -2,6 +2,7 @@
 #include <cmath>
 #include <Windows.h>
 #include "../Event/KeyboardInputManager.h"
+#include "../Animation.h"
 
 namespace Move
 {
@@ -23,9 +24,8 @@ namespace Move
         void MoveKeyInput();
         void MoveKeyRelease();
         void ApplyMovement(MoveDirection dir); 
-
-    private:
-        //real code 
+        void PlayerAnimationkeyInput();
+    private :
         Input::InputManager<Input::KeyboardDevice>& key;
         bool isMoving = false;
         POINT movePos = {};

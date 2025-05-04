@@ -10,13 +10,13 @@ d:\bf\butterfly\winmain\x64\debug\imageresource.obj
 d:\bf\butterfly\winmain\x64\debug\global.obj
 d:\bf\butterfly\winmain\x64\debug\keyboardinputmanager.obj
 d:\bf\butterfly\winmain\x64\debug\animationmap.obj
-d:\bf\butterfly\winmain\x64\debug\animation.obj
 d:\bf\butterfly\winmain\x64\debug\resourcemanager.obj
+d:\bf\butterfly\winmain\x64\debug\animation.obj
 d:\bf\butterfly\x64\debug\winmain.exe
 d:\bf\butterfly\x64\debug\winmain.pdb
 d:\bf\butterfly\winmain\x64\debug\winmain.res
 d:\bf\butterfly\winmain\x64\debug\winmain.ilk
-d:\bf\butterfly\winmain\x64\debug\animation.obj.enc
+d:\bf\butterfly\winmain\x64\debug\render.obj.enc
 d:\bf\butterfly\winmain\x64\debug\winmain.tlog\cl.command.1.tlog
 d:\bf\butterfly\winmain\x64\debug\winmain.tlog\cl.items.tlog
 d:\bf\butterfly\winmain\x64\debug\winmain.tlog\cl.read.1.tlog

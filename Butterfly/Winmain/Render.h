@@ -10,9 +10,9 @@
 #include "AnimationMap.h"
 #pragma comment(lib, "gdiplus.lib")
 
-extern RECT playerRc;
 
-namespace render
+
+namespace renderer
 {
     class Render
     {
@@ -22,10 +22,9 @@ namespace render
 
         void Update();                         // 렌더 업데이트 및 스왑 호출  
         void RenderScene(HINSTANCE hInst);     // 실제 그리기 동작 
-        void PlayerAnimationkeyInput();           // 플레이어 이동 키 입력 
+       
         POINT GetBufferSize() const;
-
-
+        
     private:
         HWND                                           hWnd = nullptr;
         POINT                                          clientSize = { 0, 0 };
@@ -36,9 +35,7 @@ namespace render
         Gdiplus::Graphics* graphics = nullptr;
         Animation* animation = nullptr;
 
-        std::chrono::steady_clock::time_point          lastMoveTime;
-        Input::InputManager<Input::KeyboardDevice>& key = Input::InputManager<Input::KeyboardDevice>::GetInstance();
-        Move::MoveManager moveMgr;
+      
     };
 
 }
