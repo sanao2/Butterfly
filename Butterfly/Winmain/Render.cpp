@@ -1,6 +1,7 @@
 #include "Render.h"
 using namespace Input;
 
+RECT playerRect = { 5, 5, 10,10 };
 
 Render::Render(HDC drawDC, HWND hwnd, HINSTANCE hInstance, int width, int height)
    : hWnd(hwnd), clientSize{ width, height }, 
@@ -9,20 +10,22 @@ Render::Render(HDC drawDC, HWND hwnd, HINSTANCE hInstance, int width, int height
    swap = new Swap(hwnd, width, height);
    animation = new Animation(drawDC, hInstance);
    lastInputTime = steady_clock::now();
+   moveMgr = new Move::MoveManager(key, playerRect);
 }   
 
-
 Render::~Render()
-{
+{	 
 	DeleteDC(memDC);
 	delete graphics;
+	delete animation;
+	delete moveMgr; 
     delete swap;
 }
 
 void Render::Update()
 { 
    // 이동을 위한 업데이트 
-	key.Update(); 
+	moveMgr->MoveUpdate();
 	animation->Update(); // 애니메이션 업데이트 
 }
 
@@ -43,21 +46,29 @@ void Render::RenderScene(HINSTANCE hInst)
    
 }
 
-void Render::Moves()
+void  Render::MoveDirection()
 {
-   auto now = steady_clock::now(); 
-   lastInputTime = now; 
+   auto now = steady_clock::now();   
 
    Move::MoveDirection dir = playerController.GetDirection(); 
-
-   if (dir != Move::MoveDirection::None)
+   
+   if (key.IsKeyDown(VK_RIGHT))
    {
-	   if (key.IsKeyDown(VK_RIGHT)) { SetAnimationState(PLAYER_RIGHTWALK); };
-	   if (key.IsKeyDown(VK_LEFT)) { SetAnimationState(PLAYER_LEFTWALK); }
-	   if (key.IsKeyDown(VK_DOWN)) { SetAnimationState(PLAYER_DOWNWALK); }
-	   if (key.IsKeyDown(VK_UP)) { SetAnimationState(PLAYER_UPWALK); }
+	   SetAnimationState(PLAYER_RIGHTWALK);
    }
-  
+   if (key.IsKeyDown(VK_LEFT))
+   {
+	   SetAnimationState(PLAYER_LEFTWALK);
+
+   }
+   if (key.IsKeyDown(VK_DOWN))
+   {
+	   SetAnimationState(PLAYER_DOWNWALK);
+   }
+   if (key.IsKeyDown(VK_UP))
+   {
+	   SetAnimationState(PLAYER_UPWALK);
+   }
 
 }
 
