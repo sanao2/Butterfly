@@ -39,7 +39,7 @@ void Render::RenderScene(HINSTANCE hInst)
 
 	// Object 
 	object->MapLoop(*graphics);
-	auto floors = object->GetfloorsRects();
+	auto floors = object->GetfloorsRects(); 
 
 
 	bool onPath = false; 
@@ -64,7 +64,7 @@ void Render::RenderScene(HINSTANCE hInst)
 
 	animation->Render(memDC, graphics,playerrect.X, playerrect.Y, current_frame);
 
-	// 스왑 메모리 DC에 복사 (swap 내부 메모리 DC를 가져오는 메소드 필요)
+	// 스왑 메모리 DC에 복사 
 	swap->SwapBuffers();
 
 }

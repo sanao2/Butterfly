@@ -2,6 +2,7 @@
 #include "Global.h"
 #include <windows.h> 
 #include "ResourceManager.h"
+#include "IAnimation.h"
 #include "UI/Timer.h"
 #include <iostream> 
 #include <vector> 
@@ -21,6 +22,7 @@ class Animation;
 
 extern RECT playerRc;
 extern Animation* g_pPlayeranimation;
+
 
 class Animation
 {
@@ -42,4 +44,3 @@ public:
 	//void Changestate(Animstate newState, HINSTANCE hInstance);
 	ResourceManager* GetResourceManager() { return resManager; }
 };
-

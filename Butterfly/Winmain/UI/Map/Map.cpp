@@ -1,6 +1,6 @@
 #include "Map.h"
-using namespace std; 
-using namespace Map; 
+using namespace std;
+using namespace Map;
 
 
 unordered_map<Spritestate, SpriteInfo> SpriteStateFrameMap = {
@@ -15,8 +15,8 @@ namespace Map
 {
 	Object::Object(HDC drawDC, HINSTANCE hInstance)
 	{
-		imageResource = new ImageResource(); 
-		imageRenderer = new GdiPlusImageRenderer(); 
+		imageResource = new ImageResource();
+		imageRenderer = new GdiPlusImageRenderer();
 		tileBitmaps.resize(static_cast<int>(RESOURCE_COUNT));
 
 		LoadTileImages(hInstance, FLOORTILE);
@@ -36,7 +36,7 @@ namespace Map
 			auto& [rect, type, state] = const_cast<std::tuple<Gdiplus::Rect, TileType, Spritestate>&>(data);
 			tiles.push_back({ rect, type, state });
 		}
-		
+
 	}
 
 	void Object::AddTile(const Gdiplus::Rect& rect, TileType type, Spritestate state)
@@ -55,7 +55,7 @@ namespace Map
 		}
 		return floors;
 	}
-	
+
 	void Object::LoadTileImages(HINSTANCE hInst, Spritestate state)
 	{
 		const auto& info = SpriteStateFrameMap[state];
@@ -67,25 +67,25 @@ namespace Map
 			if (!imageResource->LoadFromResource(hInst, resID, SPRITE_TYPE))
 				throw std::runtime_error("이미지 로드 실패");
 
-			
+
 			Gdiplus::Image* img = imageResource->GetBitmap();
 			vec.push_back(img);
 		}
 	}
 	void Object::MapLoop(Gdiplus::Graphics& graphics)
-	{		
-		std::vector<std::tuple<Gdiplus::Rect, TileType, Spritestate>> defs = {			
-			// floorstart 
-			{ { -20, 30, 80, 30 }, TileType::Empty, Spritestate::FLOORTILE },	
-			{ { 50, 30, 80, 30 }, TileType::Empty, Spritestate::FLOORTILE },	
-			{ { 50, 30, 80, 30 }, TileType::Empty, Spritestate::FLOORTILE },	
-			{ { 120, 30, 80, 30 }, TileType::Empty, Spritestate::FLOORTILE },	
-			{ { 180, 30, 30, 90 }, TileType::Empty, Spritestate::FLOORTILE },	
-			{ { 180, 100, 30, 90 }, TileType::Empty, Spritestate::FLOORTILE },	
-			{ { 180, 80, 80, 30 }, TileType::Empty, Spritestate::FLOORTILE },	
-			{ { 250, 80, 80, 30 }, TileType::Empty, Spritestate::FLOORTILE },	
-			{ { 300, 80, 30, 100 }, TileType::Empty, Spritestate::FLOORTILE },	
-			{ { 300, 80, 30, 100 }, TileType::Empty, Spritestate::FLOORTILE },	
+	{
+		std::vector<std::tuple<Gdiplus::Rect, TileType, Spritestate>> defs = {
+			// floorstart
+			{ { -20, 30, 80, 30 }, TileType::Empty, Spritestate::FLOORTILE },
+			{ { 50, 30, 80, 30 }, TileType::Empty, Spritestate::FLOORTILE },
+			{ { 50, 30, 80, 30 }, TileType::Empty, Spritestate::FLOORTILE },
+			{ { 120, 30, 80, 30 }, TileType::Empty, Spritestate::FLOORTILE },
+			{ { 180, 30, 30, 90 }, TileType::Empty, Spritestate::FLOORTILE },
+			{ { 180, 100, 30, 90 }, TileType::Empty, Spritestate::FLOORTILE },
+			{ { 180, 80, 80, 30 }, TileType::Empty, Spritestate::FLOORTILE },
+			{ { 250, 80, 80, 30 }, TileType::Empty, Spritestate::FLOORTILE },
+			{ { 300, 80, 30, 100 }, TileType::Empty, Spritestate::FLOORTILE },
+			{ { 300, 80, 30, 100 }, TileType::Empty, Spritestate::FLOORTILE },
 			{ { 180, 180, 30, 100 }, TileType::Empty, Spritestate::FLOORTILE },
 			{ { 330, 80, 100, 30 }, TileType::Empty, Spritestate::FLOORTILE },
 			{ { 400, 80, 30, 100 }, TileType::Empty, Spritestate::FLOORTILE },
@@ -139,29 +139,29 @@ namespace Map
 		};
 		Initialize(defs);
 
-		RectAngle(graphics); 
-		
+		RectAngle(graphics);
+
 	}
 	void Object::RectAngle(Gdiplus::Graphics& graphics)
 	{
 		for (auto& tile : tiles) {
 			auto& imgs = tileBitmaps[static_cast<int>(tile.state)];
-			 
+
 			if (!imgs.empty()) {
-				Gdiplus::Image* image = imgs[0];			
-			 
+				Gdiplus::Image* image = imgs[0];
+
 				// 첫 번째 프레임만 그리기
 				imageRenderer->Render(graphics, tile.rect,image);
 			}
 			else {
 				// 대체 드로잉
 				Gdiplus::Pen pen(Gdiplus::Color(255, 0, 128, 255), 2.0f);
-				Gdiplus::Rect rect = { 10,10,20,20 }; 
+				Gdiplus::Rect rect = { 10,10,20,20 };
 				graphics.DrawRectangle(&pen, rect);
 			}
 		}
-		
+
 	}
-	
+
 
 }

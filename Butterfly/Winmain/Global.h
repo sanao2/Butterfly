@@ -3,6 +3,8 @@
 #include "AnimationMap.h" 
 #include <map>
 #include <unordered_map> // Add this line to include the unordered_map header
+#include <gdiplus.h>
+#pragma comment(lib, "gdiplus.lib")
 #include <stdexcept>
 #include <vector>
 #include <string>

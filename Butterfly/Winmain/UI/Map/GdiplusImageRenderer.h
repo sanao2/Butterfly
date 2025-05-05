@@ -19,6 +19,12 @@ public:
 			graphics.DrawImage(image, x, y, width, height);
 		}
 	}
+	void Render(Gdiplus::Graphics& graphics, Gdiplus::Image* image, Gdiplus::Rect& rect)
+	{
+		if (image) {
+			graphics.DrawImage(image, rect);
+		}
+	}
 	//RealCode 
 	void Render(Gdiplus::Graphics& graphics, Gdiplus::Image* image, int x, int y) override {
 		if (image) {

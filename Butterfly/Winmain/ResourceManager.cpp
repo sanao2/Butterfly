@@ -1,4 +1,8 @@
+#include "Global.h"
 #include "ResourceManager.h"
+#include <iostream>
+
+
 constexpr wchar_t RESOURCE_TYPE[] = L"PNG";
 
 
