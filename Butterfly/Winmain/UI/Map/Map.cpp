@@ -52,9 +52,8 @@ namespace Map
 		{
 			if (tile.type == TileType::Empty)
 				floors.push_back(tile.rect);
-
-			return floors;
 		}
+		return floors;
 	}
 	
 	void Object::LoadTileImages(HINSTANCE hInst, Spritestate state)

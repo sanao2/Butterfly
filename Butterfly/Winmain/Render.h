@@ -16,6 +16,8 @@ using namespace std::chrono;
 using namespace Move;
 using namespace Map; 
 
+extern Gdiplus::Rect playerrect;
+
 class Render
 {
 public:

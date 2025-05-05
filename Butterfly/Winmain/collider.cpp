@@ -15,3 +15,15 @@ bool Collider::Check(const Gdiplus::Rect& playerRect, const vector<Gdiplus::Rect
     }
     return false; 
 }
+
+bool Collider::IsCompleteOffPath(const Gdiplus::Rect& player, const vector<Gdiplus::Rect>& paths)
+{
+    for (auto& playerpath : paths)
+    {
+        if (player.IntersectsWith(playerpath))
+        {
+            return false; 
+        }
+   }
+    return true; 
+}

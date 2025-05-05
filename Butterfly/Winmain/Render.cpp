@@ -3,7 +3,7 @@ using namespace Input;
 
 
 Render::Render(HDC drawDC, HWND hwnd, HINSTANCE hInstance, int width, int height)
-	: hWnd(hwnd), clientSize{ width, height }, hInst(hInstance), moveMgr(new Move::MoveManager(key, playerRc))
+	: hWnd(hwnd), clientSize{ width, height }, hInst(hInstance), moveMgr(new Move::MoveManager(key, playerrect))
 {
 	swap = new Swap(hwnd, width, height);
 	animation = new Animation(drawDC, hInstance);
@@ -23,7 +23,6 @@ Render::~Render()
 
 void Render::Update()
 {
-
 	// 이동을 위한 업데이트 
 	moveMgr->MoveUpdate();
 	animation->Update();
@@ -42,7 +41,27 @@ void Render::RenderScene(HINSTANCE hInst)
 	object->MapLoop(*graphics);
 	auto floors = object->GetfloorsRects();
 
-	if (collider->Check(playerRc, floors));
+
+	bool onPath = false; 
+
+	for (auto& path : floors)
+	{
+		if (playerrect.IntersectsWith(path))
+		{
+			onPath = true; 
+			break; 
+		}
+	}
+
+	if (collider->IsCompleteOffPath(playerrect, floors)) {
+		// 완전 길 밖 → 시작 위치로 리셋
+		int w = playerRc.right - playerRc.left;
+		int h = playerRc.bottom - playerRc.top;
+		playerRc.left = 0;
+		playerRc.top = 0;
+		playerRc.right = w;
+		playerRc.bottom = h;
+	}
 	animation->Render(memDC, graphics, playerRc.left, playerRc.top, current_frame);
 
 	// 스왑 메모리 DC에 복사 (swap 내부 메모리 DC를 가져오는 메소드 필요)

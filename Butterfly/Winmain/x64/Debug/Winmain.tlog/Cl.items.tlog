@@ -1,5 +1,6 @@
 D:\BF\Butterfly\Winmain\Animation.cpp;D:\BF\Butterfly\Winmain\x64\Debug\Animation.obj
 D:\BF\Butterfly\Winmain\AnimationMap.cpp;D:\BF\Butterfly\Winmain\x64\Debug\AnimationMap.obj
+D:\BF\Butterfly\Winmain\collider.cpp;D:\BF\Butterfly\Winmain\x64\Debug\collider.obj
 D:\BF\Butterfly\Winmain\Event\KeyboardInputManager.cpp;D:\BF\Butterfly\Winmain\x64\Debug\KeyboardInputManager.obj
 D:\BF\Butterfly\Winmain\Global.cpp;D:\BF\Butterfly\Winmain\x64\Debug\Global.obj
 D:\BF\Butterfly\Winmain\Move\MoveManagers.cpp;D:\BF\Butterfly\Winmain\x64\Debug\MoveManagers.obj
