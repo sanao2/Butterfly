@@ -42,8 +42,9 @@ void Render::RenderScene(HINSTANCE hInst)
 
 	//animation->Render(memDC, graphics, 0, 0, current_frame);
 	Gdiplus::Rect rc = { 10,10,10,10 };
+
 	// Object 
-	object->MapLoop();
+	object->MapLoop(*graphics);
 
 	animation->Render(memDC, graphics, playerRc.left, playerRc.top, current_frame);
 

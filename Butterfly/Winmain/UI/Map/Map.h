@@ -70,8 +70,8 @@ namespace Map
 		void AddTile(const Gdiplus::Rect& rect, TileType type, Spritestate state);
 		void LoadTileImages(HINSTANCE hInst, Spritestate state);
 		vector<Gdiplus::Rect> GetWallRects() const;
-		void MapLoop(); 
-		void RectAngle(Gdiplus::Graphics& graphics, Gdiplus::Rect& rect);
+		void MapLoop(Gdiplus::Graphics& graphics);
+		void RectAngle(Gdiplus::Graphics& graphics);
 	};
 }
 

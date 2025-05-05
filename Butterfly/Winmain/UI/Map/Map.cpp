@@ -71,9 +71,8 @@ namespace Map
 			vec.push_back(img);
 		}
 	}
-	void Object::MapLoop()
-	{
-		
+	void Object::MapLoop(Gdiplus::Graphics& graphics)
+	{		
 		std::vector<std::tuple<Gdiplus::Rect, TileType, Spritestate>> defs = {
 			{ {  0,   0, 30, 30 }, TileType::Wall,  Spritestate::TREE      },
 			{ { 30,   0, 30, 30 }, TileType::Empty, Spritestate::FLOORTILE },
@@ -83,26 +82,28 @@ namespace Map
 		Initialize(defs);
 
 		
+		
 	}
-		void Object::RectAngle(Gdiplus::Graphics& graphics, Gdiplus::Rect& rect)
-		{
-			for (auto& tile : tiles) {
-				auto& imgs = tileBitmaps[static_cast<int>(tile.state)];
-				 
-				if (!imgs.empty()) {
-					Gdiplus::Image* image = imgs[0];			
-				 
-					// 첫 번째 프레임만 그리기
-					imageRenderer->Render(graphics, tile.rect,image);
-				}
-				else {
-					// 대체 드로잉
-					Gdiplus::Pen pen(Gdiplus::Color(255, 0, 128, 255), 2.0f);
-					graphics.DrawRectangle(&pen, rect);;
-				}
+	void Object::RectAngle(Gdiplus::Graphics& graphics)
+	{
+		for (auto& tile : tiles) {
+			auto& imgs = tileBitmaps[static_cast<int>(tile.state)];
+			 
+			if (!imgs.empty()) {
+				Gdiplus::Image* image = imgs[0];			
+			 
+				// 첫 번째 프레임만 그리기
+				imageRenderer->Render(graphics, tile.rect,image);
 			}
-			
+			else {
+				// 대체 드로잉
+				Gdiplus::Pen pen(Gdiplus::Color(255, 0, 128, 255), 2.0f);
+				Gdiplus::Rect rect = { 10,10,20,20 }; 
+				graphics.DrawRectangle(&pen, rect);
+			}
 		}
+		
+	}
 	
 
 }
