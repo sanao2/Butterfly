@@ -65,13 +65,17 @@ namespace Map
 	{
 	private : 
 		vector<Tile> tiles; 
-		ResourceManager* resMgr = nullptr; 
+		vector<std::vector<Gdiplus::Image*>> tileBitmaps;
+		ImageResource* imageResource = nullptr; 
+		IImageRenderer* imageRenderer = nullptr; 
 
 	public : 
 		Object(HDC drawDC, HINSTANCE hInstance); 
 		~Object(); 
 		void Initialize(const vector<tuple<Gdiplus::Rect, TileType, Spritestate>>& defs);
 		void AddTile(const Gdiplus::Rect& rect, TileType type, Spritestate state);
+		//void LoadTileImages(HINSTANCE hInstance, Spritestate state);
+		void LoadTileImages(HINSTANCE hInst, Spritestate state);
 		vector<Gdiplus::Rect> GetWallRects() const;
 		void MapLoop(); 
 

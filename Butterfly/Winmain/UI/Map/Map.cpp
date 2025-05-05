@@ -1,5 +1,6 @@
 #include "Map.h"
 using namespace std; 
+using namespace Map; 
 
 
 unordered_map<Spritestate, SpriteInfo> SpriteStateFrameMap = {
@@ -14,12 +15,15 @@ namespace Map
 {
 	Object::Object(HDC drawDC, HINSTANCE hInstance)
 	{
-		resMgr = new ResourceManager(drawDC, hInstance);
+		imageResource = new ImageResource(); 
+		imageRenderer = new GdiPlusImageRenderer(); 
+		tileBitmaps.resize(static_cast<int>(RESOURCE_COUNT));
 	}
 
 	Object::~Object()
 	{
-		delete resMgr; 
+		delete imageResource;
+		delete imageRenderer;
 	}
 
 	void Object::Initialize(const vector<tuple<Gdiplus::Rect, TileType, Spritestate>>& defs)
@@ -30,6 +34,7 @@ namespace Map
 			tiles.push_back({ rect, type, state });
 		}
 	}
+	
 
 	void Object::AddTile(const Gdiplus::Rect& rect, TileType type, Spritestate state)
 	{
@@ -48,10 +53,56 @@ namespace Map
 			return walls; 
 		}
 	}
+	//void Object::LoadTileImages(HINSTANCE hInstance, Spritestate state)
+	//{
+	//	// 1) 해당 state에 매핑된 리소스 ID 리스트 가져오기
+	//	const auto& info = SpriteStateFrameMap[state];
+	//	// 2) tileBitmaps[state] 벡터에 이미지 포인터를 차곡차곡 저장
+	//	auto& imgs = tileBitmaps[state];
 
+	//	for (size_t i = 0; i < info.ImageID.size(); ++i) {
+	//		int resID = GetSpriteID(state, i);
+
+	//		// 3) ImageResource 로부터 리소스 로드
+	//		if (!imageResource->LoadFromResource(hInstance, resID, SPRITE_TYPE)) {
+	//			throw std::runtime_error(
+	//				"이미지 로드 실패: state=" + std::to_string(static_cast<int>(state))
+	//				+ " frame=" + std::to_string(i));
+	//		}
+	//		// 4) Gdiplus::Bitmap* 을 Gdiplus::Image 로 감싸서 unique_ptr 에 담기
+	//		imgs.push_back(
+	//			std::make_unique<Gdiplus::Image>(imageResource->GetBitmap())
+	//		);
+	//	}
+	//}
+	void LoadTileImages(HINSTANCE hInst, Spritestate state)
+	{
+		const auto& info = SpriteStateFrameMap[state];
+		auto& vec = tileBitmaps[static_cast<int>(state)];  // enum→인덱스
+
+		for (size_t i = 0; i < info.ImageID.size(); ++i) {
+			int resID = GetSpriteID(state, i);
+
+			if (!imageResource->LoadFromResource(hInst, resID, SPRITE_TYPE))
+				throw std::runtime_error("이미지 로드 실패");
+
+			// ResourceManager / ImageResource가 소유하는 Bitmap*을 받아와서
+			// raw 포인터로 저장
+			Gdiplus::Image* img = imageResource->GetBitmap();
+			vec.push_back(img);
+	}
 	void Object::MapLoop()
 	{
+		
 
+		
+		std::vector<std::tuple<Gdiplus::Rect, TileType, Spritestate>> defs = {
+			{ {  0,   0, 30, 30 }, TileType::Wall,  Spritestate::TREE      },
+			{ { 30,   0, 30, 30 }, TileType::Empty, Spritestate::FLOORTILE },
+			{ { 60,   0, 30, 30 }, TileType::Empty, Spritestate::FLOORTILE },
+			// …원하는 위치·크기만큼 나열
+		};
+		Initialize(defs);
 	}
 
 	
