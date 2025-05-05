@@ -5,17 +5,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|D:\\BF\\Butterfly\\Winmain\\UI\\Map\\Map.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|solutionrelative:Winmain\\UI\\Map\\Map.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-<<<<<<< HEAD
-      "AbsoluteMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|D:\\BF\\Butterfly\\Winmain\\Animation.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|solutionrelative:Winmain\\Animation.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-=======
->>>>>>> fb9a3e70b48eb2c6857d6e953db7e8f5a578bb8b
-      "AbsoluteMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|D:\\BF\\Butterfly\\Winmain\\UI\\Map\\Map.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|solutionrelative:Winmain\\UI\\Map\\Map.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -54,65 +43,18 @@
           ]
         },
         {
-          "DockedWidth": 293,
+          "DockedWidth": 343,
           "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-<<<<<<< HEAD
-              "DocumentIndex": 2,
-=======
-              "DocumentIndex": 1,
->>>>>>> fb9a3e70b48eb2c6857d6e953db7e8f5a578bb8b
-              "Title": "Map.h",
-              "DocumentMoniker": "D:\\BF\\Butterfly\\Winmain\\UI\\Map\\Map.h",
-              "RelativeDocumentMoniker": "Winmain\\UI\\Map\\Map.h",
-              "ToolTip": "D:\\BF\\Butterfly\\Winmain\\UI\\Map\\Map.h",
-              "RelativeToolTip": "Winmain\\UI\\Map\\Map.h",
-<<<<<<< HEAD
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAApAAAAAAAAAA==",
-=======
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAKAAAAAAAAAA==",
->>>>>>> fb9a3e70b48eb2c6857d6e953db7e8f5a578bb8b
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-05-04T09:20:43.939Z",
-              "EditorCaption": ""
-            }
-          ]
-        },
-        {
-          "DockedWidth": 343,
-          "SelectedChildIndex": 1,
-          "Children": [
-            {
-              "$type": "Document",
-<<<<<<< HEAD
-              "DocumentIndex": 1,
-              "Title": "Animation.cpp",
-              "DocumentMoniker": "D:\\BF\\Butterfly\\Winmain\\Animation.cpp",
-              "RelativeDocumentMoniker": "Winmain\\Animation.cpp",
-              "ToolTip": "D:\\BF\\Butterfly\\Winmain\\Animation.cpp",
-              "RelativeToolTip": "Winmain\\Animation.cpp",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAACkAAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-05-05T14:41:38.04Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-=======
->>>>>>> fb9a3e70b48eb2c6857d6e953db7e8f5a578bb8b
               "DocumentIndex": 0,
               "Title": "Map.cpp",
               "DocumentMoniker": "D:\\BF\\Butterfly\\Winmain\\UI\\Map\\Map.cpp",
               "RelativeDocumentMoniker": "Winmain\\UI\\Map\\Map.cpp",
               "ToolTip": "D:\\BF\\Butterfly\\Winmain\\UI\\Map\\Map.cpp",
               "RelativeToolTip": "Winmain\\UI\\Map\\Map.cpp",
-<<<<<<< HEAD
-              "ViewState": "AgIAADwAAAAAAAAAAAAAAE0AAAAEAAAAAAAAAA==",
-=======
-              "ViewState": "AgIAADwAAAAAAAAAAAAAAEYAAAA3AAAAAAAAAA==",
->>>>>>> fb9a3e70b48eb2c6857d6e953db7e8f5a578bb8b
+              "ViewState": "AgIAAEUAAAAAAAAAAAAAAFwAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-05-04T09:21:21.082Z",
               "EditorCaption": ""

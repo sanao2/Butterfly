@@ -77,10 +77,19 @@ namespace Map
 	void Object::MapLoop(Gdiplus::Graphics& graphics)
 	{		
 		std::vector<std::tuple<Gdiplus::Rect, TileType, Spritestate>> defs = {
-			{ {  0, 0, 30, 30 }, TileType::Wall,  Spritestate::TREE      },
-			{ { 30, 0, 30, 30 }, TileType::Empty, Spritestate::FLOORTILE },
-			{ { 70, 0, 30, 30 }, TileType::Empty, Spritestate::FLOORTILE },
-			{ {  70, 30, 70, 30 }, TileType::Empty, Spritestate::FLOORTILE },
+			{ { 0, 0, 30, 30 }, TileType::Wall,  Spritestate::TREE },
+			{ { 30, 0, 30, 30 }, TileType::Wall,  Spritestate::TREE },
+			{ { -20, 30, 80, 30 }, TileType::Empty, Spritestate::FLOORTILE },	
+			{ { 50, 30, 80, 30 }, TileType::Empty, Spritestate::FLOORTILE },	
+			{ { 50, 30, 80, 30 }, TileType::Empty, Spritestate::FLOORTILE },	
+			{ { 120, 30, 80, 30 }, TileType::Empty, Spritestate::FLOORTILE },	
+			{ { 180, 30, 30, 90 }, TileType::Empty, Spritestate::FLOORTILE },	
+			{ { 180, 100, 30, 90 }, TileType::Empty, Spritestate::FLOORTILE },	
+			{ { 180, 80, 80, 30 }, TileType::Empty, Spritestate::FLOORTILE },	
+			{ { 250, 80, 80, 30 }, TileType::Empty, Spritestate::FLOORTILE },	
+			{ { 300, 80, 30, 100 }, TileType::Empty, Spritestate::FLOORTILE },	
+			
+
 			
 			
 			// …원하는 위치·크기만큼 나열
