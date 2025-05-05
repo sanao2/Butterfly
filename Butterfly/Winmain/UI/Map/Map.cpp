@@ -18,6 +18,9 @@ namespace Map
 		imageResource = new ImageResource(); 
 		imageRenderer = new GdiPlusImageRenderer(); 
 		tileBitmaps.resize(static_cast<int>(RESOURCE_COUNT));
+
+		LoadTileImages(hInstance, FLOORTILE);
+		LoadTileImages(hInstance, TREE);
 	}
 
 	Object::~Object()
@@ -74,14 +77,17 @@ namespace Map
 	void Object::MapLoop(Gdiplus::Graphics& graphics)
 	{		
 		std::vector<std::tuple<Gdiplus::Rect, TileType, Spritestate>> defs = {
-			{ {  0,   0, 30, 30 }, TileType::Wall,  Spritestate::TREE      },
-			{ { 30,   0, 30, 30 }, TileType::Empty, Spritestate::FLOORTILE },
-			{ { 60,   0, 30, 30 }, TileType::Empty, Spritestate::FLOORTILE },
+			{ {  0, 0, 30, 30 }, TileType::Wall,  Spritestate::TREE      },
+			{ { 30, 0, 30, 30 }, TileType::Empty, Spritestate::FLOORTILE },
+			{ { 70, 0, 30, 30 }, TileType::Empty, Spritestate::FLOORTILE },
+			{ {  70, 30, 70, 30 }, TileType::Empty, Spritestate::FLOORTILE },
+			
+			
 			// …원하는 위치·크기만큼 나열
 		};
 		Initialize(defs);
 
-		
+		RectAngle(graphics); 
 		
 	}
 	void Object::RectAngle(Gdiplus::Graphics& graphics)
