@@ -1,68 +1,59 @@
 #include "Map.h"
+#include <ranges> // Add this include for std::views
+using namespace std; 
 
 namespace Map
 {
-	Object::Object(HDC drawDC, int width, int height)
-		: objsize{ 0,0 }, objPos{ 0,0 }, ResourceID(0)
+	Object::Object(HDC drawDC, HINSTANCE hInstance, int width, int height)
 	{
-		imageRenderer = new GdiPlusImageRenderer();
-		imageResource = new ImageResource();
-
+		imageResource = new ImageResource(); 
+		imageRenderer = new GdiPlusImageRenderer();	
 	}
-
+	
 	Object::~Object()
-	{
-		delete imageRenderer;
-		delete imageResource;
+	{	
+		delete imageResource; 
+		delete imageRenderer; 
 	}
 
-	void Object::MapLoop(Gdiplus::Graphics& graphics)
+	void Object::MapLoop()
 	{
-		const int windowWidth = 600;
-		const int windowHeight = 800;
-		// 타일 크기
-		const int tileWidth = 30;
-		const int tileHeight = 40;
-
-		for (int y = 0; y < windowHeight; y += tileHeight)
+		for (auto& tile : tiles)
 		{
-			for (int x = 0; x < windowWidth; x += tileWidth)
-			{
-				Gdiplus::Rect rect = createObject(x, y, tileWidth, tileHeight);
-				RectAngle(&graphics, rect);
+			auto& images = tileBitmaps[tile.state]; 
+			if (!images.empty()) {
+				Gdiplus::Image* iamge = images[0];
+
+
 			}
 		}
-
 	}
 
-	Gdiplus::Rect Object::createObject(int x, int y, int width, int height)
+	void Object::LoadTileImages(HINSTANCE hInstance, Spritestate state) // Removed extra closing parenthesis
 	{
-		Gdiplus::Rect rect = { x,y,width, height };
+		const auto& info = SpriteStateFrameMap[state];
+		auto& imgs = tileBitmaps[state];
 
-		return rect;
+		for (size_t i = 0; i < info.ImageID.size(); ++i) {
+			int resID = GetSpriteID(state, i);
+			if (!imageResource->LoadFromResource(hInstance, resID, SPRITE_TYPE)) {
+				throw std::runtime_error("이미지 로드 실패: state="
+					+ std::to_string(static_cast<int>(state)) // Fixed conversion of enum to string
+					+ " frame=" + std::to_string(i));
+			}
+			imgs.push_back(std::make_unique<Gdiplus::Image>(imageResource->GetBitmap()));
+		}
 	}
-
-	void Object::Initialize()
-	{
-		
-	}
-
 
 	void Object::TileImageRender(Gdiplus::Graphics* graphics, Gdiplus::Image* image, int x, int y)
 	{
-		Gdiplus::Pen pen(Gdiplus::Color(255, 0, 128, 255), 2.0f);
 		int width = image->GetWidth(); 
-		int height = image->GetHeight();
-
-		Gdiplus::Rect rect = {x,y,width,height};
-		graphics->DrawImage(image, rect);
+		int height = image->GetHeight(); 
+			imageRenderer->Render(graphics, image, width, height, x, y);
+		
 	}
 
-	void Object::RectAngle(Gdiplus::Graphics* graphics, Gdiplus::Rect& rect)
-	{
-		Gdiplus::Pen pen(Gdiplus::Color(255, 0, 128, 255), 2.0f);
-		graphics->DrawRectangle(&pen, rect);
-	}
+	
 
 
 
