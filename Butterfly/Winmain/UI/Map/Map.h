@@ -1,6 +1,6 @@
 #include <windows.h>
 #include <gdiplus.h>
-#include "/BF/Butterfly/Winmain/resource.h"
+#include "../Map/resource.h"
 #include "ImageResource.h"
 #include "IImageRenderer.h"
 #include "GdiplusImageRenderer.h"
@@ -10,15 +10,15 @@
 #include <map>
 #include <unordered_map> // Add this line to include the unordered_map header
 #include <stdexcept>
-using namespace std; 
+using namespace std;
 using std::unordered_map;
-using std::vector; 
+using std::vector;
 constexpr wchar_t SPRITE_TYPE[] = L"PNG";
 
 
 enum Spritestate
 {
-	FLOORTILE, 
+	FLOORTILE,
 	TREE,
 	BRANCH,
 	POND,
@@ -37,7 +37,7 @@ unordered_map<Spritestate, SpriteInfo> SpriteStateFrameMap = {
    {FLOORTILE, { IDB_FLOOR_TILE_ONE,IDB_FLOOR_TILE_SECOND,IDB_FLOOR_TILE_THREE }},
    {TREE,{ IDB_TREE}},
    {BRANCH, {IDB_BRANCH}},
-   {POND, { IDB_POND}}  
+   {POND, { IDB_POND}}
 
 };
 
@@ -67,19 +67,20 @@ namespace Map
 		Spritestate Sprstate;
 
 		POINT ObjectScale = {};
-		int  ResourceID = 0; 			
+		int  ResourceID = 0;
 
-		vector<Gdiplus::Image*> SpriteFrames;
+		static unordered_map<Spritestate, vector<Gdiplus::Bitmap*>> spriteframes;
 
 	public:
 		Object(HDC drawDC, int width, int height);
-		~Object(); 
+		~Object();
 
-		Gdiplus::Image* LoadImages(HINSTANCE hInstance);		 
-		void Update(); 
-		void Render(Gdiplus::Graphics* graphics,int x, int y);
+		void Initialize(HINSTANCE hInstance);
+		Gdiplus::Image* LoadImages(HINSTANCE hInstance);
+		void Update();
+		void Render(Gdiplus::Graphics* graphics, int x, int y);
 
-		Spritestate GetSpritestate() { return Sprstate;  }
+		Spritestate GetSpritestate() { return Sprstate; }
 		void SetSpritestate(Spritestate state) { Sprstate = state; }
 	};
 }

@@ -6,14 +6,14 @@
 #include "UI/Map/ImageResource.h"
 #include "UI/Map/IImageRenderer.h"
 #include "UI/Map/GdiplusImageRenderer.h" // Ensure this header is included
+#include "UI/Map/resource.h"
 #include "Swap.h"
-#include "resource.h"
 #include <iostream>
 #include <vector>
 using namespace std;
 using std::vector;
 
-extern Animstate current_state; 
+extern Animstate current_state;
 extern const wchar_t RESOURCE_TYPE[];
 
 /*
@@ -23,35 +23,35 @@ if (key.IsKeyDown(VK_RIGHT) && time == 100)
 		}
 */
 
-class ResourceManager  
-{  
-public : 
-    vector<Gdiplus::Image*> AnimationFrames;
-	
-private:  
-   ImageResource*				imageResource = nullptr;  
-   IImageRenderer*				imageRenderer = nullptr; 
+class ResourceManager
+{
+public:
+	vector<Gdiplus::Image*> AnimationFrames;
 
-   Swap* swap = nullptr; 
-  
-   HINSTANCE hInst = nullptr;  
+private:
+	ImageResource* imageResource = nullptr;
+	IImageRenderer* imageRenderer = nullptr;
 
-   ULONG_PTR GdiPlusToken;  
-   Gdiplus::Graphics* graphics = nullptr;  
-   Gdiplus::Image* image = nullptr;  
-   bool isLoaded = false;  
+	Swap* swap = nullptr;
+
+	HINSTANCE hInst = nullptr;
+
+	ULONG_PTR GdiPlusToken;
+	Gdiplus::Graphics* graphics = nullptr;
+	Gdiplus::Image* image = nullptr;
+	bool isLoaded = false;
 
 
-public:  
+public:
 	ResourceManager() = delete;
-   ResourceManager(HDC drawDC, HINSTANCE hInstance);
-   ~ResourceManager();  
-    
-   void LoadeFrames(HINSTANCE hInst);  
-   void RenderFrame(Gdiplus::Graphics* graphics, RECT& rect, int x, int y, int frameIndex);
-  
-   bool IsLoaded() const { return isLoaded; } 
-   void SetIsLoaded(bool loaded) { isLoaded = loaded; } 
+	ResourceManager(HDC drawDC, HINSTANCE hInstance);
+	~ResourceManager();
+
+	void LoadeFrames(HINSTANCE hInst);
+	void RenderFrame(Gdiplus::Graphics* graphics, RECT& rect, int x, int y, int frameIndex);
+
+	bool IsLoaded() const { return isLoaded; }
+	void SetIsLoaded(bool loaded) { isLoaded = loaded; }
 
 
 };

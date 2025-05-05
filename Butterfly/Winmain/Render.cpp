@@ -8,7 +8,7 @@ Render::Render(HDC drawDC, HWND hwnd, HINSTANCE hInstance, int width, int height
 	swap = new Swap(hwnd, width, height);
 	animation = new Animation(drawDC, hInstance);
 	object = new Map::Object(drawDC, width, height);
-	object->LoadImages(hInstance); 
+	object->LoadImages(hInstance);
 }
 
 
@@ -23,11 +23,11 @@ Render::~Render()
 
 void Render::Update()
 {
-	
+
 	// 이동을 위한 업데이트 
 	moveMgr->MoveUpdate();
 	animation->Update();
-	
+
 }
 
 void Render::RenderScene(HINSTANCE hInst)
@@ -43,7 +43,7 @@ void Render::RenderScene(HINSTANCE hInst)
 	animation->Render(memDC, playerRc, graphics, 0, 0, current_frame);
 
 	// Object 
-	object->Render(memDC, graphics, clientSize.x, clientSize.y, 0, 0); 
+	object->Render(graphics, clientSize.x, clientSize.y);
 
 	// 화면 초기화 (배경을 흰색으로 채우기)
 	PatBlt(memDC, 0, 0, clientSize.x, clientSize.y, WHITENESS);
@@ -93,7 +93,7 @@ void Render::PlayerAnimationkeyInput()
 	// 상태가 변경되었을 때만 교환
 	if (newState != current_state)
 	{
-		ResourceManager* resManager = animation->GetResourceManager(); 
+		ResourceManager* resManager = animation->GetResourceManager();
 
 		for (auto img : resManager->AnimationFrames) {
 			delete img;
