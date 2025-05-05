@@ -1,6 +1,6 @@
 #include <windows.h>
 #include <gdiplus.h>
-//#include "../Map/resource.h"
+#include "resource.h"
 #include "ImageResource.h"
 #include "IImageRenderer.h"
 #include "GdiplusImageRenderer.h"
@@ -25,43 +25,45 @@ enum Spritestate
 	RESOURCE_COUNT
 };
 
-//struct SpriteInfo {
-//	vector<int> ImageID;
-//	SpriteInfo() = default;
-//	SpriteInfo(std::initializer_list<int> list)
-//		: ImageID(list) {
-//	}
-//};
-//
-//unordered_map<Spritestate, SpriteInfo> SpriteStateFrameMap = {
-//   {FLOORTILE, { IDB_FLOOR_TILE_ONE,IDB_FLOOR_TILE_SECOND,IDB_FLOOR_TILE_THREE }},
-//   {TREE,{ IDB_TREE}},
-//   {BRANCH, {IDB_BRANCH}},
-//   {POND, { IDB_POND}}
-//
-//};
-//
-//inline const int GetSpriteID(Spritestate Sprstate, size_t frameIndex)
-//{
-//	auto it = SpriteStateFrameMap.find(Sprstate);
-//	if (it == SpriteStateFrameMap.end()) {
-//		throw std::runtime_error("Animstate가 AnimStateFrameMap에 존재하지 않습니다.");
-//	}
-//	auto& vec = it->second.ImageID;
-//	if (frameIndex >= vec.size()) {
-//		throw std::out_of_range("frameIndex가 ImageID 벡터의 범위를 초과했습니다.");
-//	}
-//
-//	return vec[frameIndex];
-//}
+struct SpriteInfo {
+	vector<int> ImageID;
+	SpriteInfo() = default;
+	SpriteInfo(std::initializer_list<int> list)
+		: ImageID(list) {
+	}
+};
 enum TileType {
 	Empty,    // 통과 가능
 	Wall      // 충돌 처리할 벽
+
 };
 struct Tile {
-	Gdiplus::Rect rect;  // 화면상 위치
-	TileType      type;  // 충돌 여부
+	Gdiplus::Rect rect;   // 화면상 위치
+	TileType      type;   // 충돌 여부
+	Spritestate   state;  // 어떤 이미지로 그릴지
 };
+
+unordered_map<Spritestate, SpriteInfo> SpriteStateFrameMap = {
+   {FLOORTILE, { IDB_FLOOR_TILE_ONE,IDB_FLOOR_TILE_SECOND,IDB_FLOOR_TILE_THREE }},
+   {TREE,{ IDB_TREE}},
+   {BRANCH, {IDB_BRANCH}},
+   {POND, { IDB_POND}}
+
+};
+
+inline const int GetSpriteID(Spritestate Sprstate, size_t frameIndex)
+{
+	auto it = SpriteStateFrameMap.find(Sprstate);
+	if (it == SpriteStateFrameMap.end()) {
+		throw std::runtime_error("Animstate가 AnimStateFrameMap에 존재하지 않습니다.");
+	}
+	auto& vec = it->second.ImageID;
+	if (frameIndex >= vec.size()) {
+		throw std::out_of_range("frameIndex가 ImageID 벡터의 범위를 초과했습니다.");
+	}
+
+	return vec[frameIndex];
+}
 
 namespace Map
 {
@@ -76,7 +78,7 @@ namespace Map
 		ImageResource* imageResource = nullptr;
 		//Todo test code 
 		vector<Tile> tiles;
-
+		std::unordered_map<Spritestate, std::vector<Gdiplus::Image*>> tileBitmaps;
 
 	public:
 		Object(HDC drawDC, int width, int height);
@@ -84,8 +86,9 @@ namespace Map
 
 		void MapLoop(Gdiplus::Graphics& graphics);
 		Gdiplus::Rect createObject(int x, int y, int width, int height);
-		//void LoadImages(int resourceID, const wchar_t* resourceType);
-		//void ObjectRender(Gdiplus::Graphics* graphics, Gdiplus::Image* image, int x, int y);
+		void Initialize(); 
+		void LoadImages(int resourceID, const wchar_t* resourceType);
+		void TileImageRender(Gdiplus::Graphics* graphics, Gdiplus::Image* image, int x, int y);
 		void RectAngle(Gdiplus::Graphics* graphics, Gdiplus::Rect& rect);
 	};
 }

@@ -42,6 +42,21 @@ namespace Map
 		return rect;
 	}
 
+	void Object::Initialize()
+	{
+		
+	}
+
+
+	void Object::TileImageRender(Gdiplus::Graphics* graphics, Gdiplus::Image* image, int x, int y)
+	{
+		Gdiplus::Pen pen(Gdiplus::Color(255, 0, 128, 255), 2.0f);
+		int width = image->GetWidth(); 
+		int height = image->GetHeight();
+
+		Gdiplus::Rect rect = {x,y,width,height};
+		graphics->DrawImage(image, rect);
+	}
 
 	void Object::RectAngle(Gdiplus::Graphics* graphics, Gdiplus::Rect& rect)
 	{
