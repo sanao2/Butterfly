@@ -8,7 +8,7 @@ Render::Render(HDC drawDC, HWND hwnd, HINSTANCE hInstance, int width, int height
 	swap = new Swap(hwnd, width, height);
 	animation = new Animation(drawDC, hInstance);
 	object = new Map::Object(drawDC, width, height);
-	object->LoadImages(hInstance);
+
 }
 
 
@@ -41,12 +41,9 @@ void Render::RenderScene(HINSTANCE hInst)
 	PatBlt(memDC, 0, 0, clientSize.x, clientSize.y, WHITENESS);
 
 	animation->Render(memDC, playerRc, graphics, 0, 0, current_frame);
-
+	Gdiplus::Rect rc = { 10,10,10,10 };
 	// Object 
-	object->Render(graphics, clientSize.x, clientSize.y);
-
-	// 화면 초기화 (배경을 흰색으로 채우기)
-	PatBlt(memDC, 0, 0, clientSize.x, clientSize.y, WHITENESS);
+	object->RectAngle(graphics, rc);
 
 	animation->Render(memDC, playerRc, graphics, playerRc.left, playerRc.top, current_frame);
 

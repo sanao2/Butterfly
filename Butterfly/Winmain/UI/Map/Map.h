@@ -1,6 +1,6 @@
 #include <windows.h>
 #include <gdiplus.h>
-#include "../Map/resource.h"
+//#include "../Map/resource.h"
 #include "ImageResource.h"
 #include "IImageRenderer.h"
 #include "GdiplusImageRenderer.h"
@@ -25,63 +25,59 @@ enum Spritestate
 	RESOURCE_COUNT
 };
 
-struct SpriteInfo {
-	vector<int> ImageID;
-	SpriteInfo() = default;
-	SpriteInfo(std::initializer_list<int> list)
-		: ImageID(list) {
-	}
+//struct SpriteInfo {
+//	vector<int> ImageID;
+//	SpriteInfo() = default;
+//	SpriteInfo(std::initializer_list<int> list)
+//		: ImageID(list) {
+//	}
+//};
+//
+//unordered_map<Spritestate, SpriteInfo> SpriteStateFrameMap = {
+//   {FLOORTILE, { IDB_FLOOR_TILE_ONE,IDB_FLOOR_TILE_SECOND,IDB_FLOOR_TILE_THREE }},
+//   {TREE,{ IDB_TREE}},
+//   {BRANCH, {IDB_BRANCH}},
+//   {POND, { IDB_POND}}
+//
+//};
+//
+//inline const int GetSpriteID(Spritestate Sprstate, size_t frameIndex)
+//{
+//	auto it = SpriteStateFrameMap.find(Sprstate);
+//	if (it == SpriteStateFrameMap.end()) {
+//		throw std::runtime_error("Animstate가 AnimStateFrameMap에 존재하지 않습니다.");
+//	}
+//	auto& vec = it->second.ImageID;
+//	if (frameIndex >= vec.size()) {
+//		throw std::out_of_range("frameIndex가 ImageID 벡터의 범위를 초과했습니다.");
+//	}
+//
+//	return vec[frameIndex];
+//}
+struct Tile {
+	RECT      rect;      //Todo 화면상 위치
+	Spritestate type;    //Todo 어떤 리소스(타일) 타입인지
 };
-
-unordered_map<Spritestate, SpriteInfo> SpriteStateFrameMap = {
-   {FLOORTILE, { IDB_FLOOR_TILE_ONE,IDB_FLOOR_TILE_SECOND,IDB_FLOOR_TILE_THREE }},
-   {TREE,{ IDB_TREE}},
-   {BRANCH, {IDB_BRANCH}},
-   {POND, { IDB_POND}}
-
-};
-
-inline const int GetSpriteID(Spritestate Sprstate, size_t frameIndex)
-{
-	auto it = SpriteStateFrameMap.find(Sprstate);
-	if (it == SpriteStateFrameMap.end()) {
-		throw std::runtime_error("Animstate가 AnimStateFrameMap에 존재하지 않습니다.");
-	}
-	auto& vec = it->second.ImageID;
-	if (frameIndex >= vec.size()) {
-		throw std::out_of_range("frameIndex가 ImageID 벡터의 범위를 초과했습니다.");
-	}
-
-	return vec[frameIndex];
-}
-
 namespace Map
 {
 	class Object
 	{
 	private:
-		ImageResource* imageResource = nullptr;
+		POINT objsize;		//Todo 오브젝트 사이즈 
+		POINT objPos;		//Todo 오브젝트 
+		int ResourceID;		//Todo 리소스 아이디 
+
 		IImageRenderer* imageRenderer = nullptr;
-		Gdiplus::Image* image = nullptr;
-		POINT ObjectPos = {};
-		Spritestate Sprstate;
-
-		POINT ObjectScale = {};
-		int  ResourceID = 0;
-
-		static unordered_map<Spritestate, vector<Gdiplus::Bitmap*>> spriteframes;
-
+		ImageResource* imageResource = nullptr;
 	public:
 		Object(HDC drawDC, int width, int height);
 		~Object();
 
-		void Initialize(HINSTANCE hInstance);
-		Gdiplus::Image* LoadImages(HINSTANCE hInstance);
-		void Update();
-		void Render(Gdiplus::Graphics* graphics, int x, int y);
-
-		Spritestate GetSpritestate() { return Sprstate; }
-		void SetSpritestate(Spritestate state) { Sprstate = state; }
+		void MapLoop();
+		Gdiplus::Rect createObject(int x, int y, int width, int height);
+		//void LoadImages(int resourceID, const wchar_t* resourceType);
+		//void ObjectRender(Gdiplus::Graphics* graphics, Gdiplus::Image* image, int x, int y);
+		void RectAngle(Gdiplus::Graphics* graphics, Gdiplus::Rect& rect);
 	};
 }
 
