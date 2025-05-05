@@ -2,7 +2,6 @@
 #include <gdiplus.h>
 #pragma comment(lib, "gdiplus.lib")
 #include "resource.h"
-#include "ResourceManager.h"
 #include "GdiplusImageRenderer.h"
 #include <vector>
 #include <string>
@@ -44,13 +43,7 @@ struct Tile {
 	Spritestate   state;  // 어떤 이미지로 그릴지
 };
 
-unordered_map<Spritestate, SpriteInfo> SpriteStateFrameMap = {
-   {FLOORTILE, { IDB_FLOOR_TILE_ONE }},
-   {TREE,{IDB_TREE}},
-   {BRANCH, {IDB_BRANCH}},
-   {POND, { IDB_POND}}
-
-};
+extern std::unordered_map<Spritestate, SpriteInfo> SpriteStateFrameMap;
 
 inline const int GetSpriteID(Spritestate Sprstate, size_t frameIndex)
 {
@@ -70,26 +63,18 @@ namespace Map
 {
 	class Object
 	{
-	private:
-		POINT objsize;		//Todo 오브젝트 사이즈 
-		POINT objPos;		//Todo 오브젝트 
-		int ResourceID;		//Todo 리소스 아이디 
-
+	private : 
+		vector<Tile> tiles; 
 		ResourceManager* resMgr = nullptr; 
-		IImageRenderer* imageRenderer = nullptr;
-		ImageResource* imageResource = nullptr;
-		//Todo test code 
-		vector<Tile> tiles;
-		std::unordered_map<Spritestate, std::vector<std::unique_ptr<Gdiplus::Image>>> tileBitmaps;
 
-	public:
-		Object(HDC drawDC, HINSTANCE hInstance, int width, int height);
-		~Object();
+	public : 
+		Object(HDC drawDC, HINSTANCE hInstance); 
+		~Object(); 
+		void Initialize(const vector<tuple<Gdiplus::Rect, TileType, Spritestate>>& defs);
+		void AddTile(const Gdiplus::Rect& rect, TileType type, Spritestate state);
+		vector<Gdiplus::Rect> GetWallRects() const;
+		void MapLoop(); 
 
-		void MapLoop(Gdiplus::Graphics& graphics);
-		void LoadTileImages(HINSTANCE hInstance, Spritestate state);
-		void TileImageRender(Gdiplus::Graphics* graphics, Gdiplus::Image* image, int x, int y);
-		void RectAngle(Gdiplus::Graphics* graphics, Gdiplus::Rect& rect);
 	};
 }
 

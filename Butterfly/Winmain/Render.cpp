@@ -7,7 +7,7 @@ Render::Render(HDC drawDC, HWND hwnd, HINSTANCE hInstance, int width, int height
 {
 	swap = new Swap(hwnd, width, height);
 	animation = new Animation(drawDC, hInstance);
-	object = new Map::Object(drawDC, hInstance, width, height);
+	object = new Map::Object(drawDC, hInstance);
 
 }
 
@@ -43,7 +43,7 @@ void Render::RenderScene(HINSTANCE hInst)
 	//animation->Render(memDC, graphics, 0, 0, current_frame);
 	Gdiplus::Rect rc = { 10,10,10,10 };
 	// Object 
-	object->MapLoop(*graphics);
+	object->MapLoop();
 
 	animation->Render(memDC, graphics, playerRc.left, playerRc.top, current_frame);
 
