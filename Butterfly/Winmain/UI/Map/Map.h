@@ -1,18 +1,12 @@
+#include "../../Global.h"
 #include <windows.h>
 #include <gdiplus.h>
 #pragma comment(lib, "gdiplus.lib")
 #include "resource.h"
 #include "GdiplusImageRenderer.h"
-#include <vector>
-#include <string>
-#include <map>
-#include <unordered_map> // Add this line to include the unordered_map header
-#include <stdexcept>
-#include <iostream>
-#include "../../ResourceManager.h"
-using std::string; 
-using std::unordered_map;
-using std::vector;
+#include "ImageResource.h"
+#include "IImageRenderer.h"
+
 constexpr wchar_t SPRITE_TYPE[] = L"PNG";
 
 
@@ -72,13 +66,12 @@ namespace Map
 	public : 
 		Object(HDC drawDC, HINSTANCE hInstance); 
 		~Object(); 
-		void Initialize(const vector<tuple<Gdiplus::Rect, TileType, Spritestate>>& defs);
+		void Initialize(const vector<std::tuple<Gdiplus::Rect, TileType, Spritestate>>& defs);
 		void AddTile(const Gdiplus::Rect& rect, TileType type, Spritestate state);
-		//void LoadTileImages(HINSTANCE hInstance, Spritestate state);
 		void LoadTileImages(HINSTANCE hInst, Spritestate state);
 		vector<Gdiplus::Rect> GetWallRects() const;
 		void MapLoop(); 
-
+		void RectAngle(Gdiplus::Graphics& graphics, Gdiplus::Rect& rect);
 	};
 }
 

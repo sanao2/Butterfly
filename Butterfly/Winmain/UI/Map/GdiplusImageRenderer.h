@@ -7,10 +7,10 @@
 class GdiPlusImageRenderer : public IImageRenderer {
 public:
 	// Rect drawing code space 
-	void Render(Gdiplus::Graphics& graphics, RECT& rect, Gdiplus::Image* image, int width, int height, int x, int y) override
+	virtual void Render(Gdiplus::Graphics& graphics, Gdiplus::Rect& rect, Gdiplus::Image* image) override
 	{
 		if (image) {
-			graphics.DrawImage(image, x, y, width, height);
+			graphics.DrawImage(image, rect);
 		}
 	}
 	void Render(Gdiplus::Graphics& graphics, Gdiplus::Image* image, int width, int height, int x, int y) override

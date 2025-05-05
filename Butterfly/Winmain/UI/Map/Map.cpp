@@ -26,15 +26,15 @@ namespace Map
 		delete imageRenderer;
 	}
 
-	void Object::Initialize(const vector<tuple<Gdiplus::Rect, TileType, Spritestate>>& defs)
+	void Object::Initialize(const vector<std::tuple<Gdiplus::Rect, TileType, Spritestate>>& defs)
 	{
 		tiles.clear();
 		for (auto& data : defs) {
 			auto& [rect, type, state] = const_cast<std::tuple<Gdiplus::Rect, TileType, Spritestate>&>(data);
 			tiles.push_back({ rect, type, state });
 		}
+		
 	}
-	
 
 	void Object::AddTile(const Gdiplus::Rect& rect, TileType type, Spritestate state)
 	{
@@ -53,29 +53,8 @@ namespace Map
 			return walls; 
 		}
 	}
-	//void Object::LoadTileImages(HINSTANCE hInstance, Spritestate state)
-	//{
-	//	// 1) 해당 state에 매핑된 리소스 ID 리스트 가져오기
-	//	const auto& info = SpriteStateFrameMap[state];
-	//	// 2) tileBitmaps[state] 벡터에 이미지 포인터를 차곡차곡 저장
-	//	auto& imgs = tileBitmaps[state];
-
-	//	for (size_t i = 0; i < info.ImageID.size(); ++i) {
-	//		int resID = GetSpriteID(state, i);
-
-	//		// 3) ImageResource 로부터 리소스 로드
-	//		if (!imageResource->LoadFromResource(hInstance, resID, SPRITE_TYPE)) {
-	//			throw std::runtime_error(
-	//				"이미지 로드 실패: state=" + std::to_string(static_cast<int>(state))
-	//				+ " frame=" + std::to_string(i));
-	//		}
-	//		// 4) Gdiplus::Bitmap* 을 Gdiplus::Image 로 감싸서 unique_ptr 에 담기
-	//		imgs.push_back(
-	//			std::make_unique<Gdiplus::Image>(imageResource->GetBitmap())
-	//		);
-	//	}
-	//}
-	void LoadTileImages(HINSTANCE hInst, Spritestate state)
+	
+	void Object::LoadTileImages(HINSTANCE hInst, Spritestate state)
 	{
 		const auto& info = SpriteStateFrameMap[state];
 		auto& vec = tileBitmaps[static_cast<int>(state)];  // enum→인덱스
@@ -90,11 +69,10 @@ namespace Map
 			// raw 포인터로 저장
 			Gdiplus::Image* img = imageResource->GetBitmap();
 			vec.push_back(img);
+		}
 	}
 	void Object::MapLoop()
 	{
-		
-
 		
 		std::vector<std::tuple<Gdiplus::Rect, TileType, Spritestate>> defs = {
 			{ {  0,   0, 30, 30 }, TileType::Wall,  Spritestate::TREE      },
@@ -103,8 +81,28 @@ namespace Map
 			// …원하는 위치·크기만큼 나열
 		};
 		Initialize(defs);
-	}
 
+		
+	}
+		void Object::RectAngle(Gdiplus::Graphics& graphics, Gdiplus::Rect& rect)
+		{
+			for (auto& tile : tiles) {
+				auto& imgs = tileBitmaps[static_cast<int>(tile.state)];
+				 
+				if (!imgs.empty()) {
+					Gdiplus::Image* image = imgs[0];			
+				 
+					// 첫 번째 프레임만 그리기
+					imageRenderer->Render(graphics, tile.rect,image);
+				}
+				else {
+					// 대체 드로잉
+					Gdiplus::Pen pen(Gdiplus::Color(255, 0, 128, 255), 2.0f);
+					graphics.DrawRectangle(&pen, rect);;
+				}
+			}
+			
+		}
 	
 
 }
