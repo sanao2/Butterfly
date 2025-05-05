@@ -9,36 +9,36 @@
 #include <chrono>
 #pragma comment(lib, "gdiplus.lib")
 
-using std::vector; 
-using namespace std; 
+using std::vector;
+using namespace std;
 using namespace std::chrono;
 
-extern int g_width; 
+extern int g_width;
 extern int g_height;
 extern int current_frame;
 
-class Animation; 
+class Animation;
 
 extern RECT playerRc;
-extern Animation* g_pPlayeranimation; 
+extern Animation* g_pPlayeranimation;
 
-class Animation 
+class Animation
 {
-private :
-	HINSTANCE hInstance; 
+private:
+	HINSTANCE hInstance;
 	ResourceManager* resManager;
-	steady_clock::time_point lastReload; 
+	steady_clock::time_point lastReload;
 
-	Time::Timer<> timer;	 
-	constexpr static float frameInterval = 0.25f; 
+	Time::Timer<> timer;
+	constexpr static float frameInterval = 0.25f;
 
-public : 
+public:
 	Animation(HDC drawDC, HINSTANCE hInstance);
-	~Animation(); 
-		
-	void Update();	
-	void Render(HDC drawDC, RECT& rect, Gdiplus::Graphics* graphics, int x, int y, int curFrameIndex);
-	
+	~Animation();
+
+	void Update();
+	void Render(HDC drawDC, Gdiplus::Graphics* graphics, int x, int y, int curFrameIndex);
+
 	//void Changestate(Animstate newState, HINSTANCE hInstance);
 	ResourceManager* GetResourceManager() { return resManager; }
 };
