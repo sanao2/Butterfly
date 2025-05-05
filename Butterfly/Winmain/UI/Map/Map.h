@@ -73,7 +73,7 @@ namespace Map
 		Object(HDC drawDC, int width, int height);
 		~Object();
 
-		void MapLoop();
+		void MapLoop(Gdiplus::Graphics& graphics);
 		Gdiplus::Rect createObject(int x, int y, int width, int height);
 		//void LoadImages(int resourceID, const wchar_t* resourceType);
 		//void ObjectRender(Gdiplus::Graphics* graphics, Gdiplus::Image* image, int x, int y);

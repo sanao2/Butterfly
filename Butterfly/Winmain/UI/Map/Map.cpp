@@ -16,8 +16,12 @@ namespace Map
 		delete imageResource;
 	}
 
-	void Object::MapLoop()
+	void Object::MapLoop(Gdiplus::Graphics& graphics)
 	{
+		Gdiplus::Rect rect = createObject(0, 0, 30, 40);
+
+		RectAngle(&graphics, rect);
+
 	}
 
 	Gdiplus::Rect Object::createObject(int x, int y, int width, int height)
