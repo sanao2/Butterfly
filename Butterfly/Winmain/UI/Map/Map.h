@@ -2,8 +2,7 @@
 #include <gdiplus.h>
 #pragma comment(lib, "gdiplus.lib")
 #include "resource.h"
-#include "ImageResource.h"
-#include "IImageRenderer.h"
+#include "ResourceManager.h"
 #include "GdiplusImageRenderer.h"
 #include <vector>
 #include <string>
@@ -11,6 +10,7 @@
 #include <unordered_map> // Add this line to include the unordered_map header
 #include <stdexcept>
 #include <iostream>
+#include "../../ResourceManager.h"
 using std::string; 
 using std::unordered_map;
 using std::vector;
@@ -45,7 +45,7 @@ struct Tile {
 };
 
 unordered_map<Spritestate, SpriteInfo> SpriteStateFrameMap = {
-   {FLOORTILE, { IDB_FLOOR_TILE_ONE,IDB_FLOOR_TILE_SECOND,IDB_FLOOR_TILE_THREE }},
+   {FLOORTILE, { IDB_FLOOR_TILE_ONE }},
    {TREE,{IDB_TREE}},
    {BRANCH, {IDB_BRANCH}},
    {POND, { IDB_POND}}
@@ -75,6 +75,7 @@ namespace Map
 		POINT objPos;		//Todo 오브젝트 
 		int ResourceID;		//Todo 리소스 아이디 
 
+		ResourceManager* resMgr = nullptr; 
 		IImageRenderer* imageRenderer = nullptr;
 		ImageResource* imageResource = nullptr;
 		//Todo test code 
@@ -85,11 +86,10 @@ namespace Map
 		Object(HDC drawDC, HINSTANCE hInstance, int width, int height);
 		~Object();
 
-		void MapLoop(); 
+		void MapLoop(Gdiplus::Graphics& graphics);
 		void LoadTileImages(HINSTANCE hInstance, Spritestate state);
-		void InitializeMap(); 
 		void TileImageRender(Gdiplus::Graphics* graphics, Gdiplus::Image* image, int x, int y);
-		Gdiplus::Rect createObject(int x, int y, int width, int height);
+		void RectAngle(Gdiplus::Graphics* graphics, Gdiplus::Rect& rect);
 	};
 }
 

@@ -49,6 +49,9 @@ public:
 
 	void LoadeFrames(HINSTANCE hInst);
 	void RenderFrame(Gdiplus::Graphics* graphics, int x, int y, int frameIndex);
+	
+	void LoadImages(HINSTANCE hInst, const int resourceID);
+	void ImageRender(Gdiplus::Graphics& graphics, int x, int y);
 
 	bool IsLoaded() const { return isLoaded; }
 	void SetIsLoaded(bool loaded) { isLoaded = loaded; }
