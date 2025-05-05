@@ -15,6 +15,12 @@ HDC drawDC;
 Render* render = nullptr;
 RECT playerRc = { 5,5,20,20 };
 
+Gdiplus::Rect playerrect = {
+    playerRc.left,
+    playerRc.top,
+    playerRc.right - playerRc.left,
+    playerRc.bottom - playerRc.top
+};
 
 void InitConsole()
 {
