@@ -88,7 +88,27 @@ namespace Map
 			{ { 180, 80, 80, 30 }, TileType::Empty, Spritestate::FLOORTILE },	
 			{ { 250, 80, 80, 30 }, TileType::Empty, Spritestate::FLOORTILE },	
 			{ { 300, 80, 30, 100 }, TileType::Empty, Spritestate::FLOORTILE },	
-			
+			{ { 300, 80, 30, 100 }, TileType::Empty, Spritestate::FLOORTILE },	
+			{ { 180, 180, 30, 100 }, TileType::Empty, Spritestate::FLOORTILE },
+			{ { 330, 80, 100, 30 }, TileType::Empty, Spritestate::FLOORTILE },
+			{ { 400, 80, 30, 100 }, TileType::Empty, Spritestate::FLOORTILE },
+			{ { 400, 160, 30, 100 }, TileType::Empty, Spritestate::FLOORTILE },
+			{ { 300, 180, 100, 30 }, TileType::Empty, Spritestate::FLOORTILE },
+			{ { 90, 250, 120, 30 }, TileType::Empty, Spritestate::FLOORTILE },
+			{ { 30, 250, 80, 30 }, TileType::Empty, Spritestate::FLOORTILE },
+			{ { 30, 200, 30, 80 }, TileType::Empty, Spritestate::FLOORTILE },
+			{ { 30, 120, 30, 80 }, TileType::Empty, Spritestate::FLOORTILE },
+			{ { 30, 90, 90, 30 }, TileType::Empty, Spritestate::FLOORTILE },
+			{ { 180, 280, 30, 100 }, TileType::Empty, Spritestate::FLOORTILE },
+			{ { 180, 280, 30, 100 }, TileType::Empty, Spritestate::FLOORTILE },
+			{ { 180, 360, 100, 30 }, TileType::Empty, Spritestate::FLOORTILE },
+			{ { 250, 360, 100, 30 }, TileType::Empty, Spritestate::FLOORTILE },
+			{ { 320, 310, 30, 80 }, TileType::Empty, Spritestate::FLOORTILE },
+			{ { 320, 280, 80, 30 }, TileType::Empty, Spritestate::FLOORTILE },
+			{ { 400, 250, 30, 90 }, TileType::Empty, Spritestate::FLOORTILE },
+			{ { 430, 250, 80, 30 }, TileType::Empty, Spritestate::FLOORTILE },
+			{ { 500, 250, 70, 30 }, TileType::Empty, Spritestate::FLOORTILE },
+			{ { 540, 250, 30, 80 }, TileType::Empty, Spritestate::FLOORTILE },
 
 			
 			
