@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "D:\\BF\\Butterfly\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|D:\\BF\\Butterfly\\Winmain\\Move\\MoveManagers.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|solutionrelative:Winmain\\Move\\MoveManagers.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|D:\\BF\\Butterfly\\Winmain\\UI\\Map\\Map.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{02E9BA9D-6FEA-4105-A537-DCEA42D45248}|Winmain\\Winmain.vcxproj|solutionrelative:Winmain\\UI\\Map\\Map.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
@@ -49,12 +53,25 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "MoveManagers.cpp",
+              "DocumentMoniker": "D:\\BF\\Butterfly\\Winmain\\Move\\MoveManagers.cpp",
+              "RelativeDocumentMoniker": "Winmain\\Move\\MoveManagers.cpp",
+              "ToolTip": "D:\\BF\\Butterfly\\Winmain\\Move\\MoveManagers.cpp",
+              "RelativeToolTip": "Winmain\\Move\\MoveManagers.cpp",
+              "ViewState": "AgIAABsAAAAAAAAAAADwvyoAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-05-05T17:26:15.117Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Map.cpp",
               "DocumentMoniker": "D:\\BF\\Butterfly\\Winmain\\UI\\Map\\Map.cpp",
               "RelativeDocumentMoniker": "Winmain\\UI\\Map\\Map.cpp",
               "ToolTip": "D:\\BF\\Butterfly\\Winmain\\UI\\Map\\Map.cpp",
               "RelativeToolTip": "Winmain\\UI\\Map\\Map.cpp",
-              "ViewState": "AgIAAGIAAAAAAAAAAAAAAG8AAAAOAAAAAAAAAA==",
+              "ViewState": "AgIAAHYAAAAAAAAAAAAqwH4AAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-05-04T09:21:21.082Z",
               "EditorCaption": ""

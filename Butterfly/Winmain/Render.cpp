@@ -40,9 +40,6 @@ void Render::RenderScene(HINSTANCE hInst)
 	// 화면 초기화 (배경을 흰색으로 채우기)
 	PatBlt(memDC, 0, 0, clientSize.x, clientSize.y, WHITENESS);
 
-	//animation->Render(memDC, graphics, 0, 0, current_frame);
-	Gdiplus::Rect rc = { 10,10,10,10 };
-
 	// Object 
 	object->MapLoop(*graphics);
 

@@ -40,7 +40,7 @@ namespace Move
 
 	void MoveManager::ApplyMovement(MoveDirection dir)
 	{
-		const float moveSpeed = 1.0f;
+		const float moveSpeed = 10.0f;
 		const int rcWidth = playerRect.right - playerRect.left;
 		const int rcHeight = playerRect.bottom - playerRect.top;
 		
