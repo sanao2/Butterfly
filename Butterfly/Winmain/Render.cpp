@@ -55,14 +55,14 @@ void Render::RenderScene(HINSTANCE hInst)
 
 	if (collider->IsCompleteOffPath(playerrect, floors)) {
 		// 완전 길 밖 → 시작 위치로 리셋
-		int w = playerRc.right - playerRc.left;
-		int h = playerRc.bottom - playerRc.top;
-		playerRc.left = 0;
-		playerRc.top = 0;
-		playerRc.right = w;
-		playerRc.bottom = h;
+		int width = playerrect.Width; 
+		int hegiht = playerrect.Height;
+		
+		playerrect.X = 0;
+		playerrect.Y = 0;
 	}
-	animation->Render(memDC, graphics, playerRc.left, playerRc.top, current_frame);
+
+	animation->Render(memDC, graphics,playerrect.X, playerrect.Y, current_frame);
 
 	// 스왑 메모리 DC에 복사 (swap 내부 메모리 DC를 가져오는 메소드 필요)
 	swap->SwapBuffers();
