@@ -1,12 +1,144 @@
-﻿  Render.cpp
+﻿  collider.cpp
+  Render.cpp
 D:\BF\Butterfly\Winmain\Event\InputConstants.h(7,40): warning C4309: '초기화 중': 상수 값이 잘립니다.
   (소스 파일 'Render.cpp'을(를) 컴파일하는 중)
   
+D:\BF\Butterfly\Winmain\UI\Map\Map.h(10,19): error C2374: 'SPRITE_TYPE': 재정의. 여러 번 초기화했습니다.
+  (소스 파일 'Render.cpp'을(를) 컴파일하는 중)
+      D:\BF\Butterfly\Winmain\UI\Map\Map.h(10,19):
+      'SPRITE_TYPE' 선언을 참조하십시오.
+  
+D:\BF\Butterfly\Winmain\UI\Map\Map.h(10,19): error C2086: 'const wchar_t SPRITE_TYPE[4]': 재정의
+  (소스 파일 'Render.cpp'을(를) 컴파일하는 중)
+      D:\BF\Butterfly\Winmain\UI\Map\Map.h(10,19):
+      'SPRITE_TYPE' 선언을 참조하십시오.
+  
+D:\BF\Butterfly\Winmain\UI\Map\Map.h(12,6): error C2011: 'Spritestate': 'enum' 형식 재정의
+  (소스 파일 'Render.cpp'을(를) 컴파일하는 중)
+      D:\BF\Butterfly\Winmain\UI\Map\Map.h(12,6):
+      'Spritestate' 선언을 참조하십시오.
+  
+D:\BF\Butterfly\Winmain\UI\Map\Map.h(21,8): error C2011: 'SpriteInfo': 'struct' 형식 재정의
+  (소스 파일 'Render.cpp'을(를) 컴파일하는 중)
+      D:\BF\Butterfly\Winmain\UI\Map\Map.h(21,8):
+      'SpriteInfo' 선언을 참조하십시오.
+  
+D:\BF\Butterfly\Winmain\UI\Map\Map.h(28,6): error C2011: 'TileType': 'enum' 형식 재정의
+  (소스 파일 'Render.cpp'을(를) 컴파일하는 중)
+      D:\BF\Butterfly\Winmain\UI\Map\Map.h(28,6):
+      'TileType' 선언을 참조하십시오.
+  
+D:\BF\Butterfly\Winmain\UI\Map\Map.h(33,8): error C2011: 'Tile': 'struct' 형식 재정의
+  (소스 파일 'Render.cpp'을(를) 컴파일하는 중)
+      D:\BF\Butterfly\Winmain\UI\Map\Map.h(33,8):
+      'Tile' 선언을 참조하십시오.
+  
+D:\BF\Butterfly\Winmain\UI\Map\Map.h(41,18): error C2084: 'const int GetSpriteID(Spritestate,size_t)' 함수에 이미 본문이 있습니다.
+  (소스 파일 'Render.cpp'을(를) 컴파일하는 중)
+      D:\BF\Butterfly\Winmain\UI\Map\Map.h(41,18):
+      'GetSpriteID'의 이전 정의를 참조하십시오.
+  
+D:\BF\Butterfly\Winmain\UI\Map\Map.h(47,16): error C2027: 정의되지 않은 형식 'SpriteInfo'을(를) 사용했습니다.
+  (소스 파일 'Render.cpp'을(를) 컴파일하는 중)
+      D:\BF\Butterfly\Winmain\UI\Map\Map.h(21,8):
+      'SpriteInfo' 선언을 참조하십시오.
+  
+D:\BF\Butterfly\Winmain\UI\Map\Map.h(47,12): error C2530: 'vec': 참조를 초기화해야 합니다.
+  (소스 파일 'Render.cpp'을(를) 컴파일하는 중)
+  
+D:\BF\Butterfly\Winmain\UI\Map\Map.h(48,20): error C3536: 'vec': 초기화되기 전에 사용할 수 없습니다.
+  (소스 파일 'Render.cpp'을(를) 컴파일하는 중)
+  
+D:\BF\Butterfly\Winmain\UI\Map\Map.h(52,23): error C2109: 첨자는 배열 또는 포인터 형식을 사용해야 합니다.
+  (소스 파일 'Render.cpp'을(를) 컴파일하는 중)
+  
+D:\BF\Butterfly\Winmain\UI\Map\Map.h(57,8): error C2011: 'Map::Object': 'class' 형식 재정의
+  (소스 파일 'Render.cpp'을(를) 컴파일하는 중)
+      D:\BF\Butterfly\Winmain\UI\Map\Map.h(57,8):
+      'Map::Object' 선언을 참조하십시오.
+  
+D:\BF\Butterfly\Winmain\Render.cpp(10,26): error C2027: 정의되지 않은 형식 'Map::Object'을(를) 사용했습니다.
+      D:\BF\Butterfly\Winmain\UI\Map\Map.h(57,8):
+      'Map::Object' 선언을 참조하십시오.
+  
+D:\BF\Butterfly\Winmain\Render.cpp(42,2): error C2027: 정의되지 않은 형식 'Map::Object'을(를) 사용했습니다.
+      D:\BF\Butterfly\Winmain\UI\Map\Map.h(57,8):
+      'Map::Object' 선언을 참조하십시오.
+  
+D:\BF\Butterfly\Winmain\Render.cpp(43,16): error C2027: 정의되지 않은 형식 'Map::Object'을(를) 사용했습니다.
+      D:\BF\Butterfly\Winmain\UI\Map\Map.h(57,8):
+      'Map::Object' 선언을 참조하십시오.
+  
+D:\BF\Butterfly\Winmain\Render.cpp(45,32): error C3536: 'floors': 초기화되기 전에 사용할 수 없습니다.
+D:\BF\Butterfly\Winmain\Render.cpp(45,16): error C2664: 'bool Collider::Check(const Gdiplus::Rect &,const std::vector<Gdiplus::Rect,std::allocator<Gdiplus::Rect>> &)': 인수 1을(를) 'RECT'에서 'const Gdiplus::Rect &'(으)로 변환할 수 없습니다.
+      D:\BF\Butterfly\Winmain\Render.cpp(45,22):
+      원인: 'RECT'에서 'const Gdiplus::Rect'(으)로 변환할 수 없습니다.
+      D:\BF\Butterfly\Winmain\Render.cpp(45,22):
+      이 변환을 수행할 수 있는 사용 가능한 사용자 정의 변환 연산자가 없거나 연산자를 호출할 수 없습니다.
+      D:\BF\Butterfly\Winmain\collider.h(11,14):
+      'Collider::Check' 선언을 참조하십시오.
+      D:\BF\Butterfly\Winmain\Render.cpp(45,16):
+      인수 목록 '(RECT, int)'을(를) 일치시키는 동안
+  
+D:\BF\Butterfly\Winmain\Render.cpp(45,40): warning C4390: ';': 제어된 빈 문이 있습니다. 이 문이 필요합니까?
   Map.cpp
   Winmain.cpp
 D:\BF\Butterfly\Winmain\Event\InputConstants.h(7,40): warning C4309: '초기화 중': 상수 값이 잘립니다.
   (소스 파일 'Winmain.cpp'을(를) 컴파일하는 중)
   
+D:\BF\Butterfly\Winmain\UI\Map\Map.h(10,19): error C2374: 'SPRITE_TYPE': 재정의. 여러 번 초기화했습니다.
+  (소스 파일 'Winmain.cpp'을(를) 컴파일하는 중)
+      D:\BF\Butterfly\Winmain\UI\Map\Map.h(10,19):
+      'SPRITE_TYPE' 선언을 참조하십시오.
+  
+D:\BF\Butterfly\Winmain\UI\Map\Map.h(10,19): error C2086: 'const wchar_t SPRITE_TYPE[4]': 재정의
+  (소스 파일 'Winmain.cpp'을(를) 컴파일하는 중)
+      D:\BF\Butterfly\Winmain\UI\Map\Map.h(10,19):
+      'SPRITE_TYPE' 선언을 참조하십시오.
+  
+D:\BF\Butterfly\Winmain\UI\Map\Map.h(12,6): error C2011: 'Spritestate': 'enum' 형식 재정의
+  (소스 파일 'Winmain.cpp'을(를) 컴파일하는 중)
+      D:\BF\Butterfly\Winmain\UI\Map\Map.h(12,6):
+      'Spritestate' 선언을 참조하십시오.
+  
+D:\BF\Butterfly\Winmain\UI\Map\Map.h(21,8): error C2011: 'SpriteInfo': 'struct' 형식 재정의
+  (소스 파일 'Winmain.cpp'을(를) 컴파일하는 중)
+      D:\BF\Butterfly\Winmain\UI\Map\Map.h(21,8):
+      'SpriteInfo' 선언을 참조하십시오.
+  
+D:\BF\Butterfly\Winmain\UI\Map\Map.h(28,6): error C2011: 'TileType': 'enum' 형식 재정의
+  (소스 파일 'Winmain.cpp'을(를) 컴파일하는 중)
+      D:\BF\Butterfly\Winmain\UI\Map\Map.h(28,6):
+      'TileType' 선언을 참조하십시오.
+  
+D:\BF\Butterfly\Winmain\UI\Map\Map.h(33,8): error C2011: 'Tile': 'struct' 형식 재정의
+  (소스 파일 'Winmain.cpp'을(를) 컴파일하는 중)
+      D:\BF\Butterfly\Winmain\UI\Map\Map.h(33,8):
+      'Tile' 선언을 참조하십시오.
+  
+D:\BF\Butterfly\Winmain\UI\Map\Map.h(41,18): error C2084: 'const int GetSpriteID(Spritestate,size_t)' 함수에 이미 본문이 있습니다.
+  (소스 파일 'Winmain.cpp'을(를) 컴파일하는 중)
+      D:\BF\Butterfly\Winmain\UI\Map\Map.h(41,18):
+      'GetSpriteID'의 이전 정의를 참조하십시오.
+  
+D:\BF\Butterfly\Winmain\UI\Map\Map.h(47,16): error C2027: 정의되지 않은 형식 'SpriteInfo'을(를) 사용했습니다.
+  (소스 파일 'Winmain.cpp'을(를) 컴파일하는 중)
+      D:\BF\Butterfly\Winmain\UI\Map\Map.h(21,8):
+      'SpriteInfo' 선언을 참조하십시오.
+  
+D:\BF\Butterfly\Winmain\UI\Map\Map.h(47,12): error C2530: 'vec': 참조를 초기화해야 합니다.
+  (소스 파일 'Winmain.cpp'을(를) 컴파일하는 중)
+  
+D:\BF\Butterfly\Winmain\UI\Map\Map.h(48,20): error C3536: 'vec': 초기화되기 전에 사용할 수 없습니다.
+  (소스 파일 'Winmain.cpp'을(를) 컴파일하는 중)
+  
+D:\BF\Butterfly\Winmain\UI\Map\Map.h(52,23): error C2109: 첨자는 배열 또는 포인터 형식을 사용해야 합니다.
+  (소스 파일 'Winmain.cpp'을(를) 컴파일하는 중)
+  
+D:\BF\Butterfly\Winmain\UI\Map\Map.h(57,8): error C2011: 'Map::Object': 'class' 형식 재정의
+  (소스 파일 'Winmain.cpp'을(를) 컴파일하는 중)
+      D:\BF\Butterfly\Winmain\UI\Map\Map.h(57,8):
+      'Map::Object' 선언을 참조하십시오.
+  
   코드를 생성하고 있습니다...
-D:\BF\Butterfly\Winmain\UI\Map\Map.cpp(58,1): warning C4715: 'Map::Object::GetWallRects': 모든 제어 경로에서 값을 반환하지는 않습니다.
-  Winmain.vcxproj -> D:\BF\Butterfly\x64\Debug\Winmain.exe
+D:\BF\Butterfly\Winmain\UI\Map\Map.cpp(58,1): warning C4715: 'Map::Object::GetfloorsRects': 모든 제어 경로에서 값을 반환하지는 않습니다.

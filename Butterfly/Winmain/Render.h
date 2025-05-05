@@ -10,6 +10,7 @@
 #include "AnimationMap.h"
 #include "Move/MoveManagers.h"
 #include "UI/Map/Map.h"
+#include "collider.h"
 #pragma comment(lib, "gdiplus.lib")
 using namespace std::chrono;
 using namespace Move;
@@ -36,6 +37,7 @@ public:
         Map::Object*                                   object = nullptr; 
         Gdiplus::Graphics* graphics = nullptr;
         Animation* animation = nullptr;
+        Collider* collider = nullptr; 
         Input::InputManager<Input::KeyboardDevice>& key = Input::InputManager<Input::KeyboardDevice>::GetInstance();
         Move::MoveManager* moveMgr = nullptr;
         steady_clock::time_point lastMoveTime;

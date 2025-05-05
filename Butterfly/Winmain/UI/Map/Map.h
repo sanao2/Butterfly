@@ -71,6 +71,7 @@ namespace Map
 		vector<Gdiplus::Rect> GetWallRects() const;
 		void MapLoop(Gdiplus::Graphics& graphics);
 		void RectAngle(Gdiplus::Graphics& graphics);
+		vector<Gdiplus::Rect> GetfloorsRects() const;
 	};
 }
 

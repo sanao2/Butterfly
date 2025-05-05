@@ -44,16 +44,16 @@ namespace Map
 		tiles.push_back({ rect, type, state });
 	}
 
-	vector<Gdiplus::Rect> Object::GetWallRects() const
+	vector<Gdiplus::Rect> Object::GetfloorsRects() const
 	{
-		vector<Gdiplus::Rect> walls;
+		vector<Gdiplus::Rect> floors;
 
 		for (auto& tile : tiles)
 		{
-			if (tile.type == TileType::Wall)
-				walls.push_back(tile.rect); 
+			if (tile.type == TileType::Empty)
+				floors.push_back(tile.rect);
 
-			return walls; 
+			return floors;
 		}
 	}
 	
@@ -68,8 +68,7 @@ namespace Map
 			if (!imageResource->LoadFromResource(hInst, resID, SPRITE_TYPE))
 				throw std::runtime_error("이미지 로드 실패");
 
-			// ResourceManager / ImageResource가 소유하는 Bitmap*을 받아와서
-			// raw 포인터로 저장
+			
 			Gdiplus::Image* img = imageResource->GetBitmap();
 			vec.push_back(img);
 		}
