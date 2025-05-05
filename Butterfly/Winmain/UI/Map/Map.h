@@ -9,7 +9,6 @@
 
 constexpr wchar_t SPRITE_TYPE[] = L"PNG";
 
-
 enum Spritestate
 {
 	FLOORTILE,
