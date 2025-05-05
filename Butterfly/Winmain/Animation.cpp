@@ -8,16 +8,20 @@ Animation::Animation(HDC drawDC, HINSTANCE hInstance) : hInstance(hInstance)
 	g_pPlayeranimation = this;
 	resManager = new ResourceManager(drawDC, hInstance);
 	resManager->LoadeFrames(hInstance);
-
+	Time::InitTime(); // Timer start  Initialization  
 }
 
 Animation::~Animation()
 {
+	timer.Reset(); 
 	delete resManager;
 }
 
 void Animation::Update()
 {
+	Time::UpdateTime();
+	
+	// moveMgr->MoveUpdate();
 	if (timer.IsElapsed(frameInterval)) {
 		timer.Reset();
 

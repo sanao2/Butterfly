@@ -33,7 +33,6 @@ public:
         HDC                                            memDC = nullptr;
 
         Swap* swap = nullptr;
-        Time::Timer<> timer;
         Map::Object*                                   object = nullptr; 
         Gdiplus::Graphics* graphics = nullptr;
         Animation* animation = nullptr;

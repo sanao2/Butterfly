@@ -76,10 +76,7 @@ namespace Map
 	}
 	void Object::MapLoop(Gdiplus::Graphics& graphics)
 	{		
-		std::vector<std::tuple<Gdiplus::Rect, TileType, Spritestate>> defs = {
-			{ { 0, 0, 30, 30 }, TileType::Wall,  Spritestate::TREE },
-			{ { 60, -20, 30, 70 }, TileType::Wall,  Spritestate::TREE },
-			{ { 30, 0, 30, 30 }, TileType::Wall,  Spritestate::TREE },
+		std::vector<std::tuple<Gdiplus::Rect, TileType, Spritestate>> defs = {			
 			// floorstart 
 			{ { -20, 30, 80, 30 }, TileType::Empty, Spritestate::FLOORTILE },	
 			{ { 50, 30, 80, 30 }, TileType::Empty, Spritestate::FLOORTILE },	
@@ -141,10 +138,6 @@ namespace Map
 			{ { 140, 570, 30, 100 }, TileType::Empty, Spritestate::FLOORTILE },
 			{ { 140, 640, 30, 100 }, TileType::Empty, Spritestate::FLOORTILE },
 			{ { 30, 680, 200, 100 }, TileType::Empty, Spritestate::FLOORTILE },
-
-			
-			
-			// …원하는 위치·크기만큼 나열
 		};
 		Initialize(defs);
 

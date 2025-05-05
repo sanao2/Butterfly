@@ -32,7 +32,7 @@ void Render::Update()
 
 void Render::RenderScene(HINSTANCE hInst)
 {
-	Time::UpdateTime();
+
 
 	memDC = swap->GetMemDC();
 	graphics = new Gdiplus::Graphics(memDC);
@@ -100,6 +100,6 @@ void Render::PlayerAnimationkeyInput()
 
 		current_frame = 0;
 		current_state = newState;
-		timer.Reset();
+
 	};
 }
