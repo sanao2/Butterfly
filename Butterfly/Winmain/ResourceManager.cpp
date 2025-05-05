@@ -2,11 +2,11 @@
 constexpr wchar_t RESOURCE_TYPE[] = L"PNG";
 
 
-ResourceManager::ResourceManager(HDC drawDC, HINSTANCE hInstance) 
-		: hInst(hInstance), GdiPlusToken(0)
+ResourceManager::ResourceManager(HDC drawDC, HINSTANCE hInstance)
+	: hInst(hInstance), GdiPlusToken(0)
 {
 	imageResource = new ImageResource();
-	imageRenderer = new GdiPlusImageRenderer();	
+	imageRenderer = new GdiPlusImageRenderer();
 
 	Gdiplus::GdiplusStartupInput gsi;
 	Gdiplus::GdiplusStartup(&GdiPlusToken, &gsi, nullptr);
@@ -17,7 +17,7 @@ ResourceManager::ResourceManager(HDC drawDC, HINSTANCE hInstance)
 
 ResourceManager::~ResourceManager()
 {
-	delete image; 
+	delete image;
 
 	if (graphics) delete graphics;					// GDI+ Graphics Delete
 	if (imageResource) delete imageResource;		// imageResource Delete 
@@ -61,7 +61,7 @@ void ResourceManager::LoadeFrames(HINSTANCE hInst)
 	const auto& frameCount = AnimStateFrameMap[currentstate].ImageID;
 
 	for (int i = 0; i < frameCount.size(); ++i)
-	{	
+	{
 		int id = GetAnimationFrameID(currentstate, i);
 
 		if (imageResource->LoadFromResource(hInst, id, RESOURCE_TYPE))
@@ -74,7 +74,7 @@ void ResourceManager::LoadeFrames(HINSTANCE hInst)
 			cerr << "리소스 로드 실패 ID : " << id << endl;
 		}
 	}
-	isLoaded = false; 
+	isLoaded = false;
 }
 
 //void ResourceManger::Render(Gdiplus::Graphics& graphics, int x, int y)
@@ -83,7 +83,7 @@ void ResourceManager::LoadeFrames(HINSTANCE hInst)
 //	
 //}
 
-void ResourceManager::RenderFrame(Gdiplus::Graphics* graphics, RECT& rect, int x, int y, int frameIndex)
+void ResourceManager::RenderFrame(Gdiplus::Graphics* graphics, int x, int y, int frameIndex)
 {
 	if (frameIndex < 0 || frameIndex >= AnimationFrames.size())
 	{
@@ -91,13 +91,13 @@ void ResourceManager::RenderFrame(Gdiplus::Graphics* graphics, RECT& rect, int x
 			<< (AnimationFrames.size() - 1) << endl;
 		return;
 	}
-	auto& img = AnimationFrames[frameIndex]; 
+	auto& img = AnimationFrames[frameIndex];
 
-	UINT ImgWidth = img->GetWidth() / (rect.right - rect.left);
-	UINT Imgheight = img->GetHeight() / (rect.bottom - rect.top);
-	
+	UINT ImgWidth = img->GetWidth() / 10;
+	UINT Imgheight = img->GetHeight() / 10;
 
-	imageRenderer->Render(*graphics, rect, AnimationFrames[frameIndex],ImgWidth,Imgheight, x, y);
-	
-	isLoaded = false; 
+
+	imageRenderer->Render(*graphics, AnimationFrames[frameIndex], ImgWidth, Imgheight, x, y);
+
+	isLoaded = false;
 }

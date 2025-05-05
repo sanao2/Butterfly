@@ -54,10 +54,15 @@ enum Spritestate
 //
 //	return vec[frameIndex];
 //}
-struct Tile {
-	RECT      rect;      //Todo 화면상 위치
-	Spritestate type;    //Todo 어떤 리소스(타일) 타입인지
+enum TileType {
+	Empty,    // 통과 가능
+	Wall      // 충돌 처리할 벽
 };
+struct Tile {
+	Gdiplus::Rect rect;  // 화면상 위치
+	TileType      type;  // 충돌 여부
+};
+
 namespace Map
 {
 	class Object
@@ -69,6 +74,10 @@ namespace Map
 
 		IImageRenderer* imageRenderer = nullptr;
 		ImageResource* imageResource = nullptr;
+		//Todo test code 
+		vector<Tile> tiles;
+
+
 	public:
 		Object(HDC drawDC, int width, int height);
 		~Object();
