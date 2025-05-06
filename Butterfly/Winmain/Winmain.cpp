@@ -16,7 +16,7 @@ Render* render = nullptr;
 RECT playerRc = { 5,5,20,20 };
 
 Gdiplus::Rect playerrect = {
-	playerRc.left, playerRc.top,
+	10, 10,
 	playerRc.right - playerRc.left,
 	playerRc.bottom - playerRc.top
 };

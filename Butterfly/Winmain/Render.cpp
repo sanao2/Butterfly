@@ -9,7 +9,7 @@ Render::Render(HDC drawDC, HWND hwnd, HINSTANCE hInstance, int width, int height
 	swap = new Swap(hwnd, width, height);
 	animation = new Animation(drawDC, hInstance);
 	object = new Map::Object(drawDC, hInstance);
-	collider = new Collider(drawDC, hInstance, width, height);
+	collider = new Collider(drawDC, hInstance, swap, width, height);
 }
 
 Render::~Render()

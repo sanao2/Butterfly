@@ -1,6 +1,6 @@
 #include "EndScene.h"
 
-EndScene::EndScene(HDC drawDC, int width, int height) : memDC(drawDC)
+EndScene::EndScene(Swap* _swap, int width, int height) : swap(_swap)
 {
 	memDC = swap->GetMemDC();
 
@@ -10,6 +10,7 @@ EndScene::EndScene(HDC drawDC, int width, int height) : memDC(drawDC)
 void EndScene::EndSceneRender()
 {
 	PatBlt(memDC, 0, 0, clientSize.x, clientSize.y, WHITENESS);
-	cout << "EndScene" << endl;
+	TextOut(memDC, 100, 100, L"END SCENE", 9);
 
+	swap->SwapBuffers();
 }

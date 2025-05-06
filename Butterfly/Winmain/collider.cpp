@@ -1,10 +1,10 @@
 #include "collider.h"
 
 
-Collider::Collider(HDC drawDC, HINSTANCE hInstance, int width, int height)
+Collider::Collider(HDC drawDC, HINSTANCE hInstance, Swap* swap, int width, int height)
 {
 	object = new Map::Object(drawDC, hInstance);
-	End = new EndScene(drawDC, width, height);
+	End = new EndScene(swap, width, height);
 }
 
 bool Collider::Check(const Gdiplus::Rect& playerRect, const vector<Gdiplus::Rect>& floors)

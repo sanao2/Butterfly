@@ -3,6 +3,7 @@
 #include <windows.h>
 #include <gdiplus.h>
 #include <iostream>
+#include "Swap.h"
 using namespace std;
 using namespace Gdiplus;
 
@@ -11,9 +12,10 @@ class EndScene
 private:
 	POINT clientSize = {};
 	HDC memDC;
+	Swap* swap = nullptr;
 
 public:
-	EndScene(HDC drtDC, int width, int height);
+	EndScene(Swap* _swap, int width, int height);
 	void EndSceneRender();
 };
 
