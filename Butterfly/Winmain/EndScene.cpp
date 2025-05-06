@@ -1,7 +1,8 @@
 #include "EndScene.h"
 
-EndScene::EndScene(Swap* _swap, int width, int height) : swap(_swap), memDC(swap->GetMemDC())
+EndScene::EndScene(Swap* _swap, int width, int height) : swap(_swap)
 {
+	memDC = swap->GetMemDC(); 
 	if (!swap) {
 		OutputDebugString(L"EndScene »ý¼ºÀÚ: swap is NULL\n");
 	}

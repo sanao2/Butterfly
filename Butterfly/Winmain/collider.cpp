@@ -2,9 +2,16 @@
 
 bool isEndScene = false;
 
-Collider::Collider(HDC drawDC, HINSTANCE hInstance, int width, int height)
+Collider::Collider(HDC drawDC, HINSTANCE hInstance, Swap* swap, int width, int height)
 {
 	object = new Map::Object(drawDC, hInstance);
+	End = new EndScene(swap, width, height);
+}
+
+void Collider::Update()
+{
+	End->Update();
+	End->KeyInput();
 }
 
 

@@ -9,8 +9,8 @@ Render::Render(HDC drawDC, HWND hwnd, HINSTANCE hInstance, int width, int height
 	swap = new Swap(hwnd, width, height);
 	animation = new Animation(drawDC, hInstance);
 	object = new Map::Object(drawDC, hInstance);
-	collider = new Collider(drawDC, hInstance, width, height);
-	endscene = new EndScene(swap, width, height);
+	collider = new Collider(drawDC, hInstance, swap, width, height);
+
 }
 
 Render::~Render()
@@ -27,6 +27,7 @@ void Render::Update()
 	// 이동을 위한 업데이트 
 	moveMgr->MoveUpdate();
 	animation->Update();
+	collider->Update();
 }
 
 void Render::RenderScene(HINSTANCE hInst)
@@ -43,10 +44,11 @@ void Render::RenderScene(HINSTANCE hInst)
 	auto floors = object->GetfloorsRects();
 
 	collider->ColliderCheck(floors);
+
 	cout << "[DEBUG]" << "player.X :" << playerrect.X
 		<< "playerrect.Y : " << playerrect.Y << endl;
 
-	if (isEndScene) endscene->EndSceneRender();
+	//if (isEndScene) endscene->EndSceneRender();
 
 	if (isEndScene) {
 		playerrect.X = clientSize.x / 2;
@@ -54,8 +56,10 @@ void Render::RenderScene(HINSTANCE hInst)
 		playerrect.Width = 40;
 		playerrect.Height = 50;
 	}
+
 	cout << "[DEBUG]" << "player.X :" << playerrect.X
 		<< "playerrect.Y : " << playerrect.Y << endl;
+
 	animation->Render(memDC, graphics, playerrect.X, playerrect.Y, current_frame);
 
 	// 스왑 메모리 DC에 복사 

@@ -15,8 +15,7 @@ class EndScene
 private:
 	POINT clientSize = {};
 	Swap* swap = nullptr;
-	HDC memDC;
-	
+	HDC memDC;	
 	Input::InputManager<Input::KeyboardDevice>& key = Input::InputManager<Input::KeyboardDevice>::GetInstance();
 public:
 	EndScene(Swap* _swap, int width, int height);
