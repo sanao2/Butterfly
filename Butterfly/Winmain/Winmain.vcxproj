@@ -135,6 +135,7 @@
     <ClInclude Include="Animation.h" />
     <ClInclude Include="AnimationMap.h" />
     <ClInclude Include="collider.h" />
+    <ClInclude Include="EndScene.h" />
     <ClInclude Include="Event\InputConstants.h" />
     <ClInclude Include="Event\InputManager.h" />
     <ClInclude Include="Event\KeyboardInputManager.h" />
@@ -162,6 +163,7 @@
     <ClCompile Include="Animation.cpp" />
     <ClCompile Include="AnimationMap.cpp" />
     <ClCompile Include="collider.cpp" />
+    <ClCompile Include="EndScene.cpp" />
     <ClCompile Include="Event\KeyboardInputManager.cpp" />
     <ClCompile Include="Global.cpp" />
     <ClCompile Include="IAnimation.cpp" />

@@ -1,6 +1,12 @@
 #include "collider.h"
 
 
+Collider::Collider(HDC drawDC, HINSTANCE hInstance, int width, int height)
+{
+	object = new Map::Object(drawDC, hInstance);
+	End = new EndScene(drawDC, width, height);
+}
+
 bool Collider::Check(const Gdiplus::Rect& playerRect, const vector<Gdiplus::Rect>& floors)
 {
 	for (auto& floor : floors)
@@ -29,7 +35,7 @@ bool Collider::IsCompleteOffPath(const Gdiplus::Rect& player, const vector<Gdipl
 	return true;
 }
 
-void Collider::ColliderCheck(vector<Gdiplus::Rect> floors)
+void Collider::ColliderCheck(vector<Gdiplus::Rect>& floors)
 {
 	bool onPath = false;
 
@@ -40,6 +46,20 @@ void Collider::ColliderCheck(vector<Gdiplus::Rect> floors)
 			onPath = true;
 			break;
 		}
+	}
+	if (!object->tiles.empty())
+	{
+		const Tile& lastTile = object->tiles.back();  // 마지막 타일
+		if (playerrect.IntersectsWith(lastTile.rect))
+		{
+			if (playerrect.X == 145 && playerrect.Y == 675 &&
+				lastTile.state == Spritestate::FLOORTILE && lastTile.type == TileType::Empty)
+			{
+				End->EndSceneRender();
+				return;
+			}
+		}
+
 	}
 
 	if (IsCompleteOffPath(playerrect, floors)) {
