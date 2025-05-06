@@ -14,10 +14,10 @@ HWND g_hWnd;
 HDC drawDC;
 
 Render* render = nullptr;
-RECT playerRc = { 5,5,20,20 };
+RECT playerRc = { 10,10,20,20 };
 
 Gdiplus::Rect playerrect = {
-	10, 10,
+	playerRc.left, playerRc.top,
 	playerRc.right - playerRc.left,
 	playerRc.bottom - playerRc.top
 };
