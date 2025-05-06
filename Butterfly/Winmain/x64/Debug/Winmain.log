@@ -1,2 +1,15 @@
-﻿  Map.cpp
-  Winmain.vcxproj -> C:\Users\hot56\OneDrive\문서\Butterfly\Butterfly\x64\Debug\Winmain.exe
+﻿  collider.cpp
+  EndScene.cpp
+C:\Users\hot56\OneDrive\문서\Butterfly\Butterfly\Winmain\EndScene.cpp(5,17): error C2512: 'Swap::Swap': 사용할 수 있는 적절한 기본 생성자가 없습니다.
+  C:\Users\hot56\OneDrive\문서\Butterfly\Butterfly\Winmain\EndScene.cpp(5,17):
+  인수 목록 '()'을(를) 일치시키는 동안
+  
+  Render.cpp
+C:\Users\hot56\OneDrive\문서\Butterfly\Butterfly\Winmain\Event\InputConstants.h(7,40): warning C4309: '초기화 중': 상수 값이 잘립니다.
+  (소스 파일 'Render.cpp'을(를) 컴파일하는 중)
+  
+  Winmain.cpp
+C:\Users\hot56\OneDrive\문서\Butterfly\Butterfly\Winmain\Event\InputConstants.h(7,40): warning C4309: '초기화 중': 상수 값이 잘립니다.
+  (소스 파일 'Winmain.cpp'을(를) 컴파일하는 중)
+  
+  코드를 생성하고 있습니다...

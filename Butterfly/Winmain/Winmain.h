@@ -6,6 +6,7 @@
 #include "Render.h"
 using namespace Input;
 
+extern HWND g_hWnd;
 extern Render* render;
 extern Gdiplus::Rect playerrect;
 extern int g_width;

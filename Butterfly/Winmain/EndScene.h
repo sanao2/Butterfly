@@ -13,7 +13,7 @@ private:
 	HDC memDC;
 
 public:
-	EndScene(HDC drawDC, int width, int height);
+	EndScene(HDC drtDC, int width, int height);
 	void EndSceneRender();
 };
 
