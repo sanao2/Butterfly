@@ -134,11 +134,13 @@
   <ItemGroup>
     <ClInclude Include="Animation.h" />
     <ClInclude Include="AnimationMap.h" />
+    <ClInclude Include="collider.h" />
     <ClInclude Include="Event\InputConstants.h" />
     <ClInclude Include="Event\InputManager.h" />
     <ClInclude Include="Event\KeyboardInputManager.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="Global.h" />
+    <ClInclude Include="IAnimation.h" />
     <ClInclude Include="Move\AIMoveController.h" />
     <ClInclude Include="Move\IMoveController.h" />
     <ClInclude Include="Move\MoveDirection.h" />
@@ -159,8 +161,10 @@
   <ItemGroup>
     <ClCompile Include="Animation.cpp" />
     <ClCompile Include="AnimationMap.cpp" />
+    <ClCompile Include="collider.cpp" />
     <ClCompile Include="Event\KeyboardInputManager.cpp" />
     <ClCompile Include="Global.cpp" />
+    <ClCompile Include="IAnimation.cpp" />
     <ClCompile Include="Move\MoveManagers.cpp" />
     <ClCompile Include="Render.cpp" />
     <ClCompile Include="ResourceManager.cpp" />

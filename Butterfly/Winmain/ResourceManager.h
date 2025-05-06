@@ -1,7 +1,9 @@
+
 #pragma once
-#include "Global.h" 
+#pragma once
+#include "Global.h"
 #include <windows.h>
-#include <cstdint> 
+#include <cstdint>
 #include "AnimationMap.h"
 #include "UI/Map/ImageResource.h"
 #include "UI/Map/IImageRenderer.h"
@@ -13,15 +15,9 @@
 using namespace std;
 using std::vector;
 
+
 extern Animstate current_state;
 extern const wchar_t RESOURCE_TYPE[];
-
-/*
-if (key.IsKeyDown(VK_RIGHT) && time == 100)
-		{
-			// 해당 애니메이션 이 움직입니다.
-		}
-*/
 
 class ResourceManager
 {
@@ -49,6 +45,12 @@ public:
 
 	void LoadeFrames(HINSTANCE hInst);
 	void RenderFrame(Gdiplus::Graphics* graphics, int x, int y, int frameIndex);
+<<<<<<< HEAD
+=======
+
+	void LoadImages(HINSTANCE hInst, const int resourceID);
+	void ImageRender(Gdiplus::Graphics& graphics, int x, int y);
+>>>>>>> 5f00e2ed61ee77d6d5d1cb1ef5eeb9a29ab30afa
 
 	bool IsLoaded() const { return isLoaded; }
 	void SetIsLoaded(bool loaded) { isLoaded = loaded; }
@@ -56,3 +58,15 @@ public:
 
 };
 
+
+
+/*
+if (key.IsKeyDown(VK_RIGHT) && time == 100)
+		{
+			// 해당 애니메이션 이 움직입니다.
+		}
+*/
+
+/*
+
+*/

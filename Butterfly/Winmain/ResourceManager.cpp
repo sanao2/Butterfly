@@ -1,4 +1,8 @@
+#include "Global.h"
 #include "ResourceManager.h"
+#include <iostream>
+
+
 constexpr wchar_t RESOURCE_TYPE[] = L"PNG";
 
 
@@ -26,33 +30,6 @@ ResourceManager::~ResourceManager()
 }
 
 
-//void ResourceManger::LoadImages(HINSTANCE hInst)
-//{
-//	try {			
-//
-//		imageResource->LoadFromResource(hInst, RESOURCE_ID, RESOURCE_TYPE); // Load image from resource 
-//	
-//		
-//		//image = imageResource->GetBitmap();
-//		AnimationFrames.push_back(image); 
-//
-//		if (image == nullptr)
-//		{
-//			cerr << "Failed to load image resource." << endl;
-//			return;
-//		}
-//
-//	}
-//	catch (const std::exception& e) {
-//		std::cerr << "Error loading images: " << e.what() << std::endl;
-//	}
-//	if (image != nullptr)
-//	{
-//		cerr << "Failed to load images." << endl;
-//	}
-//	
-//}
-
 void ResourceManager::LoadeFrames(HINSTANCE hInst)
 {
 	if (isLoaded) return; // 이미 로드된 경우 리턴 
@@ -77,12 +54,15 @@ void ResourceManager::LoadeFrames(HINSTANCE hInst)
 	isLoaded = false;
 }
 
+<<<<<<< HEAD
 //void ResourceManger::Render(Gdiplus::Graphics& graphics, int x, int y)
 //{
 //	imageRenderer->Render(graphics, image, x, y);
 //	
 //}
 
+=======
+>>>>>>> 5f00e2ed61ee77d6d5d1cb1ef5eeb9a29ab30afa
 void ResourceManager::RenderFrame(Gdiplus::Graphics* graphics, int x, int y, int frameIndex)
 {
 	if (frameIndex < 0 || frameIndex >= AnimationFrames.size())
@@ -96,8 +76,46 @@ void ResourceManager::RenderFrame(Gdiplus::Graphics* graphics, int x, int y, int
 	UINT ImgWidth = img->GetWidth() / 10;
 	UINT Imgheight = img->GetHeight() / 10;
 
+<<<<<<< HEAD
 
 	imageRenderer->Render(*graphics, AnimationFrames[frameIndex], ImgWidth, Imgheight, x, y);
 
 	isLoaded = false;
+=======
+	imageRenderer->Render(*graphics, AnimationFrames[frameIndex], ImgWidth, Imgheight, x, y);
+
+	isLoaded = false;
+}
+
+void ResourceManager::LoadImages(HINSTANCE hInst, const int resourceID)
+{
+	try {
+
+		imageResource->LoadFromResource(hInst, resourceID, RESOURCE_TYPE); // Load image from resource 
+
+
+		//image = imageResource->GetBitmap();
+		AnimationFrames.push_back(image);
+
+		if (image == nullptr)
+		{
+			cerr << "Failed to load image resource." << endl;
+			return;
+		}
+
+	}
+	catch (const std::exception& e) {
+		std::cerr << "Error loading images: " << e.what() << std::endl;
+	}
+	if (image != nullptr)
+	{
+		cerr << "Failed to load images." << endl;
+	}
+
+}
+
+void ResourceManager::ImageRender(Gdiplus::Graphics& graphics, int x, int y)
+{
+	imageRenderer->Render(graphics, image, x, y);
+>>>>>>> 5f00e2ed61ee77d6d5d1cb1ef5eeb9a29ab30afa
 }

@@ -3,12 +3,12 @@ using namespace Input;
 
 
 Render::Render(HDC drawDC, HWND hwnd, HINSTANCE hInstance, int width, int height)
-	: hWnd(hwnd), clientSize{ width, height }, hInst(hInstance), moveMgr(new Move::MoveManager(key, playerRc))
+	: hWnd(hwnd), clientSize{ width, height }, hInst(hInstance), moveMgr(new Move::MoveManager(key, playerrect))
 {
 	swap = new Swap(hwnd, width, height);
 	animation = new Animation(drawDC, hInstance);
-	object = new Map::Object(drawDC, width, height);
-
+	object = new Map::Object(drawDC, hInstance);
+	collider = new Collider(); 
 }
 
 
@@ -23,7 +23,6 @@ Render::~Render()
 
 void Render::Update()
 {
-
 	// 이동을 위한 업데이트 
 	moveMgr->MoveUpdate();
 	animation->Update();
@@ -32,22 +31,49 @@ void Render::Update()
 
 void Render::RenderScene(HINSTANCE hInst)
 {
-	Time::UpdateTime();
-
 	memDC = swap->GetMemDC();
 	graphics = new Gdiplus::Graphics(memDC);
 
 	// 화면 초기화 (배경을 흰색으로 채우기)
 	PatBlt(memDC, 0, 0, clientSize.x, clientSize.y, WHITENESS);
 
+<<<<<<< HEAD
 	//animation->Render(memDC, graphics, 0, 0, current_frame);
 	Gdiplus::Rect rc = { 10,10,10,10 };
+=======
+>>>>>>> 5f00e2ed61ee77d6d5d1cb1ef5eeb9a29ab30afa
 	// Object 
 	object->MapLoop(*graphics);
+	auto floors = object->GetfloorsRects(); 
 
+<<<<<<< HEAD
 	animation->Render(memDC, graphics, playerRc.left, playerRc.top, current_frame);
+=======
+>>>>>>> 5f00e2ed61ee77d6d5d1cb1ef5eeb9a29ab30afa
 
-	// 스왑 메모리 DC에 복사 (swap 내부 메모리 DC를 가져오는 메소드 필요)
+	bool onPath = false; 
+
+	for (auto& path : floors)
+	{
+		if (playerrect.IntersectsWith(path))
+		{
+			onPath = true; 
+			break; 
+		}
+	}
+
+	if (collider->IsCompleteOffPath(playerrect, floors)) {
+		// 완전 길 밖 → 시작 위치로 리셋
+		int width = playerrect.Width; 
+		int hegiht = playerrect.Height;
+		
+		playerrect.X = 0;
+		playerrect.Y = 0;
+	}
+
+	animation->Render(memDC, graphics,playerrect.X, playerrect.Y, current_frame);
+
+	// 스왑 메모리 DC에 복사 
 	swap->SwapBuffers();
 
 }
@@ -102,6 +128,6 @@ void Render::PlayerAnimationkeyInput()
 
 		current_frame = 0;
 		current_state = newState;
-		timer.Reset();
+
 	};
 }

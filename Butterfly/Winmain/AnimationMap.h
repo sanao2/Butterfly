@@ -13,12 +13,7 @@ enum Animstate
 	PLAYER_RIGHTWALK,
 	PLAYER_LEFTWALK,
 	PLAYER_DOWNWALK,
-	PLAYER_UPWALK,
-	PLAYER_USEPIKAX_RIGHT,
-	PLAYER_USEPIKAX_LEFT,
-	PLAYER_USEPIKAX_DOWN,
-	PLAYER_USEPIKAX_UP,
-	PLAYER_ANIMCOUNT
+	PLAYER_UPWALK
 };
 
 struct ResourceInfo {
@@ -27,9 +22,7 @@ struct ResourceInfo {
 	ResourceInfo(std::initializer_list<int> list)
 		: ImageID(list) {}
 };
-
 extern  unordered_map<Animstate, ResourceInfo> AnimStateFrameMap;
-
 
 inline const int GetAnimationFrameID(Animstate animstate, size_t frameIndex)
 {

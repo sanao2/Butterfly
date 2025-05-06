@@ -40,11 +40,11 @@ namespace Move
 
 	void MoveManager::ApplyMovement(MoveDirection dir)
 	{
-		const float moveSpeed = 1.0f;
-		const int rcWidth = playerRect.right - playerRect.left;
-		const int rcHeight = playerRect.bottom - playerRect.top;
+		const float moveSpeed = 10.0f;
+		const int rcWidth = playerRect.Width;
+		const int rcHeight = playerRect.Height;
 		
-		std::cout << "[DEBUG] rect (L:" << playerRect.left << ", T:" << playerRect.top << ", R:" << playerRect.right << ", B:" << playerRect.bottom << "]" << std::endl;
+		std::cout << "[DEBUG] rect (L:" << playerRect.Width << ", " << "<< playerRect.Height : " << playerRect.Height << "]" << std::endl;
 		std::cout << "[DEBUG] rcWidth: " << rcWidth << " rcHeight: " << rcHeight << "\n";
 		std::cout << "[DEBUG] movePos (X:" << movePos.x << ", Y:" << movePos.y << ")\n";
 
@@ -57,11 +57,16 @@ namespace Move
 			default: break;
 		}
 
+		playerRect.X = static_cast<int>(movePos.x - rcWidth / 2);
+		playerRect.Y = static_cast<int>(movePos.y - rcHeight / 2);
 
-		playerRect.left = movePos.x - rcWidth / 2;
-		playerRect.top = movePos.y - rcHeight / 2;
-		playerRect.right = movePos.x + rcWidth / 2;
-		playerRect.bottom = movePos.y + rcHeight / 2;
+		std::cout
+			<< "[DEBUG] Rect after move: "
+			<< "X=" << playerRect.X
+			<< " Y=" << playerRect.Y
+			<< " W=" << playerRect.Width
+			<< " H=" << playerRect.Height
+			<< std::endl;
 	}
 
 	void MoveManager::MoveKeyRelease()
@@ -79,7 +84,7 @@ namespace Move
 		return isMoving;
 	}
 
-	MoveManager::MoveManager(Input::InputManager<Input::KeyboardDevice>& keyRef, RECT& rect)
+	MoveManager::MoveManager(Input::InputManager<Input::KeyboardDevice>& keyRef, Gdiplus::Rect& rect)
 		: key(keyRef), playerRect(rect), movePos{ 0,0 }, isMoving(false)
 	{
 	}

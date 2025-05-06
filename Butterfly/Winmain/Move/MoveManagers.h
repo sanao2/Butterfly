@@ -2,7 +2,8 @@
 #include <cmath>
 #include <Windows.h>
 #include "../Event/KeyboardInputManager.h"
-
+#include <gdiplus.h>
+#pragma comment(lib, "gdiplus.lib")
 
 
 namespace Move
@@ -12,7 +13,7 @@ namespace Move
     class MoveManager 
     {
     public:
-        explicit MoveManager(Input::InputManager<Input::KeyboardDevice>& keyRef, RECT& rect);
+        explicit MoveManager(Input::InputManager<Input::KeyboardDevice>& keyRef, Gdiplus::Rect& rect);
         ~MoveManager();
 
         void MoveUpdate();
@@ -34,7 +35,7 @@ namespace Move
         MoveDirection lastDir = MoveDirection::None; 
         bool isMoving = false;
         POINT movePos = {};
-        RECT& playerRect;
+        Gdiplus::Rect& playerRect;
     };
 }
 

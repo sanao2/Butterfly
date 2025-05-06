@@ -7,7 +7,7 @@
 using namespace Input;
 
 extern Render* render;
-extern RECT playerRc;
+extern Gdiplus::Rect playerrect;
 extern int g_width;
 extern int g_height;
 
