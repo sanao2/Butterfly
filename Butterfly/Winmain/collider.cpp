@@ -2,17 +2,12 @@
 
 bool isEndScene = false;
 
-Collider::Collider(HDC drawDC, HINSTANCE hInstance, Swap* swap, int width, int height)
+Collider::Collider(HDC drawDC, HINSTANCE hInstance, int width, int height)
 {
 	object = new Map::Object(drawDC, hInstance);
-	End = new EndScene(swap, width, height);
 }
 
-void Collider::Update()
-{
-	End->Update();
-	End->KeyInput();
-}
+
 
 bool Collider::Check(const Gdiplus::Rect& playerRect, const vector<Gdiplus::Rect>& floors)
 {
@@ -60,7 +55,6 @@ void Collider::ColliderCheck(vector<Gdiplus::Rect>& floors)
 		if (playerrect.IntersectsWith(lastTile.rect))
 		{
 			isEndScene = true;
-			End->EndSceneRender();
 		}
 
 	}

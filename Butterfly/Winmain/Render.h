@@ -3,6 +3,7 @@
 #include "Global.h"
 #include <windows.h>
 #include "Swap.h"
+#include "EndScene.h"
 #include "Animation.h"
 #include <gdiplus.h>
 #include <atltypes.h>
@@ -35,11 +36,14 @@ private:
 	HINSTANCE                                      hInst = nullptr;
 	HDC                                            memDC = nullptr;
 
+
 	Swap* swap = nullptr;
+	EndScene* endscene = nullptr;
 	Map::Object* object = nullptr;
 	Gdiplus::Graphics* graphics = nullptr;
 	Animation* animation = nullptr;
 	Collider* collider = nullptr;
+
 	Input::InputManager<Input::KeyboardDevice>& key = Input::InputManager<Input::KeyboardDevice>::GetInstance();
 	Move::MoveManager* moveMgr = nullptr;
 	steady_clock::time_point lastMoveTime;
