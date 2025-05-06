@@ -62,6 +62,7 @@ void Collider::ColliderCheck(vector<Gdiplus::Rect>& floors)
 		if (playerrect.IntersectsWith(lastTile.rect))
 		{
 			isEndScene = true;
+			End->EndSceneRender();
 		}
 
 	}

@@ -37,6 +37,7 @@ private:
 	HDC                                            memDC = nullptr;
 
 	Swap* swap = nullptr;
+	EndScene* endscene = nullptr;
 	Map::Object* object = nullptr;
 	Gdiplus::Graphics* graphics = nullptr;
 	Animation* animation = nullptr;

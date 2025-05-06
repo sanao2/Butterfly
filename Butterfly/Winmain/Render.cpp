@@ -10,7 +10,7 @@ Render::Render(HDC drawDC, HWND hwnd, HINSTANCE hInstance, int width, int height
 	animation = new Animation(drawDC, hInstance);
 	object = new Map::Object(drawDC, hInstance);
 	collider = new Collider(drawDC, hInstance, swap, width, height);
-
+	endscene = new EndScene(swap, width, height);
 }
 
 Render::~Render()
@@ -48,7 +48,7 @@ void Render::RenderScene(HINSTANCE hInst)
 	cout << "[DEBUG]" << "player.X :" << playerrect.X
 		<< "playerrect.Y : " << playerrect.Y << endl;
 
-	//if (isEndScene) endscene->EndSceneRender();
+	if (isEndScene) endscene->EndSceneRender();
 
 	if (isEndScene) {
 		playerrect.X = clientSize.x / 2;
