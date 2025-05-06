@@ -132,6 +132,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 		render->PlayerAnimationkeyInput();
 		render->RenderScene(hInstance); // 렌더링 호
 
+		delete render; 
 	}
 
 	UninitConsole();

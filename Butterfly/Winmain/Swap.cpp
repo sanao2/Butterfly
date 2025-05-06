@@ -2,7 +2,7 @@
 
 Swap::Swap(HWND _hWnd, int width, int height) : hWnd(_hWnd), clientSize{ width, height }
 {
-    clientDC = GetDC(hWnd);
+    clientDC = GetDC(_hWnd);
     memDC = CreateCompatibleDC(clientDC);
 
     backBitmap = CreateCompatibleBitmap(clientDC, width, height);
