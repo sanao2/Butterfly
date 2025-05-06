@@ -5,37 +5,38 @@
 #include <gdiplus.h>
 #pragma comment(lib, "gdiplus.lib")
 
+extern bool isEndScene;
 
 namespace Move
 {
-    enum class MoveDirection { None, Left, Right, Up, Down };
+	enum class MoveDirection { None, Left, Right, Up, Down };
 
-    class MoveManager 
-    {
-    public:
-        explicit MoveManager(Input::InputManager<Input::KeyboardDevice>& keyRef, Gdiplus::Rect& rect);
-        ~MoveManager();
+	class MoveManager
+	{
+	public:
+		explicit MoveManager(Input::InputManager<Input::KeyboardDevice>& keyRef, Gdiplus::Rect& rect);
+		~MoveManager();
 
-        void MoveUpdate();
-        bool IsMoving() const;
+		void MoveUpdate();
+		bool IsMoving() const;
 
-        bool GetIsMoving() const { return isMoving; }
-        void SetIsMoving(bool state) { isMoving = state; }
+		bool GetIsMoving() const { return isMoving; }
+		void SetIsMoving(bool state) { isMoving = state; }
 
-        //test code 
-        MoveDirection GetLastDirection() { return lastDir; }
+		//test code 
+		MoveDirection GetLastDirection() { return lastDir; }
 
-    private:
-        void MoveKeyInput();
-        void MoveKeyRelease();
-        void ApplyMovement(MoveDirection dir); 
-        
-    private :
-        Input::InputManager<Input::KeyboardDevice>& key;
-        MoveDirection lastDir = MoveDirection::None; 
-        bool isMoving = false;
-        POINT movePos = {};
-        Gdiplus::Rect& playerRect;
-    };
+	private:
+		void MoveKeyInput();
+		void MoveKeyRelease();
+		void ApplyMovement(MoveDirection dir);
+
+	private:
+		Input::InputManager<Input::KeyboardDevice>& key;
+		MoveDirection lastDir = MoveDirection::None;
+		bool isMoving = false;
+		POINT movePos = {};
+		Gdiplus::Rect& playerRect;
+	};
 }
 

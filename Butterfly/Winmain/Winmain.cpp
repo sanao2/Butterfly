@@ -8,6 +8,7 @@ LPCTSTR g_szClassName = TEXT("윈도우 클래스 이름");
 
 int g_width = 600;
 int g_height = 800;
+bool g_Quit = false;
 
 HWND g_hWnd;
 HDC drawDC;
@@ -113,7 +114,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 	render = new Render(drawDC, g_hWnd, hInstance, g_width, g_height, playerrect);  // Global Render 객체 생성
 
 	MSG msg;
-	while (true)
+	while (g_Quit != true)
 	{
 		if (PeekMessage(&msg, NULL, 0, 0, PM_REMOVE))
 		{

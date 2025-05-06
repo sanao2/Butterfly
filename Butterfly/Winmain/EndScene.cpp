@@ -7,10 +7,24 @@ EndScene::EndScene(Swap* _swap, int width, int height) : swap(_swap)
 	clientSize = { width, height };
 }
 
+void EndScene::KeyInput()
+{
+	if (key.IsKeyDown(VK_ESCAPE) && isEndScene) {
+		g_Quit = true;
+	}
+}
+
+void EndScene::Update()
+{
+	key.Update();
+}
+
 void EndScene::EndSceneRender()
 {
 	PatBlt(memDC, 0, 0, clientSize.x, clientSize.y, WHITENESS);
-	TextOut(memDC, 100, 100, L"END SCENE", 9);
+	KeyInput();
+
+	TextOut(memDC, clientSize.x / 2, clientSize.y / 2, L"END SCENE", 9);
 
 	swap->SwapBuffers();
 }

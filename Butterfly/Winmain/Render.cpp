@@ -26,7 +26,7 @@ void Render::Update()
 	// 이동을 위한 업데이트 
 	moveMgr->MoveUpdate();
 	animation->Update();
-
+	collider->Update();
 }
 
 void Render::RenderScene(HINSTANCE hInst)
@@ -47,11 +47,18 @@ void Render::RenderScene(HINSTANCE hInst)
 	cout << "[DEBUG]" << "player.X :" << playerrect.X
 		<< "playerrect.Y : " << playerrect.Y << endl;
 
+	if (isEndScene) {
+		playerrect.X = clientSize.x / 2;
+		playerrect.Y = clientSize.y - 30;
+		playerrect.Width = 40;
+		playerrect.Height = 50;
+	}
 
 	animation->Render(memDC, graphics, playerrect.X, playerrect.Y, current_frame);
 
 	// 스왑 메모리 DC에 복사 
 	swap->SwapBuffers();
+
 
 }
 

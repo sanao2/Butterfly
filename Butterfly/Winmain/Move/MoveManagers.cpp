@@ -7,6 +7,7 @@ namespace Move
 {
 	void MoveManager::MoveUpdate()
 	{
+		if (isEndScene) return;
 		key.Update();
 		g_pPlayeranimation->Update();
 		MoveKeyInput();

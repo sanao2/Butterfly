@@ -11,4 +11,4 @@ extern Render* render;
 extern Gdiplus::Rect playerrect;
 extern int g_width;
 extern int g_height;
-
+extern bool g_Quit;

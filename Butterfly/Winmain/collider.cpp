@@ -1,10 +1,17 @@
 #include "collider.h"
 
+bool isEndScene = false;
 
 Collider::Collider(HDC drawDC, HINSTANCE hInstance, Swap* swap, int width, int height)
 {
 	object = new Map::Object(drawDC, hInstance);
 	End = new EndScene(swap, width, height);
+}
+
+void Collider::Update()
+{
+	End->Update();
+	End->KeyInput();
 }
 
 bool Collider::Check(const Gdiplus::Rect& playerRect, const vector<Gdiplus::Rect>& floors)
@@ -52,8 +59,8 @@ void Collider::ColliderCheck(vector<Gdiplus::Rect>& floors)
 		auto& lastTile = object->tiles.back();  // 마지막 타일
 		if (playerrect.IntersectsWith(lastTile.rect))
 		{
+			isEndScene = true;
 			End->EndSceneRender();
-			return;
 		}
 
 	}
@@ -63,7 +70,8 @@ void Collider::ColliderCheck(vector<Gdiplus::Rect>& floors)
 		int width = playerrect.Width;
 		int hegiht = playerrect.Height;
 
-		playerrect.X = 0;
-		playerrect.Y = 0;
+
+		playerrect.X = 10;
+		playerrect.Y = 10;
 	}
 }
