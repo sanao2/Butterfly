@@ -52,11 +52,8 @@ void Collider::ColliderCheck(vector<Gdiplus::Rect>& floors)
 		auto& lastTile = object->tiles.back();  // 마지막 타일
 		if (playerrect.IntersectsWith(lastTile.rect))
 		{
-			if (lastTile.rect.Contains(playerrect)) {
-
-				End->EndSceneRender();
-				return;
-			}
+			End->EndSceneRender();
+			return;
 		}
 
 	}

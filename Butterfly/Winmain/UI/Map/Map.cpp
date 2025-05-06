@@ -11,6 +11,70 @@ unordered_map<Spritestate, SpriteInfo> SpriteStateFrameMap = {
 
 };
 
+std::vector<std::tuple<Gdiplus::Rect, TileType, Spritestate>> defs = {
+	// floorstart
+	{ { -20, 30, 80, 30 }, TileType::Empty, Spritestate::FLOORTILE },
+	{ { 50, 30, 80, 30 }, TileType::Empty, Spritestate::FLOORTILE },
+	{ { 50, 30, 80, 30 }, TileType::Empty, Spritestate::FLOORTILE },
+	{ { 120, 30, 80, 30 }, TileType::Empty, Spritestate::FLOORTILE },
+	{ { 180, 30, 30, 90 }, TileType::Empty, Spritestate::FLOORTILE },
+	{ { 180, 100, 30, 90 }, TileType::Empty, Spritestate::FLOORTILE },
+	{ { 180, 80, 80, 30 }, TileType::Empty, Spritestate::FLOORTILE },
+	{ { 250, 80, 80, 30 }, TileType::Empty, Spritestate::FLOORTILE },
+	{ { 300, 80, 30, 100 }, TileType::Empty, Spritestate::FLOORTILE },
+	{ { 300, 80, 30, 100 }, TileType::Empty, Spritestate::FLOORTILE },
+	{ { 180, 180, 30, 100 }, TileType::Empty, Spritestate::FLOORTILE },
+	{ { 330, 80, 100, 30 }, TileType::Empty, Spritestate::FLOORTILE },
+	{ { 400, 80, 30, 100 }, TileType::Empty, Spritestate::FLOORTILE },
+	{ { 400, 160, 30, 100 }, TileType::Empty, Spritestate::FLOORTILE },
+	{ { 300, 180, 100, 30 }, TileType::Empty, Spritestate::FLOORTILE },
+	{ { 90, 250, 120, 30 }, TileType::Empty, Spritestate::FLOORTILE },
+	{ { 30, 250, 80, 30 }, TileType::Empty, Spritestate::FLOORTILE },
+	{ { 30, 200, 30, 80 }, TileType::Empty, Spritestate::FLOORTILE },
+	{ { 30, 120, 30, 80 }, TileType::Empty, Spritestate::FLOORTILE },
+	{ { 30, 90, 90, 30 }, TileType::Empty, Spritestate::FLOORTILE },
+	{ { 180, 280, 30, 100 }, TileType::Empty, Spritestate::FLOORTILE },
+	{ { 180, 280, 30, 100 }, TileType::Empty, Spritestate::FLOORTILE },
+	{ { 180, 360, 100, 30 }, TileType::Empty, Spritestate::FLOORTILE },
+	{ { 250, 360, 100, 30 }, TileType::Empty, Spritestate::FLOORTILE },
+	{ { 90, 360, 100, 30 }, TileType::Empty, Spritestate::FLOORTILE },
+	{ { 70, 360, 30, 100 }, TileType::Empty, Spritestate::FLOORTILE },
+	{ { 70, 430, 100, 30 }, TileType::Empty, Spritestate::FLOORTILE },
+	{ { 150, 430, 30, 100 }, TileType::Empty, Spritestate::FLOORTILE },
+	{ { 150, 460, 100, 30 }, TileType::Empty, Spritestate::FLOORTILE },
+	{ { 250, 390, 30, 100 }, TileType::Empty, Spritestate::FLOORTILE },
+	{ { 70, 500, 80, 30 }, TileType::Empty, Spritestate::FLOORTILE },
+	{ { 30, 500, 50, 30 }, TileType::Empty, Spritestate::FLOORTILE },
+	{ { 30, 500, 30, 100 }, TileType::Empty, Spritestate::FLOORTILE },
+	{ { 320, 310, 30, 80 }, TileType::Empty, Spritestate::FLOORTILE },
+	{ { 320, 280, 80, 30 }, TileType::Empty, Spritestate::FLOORTILE },
+	{ { 400, 250, 30, 90 }, TileType::Empty, Spritestate::FLOORTILE },
+	{ { 400, 330, 30, 90 }, TileType::Empty, Spritestate::FLOORTILE },
+	{ { 400, 380, 30, 90 }, TileType::Empty, Spritestate::FLOORTILE },
+	{ { 430, 250, 80, 30 }, TileType::Empty, Spritestate::FLOORTILE },
+	{ { 500, 250, 70, 30 }, TileType::Empty, Spritestate::FLOORTILE },
+	{ { 540, 250, 30, 80 }, TileType::Empty, Spritestate::FLOORTILE },
+	{ { 540, 320, 30, 80 }, TileType::Empty, Spritestate::FLOORTILE },
+	{ { 470, 390, 100, 30 }, TileType::Empty, Spritestate::FLOORTILE },
+	{ { 470, 390, 30, 100 }, TileType::Empty, Spritestate::FLOORTILE },
+	{ { 400, 460, 70, 30 }, TileType::Empty, Spritestate::FLOORTILE },
+	{ { 370, 460, 100, 30 }, TileType::Empty, Spritestate::FLOORTILE },
+	{ { 370, 460, 100, 30 }, TileType::Empty, Spritestate::FLOORTILE },
+	{ { 340, 460, 30, 100 }, TileType::Empty, Spritestate::FLOORTILE },
+	{ { 340, 550, 100, 30 }, TileType::Empty, Spritestate::FLOORTILE },
+	{ { 470, 550, 30, 100 }, TileType::Empty, Spritestate::FLOORTILE },
+	{ { 470, 480, 30, 100 }, TileType::Empty, Spritestate::FLOORTILE },
+	{ { 430, 550, 100, 30 }, TileType::Empty, Spritestate::FLOORTILE },
+	{ { 530, 480, 30, 100 }, TileType::Empty, Spritestate::FLOORTILE },
+	{ { 340, 550, 30, 100 }, TileType::Empty, Spritestate::FLOORTILE },
+	{ { 340, 620, 160, 30 }, TileType::Empty, Spritestate::FLOORTILE },
+	{ { 60, 570, 90, 30 }, TileType::Empty, Spritestate::FLOORTILE },
+	{ { 170, 570, 100, 30 }, TileType::Empty, Spritestate::FLOORTILE },
+	{ { 140, 570, 30, 100 }, TileType::Empty, Spritestate::FLOORTILE },
+	{ { 140, 640, 30, 100 }, TileType::Empty, Spritestate::FLOORTILE },
+	{ { 30, 680, 200, 100 }, TileType::Empty, Spritestate::FLOORTILE },
+};
+
 namespace Map
 {
 	Object::Object(HDC drawDC, HINSTANCE hInstance)
@@ -18,9 +82,10 @@ namespace Map
 		imageResource = new ImageResource();
 		imageRenderer = new GdiPlusImageRenderer();
 		tileBitmaps.resize(static_cast<int>(RESOURCE_COUNT));
-		lastTile = {}; 
+		lastTile = {};
 		LoadTileImages(hInstance, FLOORTILE);
 		LoadTileImages(hInstance, TREE);
+
 	}
 
 	Object::~Object()
@@ -80,82 +145,25 @@ namespace Map
 		const int tileWidth = 30;
 		const int tileHeight = 40;
 
-		std::vector<std::tuple<Gdiplus::Rect, TileType, Spritestate>> defs = {
-			// floorstart
-			{ { -20, 30, 80, 30 }, TileType::Empty, Spritestate::FLOORTILE },
-			{ { 50, 30, 80, 30 }, TileType::Empty, Spritestate::FLOORTILE },
-			{ { 50, 30, 80, 30 }, TileType::Empty, Spritestate::FLOORTILE },
-			{ { 120, 30, 80, 30 }, TileType::Empty, Spritestate::FLOORTILE },
-			{ { 180, 30, 30, 90 }, TileType::Empty, Spritestate::FLOORTILE },
-			{ { 180, 100, 30, 90 }, TileType::Empty, Spritestate::FLOORTILE },
-			{ { 180, 80, 80, 30 }, TileType::Empty, Spritestate::FLOORTILE },
-			{ { 250, 80, 80, 30 }, TileType::Empty, Spritestate::FLOORTILE },
-			{ { 300, 80, 30, 100 }, TileType::Empty, Spritestate::FLOORTILE },
-			{ { 300, 80, 30, 100 }, TileType::Empty, Spritestate::FLOORTILE },
-			{ { 180, 180, 30, 100 }, TileType::Empty, Spritestate::FLOORTILE },
-			{ { 330, 80, 100, 30 }, TileType::Empty, Spritestate::FLOORTILE },
-			{ { 400, 80, 30, 100 }, TileType::Empty, Spritestate::FLOORTILE },
-			{ { 400, 160, 30, 100 }, TileType::Empty, Spritestate::FLOORTILE },
-			{ { 300, 180, 100, 30 }, TileType::Empty, Spritestate::FLOORTILE },
-			{ { 90, 250, 120, 30 }, TileType::Empty, Spritestate::FLOORTILE },
-			{ { 30, 250, 80, 30 }, TileType::Empty, Spritestate::FLOORTILE },
-			{ { 30, 200, 30, 80 }, TileType::Empty, Spritestate::FLOORTILE },
-			{ { 30, 120, 30, 80 }, TileType::Empty, Spritestate::FLOORTILE },
-			{ { 30, 90, 90, 30 }, TileType::Empty, Spritestate::FLOORTILE },
-			{ { 180, 280, 30, 100 }, TileType::Empty, Spritestate::FLOORTILE },
-			{ { 180, 280, 30, 100 }, TileType::Empty, Spritestate::FLOORTILE },
-			{ { 180, 360, 100, 30 }, TileType::Empty, Spritestate::FLOORTILE },
-			{ { 250, 360, 100, 30 }, TileType::Empty, Spritestate::FLOORTILE },
-			{ { 90, 360, 100, 30 }, TileType::Empty, Spritestate::FLOORTILE },
-			{ { 70, 360, 30, 100 }, TileType::Empty, Spritestate::FLOORTILE },
-			{ { 70, 430, 100, 30 }, TileType::Empty, Spritestate::FLOORTILE },
-			{ { 150, 430, 30, 100 }, TileType::Empty, Spritestate::FLOORTILE },
-			{ { 150, 460, 100, 30 }, TileType::Empty, Spritestate::FLOORTILE },
-			{ { 250, 390, 30, 100 }, TileType::Empty, Spritestate::FLOORTILE },
-			{ { 70, 500, 80, 30 }, TileType::Empty, Spritestate::FLOORTILE },
-			{ { 30, 500, 50, 30 }, TileType::Empty, Spritestate::FLOORTILE },
-			{ { 30, 500, 30, 100 }, TileType::Empty, Spritestate::FLOORTILE },
-			{ { 320, 310, 30, 80 }, TileType::Empty, Spritestate::FLOORTILE },
-			{ { 320, 280, 80, 30 }, TileType::Empty, Spritestate::FLOORTILE },
-			{ { 400, 250, 30, 90 }, TileType::Empty, Spritestate::FLOORTILE },
-			{ { 400, 330, 30, 90 }, TileType::Empty, Spritestate::FLOORTILE },
-			{ { 400, 380, 30, 90 }, TileType::Empty, Spritestate::FLOORTILE },
-			{ { 430, 250, 80, 30 }, TileType::Empty, Spritestate::FLOORTILE },
-			{ { 500, 250, 70, 30 }, TileType::Empty, Spritestate::FLOORTILE },
-			{ { 540, 250, 30, 80 }, TileType::Empty, Spritestate::FLOORTILE },
-			{ { 540, 320, 30, 80 }, TileType::Empty, Spritestate::FLOORTILE },
-			{ { 470, 390, 100, 30 }, TileType::Empty, Spritestate::FLOORTILE },
-			{ { 470, 390, 30, 100 }, TileType::Empty, Spritestate::FLOORTILE },
-			{ { 400, 460, 70, 30 }, TileType::Empty, Spritestate::FLOORTILE },
-			{ { 370, 460, 100, 30 }, TileType::Empty, Spritestate::FLOORTILE },
-			{ { 370, 460, 100, 30 }, TileType::Empty, Spritestate::FLOORTILE },
-			{ { 340, 460, 30, 100 }, TileType::Empty, Spritestate::FLOORTILE },
-			{ { 340, 550, 100, 30 }, TileType::Empty, Spritestate::FLOORTILE },
-			{ { 470, 550, 30, 100 }, TileType::Empty, Spritestate::FLOORTILE },
-			{ { 470, 480, 30, 100 }, TileType::Empty, Spritestate::FLOORTILE },
-			{ { 430, 550, 100, 30 }, TileType::Empty, Spritestate::FLOORTILE },
-			{ { 530, 480, 30, 100 }, TileType::Empty, Spritestate::FLOORTILE },
-			{ { 340, 550, 30, 100 }, TileType::Empty, Spritestate::FLOORTILE },
-			{ { 340, 620, 160, 30 }, TileType::Empty, Spritestate::FLOORTILE },
-			{ { 60, 570, 90, 30 }, TileType::Empty, Spritestate::FLOORTILE },
-			{ { 170, 570, 100, 30 }, TileType::Empty, Spritestate::FLOORTILE },
-			{ { 140, 570, 30, 100 }, TileType::Empty, Spritestate::FLOORTILE },
-			{ { 140, 640, 30, 100 }, TileType::Empty, Spritestate::FLOORTILE },
-			{ { 30, 680, 200, 100 }, TileType::Empty, Spritestate::FLOORTILE },
-		};
 		Initialize(defs);
 		for (auto& tile : tiles) {
 			lastTile = tile.rect;
 		}
+
 		RectAngle(graphics);
+
+	}
+	void Object::MapDraw()
+	{
+
 
 	}
 	void Object::RectAngle(Gdiplus::Graphics& graphics)
 	{
 		for (auto& tile : tiles) {
-			auto& imgs = tileBitmaps[static_cast<int>(tile.state)];					
-			
-			
+			auto& imgs = tileBitmaps[static_cast<int>(tile.state)];
+
+
 			if (!imgs.empty()) {
 				Gdiplus::Image* image = imgs[0];
 

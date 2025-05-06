@@ -39,6 +39,7 @@ struct Tile {
 };
 
 
+extern std::vector<std::tuple<Gdiplus::Rect, TileType, Spritestate>> defs;
 
 
 inline const int GetSpriteID(Spritestate Sprstate, size_t frameIndex)
@@ -71,10 +72,12 @@ namespace Map
 		~Object();
 
 		vector<Tile> tiles;
+		void MapLoop(Gdiplus::Graphics& graphics);
+		void MapDraw();
 		void Initialize(const vector<std::tuple<Gdiplus::Rect, TileType, Spritestate>>& defs);
 		void AddTile(const Gdiplus::Rect& rect, TileType type, Spritestate state);
 		void LoadTileImages(HINSTANCE hInst, Spritestate state);
-		void MapLoop(Gdiplus::Graphics& graphics);
+
 		void RectAngle(Gdiplus::Graphics& graphics);
 		vector<Gdiplus::Rect> GetfloorsRects() const;
 
