@@ -18,7 +18,7 @@ namespace Map
 		imageResource = new ImageResource();
 		imageRenderer = new GdiPlusImageRenderer();
 		tileBitmaps.resize(static_cast<int>(RESOURCE_COUNT));
-
+		lastTile = {}; 
 		LoadTileImages(hInstance, FLOORTILE);
 		LoadTileImages(hInstance, TREE);
 	}
@@ -144,15 +144,18 @@ namespace Map
 			{ { 30, 680, 200, 100 }, TileType::Empty, Spritestate::FLOORTILE },
 		};
 		Initialize(defs);
-
+		for (auto& tile : tiles) {
+			lastTile = tile.rect;
+		}
 		RectAngle(graphics);
 
 	}
 	void Object::RectAngle(Gdiplus::Graphics& graphics)
 	{
 		for (auto& tile : tiles) {
-			auto& imgs = tileBitmaps[static_cast<int>(tile.state)];
-
+			auto& imgs = tileBitmaps[static_cast<int>(tile.state)];					
+			
+			
 			if (!imgs.empty()) {
 				Gdiplus::Image* image = imgs[0];
 

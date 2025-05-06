@@ -49,12 +49,11 @@ void Collider::ColliderCheck(vector<Gdiplus::Rect>& floors)
 	}
 	if (!object->tiles.empty())
 	{
-		const Tile& lastTile = object->tiles.back();  // 마지막 타일
+		auto& lastTile = object->tiles.back();  // 마지막 타일
 		if (playerrect.IntersectsWith(lastTile.rect))
 		{
-			if (playerrect.X == 145 && playerrect.Y == 675 &&
-				lastTile.state == Spritestate::FLOORTILE && lastTile.type == TileType::Empty)
-			{
+			if (lastTile.rect.Contains(playerrect)) {
+
 				End->EndSceneRender();
 				return;
 			}

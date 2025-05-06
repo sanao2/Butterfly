@@ -64,6 +64,7 @@ namespace Map
 		vector<std::vector<Gdiplus::Image*>> tileBitmaps;
 		ImageResource* imageResource = nullptr;
 		IImageRenderer* imageRenderer = nullptr;
+		Gdiplus::Rect lastTile;
 
 	public:
 		Object(HDC drawDC, HINSTANCE hInstance);
@@ -76,6 +77,8 @@ namespace Map
 		void MapLoop(Gdiplus::Graphics& graphics);
 		void RectAngle(Gdiplus::Graphics& graphics);
 		vector<Gdiplus::Rect> GetfloorsRects() const;
+
+		Gdiplus::Rect& GetlastTile() { return lastTile; }
 	};
 }
 
