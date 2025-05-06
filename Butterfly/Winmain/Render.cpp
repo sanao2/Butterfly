@@ -2,15 +2,15 @@
 using namespace Input;
 
 
-Render::Render(HDC drawDC, HWND hwnd, HINSTANCE hInstance, int width, int height)
-	: hWnd(hwnd), clientSize{ width, height }, hInst(hInstance), moveMgr(new Move::MoveManager(key, playerrect))
+Render::Render(HDC drawDC, HWND hwnd, HINSTANCE hInstance, int width, int height,Gdiplus::Rect& rect)
+	: hWnd(hwnd), clientSize{ width, height }, hInst(hInstance),
+	moveMgr(new Move::MoveManager(key, rect))
 {
 	swap = new Swap(hwnd, width, height);
 	animation = new Animation(drawDC, hInstance);
 	object = new Map::Object(drawDC, hInstance);
 	collider = new Collider();
 }
-
 
 Render::~Render()
 {
@@ -47,7 +47,7 @@ void Render::RenderScene(HINSTANCE hInst)
 	cout << "[DEBUG]" << "player.X :" << playerrect.X
 		<< "playerrect.Y : " << playerrect.Y << endl;
 
-	animation->Render(memDC, graphics, 10, 10, current_frame);
+	animation->Render(memDC, graphics, playerrect.X, playerrect.Y, current_frame);
 
 	// 스왑 메모리 DC에 복사 
 	swap->SwapBuffers();

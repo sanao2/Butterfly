@@ -16,8 +16,7 @@ Render* render = nullptr;
 RECT playerRc = { 5,5,20,20 };
 
 Gdiplus::Rect playerrect = {
-	playerRc.left,
-	playerRc.top,
+	playerRc.left, playerRc.top,
 	playerRc.right - playerRc.left,
 	playerRc.bottom - playerRc.top
 };
@@ -111,7 +110,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 
 	Time::InitTime();
 
-	render = new Render(drawDC, g_hWnd, hInstance, g_width, g_height);  // Global Render 객체 생성
+	render = new Render(drawDC, g_hWnd, hInstance, g_width, g_height, playerrect);  // Global Render 객체 생성
 
 	MSG msg;
 	while (true)

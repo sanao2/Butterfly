@@ -16,12 +16,11 @@ using namespace std::chrono;
 using namespace Move;
 using namespace Map; 
 
-extern Gdiplus::Rect playerrect;
 
 class Render
 {
 public:
-    Render(HDC drawDC, HWND hwnd, HINSTANCE hInstance, int width, int height);
+    Render(HDC drawDC, HWND hwnd, HINSTANCE hInstance, int width, int height, Gdiplus::Rect& rect);
     ~Render();
                                                  
         void Update();                           // 렌더 업데이트 및 스왑 호출  
