@@ -86,6 +86,9 @@ namespace Map
 		LoadTileImages(hInstance, FLOORTILE);
 		LoadTileImages(hInstance, TREE);
 
+		Initialize(defs);
+
+
 	}
 
 	Object::~Object()
@@ -139,13 +142,12 @@ namespace Map
 	}
 	void Object::MapLoop(Gdiplus::Graphics& graphics)
 	{
-		const int windowWidth = 600;
-		const int windowHeight = 800;
-		// 鸥老 农扁
-		const int tileWidth = 30;
-		const int tileHeight = 40;
+		//const int windowWidth = 600;
+		//const int windowHeight = 800;
+		//// 鸥老 农扁
+		//const int tileWidth = 30;
+		//const int tileHeight = 40;
 
-		Initialize(defs);
 		for (auto& tile : tiles) {
 			lastTile = tile.rect;
 		}
@@ -153,11 +155,7 @@ namespace Map
 		RectAngle(graphics);
 
 	}
-	void Object::MapDraw()
-	{
 
-
-	}
 	void Object::RectAngle(Gdiplus::Graphics& graphics)
 	{
 		for (auto& tile : tiles) {
