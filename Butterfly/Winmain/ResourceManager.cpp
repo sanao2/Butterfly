@@ -2,9 +2,7 @@
 #include "ResourceManager.h"
 #include <iostream>
 
-
 constexpr wchar_t RESOURCE_TYPE[] = L"PNG";
-
 
 ResourceManager::ResourceManager(HDC drawDC, HINSTANCE hInstance)
 	: hInst(hInstance), GdiPlusToken(0)
@@ -54,15 +52,7 @@ void ResourceManager::LoadeFrames(HINSTANCE hInst)
 	isLoaded = false;
 }
 
-<<<<<<< HEAD
-//void ResourceManger::Render(Gdiplus::Graphics& graphics, int x, int y)
-//{
-//	imageRenderer->Render(graphics, image, x, y);
-//	
-//}
 
-=======
->>>>>>> 5f00e2ed61ee77d6d5d1cb1ef5eeb9a29ab30afa
 void ResourceManager::RenderFrame(Gdiplus::Graphics* graphics, int x, int y, int frameIndex)
 {
 	if (frameIndex < 0 || frameIndex >= AnimationFrames.size())
@@ -73,15 +63,12 @@ void ResourceManager::RenderFrame(Gdiplus::Graphics* graphics, int x, int y, int
 	}
 	auto& img = AnimationFrames[frameIndex];
 
-	UINT ImgWidth = img->GetWidth() / 10;
-	UINT Imgheight = img->GetHeight() / 10;
-
-<<<<<<< HEAD
+	UINT ImgWidth = img->GetWidth() / 15;
+	UINT Imgheight = img->GetHeight() / 15;
 
 	imageRenderer->Render(*graphics, AnimationFrames[frameIndex], ImgWidth, Imgheight, x, y);
 
 	isLoaded = false;
-=======
 	imageRenderer->Render(*graphics, AnimationFrames[frameIndex], ImgWidth, Imgheight, x, y);
 
 	isLoaded = false;
@@ -117,5 +104,4 @@ void ResourceManager::LoadImages(HINSTANCE hInst, const int resourceID)
 void ResourceManager::ImageRender(Gdiplus::Graphics& graphics, int x, int y)
 {
 	imageRenderer->Render(graphics, image, x, y);
->>>>>>> 5f00e2ed61ee77d6d5d1cb1ef5eeb9a29ab30afa
 }

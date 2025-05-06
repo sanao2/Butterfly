@@ -8,7 +8,7 @@ Render::Render(HDC drawDC, HWND hwnd, HINSTANCE hInstance, int width, int height
 	swap = new Swap(hwnd, width, height);
 	animation = new Animation(drawDC, hInstance);
 	object = new Map::Object(drawDC, hInstance);
-	collider = new Collider(); 
+	collider = new Collider();
 }
 
 
@@ -37,41 +37,17 @@ void Render::RenderScene(HINSTANCE hInst)
 	// 화면 초기화 (배경을 흰색으로 채우기)
 	PatBlt(memDC, 0, 0, clientSize.x, clientSize.y, WHITENESS);
 
-<<<<<<< HEAD
 	//animation->Render(memDC, graphics, 0, 0, current_frame);
-	Gdiplus::Rect rc = { 10,10,10,10 };
-=======
->>>>>>> 5f00e2ed61ee77d6d5d1cb1ef5eeb9a29ab30afa
-	// Object 
+	// Object
 	object->MapLoop(*graphics);
-	auto floors = object->GetfloorsRects(); 
+	auto floors = object->GetfloorsRects();
 
-<<<<<<< HEAD
-	animation->Render(memDC, graphics, playerRc.left, playerRc.top, current_frame);
-=======
->>>>>>> 5f00e2ed61ee77d6d5d1cb1ef5eeb9a29ab30afa
+	collider->ColliderCheck(floors);
 
-	bool onPath = false; 
+	cout << "[DEBUG]" << "player.X :" << playerrect.X
+		<< "playerrect.Y : " << playerrect.Y << endl;
 
-	for (auto& path : floors)
-	{
-		if (playerrect.IntersectsWith(path))
-		{
-			onPath = true; 
-			break; 
-		}
-	}
-
-	if (collider->IsCompleteOffPath(playerrect, floors)) {
-		// 완전 길 밖 → 시작 위치로 리셋
-		int width = playerrect.Width; 
-		int hegiht = playerrect.Height;
-		
-		playerrect.X = 0;
-		playerrect.Y = 0;
-	}
-
-	animation->Render(memDC, graphics,playerrect.X, playerrect.Y, current_frame);
+	animation->Render(memDC, graphics, 10, 10, current_frame);
 
 	// 스왑 메모리 DC에 복사 
 	swap->SwapBuffers();
@@ -90,7 +66,8 @@ void Render::PlayerAnimationkeyInput()
 	auto elapsed = duration_cast<seconds> (now - lastMoveTime).count();
 
 	//  키 입력으로 다음 상태 결정
-	Animstate newState = current_state;
+	Animstate newState = GetcurrentAnimationState();
+
 	if (key.IsKeyDown(VK_RIGHT))
 	{
 		newState = PLAYER_RIGHTWALK;
@@ -114,7 +91,7 @@ void Render::PlayerAnimationkeyInput()
 
 
 	// 상태가 변경되었을 때만 교환
-	if (newState != current_state)
+	if (newState != GetcurrentAnimationState())
 	{
 		ResourceManager* resManager = animation->GetResourceManager();
 

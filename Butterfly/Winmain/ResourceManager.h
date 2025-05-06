@@ -1,6 +1,5 @@
 
 #pragma once
-#pragma once
 #include "Global.h"
 #include <windows.h>
 #include <cstdint>
@@ -45,12 +44,9 @@ public:
 
 	void LoadeFrames(HINSTANCE hInst);
 	void RenderFrame(Gdiplus::Graphics* graphics, int x, int y, int frameIndex);
-<<<<<<< HEAD
-=======
 
 	void LoadImages(HINSTANCE hInst, const int resourceID);
 	void ImageRender(Gdiplus::Graphics& graphics, int x, int y);
->>>>>>> 5f00e2ed61ee77d6d5d1cb1ef5eeb9a29ab30afa
 
 	bool IsLoaded() const { return isLoaded; }
 	void SetIsLoaded(bool loaded) { isLoaded = loaded; }

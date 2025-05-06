@@ -169,6 +169,7 @@
     <ClCompile Include="Render.cpp" />
     <ClCompile Include="ResourceManager.cpp" />
     <ClCompile Include="Swap.cpp" />
+    <ClCompile Include="UI\Map\IImageRenderer.cpp" />
     <ClCompile Include="UI\Map\ImageResource.cpp" />
     <ClCompile Include="UI\Map\Map.cpp" />
     <ClCompile Include="UI\Timer.cpp" />

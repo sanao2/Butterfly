@@ -24,7 +24,7 @@ struct ResourceInfo {
 };
 extern  unordered_map<Animstate, ResourceInfo> AnimStateFrameMap;
 
-inline const int GetAnimationFrameID(Animstate animstate, size_t frameIndex)
+inline const int GetAnimationFrameID(Animstate animstate, int frameIndex)
 {
 	auto it = AnimStateFrameMap.find(animstate);
 	if (it == AnimStateFrameMap.end()) {

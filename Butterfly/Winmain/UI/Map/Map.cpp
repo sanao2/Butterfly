@@ -74,22 +74,12 @@ namespace Map
 	}
 	void Object::MapLoop(Gdiplus::Graphics& graphics)
 	{
-<<<<<<< HEAD
 		const int windowWidth = 600;
 		const int windowHeight = 800;
 		// 타일 크기
 		const int tileWidth = 30;
 		const int tileHeight = 40;
 
-		for (int y = 0; y < windowHeight; y += tileHeight)
-		{
-			for (int x = 0; x < windowWidth; x += tileWidth)
-			{
-				Gdiplus::Rect rect = createObject(x, y, tileWidth, tileHeight);
-				RectAngle(&graphics, rect);
-			}
-		}
-=======
 		std::vector<std::tuple<Gdiplus::Rect, TileType, Spritestate>> defs = {
 			// floorstart
 			{ { -20, 30, 80, 30 }, TileType::Empty, Spritestate::FLOORTILE },
@@ -156,7 +146,6 @@ namespace Map
 		Initialize(defs);
 
 		RectAngle(graphics);
->>>>>>> 5f00e2ed61ee77d6d5d1cb1ef5eeb9a29ab30afa
 
 	}
 	void Object::RectAngle(Gdiplus::Graphics& graphics)
@@ -168,7 +157,7 @@ namespace Map
 				Gdiplus::Image* image = imgs[0];
 
 				// 첫 번째 프레임만 그리기
-				imageRenderer->Render(graphics, tile.rect,image);
+				imageRenderer->Render(graphics, image, tile.rect);
 			}
 			else {
 				// 대체 드로잉

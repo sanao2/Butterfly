@@ -23,10 +23,7 @@ class Animation;
 extern RECT playerRc;
 extern Animation* g_pPlayeranimation;
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 5f00e2ed61ee77d6d5d1cb1ef5eeb9a29ab30afa
 class Animation
 {
 private:
