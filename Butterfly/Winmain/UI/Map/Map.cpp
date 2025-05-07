@@ -12,6 +12,7 @@ unordered_map<Spritestate, SpriteInfo> SpriteStateFrameMap = {
 };
 
 std::vector<std::tuple<Gdiplus::Rect, TileType, Spritestate>> defs = {
+	
 	// floorstart
 	{ { -20, 30, 80, 30 }, TileType::Empty, Spritestate::FLOORTILE },
 	{ { 50, 30, 80, 30 }, TileType::Empty, Spritestate::FLOORTILE },
@@ -62,7 +63,13 @@ std::vector<std::tuple<Gdiplus::Rect, TileType, Spritestate>> defs = {
 	{ { 370, 460, 100, 30 }, TileType::Empty, Spritestate::FLOORTILE },
 	{ { 340, 460, 30, 100 }, TileType::Empty, Spritestate::FLOORTILE },
 	{ { 340, 550, 100, 30 }, TileType::Empty, Spritestate::FLOORTILE },
+
 	{ { 470, 550, 30, 100 }, TileType::Empty, Spritestate::FLOORTILE },
+	{ { 470, 630, 30, 100 }, TileType::Empty, Spritestate::FLOORTILE },
+	{ { 370, 700, 100, 30 }, TileType::Empty, Spritestate::FLOORTILE },
+	{ { 270, 700, 100, 30 }, TileType::Empty, Spritestate::FLOORTILE },
+	{ { 220, 700, 90, 30 }, TileType::Empty, Spritestate::FLOORTILE },
+
 	{ { 470, 480, 30, 100 }, TileType::Empty, Spritestate::FLOORTILE },
 	{ { 430, 550, 100, 30 }, TileType::Empty, Spritestate::FLOORTILE },
 	{ { 530, 480, 30, 100 }, TileType::Empty, Spritestate::FLOORTILE },
@@ -73,6 +80,9 @@ std::vector<std::tuple<Gdiplus::Rect, TileType, Spritestate>> defs = {
 	{ { 140, 570, 30, 100 }, TileType::Empty, Spritestate::FLOORTILE },
 	{ { 140, 640, 30, 100 }, TileType::Empty, Spritestate::FLOORTILE },
 	{ { 30, 680, 200, 100 }, TileType::Empty, Spritestate::FLOORTILE },
+	// Wall start 
+	
+	
 };
 
 namespace Map
