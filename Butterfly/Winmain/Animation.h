@@ -40,6 +40,5 @@ public:
 	void Update();
 	void Render(HDC drawDC, Gdiplus::Graphics* graphics, int x, int y, int curFrameIndex);
 
-	//void Changestate(Animstate newState, HINSTANCE hInstance);
 	ResourceManager* GetResourceManager() { return resManager; }
 };

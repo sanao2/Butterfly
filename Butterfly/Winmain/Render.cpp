@@ -48,6 +48,7 @@ void Render::RenderScene(HINSTANCE hInst)
 	cout << "[DEBUG]" << "player.X :" << playerrect.X
 		<< "playerrect.Y : " << playerrect.Y << endl;
 
+
 	if (isEndScene) endscene->EndSceneRender();
 
 	if (isEndScene) {

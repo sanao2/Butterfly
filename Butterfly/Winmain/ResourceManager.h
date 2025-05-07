@@ -23,21 +23,6 @@ class ResourceManager
 public:
 	vector<Gdiplus::Image*> AnimationFrames;
 
-private:
-	ImageResource* imageResource = nullptr;
-	IImageRenderer* imageRenderer = nullptr;
-
-	Swap* swap = nullptr;
-
-	HINSTANCE hInst = nullptr;
-
-	ULONG_PTR GdiPlusToken;
-	Gdiplus::Graphics* graphics = nullptr;
-	Gdiplus::Image* image = nullptr;
-	bool isLoaded = false;
-
-
-public:
 	ResourceManager() = delete;
 	ResourceManager(HDC drawDC, HINSTANCE hInstance);
 	~ResourceManager();
@@ -51,7 +36,18 @@ public:
 	bool IsLoaded() const { return isLoaded; }
 	void SetIsLoaded(bool loaded) { isLoaded = loaded; }
 
+private:
+	ImageResource* imageResource = nullptr;
+	IImageRenderer* imageRenderer = nullptr;
 
+	Swap* swap = nullptr;
+
+	HINSTANCE hInst = nullptr;
+
+	ULONG_PTR GdiPlusToken;
+	Gdiplus::Graphics* graphics = nullptr;
+	Gdiplus::Image* image = nullptr;
+	bool isLoaded = false;
 };
 
 
