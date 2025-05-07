@@ -141,8 +141,6 @@
     <ClInclude Include="Event\KeyboardInputManager.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="Global.h" />
-    <ClInclude Include="IAnimation.h" />
-    <ClInclude Include="Move\AIMoveController.h" />
     <ClInclude Include="Move\IMoveController.h" />
     <ClInclude Include="Move\MoveDirection.h" />
     <ClInclude Include="Move\MoveManagers.h" />
@@ -166,7 +164,6 @@
     <ClCompile Include="EndScene.cpp" />
     <ClCompile Include="Event\KeyboardInputManager.cpp" />
     <ClCompile Include="Global.cpp" />
-    <ClCompile Include="IAnimation.cpp" />
     <ClCompile Include="Move\MoveManagers.cpp" />
     <ClCompile Include="Render.cpp" />
     <ClCompile Include="ResourceManager.cpp" />

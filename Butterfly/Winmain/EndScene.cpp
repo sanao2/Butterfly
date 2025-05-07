@@ -7,6 +7,7 @@ EndScene::EndScene(Swap* _swap, int width, int height) : swap(_swap)
 		OutputDebugString(L"EndScene »ý¼ºÀÚ: swap is NULL\n");
 	}
 	clientSize = { width, height };
+	graphics = new Gdiplus::Graphics(memDC);
 }
 
 void EndScene::KeyInput()
@@ -24,11 +25,13 @@ void EndScene::Update()
 void EndScene::EndSceneRender()
 {
 	PatBlt(memDC, 0, 0, clientSize.x, clientSize.y, WHITENESS);
-
+	float totalTime = Time::GetTotalTime(); 
+	
 	isEndScene = true;
 	KeyInput();
 
 	TextOut(memDC, clientSize.x / 2, clientSize.y / 2, L"Complete!", 9);
-
+	TextOut(memDC, clientSize.x / 2, clientSize.y / 2 , L"Press ESC to exit", 9);
+	graphics->DrawString(L"Complete!", -1, &Gdiplus::Font(L"Arial", 20), Gdiplus::PointF(clientSize.x / 2, clientSize.y / 2), &Gdiplus::SolidBrush(Gdiplus::Color(255, 0, 0, 0))); 
 	swap->SwapBuffers();
 }

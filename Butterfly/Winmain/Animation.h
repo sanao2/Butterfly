@@ -2,7 +2,6 @@
 #include "Global.h"
 #include <windows.h> 
 #include "ResourceManager.h"
-#include "IAnimation.h"
 #include "UI/Timer.h"
 #include <iostream> 
 #include <vector> 
