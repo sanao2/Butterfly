@@ -28,7 +28,7 @@ void EndScene::EndSceneRender()
 	isEndScene = true;
 	KeyInput();
 
-	TextOut(memDC, clientSize.x / 2, clientSize.y / 2, L"END SCENE", 9);
+	TextOut(memDC, clientSize.x / 2, clientSize.y / 2, L"Complete!", 9);
 
 	swap->SwapBuffers();
 }
