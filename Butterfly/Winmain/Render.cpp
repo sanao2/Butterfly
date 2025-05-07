@@ -54,8 +54,6 @@ void Render::RenderScene(HINSTANCE hInst)
 	if (isEndScene) {
 		playerrect.X = clientSize.x / 2;
 		playerrect.Y = clientSize.y - 30;
-		playerrect.Width = 40;
-		playerrect.Height = 50;
 	}
 
 	cout << "[DEBUG]" << "player.X :" << playerrect.X
