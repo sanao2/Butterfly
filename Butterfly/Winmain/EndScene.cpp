@@ -32,6 +32,6 @@ void EndScene::EndSceneRender()
 
 	TextOut(memDC, clientSize.x / 2, clientSize.y / 2, L"Complete!", 9);
 	TextOut(memDC, clientSize.x / 2, clientSize.y / 2 , L"Press ESC to exit", 9);
-	graphics->DrawString(L"Complete!", -1, &Gdiplus::Font(L"Arial", 20), Gdiplus::PointF(clientSize.x / 2, clientSize.y / 2), &Gdiplus::SolidBrush(Gdiplus::Color(255, 0, 0, 0))); 
+
 	swap->SwapBuffers();
 }

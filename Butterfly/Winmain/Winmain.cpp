@@ -14,12 +14,10 @@ HWND g_hWnd;
 HDC drawDC;
 
 Render* render = nullptr;
-RECT playerRc = { 10,10,20,20 };
 
+// GDI+ 플레이어 객체 
 Gdiplus::Rect playerrect = {
-	playerRc.left, playerRc.top,
-	playerRc.right - playerRc.left,
-	playerRc.bottom - playerRc.top
+	10,10, 20,40
 };
 
 void InitConsole()
